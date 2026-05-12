@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greek Flashcards</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #0f1117;
+    color: #e8eaf0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: #7c85a6;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  /* Import screen */
+  #import-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .import-box {
+    width: 100%;
+    border: 2px dashed #252a3d;
+    border-radius: 16px;
+    padding: 48px 32px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    background: #181c2a;
+  }
+
+  .import-box:hover, .import-box.drag-over {
+    border-color: #4f7cff;
+    background: #1a2040;
+  }
+
+  .import-box p {
+    color: #4a5170;
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+  .import-box .import-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    opacity: 0.4;
+  }
+
+  .import-box strong { color: #7c85a6; }
+
+  #file-input { display: none; }
+
+  .import-status {
+    font-size: 0.85rem;
+    color: #4a5170;
+    min-height: 20px;
+  }
+
+  .import-status.error { color: #c0394f; }
+  .import-status.success { color: #22a55a; }
+
+  .btn-skip {
+    background: none;
+    border: none;
+    color: #3a4060;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 4px;
+  }
+
+  .btn-skip:hover { color: #5a6080; }
+
+  /* Progress bar */
+  .progress-bar-wrap {
+    width: 100%;
+    max-width: 480px;
+    height: 3px;
+    background: #1e2130;
+    border-radius: 2px;
+    margin-bottom: 12px;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4f7cff, #a78bfa);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  .progress-label {
+    font-size: 0.75rem;
+    color: #4a5170;
+    text-align: right;
+    max-width: 480px;
+    width: 100%;
+    margin-bottom: 28px;
+  }
+
+  /* Card flip */
+  .scene {
+    width: 480px;
+    max-width: 100%;
+    height: 280px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin-bottom: 28px;
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .card.flipped { transform: rotateY(180deg); }
+
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    gap: 12px;
+  }
+
+  .card-front {
+    background: #181c2a;
+    border: 1px solid #252a3d;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  }
+
+  .card-back {
+    background: #181c2a;
+    border: 1px solid #2d3255;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    transform: rotateY(180deg);
+  }
+
+  .card-lang {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #4f7cff;
+    font-weight: 500;
+  }
+
+  .card-word {
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: #e8eaf0;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .card-hint {
+    font-size: 0.75rem;
+    color: #3a4060;
+    margin-top: 8px;
+  }
+
+  .card-answer {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #a78bfa;
+    text-align: center;
+  }
+
+  .card-answer-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #5a4a8a;
+    font-weight: 500;
+  }
+
+  /* Buttons */
+  .btn-row {
+    display: flex;
+    gap: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease 0.2s;
+  }
+
+  .btn-row.visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  button {
+    padding: 12px 36px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    letter-spacing: 0.03em;
+  }
+
+  button:active { transform: scale(0.97); }
+
+  .btn-correct {
+    background: linear-gradient(135deg, #1a6b3a, #22a55a);
+    color: #d4f5e2;
+    box-shadow: 0 4px 20px rgba(34,165,90,0.25);
+  }
+
+  .btn-correct:hover { box-shadow: 0 4px 28px rgba(34,165,90,0.4); }
+
+  .btn-wrong {
+    background: linear-gradient(135deg, #6b1a2a, #c0394f);
+    color: #fdd8de;
+    box-shadow: 0 4px 20px rgba(192,57,79,0.25);
+  }
+
+  .btn-wrong:hover { box-shadow: 0 4px 28px rgba(192,57,79,0.4); }
+
+  /* Session end */
+  .session-end {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .session-end.visible { display: flex; }
+
+  .session-end h2 {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #a78bfa;
+  }
+
+  .session-stats {
+    font-size: 0.9rem;
+    color: #5a6080;
+    line-height: 1.8;
+  }
+
+  .session-stats span { color: #e8eaf0; font-weight: 500; }
+
+  .btn-restart {
+    background: linear-gradient(135deg, #2a2f4a, #3a4170);
+    color: #a0aacc;
+    padding: 12px 40px;
+    border-radius: 10px;
+    border: 1px solid #3a4170;
+    font-size: 0.9rem;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-restart:hover { background: linear-gradient(135deg, #3a4060, #4a5280); }
+
+  /* Direction toggle + top bar */
+  .controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
+  .dir-btn {
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid #252a3d;
+    background: #181c2a;
+    color: #4a5170;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+  }
+
+  .dir-btn.active {
+    background: #2a3060;
+    border-color: #4f7cff;
+    color: #a0b4ff;
+  }
+
+  .btn-import-again {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #252a3d;
+    background: #181c2a;
+    color: #3a4060;
+    font-size: 0.72rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.04em;
+    margin-left: 8px;
+  }
+
+  .btn-import-again:hover { color: #5a6080; border-color: #3a4060; }
+
+  #main-view { display: none; flex-direction: column; align-items: center; width: 100%; }
+
+  /* Loading spinner */
+  .spinner {
+    width: 32px; height: 32px;
+    border: 3px solid #1e2130;
+    border-top-color: #4f7cff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<h1>Greek Flashcards</h1>
+
+<!-- Import screen -->
+<div id="import-view">
+  <div class="import-box" id="drop-zone" onclick="document.getElementById('file-input').click()">
+    <div class="import-icon">📦</div>
+    <p><strong>Drop your .apkg file here</strong><br>or click to browse<br><br>
+    Imported words are saved permanently —<br>you only need to do this once.</p>
+  </div>
+  <input type="file" id="file-input" accept=".apkg">
+  <div class="import-status" id="import-status"></div>
+  <button class="btn-skip" onclick="useBuiltinWords()">Use built-in 100 words instead</button>
+</div>
+
+<!-- Main flashcard view -->
+<div id="main-view">
+  <div class="controls">
+    <button class="dir-btn active" id="btn-both" onclick="setMode('both')">Both</button>
+    <button class="dir-btn" id="btn-en" onclick="setMode('en')">EN → GR</button>
+    <button class="dir-btn" id="btn-gr" onclick="setMode('gr')">GR → EN</button>
+    <button class="btn-import-again" onclick="showImport()">↑ Import deck</button>
+  </div>
+
+  <div class="progress-bar-wrap">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+  <div class="progress-label" id="progress-label"></div>
+
+  <div class="scene" onclick="flipCard()">
+    <div class="card" id="card">
+      <div class="card-face card-front">
+        <div class="card-lang" id="front-lang"></div>
+        <div class="card-word" id="front-word"></div>
+        <div class="card-hint">tap to reveal</div>
+      </div>
+      <div class="card-face card-back">
+        <div class="card-answer-label" id="back-lang"></div>
+        <div class="card-answer" id="back-word"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn-row" id="btn-row">
+    <button class="btn-wrong" onclick="answer(false)">✗ Wrong</button>
+    <button class="btn-correct" onclick="answer(true)">✓ Correct</button>
+  </div>
+</div>
+
+<div class="session-end" id="session-end">
+  <h2>Session complete</h2>
+  <div class="session-stats" id="session-stats"></div>
+  <button class="btn-restart" onclick="startSession()">Start next session</button>
+</div>
+
+<!-- CDN dependencies loaded lazily -->
+<script>
+// ── Built-in fallback words ──────────────────────────────────────────────────
+const BUILTIN_WORDS = [
+  {en:"yes",gr:"ναι"},{en:"no",gr:"όχι"},{en:"hello",gr:"γεια σου"},{en:"goodbye",gr:"αντίο"},
+  {en:"please",gr:"παρακαλώ"},{en:"thank you",gr:"ευχαριστώ"},{en:"sorry",gr:"συγγνώμη"},
+  {en:"excuse me",gr:"με συγχωρείτε"},{en:"I",gr:"εγώ"},{en:"you",gr:"εσύ"},
+  {en:"he",gr:"αυτός"},{en:"she",gr:"αυτή"},{en:"we",gr:"εμείς"},{en:"they",gr:"αυτοί"},
+  {en:"what",gr:"τι"},{en:"where",gr:"πού"},{en:"when",gr:"πότε"},{en:"who",gr:"ποιος"},
+  {en:"how",gr:"πώς"},{en:"why",gr:"γιατί"},{en:"is",gr:"είναι"},{en:"I am",gr:"είμαι"},
+  {en:"I have",gr:"έχω"},{en:"I want",gr:"θέλω"},{en:"I know",gr:"ξέρω"},
+  {en:"I go",gr:"πάω"},{en:"I eat",gr:"τρώω"},{en:"I drink",gr:"πίνω"},
+  {en:"I speak",gr:"μιλάω"},{en:"I understand",gr:"καταλαβαίνω"},
+  {en:"good",gr:"καλός"},{en:"bad",gr:"κακός"},{en:"big",gr:"μεγάλος"},
+  {en:"small",gr:"μικρός"},{en:"new",gr:"νέος"},{en:"old",gr:"παλιός"},
+  {en:"hot",gr:"ζεστός"},{en:"cold",gr:"κρύος"},{en:"beautiful",gr:"όμορφος"},
+  {en:"much / many",gr:"πολύς"},{en:"little / few",gr:"λίγος"},
+  {en:"water",gr:"νερό"},{en:"food",gr:"φαγητό"},{en:"bread",gr:"ψωμί"},
+  {en:"coffee",gr:"καφές"},{en:"wine",gr:"κρασί"},{en:"house",gr:"σπίτι"},
+  {en:"street",gr:"δρόμος"},{en:"car",gr:"αυτοκίνητο"},{en:"city",gr:"πόλη"},
+  {en:"country",gr:"χώρα"},{en:"day",gr:"μέρα"},{en:"night",gr:"νύχτα"},
+  {en:"time",gr:"ώρα"},{en:"today",gr:"σήμερα"},{en:"tomorrow",gr:"αύριο"},
+  {en:"yesterday",gr:"χθες"},{en:"now",gr:"τώρα"},{en:"here",gr:"εδώ"},
+  {en:"there",gr:"εκεί"},{en:"man",gr:"άντρας"},{en:"woman",gr:"γυναίκα"},
+  {en:"child",gr:"παιδί"},{en:"friend",gr:"φίλος"},{en:"name",gr:"όνομα"},
+  {en:"money",gr:"χρήματα"},{en:"work",gr:"δουλειά"},{en:"school",gr:"σχολείο"},
+  {en:"book",gr:"βιβλίο"},{en:"phone",gr:"τηλέφωνο"},{en:"door",gr:"πόρτα"},
+  {en:"number",gr:"αριθμός"},{en:"one",gr:"ένα"},{en:"two",gr:"δύο"},
+  {en:"three",gr:"τρία"},{en:"four",gr:"τέσσερα"},{en:"five",gr:"πέντε"},
+  {en:"ten",gr:"δέκα"},{en:"hundred",gr:"εκατό"},{en:"and",gr:"και"},
+  {en:"or",gr:"ή"},{en:"but",gr:"αλλά"},{en:"because",gr:"γιατί"},
+  {en:"with",gr:"με"},{en:"without",gr:"χωρίς"},{en:"in",gr:"σε"},
+  {en:"on",gr:"πάνω"},{en:"under",gr:"κάτω"},{en:"before",gr:"πριν"},
+  {en:"after",gr:"μετά"},{en:"very",gr:"πολύ"},{en:"also",gr:"επίσης"},
+  {en:"only",gr:"μόνο"},{en:"always",gr:"πάντα"},{en:"never",gr:"ποτέε"},
+  {en:"maybe",gr:"ίσως"},{en:"open",gr:"ανοιχτό"},{en:"closed",gr:"κλειστό"},
+  {en:"right",gr:"σωστό"},{en:"wrong",gr:"λάθος"}
+];
+
+const STORAGE_KEY  = 'greek_srs_v1';
+const WORDS_KEY    = 'greek_words_v1';
+
+let WORDS = [];
+let mode = 'both';
+let queue = [];
+let current = null;
+let sessionTotal = 0;
+let sessionCorrect = 0;
+let sessionWrong = 0;
+let flipped = false;
+
+// ── Startup ──────────────────────────────────────────────────────────────────
+function init() {
+  const cached = loadCachedWords();
+  if (cached && cached.length > 0) {
+    WORDS = cached;
+    showMain();
+  } else {
+    showImport();
+  }
+}
+
+function loadCachedWords() {
+  try {
+    const raw = localStorage.getItem(WORDS_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch { return null; }
+}
+
+function showImport() {
+  document.getElementById('import-view').style.display = 'flex';
+  document.getElementById('main-view').style.display = 'none';
+  document.getElementById('session-end').classList.remove('visible');
+}
+
+function showMain() {
+  document.getElementById('import-view').style.display = 'none';
+  document.getElementById('main-view').style.display = 'flex';
+  startSession();
+}
+
+function useBuiltinWords() {
+  WORDS = BUILTIN_WORDS;
+  showMain();
+}
+
+// ── .apkg import ─────────────────────────────────────────────────────────────
+function setStatus(msg, cls) {
+  const el = document.getElementById('import-status');
+  el.textContent = msg;
+  el.className = 'import-status' + (cls ? ' ' + cls : '');
+}
+
+document.getElementById('file-input').addEventListener('change', e => {
+  if (e.target.files[0]) processApkg(e.target.files[0]);
+});
+
+const dropZone = document.getElementById('drop-zone');
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('drag-over');
+  if (e.dataTransfer.files[0]) processApkg(e.dataTransfer.files[0]);
+});
+
+async function processApkg(file) {
+  setStatus('');
+  const statusEl = document.getElementById('import-status');
+  statusEl.innerHTML = '<div class="spinner"></div>';
+  statusEl.className = 'import-status';
+
+  try {
+    await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js');
+    await loadScript('https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js');
+
+    setStatus('Unzipping…');
+    const ab = await file.arrayBuffer();
+    const zip = await JSZip.loadAsync(ab);
+
+    // Find the SQLite db — could be collection.anki2 or collection.anki21
+    const dbEntry = zip.file('collection.anki21') || zip.file('collection.anki2');
+    if (!dbEntry) throw new Error('No collection database found in .apkg file.');
+
+    setStatus('Reading database…');
+    const dbBytes = await dbEntry.async('uint8array');
+
+    const SQL = await initSqlJs({
+      locateFile: f => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/${f}`
+    });
+    const db = new SQL.Database(dbBytes);
+
+    setStatus('Extracting cards…');
+    const words = extractWords(db);
+    db.close();
+
+    if (words.length === 0) throw new Error('No usable EN↔GR pairs found. Check the deck has English and Greek fields.');
+
+    localStorage.setItem(WORDS_KEY, JSON.stringify(words));
+    WORDS = words;
+    setStatus(`✓ Imported ${words.length} word pairs`, 'success');
+    setTimeout(() => showMain(), 800);
+
+  } catch (err) {
+    setStatus('Error: ' + err.message, 'error');
+    console.error(err);
+  }
+}
+
+function extractWords(db) {
+  // Get field names from models (stored as JSON in col table)
+  const colRes = db.exec("SELECT models FROM col LIMIT 1");
+  if (!colRes.length) return [];
+
+  const models = JSON.parse(colRes[0].values[0][0]);
+  // Build map: mid -> [fieldNames]
+  const modelFields = {};
+  for (const mid in models) {
+    modelFields[mid] = models[mid].flds.map(f => f.name.toLowerCase());
+  }
+
+  // Get notes: mid, flds (tab-separated field values)
+  const notesRes = db.exec("SELECT mid, flds FROM notes");
+  if (!notesRes.length) return [];
+
+  const words = [];
+  const seen = new Set();
+
+  for (const [mid, flds] of notesRes[0].values) {
+    const fields = flds.split('\x1f'); // Anki uses ASCII unit separator
+    const names = modelFields[mid] || [];
+
+    // Find which field index is likely English and which is Greek
+    const enIdx = findFieldIndex(names, fields, 'en');
+    const grIdx = findFieldIndex(names, fields, 'gr');
+
+    if (enIdx === -1 || grIdx === -1 || enIdx === grIdx) continue;
+
+    const en = stripHtml(fields[enIdx]).trim();
+    const gr = stripHtml(fields[grIdx]).trim();
+
+    if (!en || !gr) continue;
+
+    // Deduplicate
+    const key = en.toLowerCase() + '|' + gr.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+
+    words.push({ en, gr });
+  }
+
+  return words;
+}
+
+function findFieldIndex(names, values, lang) {
+  // First try name-based matching
+  const nameHints = {
+    en: ['english', 'en', 'front', 'word', 'translation', 'meaning'],
+    gr: ['greek', 'gr', 'back', 'target', 'ελληνικά', 'greek word']
+  };
+  const hints = nameHints[lang];
+
+  for (const hint of hints) {
+    const i = names.findIndex(n => n.includes(hint));
+    if (i !== -1 && i < values.length) return i;
+  }
+
+  // Fallback: detect by script — Greek chars for gr, Latin for en
+  if (lang === 'gr') {
+    return values.findIndex(v => /[\u0370-\u03FF\u1F00-\u1FFF]/.test(v));
+  } else {
+    return values.findIndex(v => v && /^[A-Za-z\s\-\/,.']+$/.test(stripHtml(v).trim()) && stripHtml(v).trim().length > 0);
+  }
+}
+
+function stripHtml(str) {
+  return str.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+}
+
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    if (document.querySelector(`script[src="${src}"]`)) { resolve(); return; }
+    const s = document.createElement('script');
+    s.src = src;
+    s.onload = resolve;
+    s.onerror = () => reject(new Error('Failed to load: ' + src));
+    document.head.appendChild(s);
+  });
+}
+
+// ── SRS data ─────────────────────────────────────────────────────────────────
+function loadData() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  catch { return {}; }
+}
+
+function saveData(data) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function cardKey(word, dir) { return word.en.replace(/\s+/g,'_') + '_' + dir; }
+
+function getCardData(data, word, dir) {
+  const key = cardKey(word, dir);
+  if (!data[key]) data[key] = { interval: 0, easeFactor: 2.5, nextReview: 0, reps: 0 };
+  return data[key];
+}
+
+// ── Session ───────────────────────────────────────────────────────────────────
+function buildQueue() {
+  const data = loadData();
+  const now = Date.now();
+  const dirs = mode === 'both' ? ['en','gr'] : [mode];
+  const due = [], fresh = [];
+
+  for (const word of WORDS) {
+    for (const dir of dirs) {
+      const cd = getCardData(data, word, dir);
+      const card = { word, dir, key: cardKey(word, dir) };
+      if (cd.nextReview <= now) {
+        if (cd.reps === 0) fresh.push(card);
+        else due.push(card);
+      }
+    }
+  }
+
+  shuffle(due); shuffle(fresh);
+  queue = [...due, ...fresh].slice(0, 40);
+  sessionTotal = queue.length;
+  sessionCorrect = 0;
+  sessionWrong = 0;
+}
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
+function nextCard() {
+  if (queue.length === 0) { showEnd(); return; }
+  const next = queue.shift();
+  flipped = false;
+  const card = document.getElementById('card');
+  document.getElementById('btn-row').classList.remove('visible');
+  card.classList.remove('flipped');
+
+  setTimeout(() => {
+    current = next;
+    const isEnGr = current.dir === 'en';
+    document.getElementById('front-lang').textContent = isEnGr ? 'English' : 'Greek';
+    document.getElementById('front-word').textContent = isEnGr ? current.word.en : current.word.gr;
+    document.getElementById('back-lang').textContent = isEnGr ? 'Greek' : 'English';
+    document.getElementById('back-word').textContent = isEnGr ? current.word.gr : current.word.en;
+    updateProgress();
+  }, 250);
+}
+
+function flipCard() {
+  if (!current) return;
+  flipped = !flipped;
+  document.getElementById('card').classList.toggle('flipped', flipped);
+  if (flipped) document.getElementById('btn-row').classList.add('visible');
+}
+
+function answer(correct) {
+  if (!current || !flipped) return;
+  const answering = current;
+  current = null;
+  const data = loadData();
+  const cd = getCardData(data, answering.word, answering.dir);
+
+  if (correct) {
+    sessionCorrect++;
+    cd.reps = (cd.reps || 0) + 1;
+    if (cd.reps === 1) { cd.interval = 1; }
+    else if (cd.reps === 2) { cd.interval = 4; }
+    else { cd.interval = Math.round(cd.interval * cd.easeFactor); }
+    cd.easeFactor = Math.max(1.3, cd.easeFactor + 0.1);
+  } else {
+    sessionWrong++;
+    cd.reps = 0;
+    cd.interval = 1;
+    cd.easeFactor = Math.max(1.3, cd.easeFactor - 0.2);
+    queue.push(answering);
+  }
+
+  cd.nextReview = Date.now() + cd.interval * 86400000;
+  saveData(data);
+  nextCard();
+}
+
+function updateProgress() {
+  const done = sessionTotal - queue.length - 1;
+  const pct = sessionTotal > 0 ? Math.max(0, (done / sessionTotal) * 100) : 0;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  document.getElementById('progress-label').textContent =
+    `${Math.max(0, done)} / ${sessionTotal} cards`;
+}
+
+function showEnd() {
+  document.getElementById('main-view').style.display = 'none';
+  document.getElementById('session-end').classList.add('visible');
+
+  const data = loadData();
+  const now = Date.now();
+  const dirs = mode === 'both' ? ['en','gr'] : [mode];
+  let totalDue = 0;
+  for (const word of WORDS) {
+    for (const dir of dirs) {
+      const cd = getCardData(data, word, dir);
+      if (cd.nextReview <= now + 86400000) totalDue++;
+    }
+  }
+
+  document.getElementById('session-stats').innerHTML =
+    `Correct: <span>${sessionCorrect}</span> &nbsp;|&nbsp; Wrong: <span>${sessionWrong}</span><br>` +
+    `Cards due tomorrow: <span>${totalDue}</span>`;
+}
+
+function startSession() {
+  document.getElementById('session-end').classList.remove('visible');
+  document.getElementById('main-view').style.display = 'flex';
+  buildQueue();
+  if (queue.length === 0) {
+    document.getElementById('progress-label').textContent = 'No cards due — come back later!';
+    document.getElementById('front-word').textContent = '';
+    document.getElementById('front-lang').textContent = '';
+  } else {
+    nextCard();
+  }
+}
+
+function setMode(m) {
+  mode = m;
+  ['both','en','gr'].forEach(id => {
+    document.getElementById('btn-' + id).classList.toggle('active', id === m);
+  });
+  startSession();
+}
+
+init();
+</script>
+</body>
+</html>
