@@ -23,7 +23,8 @@
       "Bash(python fix_deck.py)",
       "Bash(PYTHONIOENCODING=utf-8 python fix_deck2.py)",
       "Bash(ls -la Learning_Greek_for_Beginners_2500_Most_Common_Greek_Words/collection.anki21*)",
-      "Bash(PYTHONIOENCODING=utf-8 python fix_deck.py)"
+      "Bash(PYTHONIOENCODING=utf-8 python fix_deck.py)",
+      "Bash(ls -la \"/c/Users/OliverLeask/Desktop/New folder\"/*.png)"
     ]
   }
 }

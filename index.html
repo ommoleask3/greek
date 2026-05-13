@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eλληνικές Σημειώσεις</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -12,18 +15,24 @@
 
 <!-- Home splash -->
 <div id="home-view">
-  <div class="home-panels">
-    <div class="home-panel" onclick="showLevelSelect()">
-      <img src="plato.png" alt="Plato" class="home-panel-img">
-      <div class="home-panel-title">Λεξιλόγιο</div>
-      <div class="home-panel-sub">Vocabulary</div>
+  <div class="splash-canvas">
+    <img src="_The_School_of_Athens__by_Raffaello_Sanzio_da_Urbino.png" alt="The School of Athens" class="splash-bg">
+
+    <div class="splash-zone splash-zone--left" onclick="showLevelSelect()">
+      <div class="splash-zone-label">
+        <span class="splash-title">Λεξιλόγιο</span>
+      </div>
     </div>
-    <div class="home-panel" onclick="showGrammarMenu()">
-      <img src="aristotle.png" alt="Aristotle" class="home-panel-img">
-      <div class="home-panel-title">Γραμματική</div>
-      <div class="home-panel-sub">Grammar</div>
+
+    <div class="splash-zone splash-zone--right" onclick="showGrammarMenu()">
+      <div class="splash-zone-label">
+        <span class="splash-title">Γραμματική</span>
+      </div>
     </div>
+
+    <div class="splash-divider"></div>
   </div>
+
   <div class="home-toggle" id="greek-only-toggle" onclick="toggleGreekOnly()">
     <div class="toggle-track"><div class="toggle-thumb"></div></div>
     <span class="toggle-label">Greek only</span>
