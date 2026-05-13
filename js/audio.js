@@ -2,6 +2,12 @@
 // AUDIO
 // ═══════════════════════════════════════════════════════════════════════════════
 async function playAudio(filename, ttsText) {
+  // If user chose a TTS voice, always use TTS (skip indexed audio)
+  if (prefs.voiceSource !== 'indexed') {
+    if (ttsText) speakGreek(ttsText);
+    return;
+  }
+
   // Try stored audio file first
   if (filename) {
     try {
@@ -32,25 +38,29 @@ async function playAudio(filename, ttsText) {
     } catch {}
   }
 
-  // Fallback: TTS for words without stored audio
+  // Fallback: TTS with Athina when no stored audio available
   if (ttsText) {
-    speakGreek(ttsText);
+    speakGreek(ttsText, 'athina');
   }
 }
 
-function speakGreek(text) {
+function speakGreek(text, voiceOverride) {
   if (!window.speechSynthesis) return;
   speechSynthesis.cancel();
   const utter = new SpeechSynthesisUtterance(text);
   utter.lang = 'el-GR';
-  utter.rate = 0.9;
-  utter.pitch = 1.2;
+  utter.rate = prefs.ttsRate || 0.85;
+  utter.pitch = 1.0;
   utter.volume = prefs.volume;
-  // Try to pick a female Greek voice
+
+  const voiceName = voiceOverride || prefs.voiceSource;
   const voices = speechSynthesis.getVoices();
-  const female = voices.find(v => v.lang.startsWith('el') && /female/i.test(v.name));
-  const greek = female || voices.find(v => v.lang.startsWith('el'));
-  if (greek) utter.voice = greek;
+  const greekVoices = voices.filter(v => v.lang.startsWith('el'));
+  const pick = greekVoices.find(v => v.name.toLowerCase().includes(voiceName))
+    || greekVoices.find(v => /athina/i.test(v.name))
+    || greekVoices[0];
+  if (pick) utter.voice = pick;
+
   document.getElementById('btn-speaker').classList.add('active');
   utter.onend = () => document.getElementById('btn-speaker').classList.remove('active');
   speechSynthesis.speak(utter);
@@ -64,6 +74,7 @@ function stopAudio() {
     URL.revokeObjectURL(currentBlobUrl);
     currentBlobUrl = null;
   }
+  if (window.speechSynthesis) speechSynthesis.cancel();
   document.getElementById('btn-speaker').classList.remove('active');
 }
 
@@ -101,6 +112,29 @@ function setupVolumeSlider() {
     prefs.volume = parseFloat(slider.value);
     document.getElementById('audio-el').volume = prefs.volume;
     savePrefs();
+  });
+
+  // Speed slider
+  const speedSlider = document.getElementById('speed-slider');
+  speedSlider.value = prefs.ttsRate || 0.85;
+  speedSlider.addEventListener('input', () => {
+    prefs.ttsRate = parseFloat(speedSlider.value);
+    savePrefs();
+  });
+
+  // Voice select buttons
+  const voiceBtns = document.querySelectorAll('#voice-select button');
+  voiceBtns.forEach(btn => {
+    if (btn.dataset.voice === prefs.voiceSource) {
+      voiceBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    btn.addEventListener('click', () => {
+      voiceBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      prefs.voiceSource = btn.dataset.voice;
+      savePrefs();
+    });
   });
 
   document.addEventListener('click', e => {

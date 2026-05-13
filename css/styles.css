@@ -648,11 +648,45 @@ button:active { transform: scale(0.97); }
   background: #181c2a;
   border: 1px solid #252a3d;
   border-radius: 10px;
-  padding: 10px 14px;
+  padding: 12px 14px;
   display: none;
+  min-width: 160px;
 }
-#volume-popover.open { display: block; }
-#volume-slider { width: 80px; accent-color: #4f7cff; }
+#volume-popover.open { display: flex; flex-direction: column; gap: 6px; }
+#volume-slider, #speed-slider { width: 100%; accent-color: #4f7cff; }
+
+.popover-label {
+  font-size: 0.65rem;
+  color: #4a5170;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.voice-select {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+.voice-select button {
+  padding: 5px 4px;
+  background: #0f1117;
+  border: 1px solid #252a3d;
+  border-radius: 6px;
+  color: #4a5170;
+  font-size: 0.68rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  min-width: 0;
+}
+.voice-select button.active {
+  background: #2a3060;
+  color: #a0b4ff;
+  border-color: #3a4a80;
+}
+.voice-select button:hover:not(.active) {
+  background: #1a1f30;
+  color: #7c85a6;
+}
 
 /* ── Bag icon (fixed bottom-right, behind audio) ── */
 #bag-icon {

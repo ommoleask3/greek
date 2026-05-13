@@ -576,10 +576,8 @@ function advanceFromAnswer() {
   if (current.word.sentence) {
     sgr.textContent = current.word.sentence;
     requestAnimationFrame(() => { sgr.classList.add('visible'); });
-    if (current.word.sentenceAudio) {
-      playAudio(current.word.sentenceAudio);
-      sentenceAudioFile = current.word.sentenceAudio;
-    }
+    playAudio(current.word.sentenceAudio, current.word.sentence);
+    sentenceAudioFile = current.word.sentenceAudio;
     cardState = 'sentence';
   } else {
     nextCard(true);
