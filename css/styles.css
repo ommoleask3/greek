@@ -764,51 +764,7 @@ button:active { transform: scale(0.97); }
   cursor: pointer;
   display: flex;
   align-items: center;
-  transition: filter 0.45s ease, opacity 0.45s ease, transform 0.5s ease-in;
-}
-
-/* ── Departure animation ──────────────────────────────────────────────────── */
-/* Home-view stays active during departure but shouldn't take layout space     */
-#home-view:has(.splash-canvas.departing) {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  pointer-events: none;
-}
-/* Canvas becomes a fixed overlay so the target page is visible in the gap     */
-.splash-canvas.departing {
-  position: absolute;
-  inset: 0;
-  z-index: 100;
-  border-radius: 0;
-  pointer-events: none;
-}
-.splash-canvas.departing .splash-zone--left  { transform: translateX(-100%); }
-.splash-canvas.departing .splash-zone--right { transform: translateX(100%); }
-.splash-canvas.departing .splash-bg          { opacity: 0; transition: opacity 0.1s ease; }
-.splash-canvas.departing .splash-divider     { opacity: 0; transition: opacity 0.1s ease; }
-.splash-canvas.departing ~ .home-toggle      { opacity: 0; transition: opacity 0.1s ease; }
-
-/* ── Arrival animation (reverse) ─────────────────────────────────────────── */
-.splash-canvas.arriving .splash-zone--left  {
-  animation: slideInLeft 0.5s ease-out forwards;
-}
-.splash-canvas.arriving .splash-zone--right {
-  animation: slideInRight 0.5s ease-out forwards;
-}
-.splash-canvas.arriving .splash-divider { animation: fadeIn 0.3s 0.3s ease both; }
-
-@keyframes slideInLeft {
-  from { transform: translateX(-100%); }
-  to   { transform: translateX(0); }
-}
-@keyframes slideInRight {
-  from { transform: translateX(100%); }
-  to   { transform: translateX(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  transition: filter 0.45s ease, opacity 0.45s ease;
 }
 
 .splash-zone--left  {
