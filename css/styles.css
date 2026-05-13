@@ -504,11 +504,20 @@ button:active { transform: scale(0.97); }
 }
 .btn-wrong:hover { box-shadow: 0 4px 28px rgba(192,57,79,0.4); }
 
-.main-view-header {
-  width: 100%;
-  max-width: 420px;
-  margin-bottom: 8px;
+.btn-back-session {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  background: none;
+  border: none;
+  color: #3a4060;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  z-index: 100;
+  transition: color 0.2s;
 }
+.btn-back-session:hover { color: #7c85a6; }
 
 .btn-back-to-levels {
   background: linear-gradient(135deg, #2a2f4a, #3a4170);

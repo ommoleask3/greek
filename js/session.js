@@ -118,9 +118,9 @@ function loadCardContent(c) {
   const card = document.getElementById('card');
   card.classList.remove('flipped', 'complete-glow', 'flying');
   document.getElementById('btn-row').classList.remove('visible');
-  document.getElementById('front-lang').textContent = isEnGr ? 'English' : 'Greek';
+  document.getElementById('front-lang').textContent = isEnGr ? 'English' : 'Eλληνικά';
   document.getElementById('front-word').textContent = isEnGr ? c.word.en : c.word.gr;
-  document.getElementById('back-lang').textContent = isEnGr ? 'Greek' : 'English';
+  document.getElementById('back-lang').textContent = isEnGr ? 'Eλληνικά' : 'English';
   document.getElementById('back-word').textContent = isEnGr ? c.word.gr : c.word.en;
   resetSentence();
   updateFreqBadge(c.word);

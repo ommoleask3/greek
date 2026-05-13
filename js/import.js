@@ -312,7 +312,9 @@ function findAudioIndex(names, values, audioHint) {
 
 function stripHtml(str) {
   if (!str) return '';
-  return str.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim();
+  const tmp = document.createElement('textarea');
+  tmp.innerHTML = str.replace(/<[^>]*>/g, '');
+  return tmp.value.trim();
 }
 
 function stripSound(str) {

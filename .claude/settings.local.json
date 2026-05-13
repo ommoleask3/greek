@@ -1,7 +1,20 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:faqs.ankiweb.net)"
+      "WebFetch(domain:faqs.ankiweb.net)",
+      "Bash(ls \"c:/Users/OliverLeask/Desktop/New folder/\"*.apkg)",
+      "Bash(pip install spacy)",
+      "Bash(python -m spacy download el_core_news_sm)",
+      "Bash(python -c \"import spacy; print\\(spacy.__file__\\)\")",
+      "Bash(/c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe -m spacy download el_core_news_sm)",
+      "Bash(/c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe check_sentences.py)",
+      "Bash(/c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe -c \":*)",
+      "Bash(PYTHONIOENCODING=utf-8 /c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe -c \":*)",
+      "Bash(PYTHONIOENCODING=utf-8 /c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe check_sentences.py)",
+      "Bash(/c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe -m spacy info)",
+      "Bash(/c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe -m spacy download el_core_news_lg)",
+      "Bash(/c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe -m pip install stanza)",
+      "Bash(PYTHONIOENCODING=utf-8 /c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe -c \"import stanza; stanza.download\\(''el''\\)\")"
     ]
   }
 }
