@@ -19,7 +19,7 @@ function gt(gr, en) {
 
 // ─── Home splash ────────────────────────────────────────────────────────────
 function showHome() {
-  showView('home-view');
+  splashArrive();
 }
 
 // ─── Grammar menu ───────────────────────────────────────────────────────────

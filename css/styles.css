@@ -21,9 +21,13 @@ h1 {
   margin-bottom: 32px;
 }
 
-/* Hide the h1 when splash is showing — the painting IS the header */
+/* When splash is showing: full-bleed, no padding */
 body:has(#home-view.active) > h1 {
   display: none;
+}
+body:has(#home-view.active) {
+  padding: 0;
+  justify-content: stretch;
 }
 
 /* ── Views ── */
@@ -729,14 +733,15 @@ button:active { transform: scale(0.97); }
 /* ═══════════════════════════════════════════════════════════════════════════════
    HOME SPLASH
    ═══════════════════════════════════════════════════════════════════════════════ */
-#home-view { max-width: 900px; gap: 20px; }
+#home-view { max-width: none; width: 100%; gap: 0; flex: 1; position: relative; }
 
 /* ── Canvas container ─────────────────────────────────────────────────────── */
 .splash-canvas {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 12px;
+  flex: 1;
+  min-height: 0;
+  border-radius: 0;
   overflow: hidden;
   user-select: none;
 }
@@ -759,7 +764,51 @@ button:active { transform: scale(0.97); }
   cursor: pointer;
   display: flex;
   align-items: center;
-  transition: filter 0.45s ease, opacity 0.45s ease;
+  transition: filter 0.45s ease, opacity 0.45s ease, transform 0.5s ease-in;
+}
+
+/* ── Departure animation ──────────────────────────────────────────────────── */
+/* Home-view stays active during departure but shouldn't take layout space     */
+#home-view:has(.splash-canvas.departing) {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+/* Canvas becomes a fixed overlay so the target page is visible in the gap     */
+.splash-canvas.departing {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  border-radius: 0;
+  pointer-events: none;
+}
+.splash-canvas.departing .splash-zone--left  { transform: translateX(-100%); }
+.splash-canvas.departing .splash-zone--right { transform: translateX(100%); }
+.splash-canvas.departing .splash-bg          { opacity: 0; transition: opacity 0.1s ease; }
+.splash-canvas.departing .splash-divider     { opacity: 0; transition: opacity 0.1s ease; }
+.splash-canvas.departing ~ .home-toggle      { opacity: 0; transition: opacity 0.1s ease; }
+
+/* ── Arrival animation (reverse) ─────────────────────────────────────────── */
+.splash-canvas.arriving .splash-zone--left  {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+.splash-canvas.arriving .splash-zone--right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+.splash-canvas.arriving .splash-divider { animation: fadeIn 0.3s 0.3s ease both; }
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .splash-zone--left  {
@@ -789,7 +838,7 @@ button:active { transform: scale(0.97); }
 
 /* Hovered side: lifted, bright                                                */
 .splash-zone:hover::before {
-  filter: brightness(1.05);
+  filter: brightness(0.95);
 }
 .splash-zone:hover {
   z-index: 2;
@@ -829,23 +878,30 @@ button:active { transform: scale(0.97); }
 .splash-zone:hover .splash-zone-label { transform: scale(1.05); }
 
 .splash-title {
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  font-weight: 900;
-  font-size: clamp(1.4rem, 3.5vw, 2.6rem);
+  font-family: 'Libertinus Serif Display', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
   color: #fff;
   letter-spacing: 0.04em;
 }
 
 .splash-sub {
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  font-weight: 700;
-  font-size: clamp(0.65rem, 1.2vw, 0.95rem);
+  font-family: 'Libertinus Serif Display', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: clamp(0.8rem, 1.6vw, 1.15rem);
   color: rgba(255,255,255,0.7);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-/* Greek-only toggle */
+/* Greek-only toggle — floats over bottom of painting */
+#home-view > .home-toggle {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
 .home-toggle {
   display: flex;
   align-items: center;
@@ -855,7 +911,7 @@ button:active { transform: scale(0.97); }
   border-radius: 8px;
   transition: background 0.2s;
 }
-.home-toggle:hover { background: #181c2a; }
+.home-toggle:hover { background: rgba(24,28,42,0.7); }
 
 .toggle-track {
   width: 36px;
@@ -1263,5 +1319,4 @@ button:active { transform: scale(0.97); }
    ═══════════════════════════════════════════════════════════════════════════════ */
 @media (max-width: 500px) {
   .grammar-menu-panels { flex-direction: column; }
-  .splash-canvas { aspect-ratio: 4 / 3; }
 }
