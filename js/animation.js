@@ -12,9 +12,19 @@ function doPageTurn(onMidpoint, onReady) {
   setTimeout(() => {
     // At 180° (back face showing): swap content and unflip
     onMidpoint();
+    // Hide back-face answer during unflip so new answer isn't briefly visible
+    const backWord = document.getElementById('back-word');
+    const backLang = document.getElementById('back-lang');
+    const savedWord = backWord.textContent;
+    const savedLang = backLang.textContent;
+    backWord.textContent = '';
+    backLang.textContent = '';
     card.classList.remove('flipped');
 
     setTimeout(() => {
+      // Restore back-face content after unflip completes
+      backWord.textContent = savedWord;
+      backLang.textContent = savedLang;
       if (onReady) onReady();
     }, HALF);
   }, HALF);

@@ -174,8 +174,8 @@ function nextCard(animate) {
       if (!cd.days.includes(today)) cd.days.push(today);
       saveSRS(srs);
     }
-    if (current.dir === 'gr' && current.word.wordAudio) {
-      playAudio(current.word.wordAudio);
+    if (current.dir === 'gr') {
+      playAudio(current.word.wordAudio, current.word.gr);
     }
   };
 
@@ -308,9 +308,9 @@ function flipCard() {
     document.getElementById('kbd-hint').style.display = 'none';
   }
 
-  // EN→GR: play word audio on flip
-  if (current.dir === 'en' && current.word.wordAudio) {
-    playAudio(current.word.wordAudio);
+  // EN→GR: play word audio on flip (TTS fallback for words without audio files)
+  if (current.dir === 'en') {
+    playAudio(current.word.wordAudio, current.word.gr);
     currentAudioFile = current.word.wordAudio;
   }
 
@@ -430,11 +430,9 @@ function answer(choice) {
 
     if (isCorrect) {
       requestAnimationFrame(() => { sgr.classList.add('visible'); });
-      if (answering.word.sentenceAudio) {
-        playAudio(answering.word.sentenceAudio);
-        currentAudioFile = answering.word.wordAudio || null;
-        sentenceAudioFile = answering.word.sentenceAudio;
-      }
+      playAudio(answering.word.sentenceAudio, answering.word.sentence);
+      currentAudioFile = answering.word.wordAudio || null;
+      sentenceAudioFile = answering.word.sentenceAudio;
       cardState = 'sentence';
     } else {
       cardState = 'answer-wrong';

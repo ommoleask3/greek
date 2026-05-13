@@ -1,0 +1,91 @@
+{
+  "top500_fixes": {
+    "article_errors": [
+      {"rank": 84, "current_gr": "το δύο", "fix_gr": "δύο", "note": "numbers don't take neuter article"},
+      {"rank": 115, "current_gr": "το λεφτά", "fix_gr": "τα λεφτά", "note": "plural neuter needs τα not το"},
+      {"rank": 227, "current_gr": "το τρεις", "fix_gr": "τρεις", "note": "number, drop wrong article"},
+      {"rank": 435, "current_gr": "το τέσσερις", "fix_gr": "τέσσερις", "note": "number, drop wrong article"},
+      {"rank": 477, "current_gr": "το αδερφός", "fix_gr": "ο αδερφός", "note": "masculine noun, not neuter"}
+    ],
+    "translation_fixes": [
+      {"rank": 55, "gr": "το μέσο", "current_en": "means, middle", "fix_en": "medium; means; middle"},
+      {"rank": 189, "gr": "η βοήθεια", "current_en": "aid", "fix_en": "help; assistance"}
+    ],
+    "removals": []
+  },
+  "all_findings": {
+    "wrong_articles_all": [
+      {"rank": 84, "current": "το δύο", "fix": "δύο"},
+      {"rank": 115, "current": "το λεφτά", "fix": "τα λεφτά"},
+      {"rank": 227, "current": "το τρεις", "fix": "τρεις"},
+      {"rank": 435, "current": "το τέσσερις", "fix": "τέσσερις"},
+      {"rank": 477, "current": "το αδερφός", "fix": "ο αδερφός"},
+      {"rank": 595, "current": "το ναρκωτικά", "fix": "τα ναρκωτικά"},
+      {"rank": 1002, "current": "το γενέθλια", "fix": "τα γενέθλια"},
+      {"rank": 1003, "current": "το μετρητά", "fix": "τα μετρητά"},
+      {"rank": 1167, "current": "το αδέρφια", "fix": "τα αδέρφια"},
+      {"rank": 1606, "current": "το έξοδο", "fix": "τα έξοδα"},
+      {"rank": 2070, "current": "το τρόφιμα", "fix": "τα τρόφιμα"},
+      {"rank": 2316, "current": "το φόρος", "fix": "ο φόρος"}
+    ],
+    "english_typos_all": [
+      {"rank": 1082, "gr": "η οδηγία", "current": "instuctions", "fix": "instructions"},
+      {"rank": 1131, "gr": "η απειλή", "current": "threatening", "fix": "threat"},
+      {"rank": 1233, "gr": "το ψώνιο", "current": "boastful", "fix": "shopping; show-off (slang)"},
+      {"rank": 1240, "gr": "η ποινή", "current": "penalty,  sentence", "fix": "penalty; sentence"},
+      {"rank": 1350, "gr": "ο αξιωματικός", "current": "officer; axiomatic", "fix": "officer"},
+      {"rank": 1412, "gr": "μέσος", "current": "average, middle; middle finger", "fix": "average; middle"},
+      {"rank": 1686, "gr": "η σύλληψη", "current": "arrest,  conception", "fix": "arrest; conception"},
+      {"rank": 1963, "gr": "ξαπλώνω", "current": "lie", "fix": "lie down; recline"}
+    ],
+    "duplicates": [
+      {"ranks": [318, 1436], "words": ["ο γιος", "ο γιός"], "note": "same word, accent variant"},
+      {"ranks": [227, 1543], "words": ["τρεις", "τρείς"], "note": "same word, spelling variant"},
+      {"ranks": [642, 1775], "words": ["η μπύρα", "η μπίρα"], "note": "same word, spelling variant"},
+      {"ranks": [1178, 1478], "words": ["ο υπολογιστής", "το κομπιούτερ"], "note": "same concept, loanword duplicate"}
+    ],
+    "offensive_sensitive": [
+      {"rank": 2264, "gr": "ο αράπης", "en": "black", "note": "racial slur — recommend removal"},
+      {"rank": 1708, "gr": "ο Ναζί", "en": "Nazi", "note": "sensitive term"},
+      {"rank": 1793, "gr": "ο Εβραίος", "en": "Jew", "note": "sensitive but standard word"}
+    ],
+    "vulgar": [
+      {"rank": 221, "gr": "το σκατό", "en": "shit"},
+      {"rank": 459, "gr": "το κάθαρμα", "en": "scum"},
+      {"rank": 815, "gr": "η βλακεία", "en": "nonsense, stupidity"},
+      {"rank": 834, "gr": "ο μπάτσος", "en": "cop (coll)"},
+      {"rank": 863, "gr": "το καθίκι", "en": "bastard"},
+      {"rank": 1139, "gr": "το βυζί", "en": "boob"},
+      {"rank": 2210, "gr": "κατουράω", "en": "pee"}
+    ],
+    "niche_archaic": [
+      {"rank": 484, "gr": "ο χρονών", "en": "years old", "note": "not standalone word"},
+      {"rank": 562, "gr": "βάλλω", "en": "shoot, throw", "note": "archaic, modern uses πυροβολώ/ρίχνω"},
+      {"rank": 740, "gr": "ο σερίφης", "en": "sheriff", "note": "very English-specific"},
+      {"rank": 846, "gr": "ο λοχίας", "en": "sergeant", "note": "military-specific"},
+      {"rank": 987, "gr": "ο λοχαγός", "en": "captain", "note": "military-specific"},
+      {"rank": 1062, "gr": "ο μεγαλειότατος", "en": "his Majesty", "note": "very niche"},
+      {"rank": 1073, "gr": "η κασέτα", "en": "cassette", "note": "outdated technology"},
+      {"rank": 1316, "gr": "η λαίδη", "en": "lady", "note": "English loanword, niche"},
+      {"rank": 1467, "gr": "η μαντάμ", "en": "madame", "note": "French loanword, dated"},
+      {"rank": 1802, "gr": "ο μπαμπάκας", "en": "daddy", "note": "uncommon diminutive"},
+      {"rank": 2437, "gr": "ο Ινδιάνος", "en": "American Indian", "note": "outdated term"}
+    ],
+    "missing_common_words": [
+      {"gr": "πλένω", "en": "wash"},
+      {"gr": "μαγειρεύω", "en": "cook"},
+      {"gr": "κολυμπάω", "en": "swim"},
+      {"gr": "χτίζω", "en": "build"},
+      {"gr": "νοικιάζω", "en": "rent"},
+      {"gr": "η ελιά", "en": "olive"},
+      {"gr": "η ντομάτα", "en": "tomato"},
+      {"gr": "η ομπρέλα", "en": "umbrella"},
+      {"gr": "γκρι", "en": "grey"},
+      {"gr": "πορτοκαλί", "en": "orange (color)"},
+      {"gr": "η βρύση", "en": "tap; faucet"},
+      {"gr": "το κρεμμύδι", "en": "onion"},
+      {"gr": "σκουπίζω", "en": "wipe; sweep"},
+      {"gr": "φέρνω", "en": "bring"}
+    ]
+  }
+}

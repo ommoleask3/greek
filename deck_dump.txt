@@ -1,0 +1,2514 @@
+1	να	to (subjunctive); here (you go)
+2	ο	the (masc. article)
+3	δε(ν)	no, not
+4	θα	will, would
+5	είμαι	be
+6	και	and
+7	μου	my, mine
+8	με	with; me
+9	για	for; about
+10	εγώ	I; ego
+11	τι	what; how (excl.)
+12	σε	in, to, at
+13	που	that; which; where
+14	αυτός	he
+15	στο	at, in, to
+16	ότι	that
+17	από	from; than
+18	ναι	yes
+19	ένας	a; one
+20	εδώ	here
+21	αν	if
+22	όχι	no, not
+23	αλλά	but
+24	πρέπει	must
+25	πολύ	very
+26	γιατί	why; because
+27	τώρα	now
+28	πως	that (conjunction)
+29	εντάξει	all right
+30	κάτι	something
+31	ξέρω	know
+32	μη(ν)	not
+33	έχω	have
+34	θέλω	want
+35	καλά	well
+36	έτσι	thus, so
+37	στον	at, in, to
+38	κάνω	do; make
+39	εκεί	there
+40	σαν	like; as; when
+41	μόνο	only, just
+42	μπορώ	can, may
+43	όταν	when
+44	μαζί	together; with
+45	πώς	how
+46	τίποτα	nothing
+47	ευχαριστώ	thank
+48	όλος	all, whole
+49	πηγαίνω	go
+50	ή	or
+51	ποτέ	never
+52	τόσο	so; that much
+53	πού	where
+54	έλα	come; come on
+55	το μέσο	means, middle
+56	κύριος	main; master
+57	πιο	more
+58	το σπίτι	home
+59	παρακαλώ	please
+60	λοιπόν	so, then
+61	υπάρχω	exist
+62	ακόμα	yet, still
+63	πίσω	back, behind
+64	λίγο	a little; a bit
+65	πάντα	always, forever
+66	γεια	hello
+67	τότε	then
+68	μετά	after
+69	λέω	say; tell
+70	νομίζω	think
+71	πριν	before, prior
+72	απλά	simply
+73	βλέπω	see, view
+74	η δουλειά	work, job
+75	το παιδί	child
+76	η αλήθεια	truth
+77	ίσως	maybe, perhaps
+78	όπως	as, like, such as
+79	ας	let; may
+80	μα	but; by (oath)
+81	άλλος	other
+82	η ζωή	life
+83	πάω	go
+84	το δύο	two
+85	ωραίος	beautiful
+86	καλός	good
+87	έξω	outside, out
+88	κοιτάζω	look
+89	πάνω	on, up, above
+90	ο χρόνος	time, year
+91	ούτε	neither, nor
+92	κάτω	below, down, under
+93	η ώρα	time, hour
+94	η γυναίκα	woman
+95	η μέρα	day
+96	η φορά	time
+97	όμως	however, but
+98	κανένας	nobody, none
+99	κάθε	each, every
+101	αρέσω	like
+102	μέχρι	until
+103	η μαμά	mum
+104	χωρίς	without
+105	το πράγμα	thing
+106	σήμερα	today
+107	κάποιος	someone
+108	ο θεός	god
+109	σωστά	correctly, right
+110	συμβαίνω	happen, occur
+111	ακριβώς	exactly
+112	γίνομαι	become
+113	πόσο	how much
+114	επειδή	because
+115	το λεφτά	money
+116	πολύς	much
+117	μόλις	just; once
+118	η συγγνώμη	excuse me, sorry, apology
+119	γρήγορα	quickly
+121	λυπάμαι	be sorry, pity
+122	περιμένω	wait
+123	ο φίλος	friend
+124	το μέρος	place, part
+125	η στιγμή	moment, instant
+126	φαίνομαι	appear, look
+127	το πρόβλημα	problem
+128	φυσικά	naturally, of course
+129	όσο	as, as long as
+130	πάλι	again
+131	το λάθος	mistake
+132	ως	as; until; up to
+133	η κυρία	lady
+134	παίρνω	take
+135	ο μπαμπάς	dad
+136	δικός	own
+137	όλο	all, whole
+138	η μητέρα	mother
+139	πιστεύω	believe
+140	σίγουρα	certainly
+141	το μωρό	baby
+142	η ιδέα	idea
+143	μάλλον	probably, rather
+144	ίδιος	same; own
+145	το αύριο	tomorrow
+146	νέος	new; young
+147	ο κόσμος	world, people
+148	σταματάω	stop
+149	η αγάπη	love
+150	ο πατέρας	father
+151	αρκετά	enough, quite, fairly
+152	χρειάζομαι	need
+153	ο καιρός	weather, time
+155	προς	to, toward
+156	αμέσως	immediately
+157	πια	anymore; no longer
+158	η χαρά	joy
+159	απόψε	tonight
+160	το όνομα	name
+161	μάλιστα	yes, certainly
+162	μόνος	alone
+163	μεγάλος	big
+164	πραγματικά	really, actually
+165	πότε	when
+166	το βράδυ	night
+167	σημαίνω	mean
+168	πρώτος	first, primary
+169	η πόλη	city
+170	ήδη	already
+171	τελευταίος	last
+172	ο άνθρωπος	human, person
+173	το τέλος	end
+174	η θέση	position
+175	καταλαβαίνω	understand
+176	φεύγω	leave
+177	το χέρι	hand
+178	εκτός	except, besides
+179	οπότε	so, therefore
+180	το λεπτό	minute
+181	μακριά	away, far
+182	το αμάξι	car
+183	μήπως	perhaps, maybe
+184	το κορίτσι	girl
+185	το μάτι	eye
+186	πρόκειται	it is about, be going to
+187	η πόρτα	door
+188	το δίκιο	right
+189	η βοήθεια	aid
+190	έρχομαι	come
+191	μιλάω	talk
+192	ο δρόμος	road
+193	εαυτός	self
+194	καθόλου	at all
+195	ορίζω	set, define
+196	βρίσκω	find
+197	πειράζω	bother, tease
+198	πέρα	beyond; across
+199	κοντά	near
+200	εννοώ	mean
+201	τέτοιος	such
+202	μπροστά	in front of, before
+203	ελπίζω	hope
+204	δίνω	give
+205	ο διά(β)ολος	devil
+206	η ιστορία	history, story
+207	το όπλο	weapon, gun
+208	αφού	after, since
+209	το πρωί	morning
+210	η νύχτα	night
+211	ο τύπος	type, press, dude (coll)
+212	ξανά	again
+213	θυμάμαι	remember
+214	κατά	against; during; according to
+215	αγαπάω	love
+216	κακός	bad
+217	το θέμα	subject theme
+218	ο τρόπος	way, manner
+219	το κεφάλι	head
+220	μερικοί	some, few
+221	το σκατό	shit
+222	βέβαια	of course, sure
+223	ο άντρας	man, husband
+224	η αστυνομία	police
+225	αλλιώς	otherwise, else
+226	χαίρω	be glad, pleased to meet you
+227	εκείνος	that
+228	το νερό	water
+229	σίγουρος	sure, certain
+231	το τρεις	three, three o&#x27;clock
+232	πρώτα	first
+233	ποιος	who
+234	πεθαίνω	die
+235	το αγόρι	boy, boyfriend
+236	ανησυχώ	worry
+237	το δωμάτιο	room
+238	η ομάδα	team, group
+239	εμπρός	forward, front; hello
+240	βοηθώ	help
+241	ο λόγος	reason, speech, ratio
+242	μικρός	small
+243	αντίο	goodbye
+244	το πέντε	five, five o&#x27;clock
+245	καν	(not) even
+246	η ευκαιρία	opportunity
+247	δηλαδή	namely, that is
+248	αργά	late, slowly
+249	όπου	where
+250	η κόρη	daughter
+251	το τηλέφωνο	phone
+252	η καρδιά	heart
+253	το γραφείο	office
+254	επίσης	also
+255	νιώθω	feel
+256	η σχέση	relationship
+257	τέλειος	perfect
+258	κάπου	somewhere
+259	το μυαλό	mind, brain
+260	ώστε	so; so that; therefore
+261	καλημέρα	good morning, good day
+262	το σχολείο	school
+263	τρέχω	run
+264	το ψέμα	lie
+265	η οικογένεια	family
+266	προσέχω	watch out, look after, notice
+268	σύντομα	soon
+269	σχεδόν	almost
+270	το παιχνίδι	game
+271	ο μήνας	month
+272	σοβαρός	serious
+273	το δολάριο	dollar
+274	τουλάχιστον	at least
+275	το χρήμα	money
+276	το πόδι	foot
+277	το αίμα	blood
+278	η κοπέλα	girl
+279	το φαγητό	food
+280	δύσκολος	difficult
+281	όμορφος	beautiful
+282	η τύχη	luck
+283	η πλάκα	plate, joke, fun
+284	μένω	stay; live; remain
+285	αστείος	funny
+286	η χάρη	grace, favor
+287	η σημασία	significance, meaning
+288	η φυλακή	prison
+289	νεκρός	dead
+290	συγχωρώ	forgive
+291	φοβάμαι	fear
+292	μπράβο	well done, bravo
+293	γύρω	around, circa
+294	μεταξύ	between, among
+295	χθες	yesterday, the past
+296	ρε	hey; man (informal)
+297	καληνύχτα	good night
+298	αφήνω	leave
+299	ακούω	listen, hear
+300	ηρεμώ	calm, calm down
+301	πάρα	very; too (much)
+302	η συνέχεια	continuity; constantly
+303	γλυκός	sweet
+304	νοιάζει	care
+305	το βιβλίο	book
+306	η χώρα	country
+307	η αρχή	beginning, principle
+308	η γη	earth, land
+309	έτοιμος	ready
+310	άσχημα	badly
+311	το αυτοκίνητο	car
+312	τελικά	finally
+313	φέρω	bring; bear; behave
+314	η κατάσταση	situation, condition
+315	σημαντικός	important, significant
+316	όσος	any, as many as, as much as
+317	σκέφτομαι	think
+318	ο γιος	son
+319	σκοτώνω	kill
+320	η δύναμη	power, strength
+321	ο γονέας	parent
+322	η υπόθεση	case, assumption
+323	υποθέτω	assume, suppose, guess
+324	ενώ	while, whereas
+325	το έξι	six, six o&#x27;clock
+326	το σχέδιο	plan, design
+327	ο καφές	coffee
+328	σωστός	correct, right
+329	προσπαθώ	try
+330	το ποτό	drink
+331	η ταινία	film, movie, tape
+332	μοιάζω	resemble
+333	το κρεβάτι	bed
+334	μαθαίνω	learn
+335	μισός	half
+336	το δέκα	ten, ten o&#x27;clock
+337	το αφεντικό	boss
+338	περίπου	about, approximately
+339	κάποτε	once
+340	υπέροχος	wonderful
+341	δίπλα	next to, by
+342	σκάσε	shut up (coll)
+343	η λέξη	word
+344	παρά	despite; than; minus
+345	επόμενος	next
+346	περνάω	pass
+347	πόσος	how much
+348	το σώμα	body
+349	τελειώνω	finish
+350	το ρούχο	garment
+351	γυρίζω	turn, return
+352	βάζω	put; set
+353	η μουσική	music
+354	το ραντεβού	appointment
+355	η φωτιά	fire
+356	δείχνω	show, indicate
+357	η σειρά	turn, row, series
+358	αξίζω	deserve, be worth
+359	λίγος	little
+360	η προσοχή	attention, care
+361	εύκολος	easy
+362	η ερώτηση	question
+363	υπέροχα	wonderfully
+364	το νοσοκομείο	hospital
+365	τρελός	crazy
+366	ο πόλεμος	war
+367	η τιμή	price
+368	το ταξίδι	journey, trip
+369	οποίος	who, which, that
+370	δουλεύω	work
+371	παντού	everywhere
+372	το πρόσωπο	face
+373	το μήνυμα	message, text
+374	η αδερφή	sister
+375	παλιός	old
+376	πουθενά	nowhere
+377	κρατώ	keep, hold
+378	η περίπτωση	case
+379	το φως	light
+380	επάνω	up, on
+381	η συμφωνία	agreement, symphony
+382	η δεσποινίς	miss
+383	ο γιατρός	doctor
+384	γνωρίζω	know
+385	το σεξ	sex
+386	κάπως	somewhat
+387	η επιλογή	choice, selection, option
+388	τόσος	so
+389	οτιδήποτε	anything
+390	η άδεια	permission, leave
+391	το πάρτι	party
+392	το μαλλί	hair, wool
+393	η μέση	middle, waist
+394	συνεχίζω	continue
+395	η φωτογραφία	photo
+396	η περιοχή	region
+397	καθώς	as
+398	το δώρο	gift
+399	το στόμα	mouth
+400	το χάλι	mess
+401	εντελώς	entirely, completely
+402	μακάρι	if only
+403	η γνώμη	opinion
+404	η πλευρά	side; rib cage
+405	το μέλλον	future
+406	ο θάνατος	death
+407	το κομμάτι	piece
+408	ψηλά	high
+409	ο αέρας	air, wind
+410	το σημείο	point
+411	η τηλεόραση	television
+412	η πραγματικότητα	reality
+413	η ανάγκη	need
+414	το δείπνο	dinner
+415	επιτέλους	at last
+416	το κέντρο	center
+417	περίεργος	curious, strange
+418	το πλοίο	ship
+419	πλέον	anymore, most
+420	υπόσχομαι	promise
+421	ρωτώ	ask
+422	σιγά	slowly; quietly; as if!
+423	το στοιχείο	element
+424	βασικά	basically
+425	η άκρη	edge
+426	το εκατομμύριο	million
+427	το ξενοδοχείο	hotel
+428	η αποστολή	mission, shipment
+429	το ενδιαφέρον	interest
+430	το αεροπλάνο	airplane
+431	ο γάμος	wedding, marriage
+432	η χιλιάδα	thousand
+433	η ησυχία	silence, quiet
+434	η ασφάλεια	safety, security, insurance
+435	το τέσσερις	four, four o&#x27;clock
+436	βγάζω	remove
+437	μπαίνω	enter, shrink
+438	συχνά	often
+439	η ημέρα	day
+440	η μάνα	mother
+441	η γραμμή	line
+442	ο ύπνος	sleep
+443	μυστικός	secret
+444	σχετικά	about, regarding
+445	το είδος	kind, species
+446	μισώ	hate
+447	το σύστημα	system
+448	τελείως	completely
+449	αλλάζω	change
+450	δεξιά	right; the Right
+451	συνήθως	usually
+452	η εβδομάδα	week
+453	το νούμερο	number
+454	λείπω	be absent
+455	το τμήμα	part, section, department
+456	βγαίνω	go out, exit
+457	η ψυχή	soul
+458	πέφτω	fall
+459	το κάθαρμα	scum
+460	η ματιά	look
+461	η πληροφορία	information
+462	το κρίμα	pity
+463	το τραγούδι	song
+464	το μαγαζί	shop
+465	καλησπέρα	good evening
+466	συγχαρητήρια	congratulations; felicitations
+467	η φωνή	voice
+469	το άτομο	person, individual, atom
+470	παίζω	play
+471	το σκάφος	boat, vessel
+472	ξαφνικά	suddenly
+473	παραπάνω	above, more
+474	το ατύχημα	accident
+475	ξεχνώ	forget
+476	εναντίον	against
+477	το τραπέζι	table
+478	το γράμμα	letter
+479	ο βασιλιάς	king
+480	υπό	under (formal)
+481	το μπάνιο	bathroom, bath
+482	προφανώς	obviously
+483	το αδερφός	brother
+484	ο χρονών	years old
+485	το κλειδί	key
+486	η γιαγιά	grandmother
+487	παράξενος	strange
+488	το πτώμα	corpse
+489	υποτίθεται	allegedly, supposedly
+490	ορκίζομαι	swear
+491	δυνατός	strong, possible
+492	η θάλασσα	sea
+493	η παρέα	company
+494	αριστερά	left; the Left
+495	η μάχη	battle
+496	η μηχανή	engine, machine, motorcycle
+497	ζωντανός	alive
+498	το όνειρο	dream
+499	πάντως	in any case
+500	ανάμεσα	between, among
+501	χάνω	lose
+502	νωρίς	early
+503	φτάνω	arrive, be enough
+504	το νόημα	meaning, sense
+505	ο έλεγχος	control, check, audit
+506	το μέτρο	meter, measure
+507	ζω	live; be alive
+508	η απάντηση	answer
+509	ειλικρινά	sincerely, frankly
+510	η επίθεση	attack
+511	είτε	or, either, whether
+512	ηλίθιος	idiot
+513	η λίστα	list
+514	αισθάνομαι	feel
+515	η έκπληξη	surprise
+516	ο αγώνας	race, match, fight
+517	λιγάκι	a little
+518	ο χώρος	space
+519	η σκηνή	tent, scene
+520	απίστευτος	unbelievable, incredible
+521	η βόλτα	walk, stroll, ride
+522	το δικαίωμα	right
+523	ο σκύλος	dog
+524	η βάση	base
+525	αληθινός	real, true, genuine
+526	πράγματι	indeed, actually
+527	ο πρόεδρος	president
+528	το σήμα	signal, sign
+529	το παράθυρο	window
+530	η εκκλησία	church
+531	στέκομαι	stand
+532	το απόγευμα	afternoon, evening
+533	η κίνηση	movement, traffic
+534	ανήκω	belong
+535	παν	all; everything
+536	το μπαρ	bar
+537	αρχίζω	begin, start
+538	το παρελθόν	past
+539	το κρασί	wine
+540	η έρευνα	research, investigation
+541	όμορφα	beautifully, nicely
+542	εύκολα	easily
+543	ζητώ	ask
+544	απλός	simple
+545	το πρόγραμμα	program, schedule
+546	η επαφή	contact
+547	πρώην	former, ex
+548	αντί	instead of; in exchange for
+549	στέλνω	send
+550	λόγω	due to; because of
+551	η θεία	aunt
+552	αφορώ	concern
+553	η γλώσσα	language, tongue
+554	η τάξη	class, order
+555	εξαιτίας	because of
+556	τρώω	eat
+557	η ελπίδα	hope
+558	ενδιαφέρω	interest
+559	η τσάντα	bag
+560	ο δεύτερος	second
+561	τυχερός	lucky
+562	βάλλω	shoot, throw
+563	η κόλαση	hell
+564	το πρωινό	breakfast, morning
+565	ο κανόνας	rule
+566	διαφορετικά	differently
+567	ψάχνω	search
+568	η μπάλα	ball
+569	η απόφαση	decision
+570	το χαρτί	paper
+571	το μάθημα	lesson
+572	την	her
+573	το τσάι	tea
+574	αλλού	elsewhere
+575	ο στρατός	army
+576	ειδικός	specific, specialist
+577	χτυπώ	hit
+578	ο αρχηγός	leader, chief
+579	το άλογο	horse
+580	δυστυχώς	unfortunately
+581	αρκετός	enough, sufficient
+582	το παπούτσι	shoe
+583	καταλαμβάνω	occupy, seize
+584	το ζώο	animal
+585	η διαφορά	difference
+586	το κουτί	box
+587	καθίζω	sit
+588	φοβερός	dreadful, awesome
+589	η απόδοση	performance, output
+590	επιστρέφω	return
+591	η τράπεζα	bank
+592	ο έρωτας	love
+593	όντως	in fact
+594	λατρεύω	worship, adore
+595	το ναρκωτικά	drugs
+596	το δικαστήριο	court
+597	η εποχή	season, era
+598	το τρένο	train
+599	το ταξί	taxi
+600	φτιάχνω	make
+601	θαυμάσιος	wonderful
+602	εξηγώ	explain
+603	το γεγονός	fact, event
+604	σύμφωνα	according
+605	η κυβέρνηση	government
+606	η ηλικία	age
+607	αναρωτιέμαι	wonder
+608	η μύτη	nose
+609	το νησί	island
+610	το στοίχημα	bet
+611	απόλυτα	absolutely
+612	η αναφορά	reference, report
+613	η πλάτη	back
+614	η βασίλισσα	queen
+615	τηλεφωνώ	call, phone
+616	το κόλπο	trick
+617	φαντάζομαι	imagine
+618	ο δολοφόνος	assassin, murderer
+619	κιόλας	already
+620	η κάρτα	card
+621	το κρύο	cold
+622	ανοίγω	open
+623	το φορτηγό	truck (US), lorry (UK)
+624	άντε	come on; let's go
+625	το προσωπικό	staff, personnel
+626	η δόξα	glory
+627	συζητώ	discuss
+628	ο χορός	dance
+629	η επιχείρηση	business
+630	ασφαλής	safe
+631	κόκκινος	red
+632	το τέρας	monster
+633	όποτε	whenever
+634	η διακοπές	holiday
+635	κλείνω	close
+636	ξυπνώ	wake
+637	μπλε	blue
+638	το μίλι	mile
+639	το έργο	work; project; film
+640	πονάω	hurt
+641	το πουλί	bird
+642	η μπύρα	beer
+643	σκληρά	hard
+644	το χωριό	village
+645	το κτίριο	building
+646	ήρεμα	calmly
+647	όποιος	whoever
+648	το καπέλο	hat
+649	έξυπνος	smart
+650	η κουζίνα	kitchen, cooker
+651	το πνεύμα	spirit
+652	ο ντετέκτιβ	detective
+653	ο σκοπός	purpose, aim
+654	παθαίνω	happen to, suffer
+655	το κοινό	public, audience
+656	αρκώ	be enough, suffice
+657	η βόμβα	bomb
+658	ο στρατιώτης	soldier
+659	ο λαιμός	neck, throat
+660	βαθύς	deep
+661	η υπηρεσία	service
+662	κοιμάμαι	sleep
+663	η τουαλέτα	toilet, bathroom
+664	ο αριθμός	number
+665	ο πλανήτης	planet
+666	το δευτερόλεπτο	second
+667	το διαμέρισμα	apartment
+668	γεμάτος	full
+669	αποκλείω	exclude
+670	το σόου	show
+671	το σκυλί	dog
+672	καθένας	each, everyone
+673	αγαπητός	dear, beloved
+674	ο φόνος	murder
+675	το λεωφορείο	bus
+676	η κάμερα	camera
+677	η πίστη	faith
+678	πιάνω	grip
+679	το έτος	year
+680	ο τρίτος	third
+681	το σημάδι	sign, mark
+682	μαύρος	black
+683	το μαχαίρι	knife
+684	ευτυχώς	fortunately
+685	ο πόνος	pain
+686	καλώ	call
+687	το κλαμπ	club
+688	επικίνδυνος	dangerous
+689	εύχομαι	wish
+690	η συνάντηση	meeting
+691	ολόκληρος	whole, entire
+692	η σφαίρα	sphere, bullet
+693	η εταιρεία	company
+694	το δάσος	forest
+695	ο χρυσός	gold; golden
+696	φταίω	be at fault
+697	κουνάω	wiggle, wag
+698	η λύση	solution
+699	φοράω	wear
+700	ήσυχος	quiet
+701	ο τοίχος	wall
+702	ο θείος	uncle; divine
+703	το δόντι	tooth
+704	ελεύθερος	free
+705	η μοίρα	fate, destiny, degree
+706	χαλαρώνω	relax
+707	η σκέψη	thought
+708	προσωπικά	personally, in person
+709	το επτά	seven, seven o&#x27;clock
+710	κάθομαι	sit
+711	προτιμώ	prefer
+712	ο δικηγόρος	lawyer
+713	η τρύπα	hole
+714	ευτυχισμένος	happy
+715	γράφω	write
+716	ρίχνω	throw
+717	η εμπιστοσύνη	confidence, trust
+718	το λουλούδι	flower
+719	η αλλαγή	change
+721	επί	on; upon; times (math)
+722	η απόδειξη	receipt, evidence
+723	άρρωστος	ill, sick
+724	άσχημος	ugly
+725	ποιον	whom
+726	εξαρτώμαι	depend on
+727	το παράδειγμα	example
+728	η γλύκα	sweetie (coll), sweetness
+729	το θύμα	victim
+730	ο γέρος	old man
+731	καινούργιος	new
+732	η ειρήνη	peace
+733	η διεύθυνση	address
+734	η πτήση	flight
+735	τρομερός	terrible
+736	σπουδαίος	great
+737	το ποτάμι	river
+738	το δέντρο	tree
+739	η συζήτηση	discussion
+740	ο σερίφης	sheriff
+741	ο παππούς	grandfather
+742	η κούκλα	doll
+743	καταφέρνω	manage
+744	η προσφορά	offer
+745	η διαταγή	order
+746	το πάτωμα	floor
+747	η γέφυρα	bridge
+748	η ελευθερία	freedom
+749	φροντίζω	take care
+750	έγκυος	pregnant; pregnant woman
+751	το σκοτάδι	dark, darkness
+752	παραλίγο	almost
+753	ασφαλώς	certainly
+754	το βήμα	step
+755	μέσω	via
+756	το ζευγάρι	pair, couple
+757	η εικόνα	picture, image
+758	το θαύμα	miracle
+759	το τέρμα	goal, end
+760	διαφορετικός	different
+761	πληρώνω	pay
+762	ο λογαριασμός	account
+763	το ρολόι	clock
+764	το έδαφος	ground
+765	η αίθουσα	room, classroom
+766	η πατρίδα	home country
+767	υπόλοιπος	remaining, rest
+768	το χρώμα	color
+769	η αίσθηση	sense
+770	ειλικρινής	honest
+771	η στολή	uniform, costume
+772	υπεύθυνος	responsible
+773	η εφημερίδα	newspaper
+774	ο σταθμός	station
+775	συνεχώς	constantly, continuously
+776	η ζώνη	belt, zone
+777	αδύνατος	thin, impossible
+778	η πρόταση	proposal, sentence
+779	η ταχύτητα	speed
+780	η κράτηση	reservation
+781	η γωνία	corner
+782	ο στρατηγός	general
+783	η επιτυχία	success
+784	το αγγλικά	English
+785	ο σεβασμός	respect
+786	το μέλος	member, limb
+787	η πορεία	course
+788	η πριγκίπισσα	princess
+789	το δίκαιο	law
+790	το γάλα	milk
+791	πραγματικός	actual, real
+792	εξάλλου	besides
+793	βόρειος	north
+794	η διάρκεια	duration
+795	συμφωνώ	agree
+796	ο αστυνομικός	policeman
+797	η φύση	nature
+798	το έγκλημα	crime
+799	πετάω	fly, throw away
+800	ο διάλογος	dialogue
+801	η ενέργεια	energy, action
+802	διότι	because
+803	το τεστ	test
+804	ο πελάτης	client, customer
+805	πιθανώς	probably
+806	η βραδιά	night
+807	το κρέας	meat
+808	το εκατό	hundred
+809	η συμπεριφορά	behavior
+810	το βάρος	weight
+811	το αεροδρόμιο	airport
+812	το είκοσι	twenty
+813	το φόρεμα	dress
+814	το γεύμα	meal
+815	η βλακεία	nonsense, stupidity
+816	ο κίνδυνος	danger, risk
+817	ο σύζυγος	spouse
+818	καθαρά	clearly
+819	το κινητό	mobile phone
+820	άρα	therefore; so; then
+821	αντέχω	endure
+822	η εμπειρία	experience
+823	το οκτώ	eight, eight o&#x27;clock
+824	εξαφανίζω	disappear
+825	απέναντι	opposite
+826	ο ρόλος	role
+827	το ξύλο	wood
+828	η παραλία	beach
+829	το πυρ	fire
+830	λευκός	white
+831	η μετάφραση	translation
+832	νότιος	south
+833	ο βλάκας	fool
+834	ο μπάτσος	cop (coll)
+835	ξεκινάω	begin
+836	η βάρκα	boat
+837	τραβάω	pull
+838	παντρεύω	marry
+839	η προσπάθεια	effort
+840	δοκιμάζω	try
+841	το καλοκαίρι	summer
+842	ο πολιτικός	politician; political
+843	η παράσταση	performance
+844	η θεραπεία	cure, treatment
+845	η παρασκευή	preparation, Friday
+846	ο λοχίας	sergeant
+847	ο ουρανός	sky
+848	λειτουργώ	function
+849	το σαββατοκύριακο	weekend
+850	το αποτέλεσμα	result
+851	βαριέμαι	bore
+852	ενάντια	against
+853	παρατώ	abandon
+854	το δαχτυλίδι	ring
+855	σκληρός	hard, tough
+856	αχ	oh
+857	το διάστημα	space, interval
+858	καταπληκτικός	amazing
+859	πίνω	drink
+860	γελοίος	ridiculous
+861	διαβάζω	read
+862	το μπουκάλι	bottle
+863	το καθίκι	bastard
+864	ο στόχος	target
+865	η καταστροφή	destruction
+866	η πίεση	pressure
+867	ο νόμος	law
+868	η δίκη	trial
+869	το εστιατόριο	restaurant
+870	ο φόβος	fear
+871	το επίπεδο	level
+872	η γάτα	cat
+873	το τηλεφώνημα	phone call
+874	μυρίζω	smell
+875	η ευθύνη	responsibility
+876	ακίνητος	motionless
+877	ο ήρωας	hero
+878	η σχολή	college
+879	η καρέκλα	chair
+880	προτού	before
+881	καθαρός	clean
+882	η εργασία	work, assignment
+883	η διαδικασία	process, procedure
+884	κατευθείαν	directly
+885	βιάζομαι	hurry
+886	εκτιμώ	appreciate
+887	δύσκολα	hardly
+888	το ψάρι	fish
+890	η συνέντευξη	interview
+891	απαίσιος	awful
+892	το πανεπιστήμιο	university
+893	οδηγώ	drive
+894	το φιλί	kiss
+895	το τσιγάρο	cigarette
+896	το συμβούλιο	council
+897	ο ήλιος	sun
+898	ο φιλαράκος	buddy (coll)
+899	προσεκτικά	carefully
+900	η κουβέντα	conversation
+901	το σπαθί	sword
+902	ιδιαίτερα	particularly
+903	το καθήκον	duty
+904	το βίντεο	video
+905	ο κόπος	toil
+906	η ρώμη	strength; Rome
+907	αληθινά	truly
+908	ο διευθυντής	manager, director
+909	ο αφέντης	master
+910	ο πράκτορας	agent
+911	η συμβουλή	advice
+912	η γεύση	taste
+913	σώζω	save
+914	ταιριάζω	match
+915	διάφορος	different
+916	κόβω	cut
+917	η κρίση	crisis
+918	το ταλέντο	talent
+919	η ζέστη	heat
+920	η στάση	stop, attitude
+921	η καριέρα	career
+922	αγοράζω	buy
+923	περήφανος	proud
+924	έστω	even if; at least; let's say
+925	το ποτήρι	glass
+926	η νίκη	victory
+927	η λίμνη	lake
+928	η διασκέδαση	entertainment
+929	το φεγγάρι	moon
+930	η μνήμη	memory
+931	το χτύπημα	beating, hit
+932	η γειτονιά	neighborhood
+933	η λεπτομέρεια	detail
+934	το δέρμα	skin
+935	το κιλό	kilo
+936	το στήθος	breast
+937	προτείνω	recommend
+938	λαμβάνω	receive
+939	η αγορά	market
+940	η ανοησία	nonsense
+941	ζεστός	hot
+942	η αξία	value
+943	πεινάω	be hungry
+944	η υπομονή	patience
+945	η πράξη	act
+946	η πύλη	gate
+947	το φάντασμα	ghost
+948	το αρχείο	file
+949	κυρίως	mainly
+950	το γυαλί	glass
+951	ο κήπος	garden
+952	η οδός	road
+953	το ίχνος	trace
+954	η κηδεία	funeral
+955	η ντροπή	shame
+956	ο γκόμενος	boyfriend (coll)
+957	το παρόν	present
+958	επιτρέπω	allow
+959	το σκουπίδι	trash (US), rubbish (UK)
+960	η τρέλα	craze
+961	ευγενικός	polite
+962	το θέατρο	theater
+963	το γουρούνι	pig
+964	λογικός	reasonable
+965	το βαν	van
+966	η παγίδα	trap
+967	ο βοηθός	assistant
+968	ο καθηγητής	professor
+969	η πιθανότητα	chance
+970	η φάση	phase
+971	κερδίζω	earn
+972	η κορυφή	top
+973	νοιάζομαι	care
+974	η προστασία	protection
+975	η ακρίβεια	accuracy
+976	η ομορφιά	beauty
+977	άνετα	comfortably
+978	κατάλληλος	appropriate
+979	το ψωμί	bread
+980	η πηγή	source
+981	η θεωρία	theory
+982	το πάρκο	park
+983	η βία	violence
+984	εξής	next; following; henceforth
+985	τεράστιος	huge
+986	απαντάω	answer
+987	ο λοχαγός	captain
+988	η τέχνη	art
+989	η εντολή	mandate
+990	χρησιμοποιώ	use
+991	η εκδίκηση	revenge
+992	αποφασίζω	decide
+993	κλέβω	steal
+994	το εργαστήριο	laboratory
+995	η ευχή	wish
+996	ενοχλώ	bother
+997	κουρασμένος	tired
+998	το φάρμακο	medicine
+999	το διάλειμμα	interval
+1000	το κάστρο	castle
+1001	η εξέταση	examination
+1002	το γενέθλια	birthday
+1003	το μετρητά	cash
+1004	ο χάρτης	map
+1005	ο επικεφαλής	chief
+1006	η σαμπάνια	champagne
+1007	η πέτρα	stone
+1008	το χάπι	pill
+1009	η μονάδα	unit, one
+1010	ο πάγος	ice
+1011	οποιοσδήποτε	anybody
+1012	η φήμη	reputation, fame
+1013	περί	about; approximately
+1014	η ευτυχία	happiness
+1015	τριγύρω	around
+1016	η βροχή	rain
+1017	η δεκάρα	dime, damn (coll)
+1018	στραβά	wrong
+1019	το παντελόνι	trousers
+1020	η δράση	action
+1021	η χρονιά	year
+1022	συναντώ	meet
+1023	επιπλέον	additional, furthermore
+1024	πετυχαίνω	succeed
+1025	το εισιτήριο	ticket
+1026	αριστερός	left
+1027	σύμφωνος	congruent, agreed
+1028	δεξιός	right
+1029	η εξουσία	power, authority
+1030	η περιουσία	estate
+1031	ο ηθοποιός	actor
+1032	κανονικά	normally
+1033	η κλήση	call, fine
+1034	το ουίσκι	whiskey
+1035	χαρούμενος	cheerful
+1036	η όρεξη	appetite
+1037	η επιτροπή	commission
+1038	πυροβολώ	shoot
+1039	μεθυσμένος	drunk
+1040	εμπιστεύομαι	trust
+1041	χρωστώ	owe
+1042	ο υπότιτλος	subtitle
+1043	ισχύω	apply
+1044	η κοινωνία	society
+1045	το υπόγειο	basement
+1046	ένοχος	guilty
+1047	το πλάσμα	creature
+1048	ώσπου	until
+1049	η φασαρία	trouble
+1050	σέξι	sexy
+1051	ο παράδεισος	paradise
+1052	το βουνό	mountain
+1053	ο μάγκας	tough guy
+1054	κανονίζω	arrange
+1055	θυμίζω	remind
+1056	ερωτεύομαι	fall in love
+1057	μοναδικός	unique
+1058	η μυρωδιά	smell
+1059	αστειεύομαι	joke
+1060	η έκρηξη	explosion
+1061	η επιθυμία	desire
+1062	ο μεγαλειότατος	his Majesty
+1063	ο μπελάς	nuisance, trouble
+1064	ο κυβερνήτης	governor
+1065	το μούτρο	face (coll)
+1066	η φαντασία	imagination
+1067	το κοτόπουλο	chicken
+1068	η αυλή	courtyard
+1069	η υγεία	health
+1070	ανοιχτά	openly
+1071	ωστόσο	however
+1072	το κολέγιο	college
+1073	η κασέτα	cassette
+1074	ο τόπος	place
+1075	αγγίζω	touch
+1076	διαλέγω	choose
+1077	το παλτό	coat
+1078	σηκώνω	raise
+1079	νεαρός	young; youngster
+1080	το συμβόλαιο	contract
+1081	η διάθεση	mood, disposal
+1082	η οδηγία	instuctions
+1083	ο οδηγός	driver
+1084	επείγων	urgent
+1085	ο πέμπτος	fifth
+1086	η λίρα	pound
+1087	η διανομή	distribution
+1088	σπάω	break
+1089	χαζός	stupid
+1090	ο καπετάνιος	captain
+1091	περίεργα	strangely
+1092	έπειτα	afterward
+1093	πλησιάζω	approach
+1094	δέχομαι	accept
+1095	πράσινος	green
+1096	το ασθενοφόρο	ambulance
+1097	το αυγό	egg
+1098	ύστερα	later
+1099	το στομάχι	stomach
+1100	το αυτί	ear
+1101	η μορφή	form
+1102	η δικαιοσύνη	justice
+1103	μετράω	count
+1104	η εντύπωση	impression
+1105	ακολουθώ	follow
+1106	ο εχθρός	enemy
+1107	η τσέπη	pocket
+1108	το σύνορο	border
+1109	ο σταρ	star
+1110	το άρθρο	article
+1111	ο αιώνας	century
+1112	φανταστικός	fantastic, imaginary
+1113	η ανάσα	breath
+1114	απασχολώ	employ
+1115	απαραίτητος	necessary
+1116	ο όροφος	floor
+1117	η είδηση	news (item)
+1118	το όριο	limit
+1119	δωρεάν	free
+1120	η εκπομπή	broadcast, emission
+1121	η παράδοση	tradition, surrender
+1122	πλήρης	complete
+1123	μαντεύω	guess
+1124	το εργοστάσιο	factory
+1125	ροζ	pink
+1126	κατεβαίνω	get off, descend
+1127	η γιορτή	celebration
+1128	ο συγγραφέας	author
+1129	βέβαιος	certain
+1130	το θάρρος	courage
+1131	το ρεύμα	current
+1132	η ληστεία	robbery
+1133	το κυνήγι	hunt
+1134	η απόσταση	distance
+1135	η μαγεία	magic
+1136	το εννέα	nine
+1137	ο τάφος	grave
+1138	η απειλή	threatening
+1139	το βυζί	boob
+1140	το σάντουιτς	sandwich
+1141	η άνοιξη	spring
+1142	το χιλιόμετρο	kilometre
+1143	το αστέρι	star
+1144	η μεριά	side
+1145	ο πολίτης	citizen
+1146	η δολοφονία	assassination
+1147	η παρουσία	presence
+1148	πιθανός	possible, probable
+1149	προσωπικός	personal
+1150	γεννάω	give birth
+1151	προσφέρω	offer
+1152	το μεσάνυχτα	midnight
+1153	πρόσφατα	recently
+1154	ο νους	mind
+1155	η ιατρική	medicine
+1156	η αποθήκη	warehouse, storage
+1157	αργώ	be late
+1158	ο μάρτυρας	witness
+1159	εκπληκτικός	amazing
+1160	η γνωριμία	acquaintance
+1161	η πρόσβαση	access
+1162	η ουσία	substance, essence
+1163	φωνάζω	yell
+1164	ανθρώπινος	human
+1165	η ροκ	rock
+1166	η ακτή	coast
+1167	το αδέρφια	siblings
+1168	τρελαίνω	drive crazy
+1169	το βραβείο	prize
+1170	πλούσιος	rich
+1171	η εκατοντάδα	hundred
+1172	η καταιγίδα	storm
+1173	αναφέρω	mention
+1174	το πεδίο	field
+1175	η σιωπή	silence
+1176	προηγούμενος	previous
+1177	το κουράγιο	courage
+1178	ο υπολογιστής	computer
+1179	το μεσημέρι	noon
+1180	ο φάκελος	envelope
+1181	η αμφιβολία	doubt
+1182	η βαλίτσα	suitcase
+1183	ο θόρυβος	noise
+1184	κινώ	move; set in motion
+1185	η συνθήκη	treaty
+1186	η άποψη	opinion, aspect
+1187	ο διάδρομος	corridor
+1188	ξεφεύγω	get away
+1189	το χίλια	thousand
+1190	ετοιμάζω	prepare
+1191	το σινεμά	cinema
+1192	ο συγχρονισμός	timing, synchronization
+1193	η έκθεση	essay, exhibition, report
+1194	η θέα	view
+1195	ευχαρίστως	gladly
+1196	το τζιν	jeans, gin; jean
+1197	η ζημιά	damage
+1198	το στυλ	style
+1199	η νοσοκόμα	nurse
+1200	η επιταγή	check
+1201	ο δάσκαλος	teacher
+1202	θυμώνω	get angry
+1203	ο δικαστής	judge
+1204	ο λαός	people
+1205	η κατάρα	curse
+1206	πανέμορφος	gorgeous
+1207	η πισίνα	pool
+1208	η καλοσύνη	kindness
+1209	το σημείωμα	note
+1210	η ουρά	tail, queue
+1211	γνωστός	known
+1212	το πακέτο	package, packet
+1213	το πάθος	passion
+1214	η φίλη	friend
+1215	η σκόνη	dust
+1216	η επιστροφή	return
+1217	ανοιχτός	open
+1218	η φιλενάδα	girlfriend
+1219	η βενζίνη	gasoline (US), petrol (UK)
+1220	καταστρέφω	destroy
+1221	η ταυτότητα	identity, identity card
+1222	ελέγχω	control, check
+1223	το φτερό	wing, feather
+1224	το κανάλι	channel, canal
+1225	το ντους	shower
+1226	θεωρώ	consider
+1227	παύω	cease
+1228	ο μαθητής	pupil
+1229	το δώδεκα	twelve, twelve o&#x27;clock, dozen
+1230	άγρια	fiercely
+1231	το τυρί	cheese
+1232	η νύφη	bride, daughter-in-law
+1233	εξαιρετικά	extremely
+1234	το διαζύγιο	divorce
+1235	αθώος	innocent
+1236	το μέγεθος	size
+1237	το ελικόπτερο	helicopter
+1238	το πορτοφόλι	wallet
+1239	η σωρός	pile
+1240	η ποινή	penalty,  sentence
+1241	το ψώνιο	boastful
+1242	το ζήτημα	issue
+1243	ανόητος	fool
+1244	η αγκαλιά	hug
+1245	το όχημα	vehicle
+1246	το παγωτό	ice cream
+1247	συστήνω	introduce
+1248	ανεβαίνω	go up
+1249	ο δόκτωρ	doctor
+1250	το βάθος	depth
+1251	η σοκολάτα	chocolate
+1252	υπερβολικά	overly
+1253	ο γύρος	round, tour
+1254	ο συνταγματάρχης	colonel
+1255	το μοντέλο	model
+1256	η ανάμνηση	memory
+1257	φέτος	this year
+1258	προκαλώ	provoke, cause
+1259	χαμηλά	low
+1260	η κατηγορία	category, accusation
+1261	το ασανσέρ	lift (UK), elevator (US)
+1262	ο τομέας	sector
+1263	εμφανίζω	show
+1264	άδειος	empty
+1265	αμφιβάλλω	doubt
+1266	άδικος	unfair
+1267	κλειστός	closed
+1268	το χείλος	lip, brink, rim
+1269	η συμμορία	gang
+1270	η βιβλιοθήκη	library, bookcase
+1271	ο πίνακας	painting, panel
+1272	οπωσδήποτε	definitely
+1273	η αηδία	disgust
+1274	το τριάντα	thirty
+1275	η τιμωρία	punishment
+1276	η είσοδος	entrance, entry
+1277	ο συγγενής	relative; congenital
+1278	η μάσκα	mask
+1279	η αιτία	cause
+1280	τολμάω	dare
+1281	παρατάω	give up, quit
+1282	αναλαμβάνω	undertake
+1283	οπουδήποτε	wherever, anywhere
+1284	φυσικός	natural; physicist
+1285	συναρπαστικός	exciting
+1286	η ζήτηση	demand
+1287	γελάω	laugh
+1288	χαμένος	lost
+1289	το ρομπότ	robot
+1290	η σκιά	shadow, shade
+1291	το σύμπαν	universe
+1292	η γριά	old lady
+1293	η τροφή	food
+1294	η επιμέλεια	custody, diligence
+1295	το δάχτυλο	finger
+1296	προχωρώ	proceed
+1297	το χιλιάρικο	(a) grand
+1298	η εκπαίδευση	education
+1299	έως	until, to
+1300	απίθανος	unlikely, amazing
+1301	το κοστούμι	suit
+1302	αντίθετος	contrary, opposite
+1303	εντυπωσιακός	impressive
+1304	η πολιτεία	state
+1305	η κατεύθυνση	direction
+1306	το πλήρωμα	crew
+1307	το δείγμα	sample, specimen
+1308	φυσιολογικός	normal, physiological
+1309	η δικαιολογία	excuse, justification
+1310	η ευχαρίστηση	pleasure
+1311	το σενάριο	scenario, script
+1312	το ψυγείο	refrigerator
+1313	ανυπομονώ	look forward
+1314	η επίσκεψη	visit
+1315	το περιοδικό	magazine
+1316	η λαίδη	lady
+1317	γουστάρω	like
+1318	απαγορεύω	prohibit, forbid
+1319	η σελίδα	page
+1320	το κουμπί	button
+1321	ο ήχος	sound
+1322	το τζάκι	fireplace
+1323	ονομάζω	name
+1324	το γκαράζ	garage
+1325	η έρημος	desert
+1326	η ζάχαρη	sugar
+1327	το βλέμμα	look, gaze
+1328	ικετεύω	beg
+1329	η ενίσχυση	reinforcement
+1330	η σύμπτωση	coincidence
+1331	η πίτσα	pizza
+1332	εθνικός	national
+1333	συν	plus
+1334	η εξήγηση	explanation
+1335	η μάγισσα	witch
+1336	αρχικά	initially; initials
+1337	ο καναπές	sofa
+1338	το ποδήλατο	bicycle
+1339	κρυφά	secretly
+1340	το κελί	cell
+1341	η σκάλα	ladder, staircase
+1342	η χρήση	use
+1343	το πιάτο	plate, dish
+1344	η πατάτα	potato
+1345	η τελετή	ceremony
+1346	το φορτίο	load
+1347	το αλκοόλ	alcohol
+1348	το πιστόλι	pistol
+1349	η διαδρομή	route
+1350	ο αξιωματικός	officer; axiomatic
+1351	ο χαρακτήρας	character
+1352	η δόση	dose
+1353	η σούπα	soup
+1354	διάσημος	famous
+1355	καθαρίζω	clean
+1356	το χιόνι	snow
+1357	δημόσιος	public
+1358	η επιφάνεια	surface
+1359	η άμαξα	carriage
+1360	μέσα	inside; in; means
+1361	ο ασθενής	patient; weak
+1362	ιδιαίτερος	particular
+1363	το συναίσθημα	emotion, feeling
+1364	ο επαγγελματίας	professional
+1365	το βασίλειο	kingdom
+1366	το αποτύπωμα	imprint
+1367	ανατολικά	east, eastward
+1368	το μηδέν	zero
+1369	ο κλέφτης	thief
+1370	αποδεικνύω	prove
+1371	το γκολφ	golf
+1372	το υλικό	material
+1373	βαρύς	heavy
+1374	η βολή	shot
+1376	το παλάτι	palace
+1377	το νεύρο	nerve
+1378	το αίσθημα	feeling
+1379	σκοπεύω	intend
+1380	το ένταλμα	warrant
+1381	ο πύργος	tower
+1382	πάντοτε	always
+1383	το δηλητήριο	poison, venom
+1384	δολοφονώ	murder
+1385	πρώτον	firstly
+1386	η αίτηση	application
+1387	το γήπεδο	stadium, court
+1388	δυτικός	western, west
+1389	ο ρυθμός	rhythm, rate
+1390	το κότσια	guts (coll)
+1391	συμπαθώ	like
+1392	η αμοιβή	remuneration, payment
+1393	το πενήντα	fifty
+1394	ο καθρέφτης	mirror
+1395	τρομακτικός	scary
+1396	το μουσείο	museum
+1397	το ρίσκο	risk
+1398	ο πρωταθλητής	champion
+1399	χαλάω	break down, spoil
+1400	το μυστήριο	mystery
+1401	η φυλή	tribe, race
+1402	η διάβαση	crossing, passage
+1403	παρακολουθώ	watch
+1404	υπέρ	for; in favor of; over
+1405	το ημερολόγιο	calendar
+1406	ο βάλτος	swamp
+1407	η οργή	anger
+1408	το χώμα	soil
+1409	πηδάω	jump
+1410	αποκλειστικός	exclusive
+1411	η επιστήμη	science
+1412	μέσος	average, middle; middle finger
+1413	η ντουλάπα	closet
+1414	ο καρκίνος	cancer
+1415	ο ιδιοκτήτης	owner
+1416	διασκεδαστικός	amusing
+1417	η έξοδος	exit
+1418	το ποσό	amount
+1419	κρύβω	hide
+1420	το αντικείμενο	objective
+1421	ο γερμανός	German
+1422	μαγικός	magical
+1423	τελικός	final
+1424	μονάχα	only
+1425	χορεύω	dance
+1426	το μηχάνημα	machine
+1427	ο διοικητής	commander, administrator
+1428	το χαμόγελο	smile
+1429	ο κωδικός	code
+1430	η περίοδος	period
+1431	σημαντικά	remarkably
+1432	το μονοπάτι	path
+1433	η αυτοκτονία	suicide
+1434	το πλήθος	crowd
+1435	γιορτάζω	celebrate
+1436	ο γιός	son
+1437	το ποδόσφαιρο	football
+1438	σπάνια	seldom
+1439	εφόσον	provided
+1440	το χρυσάφι	gold
+1441	ο οίκος	house
+1442	το φίδι	snake
+1443	η λειτουργία	operation, function, mass
+1444	το λύκειο	high school
+1445	φρικτός	horrible
+1446	το πιάνο	piano
+1447	πέρυσι	last year
+1448	το χιούμορ	humor
+1449	η λέσχη	club
+1450	το πουκάμισο	shirt
+1451	το έλεος	mercy
+1452	κλαίω	cry
+1453	το επεισόδιο	episode
+1454	η σοφία	wisdom
+1455	το αντίγραφο	copy
+1456	άμα	when, if
+1457	καυτός	hot
+1458	κοστίζω	cost
+1459	μεγαλώνω	grow up, raise
+1460	τυχαία	by chance, randomly
+1461	το καταφύγιο	shelter, refuge
+1462	επαναλαμβάνω	repeat
+1463	ο δίσκος	tray, disc
+1464	παράνομος	illegal
+1465	το στούντιο	studio
+1466	ο τέταρτος	fourth
+1467	η μαντάμ	madame
+1468	ξεχωριστός	special, separate
+1469	η συσκευή	device
+1470	ξανακάνω	redo
+1471	η πρόβα	rehearsal
+1472	ελεύθερα	freely
+1473	η απάτη	fraud
+1474	η συνεργασία	cooperation
+1475	πουλάω	sell
+1476	το μίσος	hate
+1477	η μεταφορά	transport, metaphor
+1478	το κομπιούτερ	computer
+1479	ο εξοπλισμός	equipment
+1480	η μοναξιά	loneliness
+1481	η δασκάλα	teacher
+1482	το ύψος	height
+1483	το τατουάζ	tattoo
+1484	η επανάσταση	revolution
+1485	σιχαίνομαι	hate
+1486	το ραδιόφωνο	radio
+1487	κυνηγάω	chase
+1488	η στροφή	turn
+1489	το μάγια	magic
+1490	απόλυτος	absolute
+1491	το σοκ	shock
+1492	γρήγορος	fast
+1493	ο τίτλος	title
+1494	το νύχι	nail
+1495	η αμαρτία	sin
+1496	γαλλικός	french
+1497	η τρίχα	hair
+1498	μαζεύω	gather
+1499	περασμένος	past
+1500	η εμφάνιση	appearance
+1501	ο ψεύτης	liar
+1502	ζωντανά	live; livestock
+1503	επομένως	therefore
+1504	ακουστά	heard
+1505	το τούνελ	tunnel
+1506	το στρατόπεδο	camp
+1507	η παρεξήγηση	misunderstanding
+1508	η απώλεια	loss
+1509	το κεφάλαιο	chapter, capital
+1510	η σάρκα	flesh
+1511	η σημαία	flag
+1512	παραμένω	remain
+1513	η δήλωση	statement
+1514	ντρέπομαι	be embarrassed, be ashamed
+1515	η κλινική	clinic
+1516	η μπότα	boot
+1517	η γνώση	knowledge
+1518	αιώνια	eternally
+1519	το στάδιο	stage, stadium
+1520	μπλέκω	be in trouble, entangle
+1521	ο νικητής	winner
+1522	απαιτώ	demand
+1523	ικανός	capable
+1524	η ακοή	hearing
+1525	η θρησκεία	religion
+1526	χαριτωμένος	cute
+1527	τίνος	whose
+1528	μεσημεριανός	midday
+1529	το περιβάλλον	environment
+1530	ευγνώμων	thankful, grateful
+1531	το κατάστημα	shop
+1532	αηδιαστικός	disgusting
+1533	ευθύς	straight
+1534	το υπουργείο	ministry
+1535	ο εργάτης	worker
+1536	ανακαλύπτω	discover
+1537	συγκεκριμένος	specific
+1538	η φιλία	friendship
+1539	ο γείτονας	neighbor
+1540	το σαλόνι	lounge
+1541	η αναπνοή	breathing
+1542	ο κύκλος	circle
+1543	τρείς	three, three o&#x27;clock
+1544	νικάω	win
+1545	η επίδειξη	display, demonstration
+1546	ύποπτος	suspicious
+1547	ο συνεργάτης	partner
+1548	η στέγη	roof
+1549	η προσβολή	insult
+1550	η τούρτα	cake
+1551	το αντάλλαγμα	exchange
+1552	η θερμοκρασία	temperature
+1553	η διόρθωση	correction
+1554	ο χειμώνας	winter
+1555	ανάποδα	upside down
+1556	το σακάκι	jacket
+1557	η δύση	west
+1558	γενναίος	brave
+1559	ο ναυτικός	sailor; naval
+1560	το λιμάνι	port
+1561	κενός	blank
+1562	παρόλο	even though
+1563	γυρεύω	look for
+1564	μαλακός	soft
+1565	οικονομικός	financial, economical
+1566	ο άγγελος	angel
+1567	η έλλειψη	lack
+1568	ο βαθμός	degree, grade
+1569	το έγγραφο	document
+1570	το γόνατο	knee
+1571	η ανατολή	east
+1572	αφότου	after, since
+1573	η αρκούδα	bear
+1574	η προσευχή	prayer
+1575	ενδιαφέρων	interesting
+1576	ενημερώνω	inform
+1577	το κτήνος	beast
+1578	το άγχος	stress
+1579	η συλλογή	collection
+1580	πατάω	step on
+1581	η ικανότητα	ability
+1582	ο λόφος	hill
+1583	άσπρος	white
+1584	η φόρμα	form, shape
+1585	το πεπρωμένο	destiny
+1586	παγκόσμιος	worldwide
+1587	ασύρματος	wireless; radio
+1588	ταυτόχρονα	at the same time
+1589	ξύπνιος	awake, smart
+1590	ο επιθεωρητής	inspector
+1591	η προειδοποίηση	warning
+1592	ο συναγερμός	alarm
+1593	το ανάθεμα	damn, anathema
+1594	το πέρασμα	passage
+1595	το θέαμα	spectacle
+1596	το στοπ	stop
+1597	προ	ago
+1598	ο πιλότος	pilot
+1599	το πλάι	side; alongside
+1600	κολλάω	glue
+1601	η ατμόσφαιρα	atmosphere, ambiance
+1602	ο κώδικας	code
+1603	καταριέμαι	curse
+1604	ο πρίγκιπας	prince
+1605	το διαμάντι	diamond
+1606	το έξοδο	expense
+1607	αυτοκτονώ	commit suicide
+1608	το κίνητρο	motive
+1609	η τεχνολογία	technology
+1610	η κοιλιά	belly
+1611	κατεβάζω	lower, download
+1612	η χειροπέδες	handcuffs
+1613	ο πισινός	bottom; hind
+1614	το συγκρότημα	band, complex
+1615	βρέχω	wet
+1616	η εγγύηση	guarantee, bail
+1617	το χάος	chaos
+1618	σκασμός	shut up (coll); a load of
+1619	ο δήμαρχος	mayor
+1620	η ασθένεια	disease
+1621	στοιχηματίζω	bet
+1622	τρελά	madly
+1623	το χόρτο	grass
+1624	το κύμα	wave
+1625	το τσακ	close call
+1626	η άσκηση	exercise
+1627	η ημερομηνία	date
+1628	η κόψη	edge
+1629	η ζούγκλα	jungle
+1630	καίω	burn
+1631	το ψάρεμα	fishing
+1632	το καζίνο	casino
+1633	το ρεκόρ	record
+1634	το ίδρυμα	institution
+1635	ιερός	holy
+1636	προειδοποιώ	warn
+1637	η μπλούζα	blouse
+1638	ο διαγωνισμός	contest
+1639	το προαίσθημα	premonition
+1640	το εσώρουχο	underwear
+1641	η εξέλιξη	development
+1642	η κατάθεση	deposit
+1643	η υπόσχεση	promise
+1644	η εξάσκηση	practice
+1645	η υποστήριξη	support
+1646	ο αστυνόμος	police officer
+1647	ο θάλαμος	chamber
+1648	ο εφιάλτης	nightmare
+1649	το κορμί	body
+1650	ο εγκληματίας	criminal
+1651	η υπογραφή	signature
+1652	ο ωκεανός	ocean
+1653	η περιπέτεια	adventure
+1654	η πίπα	pipe
+1655	δειλός	coward
+1656	αμέ	sure
+1657	το ερώτημα	question
+1658	η οθόνη	screen
+1659	το δίκτυο	network
+1660	στρατιωτικός	military; serviceman
+1661	ο μισθός	salary
+1662	χειρίζομαι	operate
+1663	παρθένος	virgin, maiden, Virgo
+1664	ο καλλιτέχνης	artist
+1665	η οργάνωση	organization
+1666	η κόκα	cocaine
+1667	παρεμπιπτόντως	by the way
+1668	συνηθίζω	get used to
+1669	προστατεύω	protect
+1670	η σάλτσα	sauce
+1671	η συναυλία	concert
+1672	τρομερά	terribly
+1673	ο φύλακας	guard
+1674	ο γερουσιαστής	senator
+1675	η προαγωγή	promotion
+1676	το νεκροταφείο	cemetery
+1677	η βέρα	wedding ring
+1678	το κλουβί	cage
+1679	η κατασκήνωση	camp
+1680	το πρωτάθλημα	championship
+1681	η πρόποση	toast
+1682	ακριβός	expensive
+1683	το χρέος	debt, obligation
+1684	το σκοινί	rope
+1685	η κάλυψη	cover
+1686	η σύλληψη	arrest,  conception
+1687	ο μάγος	wizard, magician
+1688	ο όρος	term; condition; mountain
+1689	υποφέρω	suffer
+1690	τυφλός	blind
+1691	διπλός	double
+1692	η φόρα	impetus
+1693	η σημείωση	note
+1694	το εργαλείο	tool
+1695	η συνταγή	recipe, prescription
+1696	το κέικ	cake
+1697	η πτώση	fall
+1698	ευχάριστος	pleasant
+1699	η αρρώστια	disease
+1700	η αδυναμία	weakness
+1701	η συνέπεια	consequence
+1702	το φρικιό	freak
+1703	η μήνυση	complaint
+1704	ακριβά	expensive
+1705	η πρόκληση	challenge
+1706	το κόσμημα	jewel
+1707	ο τρομοκράτης	terrorist
+1708	ο Ναζί	Nazi
+1709	το σύμβολο	symbol
+1710	επίτηδες	deliberately
+1711	η αντίδραση	reaction
+1712	ο άνεμος	wind
+1713	η κοιλάδα	valley
+1714	ο δημοσιογράφος	journalist
+1715	ασυνήθιστος	unusual
+1716	ο σύμβουλος	consultant
+1717	περίφημος	renowned
+1718	πολύτιμος	valuable, precious
+1719	το χρηματοκιβώτιο	safe
+1720	η ανάλυση	analysis
+1721	επιτίθεμαι	attack
+1722	φιλάω	kiss
+1723	η διοίκηση	administration
+1724	σκέτος	plain
+1725	η πρόσκληση	invitation
+1726	ο προπονητής	coach
+1727	διά	through; by (formal)
+1728	το έθνος	nation
+1729	κανονικός	normal, regular
+1730	το φράγκο	franc
+1731	η αποτυχία	failure
+1732	επικίνδυνα	dangerously
+1733	η γραβάτα	tie
+1734	το εξωτερικό	abroad, exterior
+1735	η έννοια	meaning, sense
+1736	το μπισκότο	biscuit
+1737	κεντρικός	central
+1738	εξαιρετικός	exceptional
+1739	το καύσιμο	fuel
+1740	πλήρως	fully
+1741	η βάρδια	shift
+1742	το γυμνάσιο	middle school
+1743	ο γραμματέας	secretary
+1744	το πλευρό	side, rib
+1745	το μέτωπο	forehead, front
+1746	παράλογος	unreasonable, absurd
+1747	το τραύμα	wound, trauma
+1748	ο φρουρός	guard
+1749	η θλίψη	grief, sadness
+1750	η προπόνηση	practice, training
+1751	ανά	per
+1752	η κρέμα	cream
+1753	άμεσα	immediately
+1754	η σύνταξη	pension, syntax
+1755	ούτως	thus
+1756	το ον	being
+1757	η τοποθεσία	location
+1758	η συγκέντρωση	concentration, gathering
+1759	το όργανο	organ, instrument
+1760	η δημοκρατία	democracy
+1761	η σύνδεση	connection
+1762	χοντρός	fat
+1763	ο υπάλληλος	employee
+1764	τεχνικός	technical;  technician
+1765	η αύξηση	increase
+1766	το δάκρυ	tear
+1767	ο εγκέφαλος	brain
+1768	η θυσία	sacrifice
+1769	το αρχηγείο	headquarters
+1770	το δεδομένο	data, fact
+1771	αντίθετα	in contrast
+1772	η ανθρωπότητα	humanity, mankind
+1773	σκοτεινός	dark
+1774	το σάλι	shawl
+1775	η μπίρα	beer
+1776	ψεύτικος	fake
+1777	η αγελάδα	cow
+1778	το τσίρκο	circus
+1779	αγενής	rude
+1780	πείθω	persuade
+1781	το μοτέλ	motel
+1782	αποτελώ	constitute
+1783	δρω	act; take action
+1784	ο ιερέας	priest
+1785	το μάτσο	bunch
+1786	το πείραμα	experiment
+1787	το δόλωμα	bait
+1788	το μήκος	length
+1789	ασχολούμαι	deal
+1790	η φάτσα	face
+1791	προφανής	obvious
+1792	το στυλό	pen
+1793	ο Εβραίος	Jew
+1794	κοινωνικός	social
+1795	η βίβλος	Bible
+1796	η έκφραση	expression
+1797	η καθυστέρηση	delay, retardation
+1798	φρέσκος	fresh
+1799	το άρωμα	perfume
+1800	καπνίζω	smoke
+1801	η εγχείρηση	surgery
+1802	ο μπαμπάκας	daddy
+1803	ο επιβάτης	passenger
+1804	η σπηλιά	cave
+1805	το πάσο	pass
+1806	άγνωστος	unknown; stranger
+1807	η σκανδάλη	trigger
+1808	η τραγωδία	tragedy
+1809	η κάλτσα	sock
+1810	βρωμάω	stink
+1811	το σύννεφο	cloud
+1812	αδύναμος	weak
+1813	πιστός	faithful; believer
+1814	ξένος	foreign; foreigner
+1815	ο πάτος	bottom
+1816	ο επιστήμονας	scientist
+1817	ο ναός	temple
+1818	υγρός	wet
+1819	ο όρκος	oath
+1820	το χαλί	rug, carpet
+1821	το μαθηματικά	mathematics
+1822	συνειδητοποιώ	realize
+1823	η αυγή	dawn
+1824	νευρικός	tense, nervous
+1825	το ρεπό	time off
+1826	ψηλός	tall
+1827	το κέρδος	profit
+1828	η κλοπή	theft
+1829	ο επισκέπτης	visitor
+1830	η νταντά	nanny
+1831	ο λύκος	wolf
+1832	το φιλμ	film
+1833	το ποντίκι	mouse
+1834	ξεπερνάω	exceed, get over
+1835	γυμνός	naked
+1836	η ομιλία	speech
+1837	η ένταση	intensity, tension
+1838	γερά	firmly, strongly
+1839	άχρηστος	useless
+1840	υπόψη	into account
+1841	το σχήμα	shape
+1842	η δεκαετία	decade
+1843	η λεωφόρος	avenue
+1844	ο ώμος	shoulder
+1845	το σαράντα	forty
+1846	η παραγωγή	production
+1847	κίτρινος	yellow
+1848	άλλως	otherwise, alias
+1849	σύντομος	brief
+1850	σεξουαλικός	sexual
+1851	η ομίχλη	fog, mist
+1852	η κοινότητα	community
+1853	η προδοσία	betrayal, treason
+1854	η τίγρη	tiger
+1855	επίσημα	officially
+1856	κατηγορώ	accuse
+1857	η δοκιμή	test, trial
+1858	το σκυλάκι	doggy
+1859	το γάντι	glove
+1860	ρισκάρω	risk
+1861	η αναμονή	wait
+1862	σπρώχνω	push
+1863	άγριος	wild
+1864	το μπάσκετ	basketball
+1865	η πίτα	pie
+1866	το εσωτερικό	interior
+1867	βραδινός	night
+1868	ο σταυρός	cross
+1869	η πετσέτα	towel
+1870	η σακούλα	bag
+1871	το γούστο	taste
+1872	η πλατεία	square
+1873	μακρύς	long
+1874	η διάλεξη	lecture
+1875	κοινός	common, ordinary
+1876	το αλάτι	salt
+1877	η αλυσίδα	chain
+1878	το άγαλμα	statue
+1879	το εμπόδιο	obstacle
+1880	η άμυνα	defense
+1881	ίσιος	straight
+1882	βαρετός	boring
+1883	χρήσιμος	useful
+1884	το εκρηκτικό	explosive
+1885	παιδικός	childlike
+1886	στρίβω	turn, twist
+1887	το σχοινί	rope
+1888	ο πυρετός	fever
+1889	ο καπνός	smoke, tobacco
+1890	η παραμονή	stay, eve
+1891	το καλάθι	basket
+1892	η ένωση	union
+1893	η μούρη	face, mug (coll)
+1894	η διαθήκη	will, testament
+1895	το φύλλο	leaf
+1896	η κακία	wickedness
+1897	ρομαντικός	romantic
+1898	η χήρα	widow
+1899	το ορυχείο	mine
+1900	ίσα	barely, equally
+1901	το πετρέλαιο	oil, petroleum
+1902	τρομάζω	scare
+1903	άμεσος	immediate, direct
+1904	τυχαίνω	happen
+1905	το παραμύθι	fairy tale
+1906	η αντίσταση	resistance, resistor
+1907	το καρφί	nail, snitch (coll)
+1908	ιστορικός	historical, historic; historian
+1909	η αναγνώριση	recognition, identification
+1910	κινδυνεύω	be in danger
+1911	ο αλήτης	bum
+1912	το διαβατήριο	passport
+1913	η βότκα	vodka
+1914	δημιουργώ	create
+1915	το περιστατικό	incident, occurrence
+1916	αποκαλώ	call
+1917	τζάμπα	free
+1918	κυριολεκτικά	literally
+1919	η επικοινωνία	communication
+1920	το υποβρύχιο	submarine
+1921	ξανακούω	hear again
+1922	η μελέτη	study
+1923	η επιρροή	influence
+1924	η πείνα	hunger
+1925	η κιθάρα	guitar
+1926	η διαφήμιση	advertisement
+1927	παραδέχομαι	admit
+1928	το γέλιο	laughter
+1929	το ρέστα	change
+1930	η ιδιοκτησία	property
+1931	ο πονοκέφαλος	headache
+1932	ήρεμος	calm
+1933	οφείλω	owe
+1934	η κότα	hen, coward (coll)
+1935	το τίμημα	price
+1936	η θέληση	will
+1937	το μερίδιο	share
+1938	η οικονομία	economy
+1939	η κατοχή	occupation, possession
+1940	ο βράχος	rock
+1941	το γυμναστήριο	gym
+1942	η δοκιμασία	trial, test
+1943	η άμμος	sand
+1944	σφιχτά	tightly
+1945	η ηρεμία	calm, rest
+1946	η μετοχή	stock, participle
+1947	ο κατάλογος	catalogue, list, menu
+1948	περπατάω	walk
+1949	η προφορά	pronunciation, accent
+1950	το δάνειο	loan
+1951	το δεκαπέντε	fifteen
+1952	το δίπλωμα	diploma, license
+1953	η αυτοκρατορία	empire
+1954	ο παίκτης	player
+1955	κοροϊδεύω	mock
+1956	ο τόνος	tuna, tone, stress
+1957	συγκεκριμένα	specifically
+1958	η έκδοση	publication, edition
+1959	το μπαστούνι	cane
+1960	το νοίκι	rent
+1961	τακτοποιώ	arrange
+1962	το κόστος	cost
+1963	ξαπλώνω	lie
+1964	ουσιαστικά	essentially
+1965	η δυνατότητα	ability
+1966	το μπέιζμπολ	baseball
+1967	ο ένορκος	juror
+1968	οικογενειακός	family
+1969	ξεκάθαρος	clear
+1970	ξαναβλέπω	see again
+1971	η λάσπη	mud
+1972	ο θησαυρός	treasure
+1973	ο μηχανικός	engineer; mechanical
+1974	ο χυμός	juice
+1975	στενός	narrow, tight
+1976	το ραντάρ	radar
+1977	ηθικός	moral
+1978	η μπάντα	band
+1979	το παρακολούθηση	observation
+1980	ο αυτοκράτορας	emperor
+1981	ησυχάζω	calm
+1982	η ανταλλαγή	exchange
+1983	εμπορικός	commercial
+1984	το κάθισμα	seat
+1985	διακόπτω	interrupt
+1986	γυναικείος	feminine
+1987	η πτέρυγα	wing
+1988	ο εμετός	vomit
+1989	περιέχω	contain
+1990	ξαναπαίρνω	take again
+1991	το χάρισμα	gift, charisma
+1992	η πληγή	wound
+1993	η κατάθλιψη	depression
+1994	η επιστολή	letter
+1995	η φάρσα	prank
+1996	το μάρκο	mark
+1997	η ακρόαση	hearing
+1998	γενικά	generally
+1999	ιδιωτικός	private
+2000	δίχως	without
+2001	η ένδειξη	indication
+2002	η φροντίδα	care
+2003	καημένος	poor
+2004	η δημιουργία	creation
+2005	η πρόθεση	intention, preposition
+2006	δανείζω	lend
+2007	συλλαμβάνω	arrest
+2008	το τιμόνι	wheel
+2009	η ανακοίνωση	announcement
+2010	ο υπουργός	minister
+2011	η κατανόηση	understanding, comprehension
+2012	το τουρνουά	tournament
+2013	η πάπια	duck
+2014	ακριβής	accurate, exact
+2015	ο απατεώνας	crook
+2016	η απόπειρα	attempt
+2017	το σπορ	sport
+2018	η καμπίνα	cabin
+2019	η κρεβατοκάμαρα	bedroom
+2020	ο πολεμιστής	warrior
+2021	το επάγγελμα	profession
+2022	η αγωγή	treatment, lawsuit
+2023	η συνείδηση	consciousness
+2024	η παραγγελία	order
+2025	το χάσιμο	loss
+2026	η ένεση	injection
+2027	το προφίλ	profile, side view
+2028	η περιέργεια	curiosity
+2029	το χεράκι	hand
+2030	το ξίφος	sword
+2031	ανακατεύω	mix
+2032	η αντίρρηση	objection
+2033	ο κυνηγός	hunter
+2034	το έπιπλο	furniture
+2035	η αποσκευή	luggage
+2036	παραδίνω	surrender, deliver
+2037	όρθιος	standing, upright
+2038	σέβομαι	respect
+2039	το κρανίο	skull
+2040	η γενιά	generation
+2041	το σκι	skiing, ski
+2042	δαγκώνω	bite
+2043	το καράβι	ship
+2044	η ακτίνα	ray, radius
+2045	παγώνω	freeze
+2046	η εκλογή	election
+2047	υπερβολικός	excess
+2048	το ευρώ	euro
+2049	ο σεφ	chef
+2050	ο θρόνος	throne
+2051	η προμήθεια	supply
+2052	η ισχύς	power, validity
+2053	ο δαίμονας	demon
+2054	το ράδιο	radio
+2055	επίσημος	official
+2056	το κολύμπι	swimming
+2057	το μετρό	subway
+2058	η απαγωγή	kidnapping, abduction
+2059	το τάγμα	battalion
+2060	νόστιμος	tasty
+2061	αρνητικός	negative
+2062	το φέρετρο	coffin
+2063	διασκεδάζω	have fun
+2064	το πόκερ	poker
+2065	η μπανιέρα	bathtub
+2066	η εξοχή	country
+2067	το ποίημα	poem
+2068	σταθερά	constantly
+2069	ούτε	neither
+2070	το τρόφιμα	food
+2071	η δουλεία	slavery
+2072	ανατολικός	east, oriental
+2073	το ράντσο	ranch, cot (US), camp bed (UK)
+2074	το οξυγόνο	oxygen
+2075	η κούρσα	race
+2076	η σαλάτα	salad
+2077	χωρίζω	break up, separate
+2078	το λάστιχο	hose, tire, rubber
+2079	σπάνιος	rare
+2080	το φταίξιμο	fault
+2081	μοιράζω	distribute, share
+2082	η φωλιά	nest
+2083	άραγε	I wonder
+2084	καθημερινά	daily
+2085	σταθερός	steady, constant
+2086	σημερινός	today
+2087	ζηλεύω	envy
+2088	η καλύβα	hut
+2089	ο σύντροφος	partner, comrade
+2090	ξαναλέω	retell
+2091	το λιοντάρι	lion
+2092	το ταχυδρομείο	post office
+2093	το κουδούνι	bell, doorbell
+2094	το αέριο	gas
+2095	προέρχομαι	originate
+2096	το όσκαρ	Oscar
+2097	η σύσκεψη	meeting
+2098	το φρούτο	fruit
+2099	άγιος	saint, holy
+2100	ήπιος	mild
+2101	ονειρεύομαι	dream
+2102	σαφής	clear
+2103	ο κατάσκοπος	spy
+2104	ευτυχής	happy
+2105	η βιομηχανία	industry
+2106	η εκτέλεση	execution, performance
+2107	το πάρκινγκ	parking
+2108	νομικός	legal
+2109	προσεκτικός	careful
+2110	το κερί	candle, wax
+2111	το κουμάντο	in charge
+2112	αρχαίος	ancient
+2113	το ύφος	look, style
+2114	ονόματι	named
+2115	η λάμψη	glow, shine
+2116	ο άρχοντας	lord
+2117	το κώμα	coma
+2118	προλαβαίνω	keep up
+2119	η κόλλα	glue
+2120	ο θρύλος	legend
+2121	ξεκαθαρίζω	clarify
+2122	η αντιμετώπιση	handling
+2123	το ντουλάπι	cabinet, locker, cupboard
+2124	η ισορροπία	balance
+2125	καρδιακός	cardiac
+2126	η αναζήτηση	search, quest
+2127	αντιμετωπίζω	face
+2128	άλλωστε	besides
+2129	το ρύζι	rice
+2130	ο εισαγγελέας	prosecutor
+2131	η ανάκριση	interrogation
+2132	η γροθιά	punch
+2133	το ψιλά	change
+2134	παρόμοιος	similar
+2135	αναγνωρίζω	recognize, acknowledge
+2136	οπτικός	visual
+2137	ο λόρδος	lord
+2138	ο φούρνος	oven, bakery
+2139	ο αρχιφύλακας	sergeant
+2140	ισχυρός	powerful
+2141	το λάδι	oil
+2142	η ποίηση	poetry
+2143	το γκολ	goal
+2144	μέγας	great
+2145	το κέφι	fun
+2146	το μπουφάν	jacket
+2147	το πυρομαχικά	ammunition
+2148	ο βορράς	north
+2149	τραγουδάω	sing
+2150	ο φονιάς	killer
+2151	το καλώδιο	cable
+2152	το κράτος	state
+2153	μεταφέρω	transfer
+2154	η αξιοπρέπεια	dignity
+2155	το φυτό	plant, vegetable, nerd (coll)
+2156	γεμίζω	fill
+2157	ο γάλλος	French
+2158	η κατάληξη	ending
+2159	γενναία	bravely
+2160	υπογράφω	sign
+2161	η οροφή	roof
+2162	ενθουσιάζω	excite
+2163	παρουσιάζω	show, present
+2164	η συντροφιά	company
+2165	χαμογελάω	smile
+2166	διατάζω	order
+2167	θλιβερός	sad
+2168	η στρατηγική	strategy
+2169	βασίζω	base
+2170	ξεκουράζω	rest
+2171	ο ληστής	robber
+2172	ο ιππότης	knight
+2173	ο πόντος	point
+2174	θαυμάζω	admire
+2175	το προσόν	asset
+2176	κατάστρωμα	deck
+2177	η εκτόξευση	launch
+2178	ψητός	baked, roast
+2179	καλωσορίζω	welcome
+2180	η πινακίδα	sign, plate
+2181	ισπανικός	spanish
+2182	το συμπέρασμα	conclusion
+2183	το πλεονέκτημα	advantage
+2184	το συνέδριο	congress
+2185	η απομόνωση	isolation
+2186	η πρόοδος	progress
+2187	το κόμμα	comma, party
+2188	το τζετ	jet
+2189	ο ρεπόρτερ	reporter
+2190	η εξαίρεση	exception
+2191	γραμμένος	written
+2192	προσλαμβάνω	hire
+2193	σβήνω	erase, turn off
+2194	η θεά	goddess
+2195	η προσωπικότητα	personality
+2196	η περιγραφή	description
+2197	το μασάζ	massage
+2198	αναπνέω	breathe
+2199	ευγενικά	politely
+2200	ειδοποιώ	notify
+2201	παρών	present
+2202	η εισβολή	invasion
+2203	το γρασίδι	grass
+2204	ο φακός	lens, flashlight
+2205	ο θυμός	anger
+2206	σοβαρολογώ	be serious
+2207	απαλός	soft
+2208	επιθυμώ	wish
+2209	η μπούρδα	nonsense
+2210	κατουράω	pee
+2211	το όραμα	vision
+2212	η πώληση	sale
+2213	το πουλάκι	nestling
+2214	η ξεκούραση	rest, relaxation
+2215	η κληρονομιά	legacy, inheritance
+2216	η ψυχραιμία	composure
+2217	καλύπτω	cover
+2218	η μόδα	fashion
+2219	το φασόλι	bean
+2220	το σύνολο	total, outfit
+2221	το ταμείο	cash register
+2222	το κάπνισμα	smoking
+2223	η ταράτσα	roof
+2224	εσωτερικός	inner, internal
+2225	τακτικός	regular
+2226	πρόθυμος	willing
+2227	το μήλο	apple
+2228	η ψεύτρα	liar
+2229	η πρεσβεία	embassy
+2230	το θράσος	nerve, audacity
+2231	ο εραστής	lover
+2232	το μοναστήρι	monastery
+2233	ο μάνατζερ	manager
+2234	ο μύθος	myth
+2235	το προϊόν	product
+2236	απομένω	remain
+2237	η ευλογία	blessing
+2238	ο σούπερμαν	Superman
+2239	ο προδότης	traitor
+2240	η τροχιά	orbit
+2241	η ύπαρξη	existence
+2242	το τσιπ	chip
+2243	εγγυώμαι	guarantee
+2244	το μπαλάκι	ball
+2245	απολύω	fire
+2246	το εμπόριο	trade
+2247	η βλάβη	damage
+2248	ερωτικός	erotic
+2249	το μαξιλάρι	pillow
+2250	το βούτυρο	butter
+2251	λυπηρός	sad
+2252	ο σάκος	sack, bag
+2253	η σφαγή	slaughter, massacre
+2254	ο ταγματάρχης	major
+2255	το σόι	kin, family
+2256	η φρουρά	garrison, guard
+2257	το τετράγωνο	square
+2258	το συνεργείο	workshop
+2259	η ένσταση	objection
+2260	κινέζικος	Chinese
+2261	ο παπάς	priest
+2262	αρνιέμαι	deny
+2263	ο ιός	virus
+2264	ο Καίσαρας	Caesar
+2265	η ενόχληση	bother
+2266	το δισεκατομμύριο	billion
+2267	κατανοητός	understandable
+2268	αληθεύω	be true
+2269	το παιδάκι	little kid, tot
+2270	η αγωνία	suspense
+2271	η μόλυνση	infection, contamination
+2272	γερμανικός	German
+2273	ο αράπης	black
+2274	η ακαδημία	academy
+2275	το τένις	tennis
+2276	η ερωμένη	mistress
+2277	η συνήθεια	habit
+2278	η πάλη	fight
+2279	σχεδιάζω	draw, design
+2280	η σύγκρουση	conflict
+2281	φτωχός	poor
+2282	ο κόπανος	jerk
+2283	το μπλέξιμο	entanglement
+2284	η υπηρέτρια	maid
+2285	επιμένω	insist
+2286	το μπουμ	boom
+2287	ο έμπορος	merchant
+2288	το κοπάδι	herd
+2289	τραγικός	tragic
+2290	εκπλήσσω	surprise
+2291	ο υπολοχαγός	lieutenant
+2292	η παρουσίαση	presentation
+2293	βεβαιώνω	certify
+2294	το άλμα	jump
+2295	η πίστα	dance floor
+2296	καταλήγω	end up
+2297	το πήδημα	hop, leap
+2298	η αιμορραγία	bleeding, hemorrhage
+2299	η λεσβία	lesbian
+2300	παραμικρός	slightest
+2301	ο χαμός	demise, havoc
+2302	η ηρωίνη	heroin
+2303	η μπαταρία	battery
+2304	ομολογώ	confess
+2305	η ανάπτυξη	development
+2306	ο πάγκος	counter, bench
+2307	ταξιδεύω	travel
+2308	η όπερα	opera
+2309	ευλογώ	bless
+2310	το οχυρό	fort, stronghold
+2311	αμερικάνικος	American
+2312	το άσυλο	asylum
+2313	επαγγελματικός	professional
+2314	ο πεζοναύτης	marine
+2315	εγκαταλείπω	abandon
+2316	το φόρος	tax
+2317	η προκαταβολή	deposit
+2318	η ευγένεια	courtesy
+2319	ο καλεσμένος	guest; invited
+2320	ο σατανάς	Satan
+2321	η κουβέρτα	blanket
+2322	το λαχανικό	vegetable
+2323	η επέμβαση	operation, interference
+2324	το γκρουπ	group
+2325	εργάζομαι	work
+2326	το τζιπ	jeep
+2327	χριστουγεννιάτικος	Christmas
+2328	η σοφίτα	attic
+2329	η αλεπού	fox
+2330	η έγκριση	approval
+2331	η διαρροή	leak
+2332	το φεστιβάλ	festival
+2333	το σαπούνι	soap
+2334	περίπλοκος	complex
+2335	το δελτίο	bulletin
+2336	το ντοκ	dock
+2337	η ασπίδα	shield
+2338	ο σωλήνας	pipe, tube
+2339	η ποσότητα	amount, quantity
+2340	απευθείας	directly
+2341	η δυστυχία	unhappiness
+2342	παρακάτω	below
+2343	το μουστάκι	mustache
+2344	το σεντόνι	sheet
+2345	το τείχος	wall
+2346	ο παραγωγός	producer
+2347	το ένστικτο	instinct
+2348	η ευγνωμοσύνη	gratitude
+2349	μετανιώνω	regret
+2350	η αφοσίωση	dedication, loyalty
+2351	το κράνος	helmet
+2352	η σεζόν	season
+2353	ντύνω	dress
+2354	η συντεταγμένη	coordinates
+2355	το έντεκα	eleven
+2356	σιγουρεύω	make sure
+2357	η μαϊμού	monkey
+2358	επηρεάζω	affect
+2359	η κατασκευή	construction
+2360	ακουμπώ	touch
+2361	το στρώμα	mattress, layer
+2362	κυκλοφορώ	circulate
+2363	το ξόρκι	spell
+2364	το φράγμα	dam, barrier
+2365	ο υπηρέτης	servant
+2366	κουβαλάω	carry
+2367	συνέρχομαι	recover
+2368	αναθεματίζω	curse, anathematize
+2370	η υπεράσπιση	defense
+2371	νόμιμος	legal
+2372	διώχνω	kick out
+2373	το σύνταγμα	constitution
+2374	αποκτώ	acquire, get
+2375	κρυώνω	be cold
+2376	ο δράκος	dragon
+2377	ο νότος	south
+2378	το στέμμα	crown
+2379	μπερδεύω	mix up, confuse
+2380	το ποσοστό	percentage
+2381	λύνω	solve
+2382	το χαιρετίσματα	greetings
+2383	η χλόη	grass
+2384	κατευθύνω	direct
+2385	εντός	within
+2386	η κουρτίνα	curtain
+2387	το σχόλιο	comment
+2388	το κτήμα	estate
+2389	πιστωτικός	credit
+2390	κουφός	deaf
+2391	ο γονιός	parent
+2392	πρωτότυπος	original
+2393	η εγκατάσταση	installation, establishment
+2394	αποτυχαίνω	fail
+2395	το τηλεγράφημα	telegram
+2396	καταπληκτικά	amazingly
+2397	πρακτικός	practical
+2398	εξίσου	equally
+2399	η σερβιτόρα	waitress
+2400	δημοφιλής	popular
+2401	η λάμπα	lamp, bulb
+2402	η πληρωμή	payment
+2403	η υποτροφία	scholarship
+2404	η στήλη	column
+2405	ισόβιος	lifelong
+2406	η ανακάλυψη	discovery
+2407	ανάλογα	accordingly
+2408	η γοητεία	charm
+2409	η μαφία	mafia
+2410	το ματς	match
+2411	το μέλι	honey
+2412	γραπτός	written
+2413	κόντρα	against; rivalry
+2414	το νόμισμα	currency
+2415	ο δεσμός	bond
+2416	το χαμπάρι	news (coll)
+2417	η καραμπίνα	rifle, carbine
+2418	η εκτίμηση	appreciation, assessment, estimate
+2419	ο φοιτητής	student
+2420	το βαμπίρ	vampire
+2421	το τροχόσπιτο	caravan (UK), trailer (US)
+2422	επανορθώνω	make amends for
+2423	κρίνω	judge
+2424	το τζίνι	genie
+2425	το μωράκι	little baby
+2426	το καρύδι	walnut
+2427	το μποξ	boxing
+2428	ο ηγέτης	leader
+2429	η σόδα	soda
+2430	ο πυροβολισμός	gunshot
+2431	είθε	may
+2432	παραιτούμαι	resign, quit
+2433	βασικός	basic, main
+2434	ξεφορτώνω	unload
+2435	το κορόιδο	sucker
+2436	εμποδίζω	prevent, block
+2437	ο Ινδιάνος	American Indian
+2438	ηλεκτρικός	electric, electrical
+2439	έξυπνα	cleverly
+2440	το πτυχίο	degree
+2441	υποχρεώνω	obligate
+2442	βλάπτω	harm
+2443	το κύπελλο	cup
+2444	ο πειρατής	pirate
+2445	το φαινόμενο	phenomenon
+2446	η λήψη	take, download
+2447	η επαρχία	province
+2448	η συχνότητα	frequency
+2449	η καταδίκη	conviction
+2450	το στιλ	style
+2451	ο μπάτλερ	butler
+2452	άβολα	uncomfortably
+2453	το ελάφι	deer
+2454	το πρόβατο	sheep
+2455	το σφυρί	hammer
+2456	το κομματάκι	shred, scrap
+2457	το μαρτίνι	martini
+2458	η αστραπή	lightning
+2459	η μπριζόλα	steak
+2460	ο επιχειρηματίας	businessman
+2461	μαρς	march
+2462	η κοπελιά	lass (UK), gal (coll)
+2463	ευαίσθητος	sensitive
+2464	η δεξαμενή	reservoir, tank
+2465	η αυτοπεποίθηση	confidence
+2466	προδίδω	betray
+2467	το τανκ	tank
+2468	λήγω	expire, end
+2469	ο χαιρετισμός	greeting
+2470	ο Αμερικανός	American
+2471	το πεζοδρόμιο	sidewalk (US), pavement (UK)
+2472	ο κόμης	count
+2473	το χωράφι	field
+2474	υγιής	healthy
+2475	η γαλοπούλα	turkey
+2476	το σκορ	score
+2477	η τύψη	remorse
+2478	το χειρουργείο	surgery
+2479	το διάβασμα	reading
+2480	η κόμη	hair
+2481	η ανάπαυση	rest
+2482	η φούστα	skirt
+2483	το μικρόφωνο	microphone
+2484	η εμμονή	obsession
+2485	η ποιότητα	quality
+2486	η εξαφάνιση	disappearance
+2487	κατόπιν	then
+2488	ο τραυματίας	wounded
+2489	η υποχρέωση	obligation
+2490	αναμφίβολα	undoubtedly
+2491	η δυσκολία	difficulty
+2492	το γύρισμα	filming, turn
+2493	το συρτάρι	drawer
+2494	το μετάλλιο	medal
+2495	το γκάζι	gas
+2496	φτηνός	cheap
+2497	το ζόμπι	zombie
+2498	το πηγάδι	well
+2499	γοητευτικός	charming
+2500	τραυματίζω	injure
+2501	η κλειδαριά	lock
+2502	ο κολλητός	buddy; tight
+2503	η χαλάρωση	relaxation
+2504	η ενοχή	guilt
+2505	το άλλοθι	alibi
+2506	η ομολογία	confession
+2507	η χορεύτρια	dancer
+2508	κρυφός	secret
+2509	ξαναγίνομαι	go back to
+2510	τοπικός	local
+2511	το μενού	menu
+2512	το μολύβι	pencil
+2513	απόρρητος	classified
+2514	το εκατοστό	centimeter
+2515	ο ποταμός	river
+2516	η παραβίαση	breach, infringement
+2517	διδάσκω	teach
+2518	το τριαντάφυλλο	rose
+2519	λάμπω	shine
+2520	η εκστρατεία	campaign
+2521	η συνεδρίαση	meeting
+2522	άνω	over, above
+2523	το μπάσταρδο	bastard, mongrel
+2524	το σκουλήκι	worm

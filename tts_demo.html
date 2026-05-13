@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greek TTS Demo</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        h1 { color: #e2b714; text-align: center; }
+        .controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 24px;
+            padding: 12px;
+            background: #16213e;
+            border-radius: 8px;
+        }
+        .controls label { font-size: 14px; }
+        .controls input[type="range"] { flex: 1; }
+        .sentence {
+            background: #16213e;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .text { flex: 1; }
+        .greek { font-size: 20px; margin-bottom: 4px; }
+        .english { font-size: 14px; color: #888; }
+        button {
+            background: #e2b714;
+            color: #1a1a2e;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 20px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+        button:hover { background: #f0c830; }
+        button:active { transform: scale(0.95); }
+    </style>
+</head>
+<body>
+    <h1>Greek TTS Demo</h1>
+
+    <div class="controls">
+        <label>Speed</label>
+        <input type="range" id="rate" min="0.3" max="2" step="0.1" value="0.9">
+        <span id="rateVal">0.9</span>
+    </div>
+
+    <div id="sentences"></div>
+
+    <script>
+        const sentences = [
+            { gr: "Καλημέρα, πώς είσαι σήμερα;", en: "Good morning, how are you today?" },
+            { gr: "Θα ήθελα ένα καφέ, παρακαλώ.", en: "I would like a coffee, please." },
+            { gr: "Πού είναι ο σταθμός του μετρό;", en: "Where is the metro station?" },
+            { gr: "Μου αρέσει πολύ η ελληνική κουζίνα.", en: "I really like Greek cuisine." },
+            { gr: "Τι ώρα φεύγει το λεωφορείο;", en: "What time does the bus leave?" },
+            { gr: "Μπορείτε να μιλάτε πιο αργά;", en: "Can you speak more slowly?" },
+            { gr: "Η θάλασσα είναι πολύ όμορφη σήμερα.", en: "The sea is very beautiful today." },
+            { gr: "Πόσο κοστίζει αυτό;", en: "How much does this cost?" },
+            { gr: "Χθες πήγαμε στο μουσείο.", en: "Yesterday we went to the museum." },
+            { gr: "Θέλω να μάθω ελληνικά.", en: "I want to learn Greek." },
+        ];
+
+        const rateSlider = document.getElementById("rate");
+        const rateVal = document.getElementById("rateVal");
+        rateSlider.oninput = () => rateVal.textContent = rateSlider.value;
+
+        const container = document.getElementById("sentences");
+        sentences.forEach(s => {
+            const div = document.createElement("div");
+            div.className = "sentence";
+            div.innerHTML = `
+                <div class="text">
+                    <div class="greek">${s.gr}</div>
+                    <div class="english">${s.en}</div>
+                </div>
+            `;
+            const btn = document.createElement("button");
+            btn.textContent = "▶";
+            btn.onclick = () => speak(s.gr);
+            div.appendChild(btn);
+            container.appendChild(div);
+        });
+
+        function speak(text) {
+            speechSynthesis.cancel();
+            const u = new SpeechSynthesisUtterance(text);
+            u.lang = "el-GR";
+            u.rate = parseFloat(rateSlider.value);
+            speechSynthesis.speak(u);
+        }
+    </script>
+</body>
+</html>

@@ -16,7 +16,14 @@
       "Bash(/c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe -m pip install stanza)",
       "Bash(PYTHONIOENCODING=utf-8 /c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe -c \"import stanza; stanza.download\\(''el''\\)\")",
       "WebFetch(domain:docs.ankiweb.net)",
-      "WebFetch(domain:help.remnote.com)"
+      "WebFetch(domain:help.remnote.com)",
+      "Bash(python -c \":*)",
+      "Bash(PYTHONIOENCODING=utf-8 python -c \":*)",
+      "Bash(let\\\\'s go\",:*)",
+      "Bash(python fix_deck.py)",
+      "Bash(PYTHONIOENCODING=utf-8 python fix_deck2.py)",
+      "Bash(ls -la Learning_Greek_for_Beginners_2500_Most_Common_Greek_Words/collection.anki21*)",
+      "Bash(PYTHONIOENCODING=utf-8 python fix_deck.py)"
     ]
   }
 }
