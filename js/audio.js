@@ -79,24 +79,52 @@ function stopAudio() {
 }
 
 function replayAudio() {
-  const audioEl = document.getElementById('audio-el');
   const isSentenceState = (cardState === 'sentence' || cardState === 'translation');
   const file = isSentenceState && sentenceAudioFile ? sentenceAudioFile : currentAudioFile;
-  // Build TTS fallback text from current card
   let ttsText = '';
   if (current) {
-    if (isSentenceState && current.word.sentence) {
-      ttsText = current.word.sentence;
-    } else {
-      ttsText = current.word.gr;
-    }
+    ttsText = (isSentenceState && current.word.sentence) ? current.word.sentence : current.word.gr;
   }
   if (file || ttsText) {
     playAudio(file, ttsText);
   } else {
+    const audioEl = document.getElementById('audio-el');
     audioEl.currentTime = 0;
     audioEl.play().catch(() => {});
   }
+}
+
+function replayAudioSlow() {
+  const isSentenceState = (cardState === 'sentence' || cardState === 'translation');
+  let ttsText = '';
+  if (current) {
+    ttsText = (isSentenceState && current.word.sentence) ? current.word.sentence : current.word.gr;
+  }
+  if (ttsText) {
+    speakGreekSlow(ttsText);
+  }
+}
+
+function speakGreekSlow(text) {
+  if (!window.speechSynthesis) return;
+  speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'el-GR';
+  utter.rate = Math.max(0.5, (prefs.ttsRate || 0.85) * 0.55);
+  utter.pitch = 1.0;
+  utter.volume = prefs.volume;
+
+  const voiceName = prefs.voiceSource === 'indexed' ? 'athina' : prefs.voiceSource;
+  const voices = speechSynthesis.getVoices();
+  const greekVoices = voices.filter(v => v.lang.startsWith('el'));
+  const pick = greekVoices.find(v => v.name.toLowerCase().includes(voiceName))
+    || greekVoices.find(v => /athina/i.test(v.name))
+    || greekVoices[0];
+  if (pick) utter.voice = pick;
+
+  document.getElementById('btn-speaker').classList.add('active');
+  utter.onend = () => document.getElementById('btn-speaker').classList.remove('active');
+  speechSynthesis.speak(utter);
 }
 
 function toggleAudioControls(e) {

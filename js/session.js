@@ -428,15 +428,11 @@ function answer(choice) {
     const sgr = document.getElementById('sentence-gr');
     sgr.textContent = answering.word.sentence;
 
-    if (isCorrect) {
-      requestAnimationFrame(() => { sgr.classList.add('visible'); });
-      playAudio(answering.word.sentenceAudio, answering.word.sentence);
-      currentAudioFile = answering.word.wordAudio || null;
-      sentenceAudioFile = answering.word.sentenceAudio;
-      cardState = 'sentence';
-    } else {
-      cardState = 'answer-wrong';
-    }
+    requestAnimationFrame(() => { sgr.classList.add('visible'); });
+    playAudio(answering.word.sentenceAudio, answering.word.sentence);
+    currentAudioFile = answering.word.wordAudio || null;
+    sentenceAudioFile = answering.word.sentenceAudio;
+    cardState = 'sentence';
   } else {
     cardState = 'no-sentence';
   }
