@@ -392,6 +392,22 @@ h1 {
 
 .card-hint { font-size: 0.75rem; color: #3a4060; margin-top: 8px; }
 
+.card-type-badge {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+.card-type-badge.new-card { background: #1a3a6e; color: #6aabff; }
+.card-type-badge.learning-card { background: #3a2a10; color: #e0a040; }
+.card-type-badge.review-card { background: #0d3320; color: #4cde8a; }
+.card-type-badge.relearning-card { background: #3a1a1a; color: #ff8c69; }
+
 .card-answer-label {
   font-size: 0.7rem;
   letter-spacing: 0.12em;
@@ -492,19 +508,48 @@ button {
 }
 button:active { transform: scale(0.97); }
 
-.btn-correct {
-  background: linear-gradient(135deg, #1a6b3a, #22a55a);
-  color: #d4f5e2;
-  box-shadow: 0 4px 20px rgba(34,165,90,0.25);
+.btn-again, .btn-hard, .btn-good, .btn-easy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 20px;
+  min-width: 64px;
 }
-.btn-correct:hover { box-shadow: 0 4px 28px rgba(34,165,90,0.4); }
 
-.btn-wrong {
-  background: linear-gradient(135deg, #6b1a2a, #c0394f);
-  color: #fdd8de;
-  box-shadow: 0 4px 20px rgba(192,57,79,0.25);
+.btn-interval {
+  font-size: 0.65rem;
+  font-weight: 400;
+  opacity: 0.7;
 }
-.btn-wrong:hover { box-shadow: 0 4px 28px rgba(192,57,79,0.4); }
+
+.btn-again {
+  background: #2a1520;
+  color: #e88;
+  border: 1px solid #3a2030;
+}
+.btn-again:hover { background: #351a28; }
+
+.btn-hard {
+  background: #1e1e2a;
+  color: #b0a0c0;
+  border: 1px solid #2a2a3d;
+}
+.btn-hard:hover { background: #28283a; }
+
+.btn-good {
+  background: #152a1a;
+  color: #6c6;
+  border: 1px solid #203a28;
+}
+.btn-good:hover { background: #1a351f; }
+
+.btn-easy {
+  background: #1a2040;
+  color: #8af;
+  border: 1px solid #253060;
+}
+.btn-easy:hover { background: #202850; }
 
 .btn-back-session {
   position: fixed;

@@ -189,10 +189,25 @@ function cardKey(word, dir) {
 
 function getCardData(data, word, dir) {
   const key = cardKey(word, dir);
-  if (!data[key]) data[key] = { interval: 0, easeFactor: 2.5, nextReview: 0, reps: 0, streak: 0, complete: false, seen: 0, correct: 0, incorrect: 0, days: [] };
+  if (!data[key]) data[key] = {
+    phase: 'new',            // 'new' | 'learning' | 'review' | 'relearning'
+    learningStep: 0,         // index into LEARNING_STEPS or LAPSE_STEPS
+    interval: 0,             // days (for review scheduling)
+    easeFactor: STARTING_EASE,
+    nextReview: 0,           // timestamp
+    lapseCount: 0,           // times a review card was failed
+    graduated: false,        // true once first graduation (triggers gold animation)
+    seen: 0,
+    correct: 0,
+    incorrect: 0,
+    days: []
+  };
   const cd = data[key];
-  if (cd.streak === undefined) cd.streak = 0;
-  if (cd.complete === undefined) cd.complete = false;
+  // Ensure all fields exist
+  if (cd.phase === undefined) cd.phase = 'new';
+  if (cd.learningStep === undefined) cd.learningStep = 0;
+  if (cd.lapseCount === undefined) cd.lapseCount = 0;
+  if (cd.graduated === undefined) cd.graduated = false;
   if (cd.seen === undefined) cd.seen = 0;
   if (cd.correct === undefined) cd.correct = 0;
   if (cd.incorrect === undefined) cd.incorrect = 0;

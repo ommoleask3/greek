@@ -38,6 +38,20 @@ const BUILTIN_WORDS = [
 ];
 
 // ═══════════════════════════════════════════════════════════════════════════════
+// ANKI SM-2 CONSTANTS
+// ═══════════════════════════════════════════════════════════════════════════════
+const LEARNING_STEPS    = [60, 600];   // seconds: 1min, 10min
+const GRADUATING_INTERVAL = 1;         // days after final learning step
+const EASY_INTERVAL     = 4;           // days when Easy pressed during learning
+const STARTING_EASE     = 2.5;
+const MINIMUM_EASE      = 1.3;
+const HARD_MULTIPLIER   = 1.2;
+const EASY_BONUS        = 1.3;
+const LAPSE_NEW_INTERVAL = 0;          // multiplier on old interval (0 = reset to 1 day)
+const LAPSE_STEPS       = [600];       // seconds: 10min relearning
+const MAX_INTERVAL      = 36500;       // ~100 years
+
+// ═══════════════════════════════════════════════════════════════════════════════
 // CONSTANTS & STATE
 // ═══════════════════════════════════════════════════════════════════════════════
 const SRS_KEY   = 'greek_srs_v1';
@@ -50,12 +64,14 @@ let dbPromise = null;      // cached IndexedDB promise
 
 // Session state
 let queue = [];
+let delayedQueue = [];     // [{card, dueTime}] for learning/relearning cards
+let waitingTimer = null;   // timer ID for countdown display
 let current = null;
-let cardState = 'loading'; // loading | question | answer | sentence | translation
+let cardState = 'loading'; // loading | question | answer | answer-wrong | sentence | translation | no-sentence | waiting
 let sessionTotal = 0;
 let sessionCorrect = 0;
 let sessionWrong = 0;
-let sessionMastered = 0;
+let sessionGraduated = 0;  // cards that graduated learning → review this session
 let sessionMode = 'en';    // 'en' | 'gr' | 'both'
 let sessionRankMin = null;
 let sessionRankMax = null;

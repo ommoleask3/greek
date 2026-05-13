@@ -6,8 +6,8 @@ function startSession() {
   showMain();
   buildQueue();
 
-  if (queue.length === 0) {
-    document.getElementById('progress-label').textContent = 'No cards due — come back later!';
+  if (queue.length === 0 && delayedQueue.length === 0) {
+    document.getElementById('progress-label').textContent = 'Δεν υπάρχουν κάρτες — επέστρεψε αργότερα!';
     document.getElementById('front-word').textContent = '';
     document.getElementById('front-lang').textContent = '';
     cardState = 'loading';
@@ -25,37 +25,46 @@ function startSession() {
 }
 
 function buildQueue() {
-  if (WORDS.length === 0) { queue = []; return; }
+  if (WORDS.length === 0) { queue = []; delayedQueue = []; return; }
 
   const srs = loadSRS();
   const now = Date.now();
   const dirs = sessionMode === 'both' ? ['en','gr'] : [sessionMode];
-  const due = [], fresh = [];
+  const due = [], learning = [], fresh = [];
 
   const wordsInRange = sessionRankMin !== null
     ? WORDS.filter(w => w.rank >= sessionRankMin && w.rank <= sessionRankMax)
     : WORDS;
 
-  // Sort by rank ascending for fresh cards
   const sorted = [...wordsInRange].sort((a, b) => (a.rank || 0) - (b.rank || 0));
 
   for (const word of sorted) {
     for (const dir of dirs) {
       const cd = getCardData(srs, word, dir);
-      if (cd.nextReview <= now) {
-        const card = { word, dir };
-        if (cd.reps === 0) fresh.push(card);
-        else due.push(card);
+      const card = { word, dir };
+
+      if (cd.phase === 'new') {
+        fresh.push(card);
+      } else if (cd.phase === 'learning' || cd.phase === 'relearning') {
+        // Mid-learning cards go to delayed queue with remaining time
+        learning.push({ card, dueTime: cd.nextReview || now });
+      } else if (cd.phase === 'review' && cd.nextReview <= now) {
+        due.push(card);
       }
     }
   }
 
   shuffle(due);
-  queue = [...due, ...fresh].slice(0, 20);
-  sessionTotal = queue.length;
+
+  // Take up to 20 due + new cards, plus any in-progress learning
+  const mainCards = [...due, ...fresh.slice(0, Math.max(0, 20 - due.length))];
+  queue = mainCards;
+  delayedQueue = learning;
+
+  sessionTotal = queue.length + delayedQueue.length;
   sessionCorrect = 0;
   sessionWrong = 0;
-  sessionMastered = 0;
+  sessionGraduated = 0;
 }
 
 function shuffle(arr) {
@@ -65,10 +74,85 @@ function shuffle(arr) {
   }
 }
 
-function nextCard(animate) {
-  if (queue.length === 0) { showEnd(); return; }
+// ═══════════════════════════════════════════════════════════════════════════════
+// INTERVAL MATH (Anki SM-2)
+// ═══════════════════════════════════════════════════════════════════════════════
+function fuzzInterval(interval) {
+  if (interval < 3) return interval;
+  const fuzz = Math.round(interval * 0.05);
+  return interval + Math.floor(Math.random() * (fuzz * 2 + 1)) - fuzz;
+}
 
-  const next = queue.shift();
+function clampInterval(days) {
+  return Math.min(MAX_INTERVAL, Math.max(1, days));
+}
+
+function clampEase(ease) {
+  return Math.min(4.0, Math.max(MINIMUM_EASE, ease));
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// FORMAT HELPERS
+// ═══════════════════════════════════════════════════════════════════════════════
+function formatSeconds(secs) {
+  if (secs < 60) return '< 1m';
+  if (secs < 3600) return Math.round(secs / 60) + 'm';
+  return Math.round(secs / 3600) + 'h';
+}
+
+function formatInterval(days) {
+  if (days < 1) return '< 1d';
+  if (days === 1) return '1d';
+  if (days < 7) return days + 'd';
+  if (days < 30) return (days / 7).toFixed(1).replace(/\.0$/, '') + 'w';
+  if (days < 365) return (days / 30).toFixed(1).replace(/\.0$/, '') + 'mo';
+  return (days / 365).toFixed(1).replace(/\.0$/, '') + 'y';
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// NEXT CARD
+// ═══════════════════════════════════════════════════════════════════════════════
+function nextCard(animate) {
+  // Clear any waiting timer
+  if (waitingTimer) { clearInterval(waitingTimer); waitingTimer = null; }
+
+  // Check delayed queue for cards that are due now
+  const now = Date.now();
+  let readyIdx = -1;
+  let earliestTime = Infinity;
+  for (let i = 0; i < delayedQueue.length; i++) {
+    if (delayedQueue[i].dueTime <= now) {
+      readyIdx = i;
+      break;
+    }
+    if (delayedQueue[i].dueTime < earliestTime) {
+      earliestTime = delayedQueue[i].dueTime;
+    }
+  }
+
+  let next;
+  if (readyIdx >= 0) {
+    // A delayed card is ready
+    next = delayedQueue.splice(readyIdx, 1)[0].card;
+  } else if (queue.length > 0) {
+    // Pull from main queue
+    next = queue.shift();
+  } else if (delayedQueue.length > 0 && shouldWaitForDelayed(now)) {
+    // "Again" cards skip the timer — show them immediately
+    const againIdx = delayedQueue.findIndex(e => e.wasAgain);
+    if (againIdx >= 0) {
+      next = delayedQueue.splice(againIdx, 1)[0].card;
+    } else {
+      // Wait for non-again cards due within 60s
+      showWaitingState(earliestTime);
+      return;
+    }
+  } else {
+    // Session complete
+    showEnd();
+    return;
+  }
+
   cardState = 'loading';
   stopAudio();
 
@@ -76,16 +160,12 @@ function nextCard(animate) {
     current = next;
     loadCardContent(current);
     updateProgress();
-    // cardState stays 'loading' until doPageTurn calls onReady after phase2
-
-    // Always track audio files for current card
     currentAudioFile = current.word.wordAudio || null;
     sentenceAudioFile = current.word.sentenceAudio || null;
   };
 
   const doReady = () => {
     cardState = 'question';
-    // Track 'seen' (not for readonly/custom-range sessions)
     if (!sessionReadonly) {
       const srs = loadSRS();
       const cd = getCardData(srs, current.word, current.dir);
@@ -94,7 +174,6 @@ function nextCard(animate) {
       if (!cd.days.includes(today)) cd.days.push(today);
       saveSRS(srs);
     }
-    // GR→EN: play word audio after card is fully visible
     if (current.dir === 'gr' && current.word.wordAudio) {
       playAudio(current.word.wordAudio);
     }
@@ -103,7 +182,6 @@ function nextCard(animate) {
   if (animate) {
     doPageTurn(doSwap, doReady);
   } else {
-    // First card: just reset card state without animation
     const card = document.getElementById('card');
     card.classList.remove('flipped', 'complete-glow', 'flying');
     document.getElementById('btn-row').classList.remove('visible');
@@ -113,6 +191,49 @@ function nextCard(animate) {
   }
 }
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// WAITING LOGIC
+// ═══════════════════════════════════════════════════════════════════════════════
+function shouldWaitForDelayed(now) {
+  // Wait if any delayed card was an "again" or is due within 60s
+  for (const entry of delayedQueue) {
+    if (entry.wasAgain || entry.dueTime - now <= 60000) return true;
+  }
+  return false;
+}
+
+function showWaitingState(nextDueTime) {
+  cardState = 'waiting';
+  const card = document.getElementById('card');
+  card.classList.remove('flipped', 'complete-glow', 'flying');
+  document.getElementById('btn-row').classList.remove('visible');
+  document.getElementById('card-hint').style.display = 'none';
+
+  const frontWord = document.getElementById('front-word');
+  document.getElementById('front-lang').textContent = '';
+  document.getElementById('card-type-badge').textContent = '';
+
+  function updateCountdown() {
+    const remaining = Math.max(0, nextDueTime - Date.now());
+    if (remaining <= 0) {
+      clearInterval(waitingTimer);
+      waitingTimer = null;
+      nextCard(false);
+      return;
+    }
+    const secs = Math.ceil(remaining / 1000);
+    const m = Math.floor(secs / 60);
+    const s = secs % 60;
+    frontWord.textContent = `Επόμενη κάρτα σε ${m}:${s.toString().padStart(2, '0')}`;
+  }
+
+  updateCountdown();
+  waitingTimer = setInterval(updateCountdown, 1000);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// CARD CONTENT
+// ═══════════════════════════════════════════════════════════════════════════════
 function loadCardContent(c) {
   const isEnGr = c.dir === 'en';
   const card = document.getElementById('card');
@@ -124,6 +245,29 @@ function loadCardContent(c) {
   document.getElementById('back-word').textContent = isEnGr ? c.word.gr : c.word.en;
   resetSentence();
   updateFreqBadge(c.word);
+
+  // Phase badge
+  const badge = document.getElementById('card-type-badge');
+  const srs = loadSRS();
+  const cd = getCardData(srs, c.word, c.dir);
+  switch (cd.phase) {
+    case 'new':
+      badge.textContent = 'New';
+      badge.className = 'card-type-badge new-card';
+      break;
+    case 'learning':
+      badge.textContent = 'Learning';
+      badge.className = 'card-type-badge learning-card';
+      break;
+    case 'review':
+      badge.textContent = 'Review';
+      badge.className = 'card-type-badge review-card';
+      break;
+    case 'relearning':
+      badge.textContent = 'Relearn';
+      badge.className = 'card-type-badge relearning-card';
+      break;
+  }
 }
 
 function resetSentence() {
@@ -148,6 +292,9 @@ function updateFreqBadge(word) {
   badge.style.color = color;
 }
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// FLIP & INTERVAL HINTS
+// ═══════════════════════════════════════════════════════════════════════════════
 function flipCard() {
   if (cardState !== 'question' || !current) return;
   document.getElementById('card').classList.add('flipped');
@@ -166,8 +313,255 @@ function flipCard() {
     playAudio(current.word.wordAudio);
     currentAudioFile = current.word.wordAudio;
   }
+
+  updateIntervalHints();
 }
 
+function updateIntervalHints() {
+  if (!current) return;
+  const srs = loadSRS();
+  const cd = getCardData(srs, current.word, current.dir);
+  const btnHard = document.getElementById('btn-hard');
+
+  if (cd.phase === 'new' || cd.phase === 'learning') {
+    // Learning: show Again/Good/Easy (no Hard)
+    btnHard.style.display = 'none';
+
+    // Again → step 0
+    document.getElementById('hint-again').textContent = formatSeconds(LEARNING_STEPS[0]);
+
+    // Good → next step, or graduate
+    const nextStep = cd.learningStep + 1;
+    if (nextStep < LEARNING_STEPS.length) {
+      document.getElementById('hint-good').textContent = formatSeconds(LEARNING_STEPS[nextStep]);
+    } else {
+      document.getElementById('hint-good').textContent = formatInterval(GRADUATING_INTERVAL);
+    }
+
+    // Easy → graduate immediately
+    document.getElementById('hint-easy').textContent = formatInterval(EASY_INTERVAL);
+    document.getElementById('hint-hard').textContent = '';
+
+  } else if (cd.phase === 'relearning') {
+    // Relearning: Again/Good/Easy (no Hard)
+    btnHard.style.display = 'none';
+
+    document.getElementById('hint-again').textContent = formatSeconds(LAPSE_STEPS[0]);
+
+    const nextStep = cd.learningStep + 1;
+    if (nextStep < LAPSE_STEPS.length) {
+      document.getElementById('hint-good').textContent = formatSeconds(LAPSE_STEPS[nextStep]);
+    } else {
+      // Graduate back to review with the lapse interval
+      const lapseInt = cd.interval || 1;
+      document.getElementById('hint-good').textContent = formatInterval(lapseInt);
+    }
+
+    document.getElementById('hint-easy').textContent = formatInterval(Math.max(cd.interval || 1, EASY_INTERVAL));
+    document.getElementById('hint-hard').textContent = '';
+
+  } else {
+    // Review: show all 4 buttons
+    btnHard.style.display = '';
+
+    // Again
+    document.getElementById('hint-again').textContent = formatSeconds(LAPSE_STEPS[0]);
+
+    // Hard
+    const hardInt = clampInterval(Math.max(cd.interval + 1, Math.round(cd.interval * HARD_MULTIPLIER)));
+    document.getElementById('hint-hard').textContent = formatInterval(hardInt);
+
+    // Good
+    const goodInt = clampInterval(Math.max(cd.interval + 1, Math.round(cd.interval * cd.easeFactor)));
+    document.getElementById('hint-good').textContent = formatInterval(goodInt);
+
+    // Easy
+    const easyInt = clampInterval(Math.max(cd.interval + 1, Math.round(cd.interval * cd.easeFactor * EASY_BONUS)));
+    document.getElementById('hint-easy').textContent = formatInterval(easyInt);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// ANSWER (Anki SM-2)
+// ═══════════════════════════════════════════════════════════════════════════════
+function answer(choice) {
+  // choice: 'again' | 'hard' | 'good' | 'easy'
+  if (cardState !== 'answer' || !current) return;
+
+  const answering = current;
+  let justGraduated = false;
+  const isCorrect = choice !== 'again';
+
+  if (isCorrect) sessionCorrect++;
+  else sessionWrong++;
+
+  if (!sessionReadonly) {
+    const srs = loadSRS();
+    const cd = getCardData(srs, answering.word, answering.dir);
+
+    if (isCorrect) cd.correct = (cd.correct || 0) + 1;
+    else cd.incorrect = (cd.incorrect || 0) + 1;
+
+    if (cd.phase === 'new' || cd.phase === 'learning') {
+      // ─── LEARNING / NEW ───
+      justGraduated = handleLearning(cd, choice, answering);
+
+    } else if (cd.phase === 'review') {
+      // ─── REVIEW ───
+      handleReview(cd, choice, answering);
+
+    } else if (cd.phase === 'relearning') {
+      // ─── RELEARNING ───
+      handleRelearning(cd, choice, answering);
+    }
+
+    saveSRS(srs);
+  } else {
+    // Custom range (readonly): no SRS writes
+    if (choice === 'again') queue.push(answering);
+  }
+
+  document.getElementById('btn-row').classList.remove('visible');
+
+  // Show sentence flow
+  if (answering.word.sentence) {
+    const sgr = document.getElementById('sentence-gr');
+    sgr.textContent = answering.word.sentence;
+
+    if (isCorrect) {
+      requestAnimationFrame(() => { sgr.classList.add('visible'); });
+      if (answering.word.sentenceAudio) {
+        playAudio(answering.word.sentenceAudio);
+        currentAudioFile = answering.word.wordAudio || null;
+        sentenceAudioFile = answering.word.sentenceAudio;
+      }
+      cardState = 'sentence';
+    } else {
+      cardState = 'answer-wrong';
+    }
+  } else {
+    cardState = 'no-sentence';
+  }
+
+  if (justGraduated) {
+    triggerCompleteAnimation(answering, isCorrect);
+  }
+}
+
+// ─── Learning / New card handler ─────────────────────────────────────────────
+function handleLearning(cd, choice, answering) {
+  let justGraduated = false;
+
+  if (choice === 'again') {
+    // Reset to step 0, re-queue after LEARNING_STEPS[0]
+    cd.phase = 'learning';
+    cd.learningStep = 0;
+    cd.nextReview = Date.now() + LEARNING_STEPS[0] * 1000;
+    delayedQueue.push({ card: answering, dueTime: cd.nextReview, wasAgain: choice === 'again' });
+
+  } else if (choice === 'good') {
+    const nextStep = cd.learningStep + 1;
+    if (nextStep < LEARNING_STEPS.length) {
+      // Advance to next learning step
+      cd.phase = 'learning';
+      cd.learningStep = nextStep;
+      cd.nextReview = Date.now() + LEARNING_STEPS[nextStep] * 1000;
+      delayedQueue.push({ card: answering, dueTime: cd.nextReview, wasAgain: choice === 'again' });
+    } else {
+      // Graduate: learning → review
+      cd.phase = 'review';
+      cd.interval = GRADUATING_INTERVAL;
+      cd.nextReview = Date.now() + cd.interval * 86400000;
+      cd.learningStep = 0;
+      if (!cd.graduated) {
+        cd.graduated = true;
+        justGraduated = true;
+        sessionGraduated++;
+      }
+    }
+
+  } else if (choice === 'easy') {
+    // Graduate immediately with easy interval
+    cd.phase = 'review';
+    cd.interval = EASY_INTERVAL;
+    cd.easeFactor = clampEase(cd.easeFactor + 0.15);
+    cd.nextReview = Date.now() + cd.interval * 86400000;
+    cd.learningStep = 0;
+    if (!cd.graduated) {
+      cd.graduated = true;
+      justGraduated = true;
+      sessionGraduated++;
+    }
+  }
+
+  return justGraduated;
+}
+
+// ─── Review card handler ─────────────────────────────────────────────────────
+function handleReview(cd, choice, answering) {
+  if (choice === 'again') {
+    // Lapse: enter relearning
+    cd.easeFactor = clampEase(cd.easeFactor - 0.20);
+    cd.lapseCount++;
+    const newInterval = LAPSE_NEW_INTERVAL === 0 ? 1 : Math.max(1, Math.floor(cd.interval * LAPSE_NEW_INTERVAL));
+    cd.interval = newInterval;
+    cd.phase = 'relearning';
+    cd.learningStep = 0;
+    cd.nextReview = Date.now() + LAPSE_STEPS[0] * 1000;
+    delayedQueue.push({ card: answering, dueTime: cd.nextReview, wasAgain: choice === 'again' });
+
+  } else if (choice === 'hard') {
+    cd.easeFactor = clampEase(cd.easeFactor - 0.15);
+    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round(cd.interval * HARD_MULTIPLIER))));
+    cd.interval = newInt;
+    cd.nextReview = Date.now() + cd.interval * 86400000;
+
+  } else if (choice === 'good') {
+    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round(cd.interval * cd.easeFactor))));
+    cd.interval = newInt;
+    cd.nextReview = Date.now() + cd.interval * 86400000;
+
+  } else if (choice === 'easy') {
+    cd.easeFactor = clampEase(cd.easeFactor + 0.15);
+    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round(cd.interval * cd.easeFactor * EASY_BONUS))));
+    cd.interval = newInt;
+    cd.nextReview = Date.now() + cd.interval * 86400000;
+  }
+}
+
+// ─── Relearning card handler ─────────────────────────────────────────────────
+function handleRelearning(cd, choice, answering) {
+  if (choice === 'again') {
+    // Reset to step 0
+    cd.learningStep = 0;
+    cd.nextReview = Date.now() + LAPSE_STEPS[0] * 1000;
+    delayedQueue.push({ card: answering, dueTime: cd.nextReview, wasAgain: choice === 'again' });
+
+  } else if (choice === 'good') {
+    const nextStep = cd.learningStep + 1;
+    if (nextStep < LAPSE_STEPS.length) {
+      cd.learningStep = nextStep;
+      cd.nextReview = Date.now() + LAPSE_STEPS[nextStep] * 1000;
+      delayedQueue.push({ card: answering, dueTime: cd.nextReview, wasAgain: choice === 'again' });
+    } else {
+      // Graduate back to review with the lapse interval
+      cd.phase = 'review';
+      cd.nextReview = Date.now() + cd.interval * 86400000;
+      cd.learningStep = 0;
+    }
+
+  } else if (choice === 'easy') {
+    // Graduate immediately back to review
+    cd.phase = 'review';
+    cd.interval = Math.max(cd.interval, EASY_INTERVAL);
+    cd.nextReview = Date.now() + cd.interval * 86400000;
+    cd.learningStep = 0;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// CARD INTERACTION FLOW
+// ═══════════════════════════════════════════════════════════════════════════════
 function onCardClick() {
   switch (cardState) {
     case 'question':      flipCard(); break;
@@ -178,94 +572,7 @@ function onCardClick() {
   }
 }
 
-function answer(correct) {
-  if (cardState !== 'answer' || !current) return;
-
-  const answering = current;
-  let justCompleted = false;
-
-  if (sessionReadonly) {
-    // Custom range: track session counts only, no SRS writes
-    if (correct) sessionCorrect++;
-    else { sessionWrong++; queue.push(answering); }
-  } else {
-    const srs = loadSRS();
-    const cd = getCardData(srs, answering.word, answering.dir);
-    const wasComplete = cd.complete;
-
-    if (correct) {
-      sessionCorrect++;
-      cd.correct = (cd.correct || 0) + 1;
-      cd.reps = (cd.reps || 0) + 1;
-      cd.streak = (cd.streak || 0) + 1;
-
-      // Anki SM-2: initial learning steps 1→2→3 days, then multiply by easeFactor
-      if (cd.reps === 1)      { cd.interval = 1; }
-      else if (cd.reps === 2) { cd.interval = 2; }
-      else if (cd.reps === 3) { cd.interval = 3; }
-      else {
-        // Graduating review: new_interval = max(prev+1, round(prev * easeFactor))
-        const next = Math.round(cd.interval * cd.easeFactor);
-        cd.interval = Math.max(cd.interval + 1, next);
-      }
-      // Ease only increases once card has graduated (reps >= 4)
-      if (cd.reps >= 4) {
-        cd.easeFactor = Math.min(4.0, Math.max(1.3, (cd.easeFactor || 2.5) + 0.1));
-      }
-
-      if (cd.reps >= 4 && !wasComplete) {
-        cd.complete = true;
-        justCompleted = true;
-        sessionMastered++;
-      }
-    } else {
-      sessionWrong++;
-      cd.incorrect = (cd.incorrect || 0) + 1;
-      cd.streak = 0;
-      cd.reps = 0;
-      cd.interval = 1;
-      // Anki "Again": ease -= 0.2 (min 1.3)
-      cd.easeFactor = Math.max(1.3, (cd.easeFactor || 2.5) - 0.2);
-      queue.push(answering); // re-queue wrong cards
-    }
-
-    cd.nextReview = Date.now() + cd.interval * 86400000;
-    saveSRS(srs);
-  }
-
-  document.getElementById('btn-row').classList.remove('visible');
-  cardState = 'sentence';
-
-  // Show sentence immediately on correct, after Space on wrong
-  if (answering.word.sentence) {
-    const sgr = document.getElementById('sentence-gr');
-    sgr.textContent = answering.word.sentence;
-
-    if (correct) {
-      // Correct: sentence fades in instantly
-      requestAnimationFrame(() => { sgr.classList.add('visible'); });
-      if (answering.word.sentenceAudio) {
-        playAudio(answering.word.sentenceAudio);
-        currentAudioFile = answering.word.wordAudio || null;
-        sentenceAudioFile = answering.word.sentenceAudio;
-      }
-      cardState = 'sentence';
-    } else {
-      // Wrong: sentence will appear on next Space press
-      cardState = 'answer-wrong'; // special state: wrong answer given, sentence not yet shown
-    }
-  } else {
-    // No sentence: proceed straight after a short pause
-    cardState = 'no-sentence';
-  }
-
-  if (justCompleted) {
-    triggerCompleteAnimation(answering, correct);
-  }
-}
-
 function advanceFromAnswer() {
-  // Called when Space is pressed after wrong answer (to show sentence)
   if (!current) return;
   const sgr = document.getElementById('sentence-gr');
   if (current.word.sentence) {
@@ -282,7 +589,6 @@ function advanceFromAnswer() {
 }
 
 function advanceFromSentence() {
-  // Show translation
   if (!current) return;
   if (current.word.sentenceEn) {
     const sen = document.getElementById('sentence-en');

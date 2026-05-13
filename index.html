@@ -50,26 +50,26 @@
 
   <div class="custom-range" id="custom-range-section">
     <div class="custom-range-header" id="custom-range-toggle" onclick="toggleCustomRange()">
-      <span class="chevron">▶</span> Custom range
+      <span class="chevron">▶</span> Προσαρμοσμένο εύρος
     </div>
     <div class="custom-range-body" id="custom-range-body">
-      <label>From rank</label>
+      <label>Από κατάταξη</label>
       <input type="number" id="range-from" value="1" min="1">
-      <label>to</label>
+      <label>έως</label>
       <input type="number" id="range-to" value="100" min="1">
       <div class="dir-select" id="custom-dir-select">
         <button class="active" id="cdir-en" onclick="setCustomDir('en')">EN→GR</button>
         <button id="cdir-gr" onclick="setCustomDir('gr')">GR→EN</button>
-        <button id="cdir-both" onclick="setCustomDir('both')">Both</button>
+        <button id="cdir-both" onclick="setCustomDir('both')">Και τα δύο</button>
       </div>
-      <button class="btn-practice" onclick="startCustomRange()">Practice</button>
+      <button class="btn-practice" onclick="startCustomRange()">Εξάσκηση</button>
     </div>
   </div>
 </div>
 
 <!-- Session / main view -->
 <div id="main-view">
-  <button class="btn-back-session" onclick="abandonSession()">← Back</button>
+  <button class="btn-back-session" onclick="abandonSession()">← Πίσω</button>
   <div class="progress-bar-wrap">
     <div class="progress-bar" id="progress-bar"></div>
   </div>
@@ -80,7 +80,8 @@
       <div class="card-face card-front">
         <div class="card-lang" id="front-lang"></div>
         <div class="card-word" id="front-word"></div>
-        <div class="card-hint" id="card-hint">tap or press Space to reveal</div>
+        <div class="card-hint" id="card-hint">πάτα ή πάτησε Space για αποκάλυψη</div>
+        <div class="card-type-badge" id="card-type-badge"></div>
       </div>
       <div class="card-face card-back">
         <div class="card-answer-label" id="back-lang"></div>
@@ -94,20 +95,22 @@
     </div>
   </div>
 
-  <div class="kbd-hint" id="kbd-hint">Space = flip &nbsp;·&nbsp; Space = correct &nbsp;·&nbsp; Backspace = wrong &nbsp;·&nbsp; Enter = replay audio</div>
+  <div class="kbd-hint" id="kbd-hint">Space = αποκάλυψη &nbsp;·&nbsp; 1 ξανά · 2 δύσκολο · 3 καλά · 4 εύκολο &nbsp;·&nbsp; Enter = ξανά ήχος</div>
 
   <div class="btn-row" id="btn-row">
-    <button class="btn-wrong" onclick="answer(false)">✗ Wrong</button>
-    <button class="btn-correct" onclick="answer(true)">✓ Correct</button>
+    <button class="btn-again" onclick="answer('again')">Ξανά<span class="btn-interval" id="hint-again"></span></button>
+    <button class="btn-hard" onclick="answer('hard')" id="btn-hard">Δύσκολο<span class="btn-interval" id="hint-hard"></span></button>
+    <button class="btn-good" onclick="answer('good')">Καλά<span class="btn-interval" id="hint-good"></span></button>
+    <button class="btn-easy" onclick="answer('easy')">Εύκολο<span class="btn-interval" id="hint-easy"></span></button>
   </div>
 </div>
 
 <!-- Session end -->
 <div id="session-end">
-  <h2>Session complete</h2>
+  <h2>Η συνεδρία ολοκληρώθηκε</h2>
   <div class="session-stats" id="session-stats"></div>
-  <button class="btn-restart" onclick="startSession()">Next session</button>
-  <button class="btn-back-to-levels" onclick="showLevelSelect()">← Back to levels</button>
+  <button class="btn-restart" onclick="startSession()">Επόμενη συνεδρία</button>
+  <button class="btn-back-to-levels" onclick="showLevelSelect()">← Πίσω στα επίπεδα</button>
 </div>
 
 <!-- Fixed UI -->

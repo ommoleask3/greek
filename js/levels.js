@@ -61,13 +61,13 @@ function getTileCounts(levelWords, dir, srs) {
   let newCount = 0, learningCount = 0, dueCount = 0;
   for (const w of levelWords) {
     const cd = srs[cardKey(w, dir)];
-    const reps = cd ? (cd.reps || 0) : 0;
+    const phase = cd ? (cd.phase || 'new') : 'new';
     const nextReview = cd ? (cd.nextReview || 0) : 0;
-    if (reps === 0) {
+    if (phase === 'new') {
       newCount++;
-    } else if (reps <= 3 && nextReview <= now) {
+    } else if ((phase === 'learning' || phase === 'relearning') && nextReview <= now) {
       learningCount++;
-    } else if (reps >= 4 && nextReview <= now) {
+    } else if (phase === 'review' && nextReview <= now) {
       dueCount++;
     }
   }
@@ -97,7 +97,7 @@ function renderGrid(dir) {
     let completed = 0;
     for (const w of levelWords) {
       const cd = srs[cardKey(w, dir)];
-      if (cd && cd.complete) completed++;
+      if (cd && cd.graduated) completed++;
     }
 
     // Unlock logic: level 1 always unlocked; level N+1 unlocks when ≥75 complete in level N
@@ -109,7 +109,7 @@ function renderGrid(dir) {
       let prevCompleted = 0;
       for (const w of prevWords) {
         const cd = srs[cardKey(w, dir)];
-        if (cd && cd.complete) prevCompleted++;
+        if (cd && cd.graduated) prevCompleted++;
       }
       locked = prevCompleted < 75 && prevWords.length >= 75;
     }
@@ -130,14 +130,14 @@ function renderGrid(dir) {
 
     const { newCount, learningCount, dueCount } = getTileCounts(levelWords, dir, srs);
     tile.innerHTML = `
-      <div class="level-tile-title" style="color:var(--tile-title-color,#7c85a6)">Level ${lvl}</div>
+      <div class="level-tile-title" style="color:var(--tile-title-color,#7c85a6)">επίπεδο ${lvl}</div>
       <div class="level-tile-range">${rankMin}–${rankMax}</div>
       <div class="level-tile-progress">${completed}/100 complete</div>
       <div class="level-tile-bar"><div class="level-tile-bar-fill" style="width:${pct}%;background:${barColor}"></div></div>
       <div class="tile-counts">
-        ${!locked && newCount > 0      ? `<span class="tc-new">${newCount}</span>` : ''}
-        ${!locked && learningCount > 0 ? `<span class="tc-learning">${learningCount}</span>` : ''}
-        ${!locked && dueCount > 0      ? `<span class="tc-due">${dueCount}</span>` : ''}
+        ${!locked && newCount > 0      ? `<span class="tc-new" title="${newCount} new">${newCount}</span>` : ''}
+        ${!locked && learningCount > 0 ? `<span class="tc-learning" title="${learningCount} learning">${learningCount}</span>` : ''}
+        ${!locked && dueCount > 0      ? `<span class="tc-due" title="${dueCount} due for review">${dueCount}</span>` : ''}
       </div>
       ${locked ? '<div class="level-lock-icon">🔒</div>' : ''}
     `;

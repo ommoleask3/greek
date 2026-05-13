@@ -2,7 +2,8 @@
 // PROGRESS & END
 // ═══════════════════════════════════════════════════════════════════════════════
 function updateProgress() {
-  const done = sessionTotal - queue.length - 1;
+  const remaining = queue.length + delayedQueue.length;
+  const done = sessionTotal - remaining - 1;
   const pct = sessionTotal > 0 ? Math.max(0, (done / sessionTotal) * 100) : 0;
   document.getElementById('progress-bar').style.width = pct + '%';
   document.getElementById('progress-label').textContent =
@@ -11,7 +12,9 @@ function updateProgress() {
 
 function abandonSession() {
   stopAudio();
+  if (waitingTimer) { clearInterval(waitingTimer); waitingTimer = null; }
   queue = [];
+  delayedQueue = [];
   showLevelSelect();
 }
 
@@ -33,8 +36,15 @@ function showEnd() {
     }
   }
 
-  document.getElementById('session-stats').innerHTML =
+  const learningLeft = delayedQueue.length;
+  delayedQueue = []; // clear so they get picked up next session
+
+  let stats =
     `Correct: <span>${sessionCorrect}</span> &nbsp;|&nbsp; Wrong: <span>${sessionWrong}</span><br>` +
-    `Mastered this session: <span>${sessionMastered}</span><br>` +
+    `Graduated this session: <span>${sessionGraduated}</span><br>` +
     `Cards due tomorrow: <span>${totalDue}</span>`;
+  if (learningLeft > 0) {
+    stats += `<br>Learning (come back soon): <span>${learningLeft}</span>`;
+  }
+  document.getElementById('session-stats').innerHTML = stats;
 }

@@ -14,7 +14,9 @@
       "Bash(/c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe -m spacy info)",
       "Bash(/c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe -m spacy download el_core_news_lg)",
       "Bash(/c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe -m pip install stanza)",
-      "Bash(PYTHONIOENCODING=utf-8 /c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe -c \"import stanza; stanza.download\\(''el''\\)\")"
+      "Bash(PYTHONIOENCODING=utf-8 /c/Users/OliverLeask/AppData/Local/Programs/Python/Python312/python.exe -c \"import stanza; stanza.download\\(''el''\\)\")",
+      "WebFetch(domain:docs.ankiweb.net)",
+      "WebFetch(domain:help.remnote.com)"
     ]
   }
 }
