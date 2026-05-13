@@ -158,7 +158,7 @@ h1 {
   font-weight: 600;
   color: #7c85a6;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .level-tile-range {

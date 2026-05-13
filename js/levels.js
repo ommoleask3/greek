@@ -130,9 +130,9 @@ function renderGrid(dir) {
 
     const { newCount, learningCount, dueCount } = getTileCounts(levelWords, dir, srs);
     tile.innerHTML = `
-      <div class="level-tile-title" style="color:var(--tile-title-color,#7c85a6)">επίπεδο ${lvl}</div>
+      <div class="level-tile-title" style="color:var(--tile-title-color,#7c85a6)">Επίπεδο ${lvl}</div>
       <div class="level-tile-range">${rankMin}–${rankMax}</div>
-      <div class="level-tile-progress">${completed}/100 complete</div>
+      <div class="level-tile-progress">${completed}/100 ολοκληρωμένα</div>
       <div class="level-tile-bar"><div class="level-tile-bar-fill" style="width:${pct}%;background:${barColor}"></div></div>
       <div class="tile-counts">
         ${!locked && newCount > 0      ? `<span class="tc-new" title="${newCount} new">${newCount}</span>` : ''}
