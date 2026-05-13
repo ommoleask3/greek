@@ -407,6 +407,7 @@ h1 {
 .card-type-badge.learning-card { background: #3a2a10; color: #e0a040; }
 .card-type-badge.review-card { background: #0d3320; color: #4cde8a; }
 .card-type-badge.relearning-card { background: #3a1a1a; color: #ff8c69; }
+.card-type-badge.leech-card { background: #3a1a2a; color: #ff6b9d; }
 
 .card-answer-label {
   font-size: 0.7rem;

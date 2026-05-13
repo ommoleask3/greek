@@ -170,8 +170,9 @@ function nextCard(animate) {
       const srs = loadSRS();
       const cd = getCardData(srs, current.word, current.dir);
       cd.seen = (cd.seen || 0) + 1;
-      const today = new Date().toISOString().slice(0, 10);
-      if (!cd.days.includes(today)) cd.days.push(today);
+      const now = Date.now();
+      cd.lastReview = now;
+      cd.days.push(now);  // timestamps for FSRS migration readiness
       saveSRS(srs);
     }
     if (current.dir === 'gr') {
@@ -260,12 +261,12 @@ function loadCardContent(c) {
       badge.className = 'card-type-badge learning-card';
       break;
     case 'review':
-      badge.textContent = 'Review';
-      badge.className = 'card-type-badge review-card';
+      badge.textContent = cd.leech ? 'Leech' : 'Review';
+      badge.className = cd.leech ? 'card-type-badge leech-card' : 'card-type-badge review-card';
       break;
     case 'relearning':
-      badge.textContent = 'Relearn';
-      badge.className = 'card-type-badge relearning-card';
+      badge.textContent = cd.leech ? 'Leech' : 'Relearn';
+      badge.className = cd.leech ? 'card-type-badge leech-card' : 'card-type-badge relearning-card';
       break;
   }
 }
@@ -364,19 +365,24 @@ function updateIntervalHints() {
     // Review: show all 4 buttons
     btnHard.style.display = '';
 
+    // Late review bonus: use elapsed time as base if overdue
+    const elapsed = cd.lastReview > 0
+      ? Math.max(cd.interval, (Date.now() - cd.lastReview) / 86400000)
+      : cd.interval;
+
     // Again
     document.getElementById('hint-again').textContent = formatSeconds(LAPSE_STEPS[0]);
 
     // Hard
-    const hardInt = clampInterval(Math.max(cd.interval + 1, Math.round(cd.interval * HARD_MULTIPLIER)));
+    const hardInt = clampInterval(Math.max(cd.interval + 1, Math.round(elapsed * HARD_MULTIPLIER)));
     document.getElementById('hint-hard').textContent = formatInterval(hardInt);
 
     // Good
-    const goodInt = clampInterval(Math.max(cd.interval + 1, Math.round(cd.interval * cd.easeFactor)));
+    const goodInt = clampInterval(Math.max(cd.interval + 1, Math.round(elapsed * cd.easeFactor)));
     document.getElementById('hint-good').textContent = formatInterval(goodInt);
 
     // Easy
-    const easyInt = clampInterval(Math.max(cd.interval + 1, Math.round(cd.interval * cd.easeFactor * EASY_BONUS)));
+    const easyInt = clampInterval(Math.max(cd.interval + 1, Math.round(elapsed * cd.easeFactor * EASY_BONUS)));
     document.getElementById('hint-easy').textContent = formatInterval(easyInt);
   }
 }
@@ -493,33 +499,43 @@ function handleLearning(cd, choice, answering) {
 
 // ─── Review card handler ─────────────────────────────────────────────────────
 function handleReview(cd, choice, answering) {
+  // Late review bonus: use actual elapsed time as base if longer than scheduled interval
+  const now = Date.now();
+  const elapsed = cd.lastReview > 0
+    ? Math.max(cd.interval, (now - cd.lastReview) / 86400000)
+    : cd.interval;
+
   if (choice === 'again') {
     // Lapse: enter relearning
     cd.easeFactor = clampEase(cd.easeFactor - 0.20);
     cd.lapseCount++;
-    const newInterval = LAPSE_NEW_INTERVAL === 0 ? 1 : Math.max(1, Math.floor(cd.interval * LAPSE_NEW_INTERVAL));
-    cd.interval = newInterval;
+    cd.interval = Math.max(1, Math.floor(cd.interval * LAPSE_NEW_INTERVAL));
     cd.phase = 'relearning';
     cd.learningStep = 0;
-    cd.nextReview = Date.now() + LAPSE_STEPS[0] * 1000;
-    delayedQueue.push({ card: answering, dueTime: cd.nextReview, wasAgain: choice === 'again' });
+    cd.nextReview = now + LAPSE_STEPS[0] * 1000;
+    delayedQueue.push({ card: answering, dueTime: cd.nextReview, wasAgain: true });
+
+    // Leech detection
+    if (cd.lapseCount >= LEECH_THRESHOLD && cd.lapseCount % 4 === 0) {
+      cd.leech = true;
+    }
 
   } else if (choice === 'hard') {
     cd.easeFactor = clampEase(cd.easeFactor - 0.15);
-    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round(cd.interval * HARD_MULTIPLIER))));
+    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round(elapsed * HARD_MULTIPLIER))));
     cd.interval = newInt;
-    cd.nextReview = Date.now() + cd.interval * 86400000;
+    cd.nextReview = now + cd.interval * 86400000;
 
   } else if (choice === 'good') {
-    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round(cd.interval * cd.easeFactor))));
+    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round(elapsed * cd.easeFactor))));
     cd.interval = newInt;
-    cd.nextReview = Date.now() + cd.interval * 86400000;
+    cd.nextReview = now + cd.interval * 86400000;
 
   } else if (choice === 'easy') {
     cd.easeFactor = clampEase(cd.easeFactor + 0.15);
-    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round(cd.interval * cd.easeFactor * EASY_BONUS))));
+    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round(elapsed * cd.easeFactor * EASY_BONUS))));
     cd.interval = newInt;
-    cd.nextReview = Date.now() + cd.interval * 86400000;
+    cd.nextReview = now + cd.interval * 86400000;
   }
 }
 

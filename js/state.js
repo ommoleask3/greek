@@ -47,9 +47,10 @@ const STARTING_EASE     = 2.5;
 const MINIMUM_EASE      = 1.3;
 const HARD_MULTIPLIER   = 1.2;
 const EASY_BONUS        = 1.3;
-const LAPSE_NEW_INTERVAL = 0;          // multiplier on old interval (0 = reset to 1 day)
+const LAPSE_NEW_INTERVAL = 0.5;        // multiplier on old interval (0.5 = keep 50%)
 const LAPSE_STEPS       = [600];       // seconds: 10min relearning
 const MAX_INTERVAL      = 36500;       // ~100 years
+const LEECH_THRESHOLD   = 8;           // flag card as leech after this many lapses
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // CONSTANTS & STATE

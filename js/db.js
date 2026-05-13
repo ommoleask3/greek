@@ -196,7 +196,9 @@ function getCardData(data, word, dir) {
     easeFactor: STARTING_EASE,
     nextReview: 0,           // timestamp
     lapseCount: 0,           // times a review card was failed
+    leech: false,            // true if card has lapsed >= LEECH_THRESHOLD times
     graduated: false,        // true once first graduation (triggers gold animation)
+    lastReview: 0,           // timestamp of most recent review
     seen: 0,
     correct: 0,
     incorrect: 0,
@@ -207,7 +209,9 @@ function getCardData(data, word, dir) {
   if (cd.phase === undefined) cd.phase = 'new';
   if (cd.learningStep === undefined) cd.learningStep = 0;
   if (cd.lapseCount === undefined) cd.lapseCount = 0;
+  if (cd.leech === undefined) cd.leech = false;
   if (cd.graduated === undefined) cd.graduated = false;
+  if (cd.lastReview === undefined) cd.lastReview = 0;
   if (cd.seen === undefined) cd.seen = 0;
   if (cd.correct === undefined) cd.correct = 0;
   if (cd.incorrect === undefined) cd.incorrect = 0;
