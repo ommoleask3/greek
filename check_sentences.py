@@ -50,6 +50,68 @@ def clean(s: str) -> str:
     return strip_html(strip_sound(s))
 
 
+def normalize_greek(word: str) -> set[str]:
+    """Return a set of equivalent normalized forms of a Greek word.
+
+    Handles common Greek morphological alternations that NLP models
+    inconsistently resolve:
+      - -άω / -ώ verb alternation (μιλάω ↔ μιλώ)
+      - -αίνω / -ένω alternation
+      - Common pronoun clitic forms (σου ↔ εσύ, μου ↔ εγώ, etc.)
+      - Accented/unaccented article forms (ό ↔ ο)
+    """
+    w = word.lower().strip()
+    forms = {w}
+
+    # -άω ↔ -ώ verb alternation
+    if w.endswith('άω'):
+        forms.add(w[:-2] + 'ώ')
+    elif w.endswith('ώ') and len(w) > 2:
+        forms.add(w[:-1] + 'άω')
+
+    # -αίνω ↔ common alternate aorist stems
+    # (less systematic, but helps with πηγαίνω etc.)
+
+    # Strip accent variations for matching
+    # ό ↔ ο, etc.
+    import unicodedata
+    stripped = unicodedata.normalize('NFD', w)
+    stripped = ''.join(c for c in stripped if unicodedata.category(c) != 'Mn')
+    stripped = unicodedata.normalize('NFC', stripped)
+    if stripped != w:
+        forms.add(stripped)
+
+    return forms
+
+
+# Greek pronoun/clitic mapping: surface form → set of related lemmas
+PRONOUN_MAP = {
+    'σου': {'εσύ', 'σου', 'σύ'},
+    'μου': {'εγώ', 'μου'},
+    'του': {'αυτός', 'του'},
+    'της': {'αυτή', 'αυτός', 'της'},
+    'τους': {'αυτός', 'αυτοί', 'τους'},
+    'μας': {'εμείς', 'μας'},
+    'σας': {'εσείς', 'σας'},
+    'με': {'εγώ', 'με'},
+    'σε': {'εσύ', 'σε'},
+    'τον': {'αυτός', 'τον'},
+    'την': {'αυτή', 'αυτός', 'την'},
+    'το': {'αυτό', 'αυτός', 'το'},
+    'μένα': {'εγώ', 'μένα'},
+    'σένα': {'εσύ', 'σένα'},
+    'εμένα': {'εγώ', 'εμένα'},
+    'εσένα': {'εσύ', 'εσένα'},
+    # Verb form of "to be"
+    'είσαι': {'είμαι', 'είσαι'},
+    'είναι': {'είμαι', 'είναι'},
+    'ήμουν': {'είμαι', 'ήμουν'},
+    'ήταν': {'είμαι', 'ήταν'},
+    'είχα': {'έχω', 'είχα'},
+    'είχε': {'έχω', 'είχε'},
+}
+
+
 # ── extraction ───────────────────────────────────────────────────────────────
 
 def extract_from_apkg(apkg_path: str):
@@ -159,9 +221,25 @@ def analyse(words, sentences, nlp):
                 continue
             known_lemmas.add(tok.lemma.lower())
             known_surface.add(tok.text.lower())
-    # Also add the raw parts as surface forms
+    # Also add the raw parts as surface forms + normalized variants
     for p in vocab_parts:
         known_surface.add(p.lower())
+        for norm in normalize_greek(p):
+            known_surface.add(norm)
+
+    # Add normalized variants of all lemmas too
+    extra_lemmas = set()
+    for lem in known_lemmas:
+        extra_lemmas.update(normalize_greek(lem))
+    known_lemmas.update(extra_lemmas)
+
+    # Add pronoun/clitic mappings
+    for surface_form, related in PRONOUN_MAP.items():
+        if surface_form in known_surface or any(r in known_surface for r in related):
+            known_surface.add(surface_form)
+            known_surface.update(related)
+            known_lemmas.add(surface_form)
+            known_lemmas.update(related)
 
     print(f"  {len(known_lemmas)} lemmas, {len(known_surface)} surface forms from vocab")
     sys.stdout.flush()

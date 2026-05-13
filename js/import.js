@@ -313,8 +313,15 @@ function findAudioIndex(names, values, audioHint) {
 function stripHtml(str) {
   if (!str) return '';
   const tmp = document.createElement('textarea');
-  tmp.innerHTML = str.replace(/<[^>]*>/g, '');
-  return tmp.value.trim();
+  // Decode repeatedly to handle double-encoded entities (e.g. &amp;#x27; → &#x27; → ')
+  let decoded = str.replace(/<[^>]*>/g, '');
+  for (let i = 0; i < 3; i++) {
+    tmp.innerHTML = decoded;
+    const next = tmp.value;
+    if (next === decoded) break;
+    decoded = next;
+  }
+  return decoded.trim();
 }
 
 function stripSound(str) {
