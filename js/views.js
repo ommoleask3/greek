@@ -2,7 +2,8 @@
 // VIEW MANAGEMENT
 // ═══════════════════════════════════════════════════════════════════════════════
 function showView(id) {
-  ['import-view','level-view','main-view','session-end'].forEach(v => {
+  ['import-view','home-view','level-view','main-view','session-end',
+   'grammar-menu-view','grammar-list-view','grammar-lesson-view','conjugation-view'].forEach(v => {
     document.getElementById(v).classList.toggle('active', v === id);
   });
 }

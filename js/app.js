@@ -11,7 +11,8 @@ async function init() {
     const words = await dbGetAll('words');
     if (words && words.length > 0) {
       WORDS = words;
-      showLevelSelect();
+      updateGreekOnlyUI();
+      showHome();
       return;
     }
   } catch {}
@@ -26,7 +27,8 @@ async function init() {
         oldWords.forEach((w, i) => { if (!w.rank) w.rank = i + 1; });
         WORDS = oldWords;
         await dbPutBatch('words', WORDS);
-        showLevelSelect();
+        updateGreekOnlyUI();
+        showHome();
         return;
       }
     }

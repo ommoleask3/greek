@@ -60,7 +60,7 @@ async function processApkg(file) {
     }
 
     setStatus(`✓ Imported ${words.length} word pairs`, 'success');
-    setTimeout(() => showLevelSelect(), 800);
+    setTimeout(() => { updateGreekOnlyUI(); showHome(); }, 800);
 
   } catch (err) {
     setStatus('Error: ' + err.message, 'error');
@@ -352,7 +352,8 @@ async function useBuiltinWords() {
   WORDS = BUILTIN_WORDS.map((w, i) => ({ ...w, rank: i + 1, sentence: '', sentenceEn: '', wordAudio: '', sentenceAudio: '' }));
   await dbClearStore('words');
   await dbPutBatch('words', WORDS);
-  showLevelSelect();
+  updateGreekOnlyUI();
+  showHome();
 }
 
 function loadScript(src) {

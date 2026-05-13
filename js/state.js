@@ -79,7 +79,7 @@ let sessionRankMax = null;
 let sessionReadonly = false; // true for custom range — no SRS/stats updates
 
 // Prefs
-let prefs = { volume: 1, firstCardSeen: false, voiceSource: 'indexed', ttsRate: 0.85 };
+let prefs = { volume: 1, firstCardSeen: false, voiceSource: 'indexed', ttsRate: 0.85, greekOnly: false };
 
 // Audio
 let currentBlobUrl = null;

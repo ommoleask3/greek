@@ -10,6 +10,71 @@
 
 <h1>Eλληνικές σημειώσεις</h1>
 
+<!-- Home splash -->
+<div id="home-view">
+  <div class="home-panels">
+    <div class="home-panel" onclick="showLevelSelect()">
+      <img src="plato.png" alt="Plato" class="home-panel-img">
+      <div class="home-panel-title">Λεξιλόγιο</div>
+      <div class="home-panel-sub">Vocabulary</div>
+    </div>
+    <div class="home-panel" onclick="showGrammarMenu()">
+      <img src="aristotle.png" alt="Aristotle" class="home-panel-img">
+      <div class="home-panel-title">Γραμματική</div>
+      <div class="home-panel-sub">Grammar</div>
+    </div>
+  </div>
+  <div class="home-toggle" id="greek-only-toggle" onclick="toggleGreekOnly()">
+    <div class="toggle-track"><div class="toggle-thumb"></div></div>
+    <span class="toggle-label">Greek only</span>
+  </div>
+</div>
+
+<!-- Grammar menu -->
+<div id="grammar-menu-view">
+  <button class="btn-back-session" onclick="showHome()">← Πίσω</button>
+  <div class="grammar-menu-panels">
+    <div class="grammar-menu-card" onclick="showGrammarList()">
+      <div class="gmc-icon">📖</div>
+      <div class="gmc-title">Μαθήματα</div>
+      <div class="gmc-sub">Lessons</div>
+    </div>
+    <div class="grammar-menu-card" onclick="showConjugation()">
+      <div class="gmc-icon">✏️</div>
+      <div class="gmc-title">Κλίση ρημάτων</div>
+      <div class="gmc-sub">Conjugation drills</div>
+    </div>
+  </div>
+</div>
+
+<!-- Grammar lesson list -->
+<div id="grammar-list-view">
+  <button class="btn-back-session" onclick="showGrammarMenu()">← Πίσω</button>
+  <h2 class="grammar-heading">Μαθήματα</h2>
+  <div id="grammar-list" class="grammar-list"></div>
+</div>
+
+<!-- Grammar lesson content -->
+<div id="grammar-lesson-view">
+  <button class="btn-back-session" onclick="showGrammarList()">← Πίσω</button>
+  <div id="lesson-content" class="lesson-content"></div>
+</div>
+
+<!-- Conjugation drills -->
+<div id="conjugation-view">
+  <button class="btn-back-session" onclick="showGrammarMenu()">← Πίσω</button>
+  <div class="conj-header">
+    <div class="conj-mode-toggle">
+      <button id="conj-mode-mc" class="active" onclick="setConjMode('mc')">Επιλογή</button>
+      <button id="conj-mode-typing" onclick="setConjMode('typing')">Πληκτρολόγηση</button>
+    </div>
+    <div class="conj-progress" id="conj-progress"></div>
+  </div>
+  <div class="conj-card" id="conj-card"></div>
+  <div class="conj-input" id="conj-input"></div>
+  <div class="conj-feedback" id="conj-feedback"></div>
+</div>
+
 <!-- Import screen -->
 <div id="import-view">
   <div class="import-box" id="drop-zone" onclick="document.getElementById('file-input').click()">
@@ -25,6 +90,7 @@
 
 <!-- Level select screen -->
 <div id="level-view">
+  <button class="btn-back-session" onclick="showHome()">← Πίσω</button>
   <div class="level-tabs">
     <button class="level-tab-btn active" id="tab-en" onclick="switchTab('en')">EN → GR</button>
     <button class="level-tab-btn" id="tab-gr" onclick="switchTab('gr')">GR → EN</button>
@@ -146,6 +212,9 @@
 <script src="js/progress.js"></script>
 <script src="js/session.js"></script>
 <script src="js/keyboard.js"></script>
+<script src="js/grammar-data.js"></script>
+<script src="js/grammar.js"></script>
+<script src="js/conjugation.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
