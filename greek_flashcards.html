@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Greek Flashcards</title>
+<title>Eλληνικές εκπαιδευτικές κάρτες</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -142,7 +142,7 @@
     border-radius: 12px;
     padding: 14px 12px;
     cursor: pointer;
-    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.15s;
     position: relative;
     min-height: 90px;
     display: flex;
@@ -151,9 +151,8 @@
   }
 
   .level-tile:hover:not(.locked) {
-    border-color: #4f7cff;
-    background: #1a2040;
     transform: translateY(-1px);
+    filter: brightness(1.12);
   }
 
   .level-tile.locked {
@@ -193,6 +192,24 @@
     border-radius: 2px;
     transition: width 0.4s ease;
   }
+
+  .tile-counts {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 5px;
+    min-height: 18px;
+  }
+  .tile-counts span {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 8px;
+    line-height: 1.4;
+  }
+  .tc-new      { background: #1a3a6e; color: #6aabff; }
+  .tc-learning { background: #4a1a1a; color: #ff8c69; }
+  .tc-due      { background: #0d3320; color: #4cde8a; }
 
   .level-lock-icon {
     position: absolute;
@@ -308,7 +325,7 @@
   .scene {
     width: 480px;
     max-width: 100%;
-    perspective: 1000px;
+    perspective: 1200px;
     cursor: pointer;
     margin-bottom: 28px;
     position: relative;
@@ -494,6 +511,12 @@
   }
   .btn-wrong:hover { box-shadow: 0 4px 28px rgba(192,57,79,0.4); }
 
+  .main-view-header {
+    width: 100%;
+    max-width: 420px;
+    margin-bottom: 8px;
+  }
+
   .btn-back-to-levels {
     background: linear-gradient(135deg, #2a2f4a, #3a4170);
     color: #a0aacc;
@@ -602,26 +625,6 @@
     100% { transform: scale(1); opacity: 0.15; }
   }
 
-  /* ── Page-turn flap ── */
-  #page-flap {
-    position: absolute;
-    top: 0; right: 0;
-    width: 50%; height: 100%;
-    overflow: hidden;
-    transform-origin: left center;
-    transform: rotateY(0deg);
-    transition: transform 0.4s ease-in-out;
-    pointer-events: none;
-    z-index: 10;
-    display: none;
-    backface-visibility: hidden;
-    border-radius: 0 16px 16px 0;
-    background: #181c2a;
-  }
-  #page-flap.turning {
-    display: block;
-    transform: rotateY(-180deg);
-  }
 
   /* ── Complete fly animation ── */
   @keyframes flyToBag {
@@ -637,7 +640,7 @@
 </head>
 <body>
 
-<h1>Greek Flashcards</h1>
+<h1>Eλληνικές σημειώσεις</h1>
 
 <!-- Import screen -->
 <div id="import-view">
@@ -668,7 +671,12 @@
     </div>
   </div>
 
-  <div style="text-align:right; width:100%; margin-bottom:4px;">
+  <div style="display:flex; justify-content:space-between; align-items:center; width:100%; margin-bottom:4px;">
+    <div style="display:flex; gap:6px;">
+      <button class="btn-skip" onclick="exportProgress()" style="font-size:0.72rem;">↓ Export progress</button>
+      <button class="btn-skip" onclick="document.getElementById('progress-file-input').click()" style="font-size:0.72rem;">↑ Import progress</button>
+      <input type="file" id="progress-file-input" accept=".json" style="display:none" onchange="importProgress(this)">
+    </div>
     <button class="btn-skip" onclick="showImport()" style="font-size:0.72rem;">↑ Re-import deck</button>
   </div>
 
@@ -693,6 +701,9 @@
 
 <!-- Session / main view -->
 <div id="main-view">
+  <div class="main-view-header">
+    <button class="btn-back-to-levels" onclick="abandonSession()">← Levels</button>
+  </div>
   <div class="progress-bar-wrap">
     <div class="progress-bar" id="progress-bar"></div>
   </div>
@@ -715,7 +726,6 @@
         <div class="freq-badge" id="freq-badge"></div>
       </div>
     </div>
-    <div id="page-flap"></div>
   </div>
 
   <div class="kbd-hint" id="kbd-hint">Space = flip &nbsp;·&nbsp; Space = correct &nbsp;·&nbsp; Backspace = wrong &nbsp;·&nbsp; Enter = replay audio</div>
@@ -808,6 +818,7 @@ let sessionMastered = 0;
 let sessionMode = 'en';    // 'en' | 'gr' | 'both'
 let sessionRankMin = null;
 let sessionRankMax = null;
+let sessionReadonly = false; // true for custom range — no SRS/stats updates
 
 // Prefs
 let prefs = { volume: 1, firstCardSeen: false };
@@ -918,6 +929,96 @@ function saveSRS(data) {
   localStorage.setItem(SRS_KEY, JSON.stringify(data));
 }
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// PROGRESS EXPORT / IMPORT
+// ═══════════════════════════════════════════════════════════════════════════════
+function exportProgress() {
+  const srs = loadSRS();
+  const date = new Date().toISOString().slice(0, 10);
+  const payload = { version: 1, exported: new Date().toISOString(), srs };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `greek_progress_${date}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function importProgress(input) {
+  const file = input.files[0];
+  if (!file) return;
+  input.value = ''; // reset so same file can be picked again
+
+  const reader = new FileReader();
+  reader.onload = e => {
+    let payload;
+    try {
+      payload = JSON.parse(e.target.result);
+      if (!payload.srs || typeof payload.srs !== 'object') throw new Error('Invalid format');
+    } catch {
+      alert('Could not read progress file — make sure it is a valid export from this app.');
+      return;
+    }
+
+    const incoming = payload.srs;
+    const current = loadSRS();
+    const hasCurrentData = Object.keys(current).length > 0;
+
+    if (!hasCurrentData) {
+      // Nothing here yet — just replace
+      saveSRS(incoming);
+      renderLevelGrids();
+      alert(`Progress imported: ${Object.keys(incoming).length} card entries loaded.`);
+      return;
+    }
+
+    // Ask user how to handle conflict
+    const choice = confirm(
+      `You already have progress data on this device.\n\n` +
+      `OK = Replace all (use imported file)\n` +
+      `Cancel = Merge (keep best streak & sum seen/correct/incorrect)`
+    );
+
+    if (choice) {
+      // Replace
+      saveSRS(incoming);
+    } else {
+      // Merge: union of keys, per-card take best streak/complete, sum counts, union days
+      const merged = Object.assign({}, current);
+      for (const [key, inc] of Object.entries(incoming)) {
+        if (!merged[key]) {
+          merged[key] = inc;
+        } else {
+          const cur = merged[key];
+          // SRS: keep higher streak/reps; if imported has more reps, trust its interval/easeFactor too
+          if ((inc.reps || 0) > (cur.reps || 0)) {
+            cur.interval = inc.interval;
+            cur.easeFactor = inc.easeFactor;
+            cur.nextReview = inc.nextReview;
+            cur.reps = inc.reps;
+          }
+          cur.streak = Math.max(cur.streak || 0, inc.streak || 0);
+          cur.complete = cur.complete || inc.complete;
+          // Stats: sum
+          cur.seen = (cur.seen || 0) + (inc.seen || 0);
+          cur.correct = (cur.correct || 0) + (inc.correct || 0);
+          cur.incorrect = (cur.incorrect || 0) + (inc.incorrect || 0);
+          // Days: union
+          const daySet = new Set([...(cur.days || []), ...(inc.days || [])]);
+          cur.days = [...daySet].sort();
+        }
+      }
+      saveSRS(merged);
+    }
+
+    renderLevelGrids();
+    const count = Object.keys(incoming).length;
+    alert(`Progress imported: ${count} card entries ${choice ? 'replaced' : 'merged'}.`);
+  };
+  reader.readAsText(file);
+}
+
 function cardKey(word, dir) {
   if (word.rank) return `r${word.rank}_${dir}`;
   return word.en.replace(/[^a-zA-Z0-9]/g, '_').replace(/_+/g, '_') + '_' + dir;
@@ -925,10 +1026,14 @@ function cardKey(word, dir) {
 
 function getCardData(data, word, dir) {
   const key = cardKey(word, dir);
-  if (!data[key]) data[key] = { interval: 0, easeFactor: 2.5, nextReview: 0, reps: 0, streak: 0, complete: false };
+  if (!data[key]) data[key] = { interval: 0, easeFactor: 2.5, nextReview: 0, reps: 0, streak: 0, complete: false, seen: 0, correct: 0, incorrect: 0, days: [] };
   const cd = data[key];
   if (cd.streak === undefined) cd.streak = 0;
   if (cd.complete === undefined) cd.complete = false;
+  if (cd.seen === undefined) cd.seen = 0;
+  if (cd.correct === undefined) cd.correct = 0;
+  if (cd.incorrect === undefined) cd.incorrect = 0;
+  if (cd.days === undefined) cd.days = [];
   return cd;
 }
 
@@ -1374,6 +1479,71 @@ function switchTab(dir) {
   document.getElementById('panel-gr').classList.toggle('active', dir === 'gr');
 }
 
+// Interpolate tile colour based on completion (0–100)
+function tileStyle(completed, locked) {
+  if (locked) return '';
+  const t = Math.min(completed / 100, 1); // 0..1
+
+  // Colour stops: dark → bronze → silver → gold
+  // bg: #181c2a → #1e1810 → #1a1a20 → #1f1a08
+  // border: #252a3d → #7c4a1a → #8a8a9a → #c9960c
+  // glow: none → bronze → silver → gold
+  function lerp(a, b, t) { return Math.round(a + (b - a) * t); }
+  function lerpHex(c1, c2, t) {
+    const p = (h) => parseInt(h, 16);
+    const r = lerp(p(c1.slice(1,3)), p(c2.slice(1,3)), t);
+    const g = lerp(p(c1.slice(3,5)), p(c2.slice(3,5)), t);
+    const b = lerp(p(c1.slice(5,7)), p(c2.slice(5,7)), t);
+    return `rgb(${r},${g},${b})`;
+  }
+
+  let bg, border, shadow, titleColor;
+
+  if (t <= 0) {
+    return ''; // pure CSS default
+  } else if (t < 0.5) {
+    // 0 → 50%: dark to bronze
+    const u = t / 0.5;
+    bg     = lerpHex('#181c2a', '#1e1608', u);
+    border = lerpHex('#252a3d', '#8b5e1a', u);
+    shadow = `0 0 ${Math.round(u * 8)}px rgba(139,94,26,${(u * 0.4).toFixed(2)})`;
+    titleColor = lerpHex('#7c85a6', '#b07830', u);
+  } else if (t < 1) {
+    // 50% → 100%: bronze to gold
+    const u = (t - 0.5) / 0.5;
+    bg     = lerpHex('#1e1608', '#221a00', u);
+    border = lerpHex('#8b5e1a', '#d4a017', u);
+    shadow = `0 0 ${Math.round(8 + u * 14)}px rgba(212,160,23,${(0.4 + u * 0.45).toFixed(2)})`;
+    titleColor = lerpHex('#b07830', '#f5c518', u);
+  } else {
+    // 100%: full gold
+    bg     = '#231c00';
+    border = '#f5c518';
+    shadow = '0 0 22px rgba(245,197,24,0.85), 0 0 6px rgba(245,197,24,0.5)';
+    titleColor = '#f5c518';
+  }
+
+  return `background:${bg}; border-color:${border}; box-shadow:${shadow}; --tile-title-color:${titleColor};`;
+}
+
+function getTileCounts(levelWords, dir, srs) {
+  const now = Date.now();
+  let newCount = 0, learningCount = 0, dueCount = 0;
+  for (const w of levelWords) {
+    const cd = srs[cardKey(w, dir)];
+    const reps = cd ? (cd.reps || 0) : 0;
+    const nextReview = cd ? (cd.nextReview || 0) : 0;
+    if (reps === 0) {
+      newCount++;
+    } else if (reps <= 3 && nextReview <= now) {
+      learningCount++;
+    } else if (reps >= 4 && nextReview <= now) {
+      dueCount++;
+    }
+  }
+  return { newCount, learningCount, dueCount };
+}
+
 function renderLevelGrids() {
   renderGrid('en');
   renderGrid('gr');
@@ -1418,11 +1588,27 @@ function renderGrid(dir) {
 
     const tile = document.createElement('div');
     tile.className = 'level-tile' + (locked ? ' locked' : '');
+    const style = tileStyle(completed, locked);
+    if (style) tile.setAttribute('style', style);
+
+    // Progress bar colour: blue at 0%, shifts to gold at 100%
+    const barColor = completed >= 100
+      ? 'linear-gradient(90deg,#c9960c,#f5c518)'
+      : completed >= 50
+        ? `linear-gradient(90deg,#a06820,#d4a017)`
+        : 'linear-gradient(90deg,#4f7cff,#a78bfa)';
+
+    const { newCount, learningCount, dueCount } = getTileCounts(levelWords, dir, srs);
     tile.innerHTML = `
-      <div class="level-tile-title">Level ${lvl}</div>
+      <div class="level-tile-title" style="color:var(--tile-title-color,#7c85a6)">Level ${lvl}</div>
       <div class="level-tile-range">${rankMin}–${rankMax}</div>
       <div class="level-tile-progress">${completed}/100 complete</div>
-      <div class="level-tile-bar"><div class="level-tile-bar-fill" style="width:${pct}%"></div></div>
+      <div class="level-tile-bar"><div class="level-tile-bar-fill" style="width:${pct}%;background:${barColor}"></div></div>
+      <div class="tile-counts">
+        ${!locked && newCount > 0      ? `<span class="tc-new">${newCount}</span>` : ''}
+        ${!locked && learningCount > 0 ? `<span class="tc-learning">${learningCount}</span>` : ''}
+        ${!locked && dueCount > 0      ? `<span class="tc-due">${dueCount}</span>` : ''}
+      </div>
       ${locked ? '<div class="level-lock-icon">🔒</div>' : ''}
     `;
     if (!locked) {
@@ -1453,6 +1639,7 @@ function startCustomRange() {
   sessionMode = customDir;
   sessionRankMin = Math.min(from, to);
   sessionRankMax = Math.max(from, to);
+  sessionReadonly = true;
   startSession();
 }
 
@@ -1463,6 +1650,7 @@ function startLevelSession(level, dir) {
   sessionMode = dir;
   sessionRankMin = (level - 1) * 100 + 1;
   sessionRankMax = level * 100;
+  sessionReadonly = false;
   startSession();
 }
 
@@ -1516,7 +1704,7 @@ function buildQueue() {
   }
 
   shuffle(due);
-  queue = [...due, ...fresh].slice(0, 40);
+  queue = [...due, ...fresh].slice(0, 20);
   sessionTotal = queue.length;
   sessionCorrect = 0;
   sessionWrong = 0;
@@ -1541,20 +1729,32 @@ function nextCard(animate) {
     current = next;
     loadCardContent(current);
     updateProgress();
-    cardState = 'question';
+    // cardState stays 'loading' until doPageTurn calls onReady after phase2
 
     // Always track audio files for current card
     currentAudioFile = current.word.wordAudio || null;
     sentenceAudioFile = current.word.sentenceAudio || null;
+  };
 
-    // GR→EN: play word audio immediately on card load
+  const doReady = () => {
+    cardState = 'question';
+    // Track 'seen' (not for readonly/custom-range sessions)
+    if (!sessionReadonly) {
+      const srs = loadSRS();
+      const cd = getCardData(srs, current.word, current.dir);
+      cd.seen = (cd.seen || 0) + 1;
+      const today = new Date().toISOString().slice(0, 10);
+      if (!cd.days.includes(today)) cd.days.push(today);
+      saveSRS(srs);
+    }
+    // GR→EN: play word audio after card is fully visible
     if (current.dir === 'gr' && current.word.wordAudio) {
       playAudio(current.word.wordAudio);
     }
   };
 
   if (animate) {
-    doPageTurn(doSwap);
+    doPageTurn(doSwap, doReady);
   } else {
     // First card: just reset card state without animation
     const card = document.getElementById('card');
@@ -1562,6 +1762,7 @@ function nextCard(animate) {
     document.getElementById('btn-row').classList.remove('visible');
     resetSentence();
     doSwap();
+    doReady();
   }
 }
 
@@ -1570,9 +1771,9 @@ function loadCardContent(c) {
   const card = document.getElementById('card');
   card.classList.remove('flipped', 'complete-glow', 'flying');
   document.getElementById('btn-row').classList.remove('visible');
-  document.getElementById('front-lang').textContent = isEnGr ? 'English' : 'Greek';
+  document.getElementById('front-lang').textContent = isEnGr ? 'English' : 'Eλληνικά';
   document.getElementById('front-word').textContent = isEnGr ? c.word.en : c.word.gr;
-  document.getElementById('back-lang').textContent = isEnGr ? 'Greek' : 'English';
+  document.getElementById('back-lang').textContent = isEnGr ? 'Eλληνικά' : 'English';
   document.getElementById('back-word').textContent = isEnGr ? c.word.gr : c.word.en;
   resetSentence();
   updateFreqBadge(c.word);
@@ -1634,42 +1835,56 @@ function answer(correct) {
   if (cardState !== 'answer' || !current) return;
 
   const answering = current;
-  const srs = loadSRS();
-  const cd = getCardData(srs, answering.word, answering.dir);
-
-  let wasComplete = cd.complete;
   let justCompleted = false;
 
-  if (correct) {
-    sessionCorrect++;
-    cd.reps = (cd.reps || 0) + 1;
-    cd.streak = (cd.streak || 0) + 1;
-
-    if (cd.reps === 1) { cd.interval = 1; }
-    else if (cd.reps === 2) { cd.interval = 4; }
-    else {
-      let interval = Math.round(cd.interval * cd.easeFactor);
-      if (cd.complete) interval = Math.round(interval * 3);
-      cd.interval = interval;
-    }
-    cd.easeFactor = Math.max(1.3, (cd.easeFactor || 2.5) + 0.1);
-
-    if (cd.streak >= 4 && !wasComplete) {
-      cd.complete = true;
-      justCompleted = true;
-      sessionMastered++;
-    }
+  if (sessionReadonly) {
+    // Custom range: track session counts only, no SRS writes
+    if (correct) sessionCorrect++;
+    else { sessionWrong++; queue.push(answering); }
   } else {
-    sessionWrong++;
-    cd.streak = 0;
-    cd.reps = 0;
-    cd.interval = 1;
-    cd.easeFactor = Math.max(1.3, (cd.easeFactor || 2.5) - 0.2);
-    queue.push(answering); // re-queue wrong cards
-  }
+    const srs = loadSRS();
+    const cd = getCardData(srs, answering.word, answering.dir);
+    const wasComplete = cd.complete;
 
-  cd.nextReview = Date.now() + cd.interval * 86400000;
-  saveSRS(srs);
+    if (correct) {
+      sessionCorrect++;
+      cd.correct = (cd.correct || 0) + 1;
+      cd.reps = (cd.reps || 0) + 1;
+      cd.streak = (cd.streak || 0) + 1;
+
+      // Anki SM-2: initial learning steps 1→2→3 days, then multiply by easeFactor
+      if (cd.reps === 1)      { cd.interval = 1; }
+      else if (cd.reps === 2) { cd.interval = 2; }
+      else if (cd.reps === 3) { cd.interval = 3; }
+      else {
+        // Graduating review: new_interval = max(prev+1, round(prev * easeFactor))
+        const next = Math.round(cd.interval * cd.easeFactor);
+        cd.interval = Math.max(cd.interval + 1, next);
+      }
+      // Ease only increases once card has graduated (reps >= 4)
+      if (cd.reps >= 4) {
+        cd.easeFactor = Math.min(4.0, Math.max(1.3, (cd.easeFactor || 2.5) + 0.1));
+      }
+
+      if (cd.reps >= 4 && !wasComplete) {
+        cd.complete = true;
+        justCompleted = true;
+        sessionMastered++;
+      }
+    } else {
+      sessionWrong++;
+      cd.incorrect = (cd.incorrect || 0) + 1;
+      cd.streak = 0;
+      cd.reps = 0;
+      cd.interval = 1;
+      // Anki "Again": ease -= 0.2 (min 1.3)
+      cd.easeFactor = Math.max(1.3, (cd.easeFactor || 2.5) - 0.2);
+      queue.push(answering); // re-queue wrong cards
+    }
+
+    cd.nextReview = Date.now() + cd.interval * 86400000;
+    saveSRS(srs);
+  }
 
   document.getElementById('btn-row').classList.remove('visible');
   cardState = 'sentence';
@@ -1851,35 +2066,25 @@ function setupVolumeSlider() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// PAGE TURN ANIMATION
+// CARD TRANSITION (reuses the same flip animation as answer reveal)
 // ═══════════════════════════════════════════════════════════════════════════════
-function doPageTurn(onMidpoint) {
-  const flap = document.getElementById('page-flap');
+function doPageTurn(onMidpoint, onReady) {
   const card = document.getElementById('card');
+  const HALF = 250; // ms per half — matches the 0.5s transition split in two
 
-  card.classList.remove('flipped', 'complete-glow', 'flying');
-  flap.style.display = 'block';
-  flap.style.transition = 'none';
-  flap.style.transform = 'rotateY(0deg)';
+  // Phase 1: flip to back (0° → 180°)
+  card.classList.remove('complete-glow', 'flying');
+  card.classList.add('flipped');
 
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      flap.style.transition = 'transform 0.4s ease-in-out';
-      flap.style.transform = 'rotateY(-180deg)';
-    });
-  });
-
-  // At midpoint, swap content
   setTimeout(() => {
+    // At 180° (back face showing): swap content and unflip
     onMidpoint();
-  }, 200);
+    card.classList.remove('flipped');
 
-  // Clean up flap
-  setTimeout(() => {
-    flap.style.display = 'none';
-    flap.style.transition = 'none';
-    flap.style.transform = 'rotateY(0deg)';
-  }, 420);
+    setTimeout(() => {
+      if (onReady) onReady();
+    }, HALF);
+  }, HALF);
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -1910,6 +2115,12 @@ function updateProgress() {
   document.getElementById('progress-bar').style.width = pct + '%';
   document.getElementById('progress-label').textContent =
     `${Math.max(0, done)} / ${sessionTotal} cards`;
+}
+
+function abandonSession() {
+  stopAudio();
+  queue = [];
+  showLevelSelect();
 }
 
 function showEnd() {

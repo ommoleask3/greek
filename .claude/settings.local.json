@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:faqs.ankiweb.net)"
+    ]
+  }
+}

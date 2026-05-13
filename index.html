@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eλληνικές εκπαιδευτικές κάρτες</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<h1>Eλληνικές σημειώσεις</h1>
+
+<!-- Import screen -->
+<div id="import-view">
+  <div class="import-box" id="drop-zone" onclick="document.getElementById('file-input').click()">
+    <div class="import-icon">📦</div>
+    <p><strong>Drop your .apkg file here</strong><br>or click to browse<br><br>
+    Imported words are saved permanently —<br>you only need to do this once.</p>
+  </div>
+  <input type="file" id="file-input" accept=".apkg">
+  <div class="import-status" id="import-status"></div>
+  <div class="detected-fields" id="detected-fields" style="display:none"></div>
+  <button class="btn-skip" onclick="useBuiltinWords()">Use built-in 100 words instead</button>
+</div>
+
+<!-- Level select screen -->
+<div id="level-view">
+  <div class="level-tabs">
+    <button class="level-tab-btn active" id="tab-en" onclick="switchTab('en')">EN → GR</button>
+    <button class="level-tab-btn" id="tab-gr" onclick="switchTab('gr')">GR → EN</button>
+  </div>
+
+  <div class="level-panels">
+    <div class="level-panel active" id="panel-en">
+      <div class="level-grid" id="grid-en"></div>
+    </div>
+    <div class="level-panel" id="panel-gr">
+      <div class="level-grid" id="grid-gr"></div>
+    </div>
+  </div>
+
+  <div style="display:flex; justify-content:space-between; align-items:center; width:100%; margin-bottom:4px;">
+    <div style="display:flex; gap:6px;">
+      <button class="btn-skip" onclick="exportProgress()" style="font-size:0.72rem;">↓ Export progress</button>
+      <button class="btn-skip" onclick="document.getElementById('progress-file-input').click()" style="font-size:0.72rem;">↑ Import progress</button>
+      <input type="file" id="progress-file-input" accept=".json" style="display:none" onchange="importProgress(this)">
+    </div>
+    <button class="btn-skip" onclick="showImport()" style="font-size:0.72rem;">↑ Re-import deck</button>
+  </div>
+
+  <div class="custom-range" id="custom-range-section">
+    <div class="custom-range-header" id="custom-range-toggle" onclick="toggleCustomRange()">
+      <span class="chevron">▶</span> Custom range
+    </div>
+    <div class="custom-range-body" id="custom-range-body">
+      <label>From rank</label>
+      <input type="number" id="range-from" value="1" min="1">
+      <label>to</label>
+      <input type="number" id="range-to" value="100" min="1">
+      <div class="dir-select" id="custom-dir-select">
+        <button class="active" id="cdir-en" onclick="setCustomDir('en')">EN→GR</button>
+        <button id="cdir-gr" onclick="setCustomDir('gr')">GR→EN</button>
+        <button id="cdir-both" onclick="setCustomDir('both')">Both</button>
+      </div>
+      <button class="btn-practice" onclick="startCustomRange()">Practice</button>
+    </div>
+  </div>
+</div>
+
+<!-- Session / main view -->
+<div id="main-view">
+  <div class="main-view-header">
+    <button class="btn-back-to-levels" onclick="abandonSession()">← Levels</button>
+  </div>
+  <div class="progress-bar-wrap">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+  <div class="progress-label" id="progress-label"></div>
+
+  <div class="scene" id="scene" onclick="onCardClick()">
+    <div class="card" id="card">
+      <div class="card-face card-front">
+        <div class="card-lang" id="front-lang"></div>
+        <div class="card-word" id="front-word"></div>
+        <div class="card-hint" id="card-hint">tap or press Space to reveal</div>
+      </div>
+      <div class="card-face card-back">
+        <div class="card-answer-label" id="back-lang"></div>
+        <div class="card-answer" id="back-word"></div>
+        <div class="card-sentence-area">
+          <div class="sentence-gr" id="sentence-gr"></div>
+          <div class="sentence-en" id="sentence-en"></div>
+        </div>
+        <div class="freq-badge" id="freq-badge"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kbd-hint" id="kbd-hint">Space = flip &nbsp;·&nbsp; Space = correct &nbsp;·&nbsp; Backspace = wrong &nbsp;·&nbsp; Enter = replay audio</div>
+
+  <div class="btn-row" id="btn-row">
+    <button class="btn-wrong" onclick="answer(false)">✗ Wrong</button>
+    <button class="btn-correct" onclick="answer(true)">✓ Correct</button>
+  </div>
+</div>
+
+<!-- Session end -->
+<div id="session-end">
+  <h2>Session complete</h2>
+  <div class="session-stats" id="session-stats"></div>
+  <button class="btn-restart" onclick="startSession()">Next session</button>
+  <button class="btn-back-to-levels" onclick="showLevelSelect()">← Back to levels</button>
+</div>
+
+<!-- Fixed UI -->
+<audio id="audio-el"></audio>
+
+<div id="audio-controls">
+  <div id="volume-popover">
+    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+  </div>
+  <button id="btn-speaker" onclick="toggleAudioControls(event)">🔊</button>
+</div>
+
+<div id="bag-icon">🎒</div>
+
+<!-- Scripts: load order matters -->
+<script src="js/state.js"></script>
+<script src="js/db.js"></script>
+<script src="js/animation.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/views.js"></script>
+<script src="js/import.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/progress.js"></script>
+<script src="js/session.js"></script>
+<script src="js/keyboard.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
