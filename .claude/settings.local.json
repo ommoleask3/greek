@@ -26,7 +26,20 @@
       "Bash(PYTHONIOENCODING=utf-8 python fix_deck.py)",
       "Bash(ls -la \"/c/Users/OliverLeask/Desktop/New folder\"/*.png)",
       "WebFetch(domain:gwfh.mranftl.com)",
-      "WebFetch(domain:fonts.google.com)"
+      "WebFetch(domain:fonts.google.com)",
+      "WebFetch(domain:mylittlewordland.com)",
+      "Bash(sed 's/<[^>]*>//g')",
+      "Bash(py --version)",
+      "Bash(node --version)",
+      "Bash(node compare_words.js)",
+      "Bash(node -e \":*)",
+      "Bash(npm ls sql.js)",
+      "Bash(npm ls better-sqlite3)",
+      "Bash(echo $ANTHROPIC_API_KEY)",
+      "Bash(echo $OPENAI_API_KEY)",
+      "Bash(node _extract.js)",
+      "Bash(node -e \"const d = require\\(''./missing_with_en.json''\\); d.forEach\\(r => console.log\\(r.rank + ''\\\\t'' + r.gr + ''\\\\t'' + r.en\\)\\);\")",
+      "Bash(python insert_missing.py)"
     ]
   }
 }

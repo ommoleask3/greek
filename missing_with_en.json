@@ -1,0 +1,1952 @@
+[
+  {
+    "rank": 10,
+    "gr": "σου",
+    "en": "you (sg.); your (sg.)"
+  },
+  {
+    "rank": 15,
+    "gr": "του",
+    "en": "him, it; his, its"
+  },
+  {
+    "rank": 18,
+    "gr": "της",
+    "en": "her"
+  },
+  {
+    "rank": 25,
+    "gr": "τους",
+    "en": "them; their"
+  },
+  {
+    "rank": 26,
+    "gr": "σας",
+    "en": "you (pl.); your (pl.)"
+  },
+  {
+    "rank": 27,
+    "gr": "μας",
+    "en": "us; our"
+  },
+  {
+    "rank": 40,
+    "gr": "εσύ",
+    "en": "you (sg.)"
+  },
+  {
+    "rank": 50,
+    "gr": "όλα",
+    "en": "everything"
+  },
+  {
+    "rank": 57,
+    "gr": "αυτοί; αυτές; αυτά",
+    "en": "these, those; they"
+  },
+  {
+    "rank": 84,
+    "gr": "όλοι",
+    "en": "everyone"
+  },
+  {
+    "rank": 100,
+    "gr": "ωραία",
+    "en": "nicely, beautifully; great!"
+  },
+  {
+    "rank": 152,
+    "gr": "η Ελλάδα",
+    "en": "Greece"
+  },
+  {
+    "rank": 154,
+    "gr": "εσείς",
+    "en": "you (pl.)"
+  },
+  {
+    "rank": 158,
+    "gr": "εμείς",
+    "en": "we"
+  },
+  {
+    "rank": 191,
+    "gr": "περισσότερος",
+    "en": "more"
+  },
+  {
+    "rank": 216,
+    "gr": "ορίστε",
+    "en": "here you are, there you go; excuse me?"
+  },
+  {
+    "rank": 236,
+    "gr": "χαίρομαι",
+    "en": "I am happy, glad; I enjoy"
+  },
+  {
+    "rank": 237,
+    "gr": "τέλεια",
+    "en": "perfectly; great!"
+  },
+  {
+    "rank": 255,
+    "gr": "τα χρήματα",
+    "en": "the money"
+  },
+  {
+    "rank": 257,
+    "gr": "σοβαρά",
+    "en": "seriously"
+  },
+  {
+    "rank": 264,
+    "gr": "αργότερα",
+    "en": "later"
+  },
+  {
+    "rank": 300,
+    "gr": "εννοείται",
+    "en": "sure, of course"
+  },
+  {
+    "rank": 305,
+    "gr": "το αστείο",
+    "en": "the joke"
+  },
+  {
+    "rank": 307,
+    "gr": "τα νέα",
+    "en": "the news"
+  },
+  {
+    "rank": 309,
+    "gr": "οι γονείς",
+    "en": "the parents"
+  },
+  {
+    "rank": 313,
+    "gr": "νοιάζω",
+    "en": "I mind, care"
+  },
+  {
+    "rank": 320,
+    "gr": "ο Έλληνας; η Ελληνίδα",
+    "en": "the Greek person"
+  },
+  {
+    "rank": 335,
+    "gr": "ακούγομαι",
+    "en": "I sound"
+  },
+  {
+    "rank": 339,
+    "gr": "το μισό",
+    "en": "the half"
+  },
+  {
+    "rank": 361,
+    "gr": "βρίσκομαι",
+    "en": "I am (placed, located); I am found; I meet (someone)"
+  },
+  {
+    "rank": 377,
+    "gr": "τα ρούχα",
+    "en": "the clothes"
+  },
+  {
+    "rank": 380,
+    "gr": "τελευταία",
+    "en": "lately"
+  },
+  {
+    "rank": 400,
+    "gr": "τα ελληνικά",
+    "en": "Greek (language)"
+  },
+  {
+    "rank": 416,
+    "gr": "χάλια",
+    "en": "awful, terrible"
+  },
+  {
+    "rank": 419,
+    "gr": "τα μαλλιά",
+    "en": "the hair"
+  },
+  {
+    "rank": 435,
+    "gr": "ρωτάω",
+    "en": "I ask"
+  },
+  {
+    "rank": 457,
+    "gr": "το μυστικό",
+    "en": "the secret"
+  },
+  {
+    "rank": 463,
+    "gr": "κρατάω",
+    "en": "I hold, keep"
+  },
+  {
+    "rank": 466,
+    "gr": "λιγότερος",
+    "en": "less"
+  },
+  {
+    "rank": 478,
+    "gr": "ένα εκατομμύριο",
+    "en": "one million"
+  },
+  {
+    "rank": 479,
+    "gr": "το γλυκό",
+    "en": "the dessert, confection"
+  },
+  {
+    "rank": 489,
+    "gr": "αφορά",
+    "en": "it is about, concerns, relates to"
+  },
+  {
+    "rank": 500,
+    "gr": "λέγομαι",
+    "en": "I am called"
+  },
+  {
+    "rank": 511,
+    "gr": "ζητάω",
+    "en": "I ask for, request"
+  },
+  {
+    "rank": 514,
+    "gr": "τέσσερα",
+    "en": "four"
+  },
+  {
+    "rank": 536,
+    "gr": "η μαλακία; οι μαλακίες",
+    "en": "bullshit, nonsense; stupid thing"
+  },
+  {
+    "rank": 541,
+    "gr": "ειδικά",
+    "en": "particularly, especially"
+  },
+  {
+    "rank": 552,
+    "gr": "δυνατά",
+    "en": "loudly; hard"
+  },
+  {
+    "rank": 567,
+    "gr": "το ναρκωτικό",
+    "en": "the drug (illegal)"
+  },
+  {
+    "rank": 568,
+    "gr": "τα Χριστούγεννα",
+    "en": "Christmas"
+  },
+  {
+    "rank": 575,
+    "gr": "ο κώλος",
+    "en": "the arse, ass"
+  },
+  {
+    "rank": 597,
+    "gr": "χειρότερος",
+    "en": "worse"
+  },
+  {
+    "rank": 611,
+    "gr": "η Αμερική",
+    "en": "America"
+  },
+  {
+    "rank": 639,
+    "gr": "το Σάββατο",
+    "en": "Saturday"
+  },
+  {
+    "rank": 640,
+    "gr": "ελληνικός",
+    "en": "Greek"
+  },
+  {
+    "rank": 679,
+    "gr": "βαθιά",
+    "en": "deeply"
+  },
+  {
+    "rank": 691,
+    "gr": "η Αθήνα",
+    "en": "Athens"
+  },
+  {
+    "rank": 692,
+    "gr": "το Παρίσι",
+    "en": "Paris"
+  },
+  {
+    "rank": 704,
+    "gr": "ο κόλπος",
+    "en": "the bay, gulf; trick, ruse"
+  },
+  {
+    "rank": 714,
+    "gr": "μυστικά",
+    "en": "secretly"
+  },
+  {
+    "rank": 718,
+    "gr": "κρύος",
+    "en": "cold"
+  },
+  {
+    "rank": 720,
+    "gr": "εντωμεταξύ",
+    "en": "meanwhile, in the meantime"
+  },
+  {
+    "rank": 727,
+    "gr": "ηλίθια",
+    "en": "stupidly, foolishly"
+  },
+  {
+    "rank": 738,
+    "gr": "η Τρίτη",
+    "en": "Tuesday"
+  },
+  {
+    "rank": 740,
+    "gr": "ο μαλάκας",
+    "en": "the wanker, idiot"
+  },
+  {
+    "rank": 749,
+    "gr": "εξαφανίζομαι",
+    "en": "I disappear"
+  },
+  {
+    "rank": 760,
+    "gr": "περιγράφω",
+    "en": "I describe"
+  },
+  {
+    "rank": 761,
+    "gr": "το Λονδίνο",
+    "en": "London"
+  },
+  {
+    "rank": 766,
+    "gr": "αποκλείεται",
+    "en": "it's out of the question, no way"
+  },
+  {
+    "rank": 792,
+    "gr": "δίκαιος",
+    "en": "fair, just"
+  },
+  {
+    "rank": 807,
+    "gr": "ξυπνάω",
+    "en": "I wake up"
+  },
+  {
+    "rank": 822,
+    "gr": "οι ΗΠΑ; οι Ηνωμένες Πολιτείες Αμερικής",
+    "en": "the USA"
+  },
+  {
+    "rank": 823,
+    "gr": "αγαπημένος",
+    "en": "favourite; dear, beloved"
+  },
+  {
+    "rank": 831,
+    "gr": "επίπεδος",
+    "en": "flat, even"
+  },
+  {
+    "rank": 841,
+    "gr": "βόρεια",
+    "en": "north, northward"
+  },
+  {
+    "rank": 855,
+    "gr": "θαυμάσια",
+    "en": "wonderfully; great"
+  },
+  {
+    "rank": 863,
+    "gr": "η πολιτική",
+    "en": "the politics; policy"
+  },
+  {
+    "rank": 881,
+    "gr": "ωχ",
+    "en": "ouch!; oops!"
+  },
+  {
+    "rank": 882,
+    "gr": "νότια",
+    "en": "south, southward"
+  },
+  {
+    "rank": 891,
+    "gr": "τεράστια",
+    "en": "enormous, huge; immensely"
+  },
+  {
+    "rank": 910,
+    "gr": "τα σκουπίδια",
+    "en": "the rubbish, trash"
+  },
+  {
+    "rank": 918,
+    "gr": "απαίσια",
+    "en": "awfully, terribly"
+  },
+  {
+    "rank": 935,
+    "gr": "το υπόλοιπο",
+    "en": "the rest, remainder"
+  },
+  {
+    "rank": 954,
+    "gr": "ο διάβολος",
+    "en": "the devil"
+  },
+  {
+    "rank": 960,
+    "gr": "συναντάω",
+    "en": "I meet"
+  },
+  {
+    "rank": 965,
+    "gr": "ισχύει",
+    "en": "it is valid; is in force; applies"
+  },
+  {
+    "rank": 973,
+    "gr": "η λογική",
+    "en": "the logic"
+  },
+  {
+    "rank": 978,
+    "gr": "ο Τούρκος; η Τουρκάλα",
+    "en": "the Turkish person"
+  },
+  {
+    "rank": 993,
+    "gr": "απασχολημένος",
+    "en": "busy, occupied"
+  },
+  {
+    "rank": 998,
+    "gr": "παραγγέλνω",
+    "en": "I order, place an order"
+  },
+  {
+    "rank": 1013,
+    "gr": "τα γυαλιά",
+    "en": "the glasses"
+  },
+  {
+    "rank": 1014,
+    "gr": "η Γαλλία",
+    "en": "France"
+  },
+  {
+    "rank": 1015,
+    "gr": "ήσυχα",
+    "en": "quietly"
+  },
+  {
+    "rank": 1017,
+    "gr": "θυμωμένος",
+    "en": "angry"
+  },
+  {
+    "rank": 1035,
+    "gr": "εμφανίζομαι",
+    "en": "I show up, appear"
+  },
+  {
+    "rank": 1040,
+    "gr": "η Δευτέρα",
+    "en": "Monday"
+  },
+  {
+    "rank": 1059,
+    "gr": "η Αγγλία",
+    "en": "England"
+  },
+  {
+    "rank": 1075,
+    "gr": "παντρεμένος",
+    "en": "married"
+  },
+  {
+    "rank": 1079,
+    "gr": "χάνομαι",
+    "en": "I get lost, am lost; disappear"
+  },
+  {
+    "rank": 1105,
+    "gr": "οι οδηγίες",
+    "en": "the instructions, directions"
+  },
+  {
+    "rank": 1106,
+    "gr": "η Κυριακή",
+    "en": "Sunday"
+  },
+  {
+    "rank": 1107,
+    "gr": "κακά",
+    "en": "badly"
+  },
+  {
+    "rank": 1108,
+    "gr": "οι ειδήσεις",
+    "en": "the news, headlines"
+  },
+  {
+    "rank": 1115,
+    "gr": "χρωστάω",
+    "en": "I owe"
+  },
+  {
+    "rank": 1118,
+    "gr": "πλένω",
+    "en": "I wash"
+  },
+  {
+    "rank": 1127,
+    "gr": "οι συνθήκες",
+    "en": "the conditions, circumstances"
+  },
+  {
+    "rank": 1128,
+    "gr": "σύμφωνοι",
+    "en": "ok, agreed"
+  },
+  {
+    "rank": 1131,
+    "gr": "ερωτευμένος",
+    "en": "in love, enamoured"
+  },
+  {
+    "rank": 1138,
+    "gr": "ο Χριστός; Χριστός",
+    "en": "Christ"
+  },
+  {
+    "rank": 1158,
+    "gr": "μέτριος",
+    "en": "medium; moderate; mediocre"
+  },
+  {
+    "rank": 1160,
+    "gr": "η Πέμπτη",
+    "en": "Thursday"
+  },
+  {
+    "rank": 1197,
+    "gr": "κολυμπάω",
+    "en": "I swim"
+  },
+  {
+    "rank": 1198,
+    "gr": "κουβεντιάζω",
+    "en": "I chat"
+  },
+  {
+    "rank": 1210,
+    "gr": "παρεπιπτόντως",
+    "en": "by the way, incidentally"
+  },
+  {
+    "rank": 1219,
+    "gr": "η Ευρώπη",
+    "en": "Europe"
+  },
+  {
+    "rank": 1227,
+    "gr": "η γκόμενα",
+    "en": "the chick, babe"
+  },
+  {
+    "rank": 1242,
+    "gr": "το φορτηγάκι",
+    "en": "the van"
+  },
+  {
+    "rank": 1253,
+    "gr": "γεννιέμαι",
+    "en": "I am born"
+  },
+  {
+    "rank": 1278,
+    "gr": "βιομηχανικός",
+    "en": "industrial"
+  },
+  {
+    "rank": 1285,
+    "gr": "σούπερ",
+    "en": "super"
+  },
+  {
+    "rank": 1289,
+    "gr": "δημόσια; δημοσίως",
+    "en": "publicly"
+  },
+  {
+    "rank": 1305,
+    "gr": "το μεσημεριανό",
+    "en": "the lunch"
+  },
+  {
+    "rank": 1308,
+    "gr": "ένα χιλιάρικο",
+    "en": "one thousand, one grand"
+  },
+  {
+    "rank": 1315,
+    "gr": "το αρχίδι",
+    "en": "the testicle, ball"
+  },
+  {
+    "rank": 1316,
+    "gr": "μαλώνω",
+    "en": "I argue, quarrel"
+  },
+  {
+    "rank": 1317,
+    "gr": "η μερίδα",
+    "en": "the portion, helping"
+  },
+  {
+    "rank": 1318,
+    "gr": "το αντηλιακό",
+    "en": "the sun cream"
+  },
+  {
+    "rank": 1325,
+    "gr": "τα δεδομένα",
+    "en": "the data"
+  },
+  {
+    "rank": 1327,
+    "gr": "ποιανού",
+    "en": "whose"
+  },
+  {
+    "rank": 1329,
+    "gr": "απίστευτα",
+    "en": "incredibly, amazingly"
+  },
+  {
+    "rank": 1346,
+    "gr": "τα ψώνια",
+    "en": "the shopping"
+  },
+  {
+    "rank": 1398,
+    "gr": "αργός",
+    "en": "slow"
+  },
+  {
+    "rank": 1407,
+    "gr": "η φάρμα",
+    "en": "the farm"
+  },
+  {
+    "rank": 1409,
+    "gr": "ονομάζομαι",
+    "en": "I am named"
+  },
+  {
+    "rank": 1419,
+    "gr": "η φυσική",
+    "en": "the physics"
+  },
+  {
+    "rank": 1422,
+    "gr": "οικονομικά",
+    "en": "financially, economically; economics"
+  },
+  {
+    "rank": 1426,
+    "gr": "ετοιμάζομαι",
+    "en": "I get ready, prepare myself"
+  },
+  {
+    "rank": 1437,
+    "gr": "βαριά",
+    "en": "heavily"
+  },
+  {
+    "rank": 1440,
+    "gr": "τρελαίνομαι",
+    "en": "I go mad"
+  },
+  {
+    "rank": 1445,
+    "gr": "η Αφρική",
+    "en": "Africa"
+  },
+  {
+    "rank": 1450,
+    "gr": "ενδιαφέρομαι",
+    "en": "I am interested in"
+  },
+  {
+    "rank": 1470,
+    "gr": "η Γερμανία",
+    "en": "Germany"
+  },
+  {
+    "rank": 1472,
+    "gr": "η Κίνα",
+    "en": "China"
+  },
+  {
+    "rank": 1478,
+    "gr": "παράξενα",
+    "en": "strangely"
+  },
+  {
+    "rank": 1480,
+    "gr": "λογικά",
+    "en": "logically"
+  },
+  {
+    "rank": 1499,
+    "gr": "σκάω; σκάζω",
+    "en": "I burst, explode; I show up (slang); shut up! (σκάσε)"
+  },
+  {
+    "rank": 1518,
+    "gr": "φιλάκια",
+    "en": "kisses!"
+  },
+  {
+    "rank": 1531,
+    "gr": "καφέ",
+    "en": "brown"
+  },
+  {
+    "rank": 1542,
+    "gr": "δυτικά",
+    "en": "west, westward"
+  },
+  {
+    "rank": 1549,
+    "gr": "εξωτερικός",
+    "en": "outside, exterior, external"
+  },
+  {
+    "rank": 1557,
+    "gr": "χωράω",
+    "en": "I fit, accomodate"
+  },
+  {
+    "rank": 1558,
+    "gr": "ο τουρίστας; η τουρίστρια",
+    "en": "the tourist"
+  },
+  {
+    "rank": 1579,
+    "gr": "συνηθισμένος",
+    "en": "used to, accustomed to; customary; common place"
+  },
+  {
+    "rank": 1598,
+    "gr": "αναπτύσσω",
+    "en": "I develop"
+  },
+  {
+    "rank": 1605,
+    "gr": "το υγρό",
+    "en": "the liquid, fluid"
+  },
+  {
+    "rank": 1610,
+    "gr": "το τέταρτο",
+    "en": "the quarter"
+  },
+  {
+    "rank": 1611,
+    "gr": "η Ιταλία",
+    "en": "Italy"
+  },
+  {
+    "rank": 1628,
+    "gr": "κουνιέμαι",
+    "en": "I move about; get a move on; wag"
+  },
+  {
+    "rank": 1658,
+    "gr": "το φροντιστήριο",
+    "en": "the cram school, tutoring school"
+  },
+  {
+    "rank": 1669,
+    "gr": "η Τετάρτη",
+    "en": "Wednesday"
+  },
+  {
+    "rank": 1678,
+    "gr": "το μπιφτέκι",
+    "en": "the burger"
+  },
+  {
+    "rank": 1682,
+    "gr": "εξακολουθώ",
+    "en": "I go on, continue"
+  },
+  {
+    "rank": 1698,
+    "gr": "ακυρώνω",
+    "en": "I cancel"
+  },
+  {
+    "rank": 1700,
+    "gr": "τα κοσμήματα",
+    "en": "the jewellery"
+  },
+  {
+    "rank": 1703,
+    "gr": "τα γαλλικά",
+    "en": "French (language)"
+  },
+  {
+    "rank": 1715,
+    "gr": "το ζόρι",
+    "en": "the strain; slog"
+  },
+  {
+    "rank": 1723,
+    "gr": "ξεκάθαρα",
+    "en": "clearly, plainly"
+  },
+  {
+    "rank": 1724,
+    "gr": "φυσιολογικά",
+    "en": "normally, naturally"
+  },
+  {
+    "rank": 1726,
+    "gr": "η οπτική",
+    "en": "the point of view; optics"
+  },
+  {
+    "rank": 1753,
+    "gr": "φέρομαι",
+    "en": "I behave; treat (somebody)"
+  },
+  {
+    "rank": 1756,
+    "gr": "ξανασυμβαίνω",
+    "en": "I happen again, recur"
+  },
+  {
+    "rank": 1761,
+    "gr": "το διαδίκτυο",
+    "en": "the internet"
+  },
+  {
+    "rank": 1780,
+    "gr": "σιγουρεύομαι",
+    "en": "I make sure, ensure"
+  },
+  {
+    "rank": 1781,
+    "gr": "περίφημα",
+    "en": "great, brilliantly"
+  },
+  {
+    "rank": 1790,
+    "gr": "η τεχνική",
+    "en": "the technique"
+  },
+  {
+    "rank": 1791,
+    "gr": "εκπλήσσομαι",
+    "en": "I am surprised, astonished"
+  },
+  {
+    "rank": 1797,
+    "gr": "μαγικά",
+    "en": "magically"
+  },
+  {
+    "rank": 1819,
+    "gr": "ιατρικός",
+    "en": "medical"
+  },
+  {
+    "rank": 1823,
+    "gr": "απαραίτητα",
+    "en": "necessarily"
+  },
+  {
+    "rank": 1829,
+    "gr": "το βραδινό",
+    "en": "the dinner, supper"
+  },
+  {
+    "rank": 1838,
+    "gr": "συγκεντρώνομαι",
+    "en": "Ι concentrate, focus; assemble, get together"
+  },
+  {
+    "rank": 1845,
+    "gr": "εκρήγνυμαι",
+    "en": "I explode"
+  },
+  {
+    "rank": 1851,
+    "gr": "το πέος",
+    "en": "the penis"
+  },
+  {
+    "rank": 1852,
+    "gr": "χρονικός",
+    "en": "time (adj.), of time; chronic"
+  },
+  {
+    "rank": 1858,
+    "gr": "υπομονετικός",
+    "en": "patient"
+  },
+  {
+    "rank": 1863,
+    "gr": "η ενημέρωση",
+    "en": "the update; briefing"
+  },
+  {
+    "rank": 1864,
+    "gr": "διορθώνω",
+    "en": "Ι correct; mend"
+  },
+  {
+    "rank": 1866,
+    "gr": "το σύμπτωμα",
+    "en": "the symptom"
+  },
+  {
+    "rank": 1870,
+    "gr": "ο μπάσταρδος",
+    "en": "the bastard"
+  },
+  {
+    "rank": 1872,
+    "gr": "εκρηκτικός",
+    "en": "explosive"
+  },
+  {
+    "rank": 1873,
+    "gr": "καίγομαι",
+    "en": "I burn, swelter; get a sunburn"
+  },
+  {
+    "rank": 1874,
+    "gr": "ενθουσιασμένος",
+    "en": "excited, enthusiastic"
+  },
+  {
+    "rank": 1877,
+    "gr": "παραδοσιακός",
+    "en": "traditional"
+  },
+  {
+    "rank": 1878,
+    "gr": "εμπνέω",
+    "en": "I inspire"
+  },
+  {
+    "rank": 1885,
+    "gr": "η Ιαπωνία",
+    "en": "Japan"
+  },
+  {
+    "rank": 1886,
+    "gr": "σπασμένος",
+    "en": "broken"
+  },
+  {
+    "rank": 1887,
+    "gr": "η Ρωσία",
+    "en": "Russia"
+  },
+  {
+    "rank": 1889,
+    "gr": "βρώμικος",
+    "en": "dirty"
+  },
+  {
+    "rank": 1898,
+    "gr": "ώριμος",
+    "en": "mature; ripe"
+  },
+  {
+    "rank": 1904,
+    "gr": "κερνάω",
+    "en": "I treat (somebody), pay (for somebody)"
+  },
+  {
+    "rank": 1915,
+    "gr": "φανταστικά",
+    "en": "fantastically"
+  },
+  {
+    "rank": 1918,
+    "gr": "αράζω",
+    "en": "I hang out, chill out"
+  },
+  {
+    "rank": 1932,
+    "gr": "η Ισπανία",
+    "en": "Spain"
+  },
+  {
+    "rank": 1939,
+    "gr": "αρνούμαι",
+    "en": "I deny; refuse, say no"
+  },
+  {
+    "rank": 1949,
+    "gr": "αγνοώ",
+    "en": "I ignore"
+  },
+  {
+    "rank": 1951,
+    "gr": "φοβερά",
+    "en": "tremendously, terribly; awesome"
+  },
+  {
+    "rank": 1963,
+    "gr": "το Βερολίνο",
+    "en": "Berlin"
+  },
+  {
+    "rank": 1978,
+    "gr": "κοντός",
+    "en": "short"
+  },
+  {
+    "rank": 1984,
+    "gr": "η εκδήλωση",
+    "en": "the event; manifestation, demonstration"
+  },
+  {
+    "rank": 1996,
+    "gr": "αμάν",
+    "en": "good grief!, oh dear!; oh no!"
+  },
+  {
+    "rank": 1998,
+    "gr": "ζεστά",
+    "en": "warmly; cosily"
+  },
+  {
+    "rank": 1999,
+    "gr": "η Ινδία",
+    "en": "India"
+  },
+  {
+    "rank": 2002,
+    "gr": "ώπα",
+    "en": "oops; hang on"
+  },
+  {
+    "rank": 2006,
+    "gr": "υψηλός",
+    "en": "high, lofty"
+  },
+  {
+    "rank": 2007,
+    "gr": "η ηθική",
+    "en": "the ethics, morality"
+  },
+  {
+    "rank": 2018,
+    "gr": "η βρύση",
+    "en": "the tap, faucet"
+  },
+  {
+    "rank": 2019,
+    "gr": "παγκόσμια; παγκοσμίως",
+    "en": "globally, universally"
+  },
+  {
+    "rank": 2020,
+    "gr": "η δραστηριότητα",
+    "en": "the activity"
+  },
+  {
+    "rank": 2030,
+    "gr": "διπλά",
+    "en": "doubly, twice as"
+  },
+  {
+    "rank": 2032,
+    "gr": "ξεκουράζομαι",
+    "en": "I rest"
+  },
+  {
+    "rank": 2033,
+    "gr": "το κολιέ",
+    "en": "the necklace"
+  },
+  {
+    "rank": 2036,
+    "gr": "κουράζομαι",
+    "en": "I get tired"
+  },
+  {
+    "rank": 2037,
+    "gr": "ευχαριστημένος",
+    "en": "pleased, satisfied"
+  },
+  {
+    "rank": 2038,
+    "gr": "στεγνός",
+    "en": "dry"
+  },
+  {
+    "rank": 2046,
+    "gr": "παγωμένος",
+    "en": "frozen, chilled; freezing"
+  },
+  {
+    "rank": 2048,
+    "gr": "πολεμάω",
+    "en": "I battle, fight"
+  },
+  {
+    "rank": 2050,
+    "gr": "ενοχλητικός",
+    "en": "annoying"
+  },
+  {
+    "rank": 2076,
+    "gr": "εντοπίζω",
+    "en": "I locate, detect; track down, trace"
+  },
+  {
+    "rank": 2078,
+    "gr": "βελτιώνω",
+    "en": "I improve, enhance"
+  },
+  {
+    "rank": 2084,
+    "gr": "η ανησυχία",
+    "en": "the anxiety, anxiousness, unease"
+  },
+  {
+    "rank": 2085,
+    "gr": "ένα δισεκατομμύριο",
+    "en": "one billion"
+  },
+  {
+    "rank": 2092,
+    "gr": "το οστό",
+    "en": "the bone"
+  },
+  {
+    "rank": 2093,
+    "gr": "ο γαλαξίας",
+    "en": "the galaxy"
+  },
+  {
+    "rank": 2094,
+    "gr": "η δίωξη",
+    "en": "the persecution; prosecution"
+  },
+  {
+    "rank": 2097,
+    "gr": "η ιστοσελίδα",
+    "en": "the website, webpage"
+  },
+  {
+    "rank": 2105,
+    "gr": "αναγκάζω",
+    "en": "I force, compel"
+  },
+  {
+    "rank": 2109,
+    "gr": "βασίζομαι",
+    "en": "I rely on, depend on; am based on"
+  },
+  {
+    "rank": 2119,
+    "gr": "η καφετέρια",
+    "en": "the cafe"
+  },
+  {
+    "rank": 2121,
+    "gr": "πρακτικά",
+    "en": "practically"
+  },
+  {
+    "rank": 2126,
+    "gr": "η εκδοχή",
+    "en": "the version, variant"
+  },
+  {
+    "rank": 2127,
+    "gr": "προηγουμένως",
+    "en": "previously, formerly"
+  },
+  {
+    "rank": 2128,
+    "gr": "συνδέομαι",
+    "en": "I am connected"
+  },
+  {
+    "rank": 2134,
+    "gr": "η αντίθεση",
+    "en": "the contrast; opposition"
+  },
+  {
+    "rank": 2139,
+    "gr": "καταθέτω",
+    "en": "I testify; deposit money"
+  },
+  {
+    "rank": 2146,
+    "gr": "η προτεραιότητα",
+    "en": "the priority"
+  },
+  {
+    "rank": 2151,
+    "gr": "ισχυρίζομαι",
+    "en": "I claim, maintain"
+  },
+  {
+    "rank": 2154,
+    "gr": "περιλαμβάνω",
+    "en": "I include, encompass"
+  },
+  {
+    "rank": 2158,
+    "gr": "αρχικός",
+    "en": "initial; original"
+  },
+  {
+    "rank": 2161,
+    "gr": "η στενή",
+    "en": "the narrow (street); prison (slang)"
+  },
+  {
+    "rank": 2174,
+    "gr": "τα ισπανικά",
+    "en": "Spanish (language)"
+  },
+  {
+    "rank": 2177,
+    "gr": "άθλια",
+    "en": "miserably; awfully, terribly"
+  },
+  {
+    "rank": 2186,
+    "gr": "μοιράζομαι",
+    "en": "I share"
+  },
+  {
+    "rank": 2189,
+    "gr": "σεξουαλικά",
+    "en": "sexually"
+  },
+  {
+    "rank": 2191,
+    "gr": "μετακομίζω",
+    "en": "I relocate, move house"
+  },
+  {
+    "rank": 2193,
+    "gr": "επιλέγω",
+    "en": "I choose, select"
+  },
+  {
+    "rank": 2198,
+    "gr": "σοκάρω",
+    "en": "I shock"
+  },
+  {
+    "rank": 2202,
+    "gr": "αποτυγχάνω",
+    "en": "I fail"
+  },
+  {
+    "rank": 2203,
+    "gr": "η Μόσχα",
+    "en": "Moscow"
+  },
+  {
+    "rank": 2204,
+    "gr": "περαιτέρω",
+    "en": "further, to a greater extent"
+  },
+  {
+    "rank": 2206,
+    "gr": "το τρέξιμο",
+    "en": "the run, jog"
+  },
+  {
+    "rank": 2207,
+    "gr": "απειλώ",
+    "en": "I threaten, menace"
+  },
+  {
+    "rank": 2208,
+    "gr": "θετικός",
+    "en": "positive"
+  },
+  {
+    "rank": 2212,
+    "gr": "η διακοπή",
+    "en": "the interruption; power cut"
+  },
+  {
+    "rank": 2216,
+    "gr": "πληγώνω",
+    "en": "I hurt, injure"
+  },
+  {
+    "rank": 2218,
+    "gr": "εφευρίσκω",
+    "en": "I invent"
+  },
+  {
+    "rank": 2220,
+    "gr": "κατευθύνομαι",
+    "en": "I head for, head towards"
+  },
+  {
+    "rank": 2221,
+    "gr": "κινούμαι",
+    "en": "I move, get moving"
+  },
+  {
+    "rank": 2225,
+    "gr": "ανακατεύομαι",
+    "en": "I get involved; meddle; feel sick"
+  },
+  {
+    "rank": 2229,
+    "gr": "ο πυρήνας",
+    "en": "the core, nucleus, kernel"
+  },
+  {
+    "rank": 2230,
+    "gr": "το ιατρείο",
+    "en": "the doctor's office, medical practice"
+  },
+  {
+    "rank": 2231,
+    "gr": "ακουστός",
+    "en": "audible"
+  },
+  {
+    "rank": 2235,
+    "gr": "κρύβομαι",
+    "en": "I hide, conceal myself"
+  },
+  {
+    "rank": 2236,
+    "gr": "η ανακούφιση",
+    "en": "the relief"
+  },
+  {
+    "rank": 2238,
+    "gr": "το πλυντήριο",
+    "en": "the washing machine"
+  },
+  {
+    "rank": 2239,
+    "gr": "αποκτάω",
+    "en": "I obtain, acquire"
+  },
+  {
+    "rank": 2241,
+    "gr": "αναστατωμένος",
+    "en": "upset, distressed"
+  },
+  {
+    "rank": 2244,
+    "gr": "η περιοδεία",
+    "en": "the tour"
+  },
+  {
+    "rank": 2245,
+    "gr": "το σπέρμα",
+    "en": "the semen, sperm"
+  },
+  {
+    "rank": 2246,
+    "gr": "η ιδιοφυΐα",
+    "en": "the genius"
+  },
+  {
+    "rank": 2253,
+    "gr": "σηκώνομαι",
+    "en": "I get up, stand up"
+  },
+  {
+    "rank": 2255,
+    "gr": "επιβιώνω",
+    "en": "I survive"
+  },
+  {
+    "rank": 2263,
+    "gr": "συμπεριφέρομαι",
+    "en": "I behave; treat (somebody)"
+  },
+  {
+    "rank": 2264,
+    "gr": "το σύνδρομο",
+    "en": "the syndrome"
+  },
+  {
+    "rank": 2267,
+    "gr": "η αναβολή",
+    "en": "the postponement"
+  },
+  {
+    "rank": 2269,
+    "gr": "το άλμπουμ",
+    "en": "the album"
+  },
+  {
+    "rank": 2276,
+    "gr": "η διάρρηξη",
+    "en": "the burglary"
+  },
+  {
+    "rank": 2278,
+    "gr": "αναλύω",
+    "en": "I analyse"
+  },
+  {
+    "rank": 2283,
+    "gr": "ελάχιστα",
+    "en": "very little, barely, hardly"
+  },
+  {
+    "rank": 2287,
+    "gr": "η παραίσθηση",
+    "en": "the hallucination"
+  },
+  {
+    "rank": 2288,
+    "gr": "κλειδωμένος",
+    "en": "locked"
+  },
+  {
+    "rank": 2295,
+    "gr": "το ναυτικό",
+    "en": "the navy"
+  },
+  {
+    "rank": 2298,
+    "gr": "απογίνομαι",
+    "en": "what becomes of (someone)"
+  },
+  {
+    "rank": 2300,
+    "gr": "άθλιος",
+    "en": "miserable, wretched, pathetic"
+  },
+  {
+    "rank": 2302,
+    "gr": "το δοχείο",
+    "en": "the container, vessel"
+  },
+  {
+    "rank": 2305,
+    "gr": "ο μπάρμαν",
+    "en": "the barman"
+  },
+  {
+    "rank": 2306,
+    "gr": "η κυκλοφορία",
+    "en": "the traffic; circulation; release"
+  },
+  {
+    "rank": 2307,
+    "gr": "κρυμμένος",
+    "en": "hidden, concealed"
+  },
+  {
+    "rank": 2311,
+    "gr": "αποκλειστικά",
+    "en": "exclusively, solely"
+  },
+  {
+    "rank": 2313,
+    "gr": "η φράση",
+    "en": "the phrase, idiom; quote"
+  },
+  {
+    "rank": 2315,
+    "gr": "το συμβάν",
+    "en": "the incident"
+  },
+  {
+    "rank": 2316,
+    "gr": "το αδιέξοδο",
+    "en": "the dead end; standoff, stalemate"
+  },
+  {
+    "rank": 2319,
+    "gr": "επικοινωνώ",
+    "en": "I communicate; contact"
+  },
+  {
+    "rank": 2321,
+    "gr": "ο ενήλικος; ο ενήλικας",
+    "en": "the adult"
+  },
+  {
+    "rank": 2331,
+    "gr": "ίσια",
+    "en": "straight, straight ahead"
+  },
+  {
+    "rank": 2334,
+    "gr": "ψεύτικα",
+    "en": "fakely, in a fake way"
+  },
+  {
+    "rank": 2336,
+    "gr": "η αποκάλυψη",
+    "en": "the revelation; apocalypse"
+  },
+  {
+    "rank": 2338,
+    "gr": "βρεγμένος",
+    "en": "wet"
+  },
+  {
+    "rank": 2349,
+    "gr": "η μάρκα",
+    "en": "the brand, make"
+  },
+  {
+    "rank": 2350,
+    "gr": "οι αποσκευές",
+    "en": "the luggage, baggage"
+  },
+  {
+    "rank": 2354,
+    "gr": "το βέλος",
+    "en": "the arrow, bolt"
+  },
+  {
+    "rank": 2356,
+    "gr": "παρόμοια",
+    "en": "similarly"
+  },
+  {
+    "rank": 2358,
+    "gr": "η Τουρκία",
+    "en": "Turkey"
+  },
+  {
+    "rank": 2361,
+    "gr": "το πλάνο",
+    "en": "the plan"
+  },
+  {
+    "rank": 2362,
+    "gr": "απαλά",
+    "en": "gently, softly"
+  },
+  {
+    "rank": 2363,
+    "gr": "το χόμπι",
+    "en": "the hobby"
+  },
+  {
+    "rank": 2366,
+    "gr": "παράνομα",
+    "en": "illegally"
+  },
+  {
+    "rank": 2368,
+    "gr": "η διάσωση",
+    "en": "the rescue"
+  },
+  {
+    "rank": 2369,
+    "gr": "διαβεβαιώνω",
+    "en": "I assert that; I assure (somebody) that"
+  },
+  {
+    "rank": 2371,
+    "gr": "διαρκώς",
+    "en": "constantly; perpetually"
+  },
+  {
+    "rank": 2372,
+    "gr": "η λεπίδα",
+    "en": "the blade"
+  },
+  {
+    "rank": 2374,
+    "gr": "η πρακτική",
+    "en": "the practice; internship"
+  },
+  {
+    "rank": 2375,
+    "gr": "η βαρύτητα",
+    "en": "the gravity; importance"
+  },
+  {
+    "rank": 2377,
+    "gr": "ο άνθρακας",
+    "en": "the carbon; coal"
+  },
+  {
+    "rank": 2378,
+    "gr": "η κριτική",
+    "en": "the criticism, censure; review, critique"
+  },
+  {
+    "rank": 2379,
+    "gr": "ακουμπάω",
+    "en": "I touch; I lean/rest (something) against"
+  },
+  {
+    "rank": 2380,
+    "gr": "ντυμένος",
+    "en": "dressed, clothed"
+  },
+  {
+    "rank": 2382,
+    "gr": "η κούπα",
+    "en": "the cup, mug"
+  },
+  {
+    "rank": 2386,
+    "gr": "ποινικός",
+    "en": "penal, criminal"
+  },
+  {
+    "rank": 2387,
+    "gr": "το πρωτότυπο",
+    "en": "the original; prototype"
+  },
+  {
+    "rank": 2389,
+    "gr": "η αλληλογραφία",
+    "en": "the correspondence"
+  },
+  {
+    "rank": 2391,
+    "gr": "το κύτταρο",
+    "en": "the cell (biological)"
+  },
+  {
+    "rank": 2394,
+    "gr": "το συκώτι",
+    "en": "the liver"
+  },
+  {
+    "rank": 2395,
+    "gr": "συναισθηματικά",
+    "en": "emotionally"
+  },
+  {
+    "rank": 2396,
+    "gr": "η τάση",
+    "en": "the trend, tendency; voltage"
+  },
+  {
+    "rank": 2398,
+    "gr": "μπερδεμένος",
+    "en": "confused; confusing"
+  },
+  {
+    "rank": 2399,
+    "gr": "φοβισμένος",
+    "en": "scared, frightened"
+  },
+  {
+    "rank": 2400,
+    "gr": "το σκάνδαλο",
+    "en": "the scandal"
+  },
+  {
+    "rank": 2404,
+    "gr": "η συγχώρεση",
+    "en": "the forgiveness"
+  },
+  {
+    "rank": 2405,
+    "gr": "το σουτιέν",
+    "en": "the bra"
+  },
+  {
+    "rank": 2407,
+    "gr": "ξεφορτώνομαι",
+    "en": "I get rid of"
+  },
+  {
+    "rank": 2408,
+    "gr": "το φίλτρο",
+    "en": "the filter"
+  },
+  {
+    "rank": 2410,
+    "gr": "το επιδόρπιο",
+    "en": "the dessert, pudding"
+  },
+  {
+    "rank": 2412,
+    "gr": "προσεύχομαι",
+    "en": "I pray"
+  },
+  {
+    "rank": 2414,
+    "gr": "η ατάκα",
+    "en": "the line (of dialogue); catchphrase"
+  },
+  {
+    "rank": 2415,
+    "gr": "η ροή",
+    "en": "the flow"
+  },
+  {
+    "rank": 2417,
+    "gr": "εναλλακτικός",
+    "en": "alternative"
+  },
+  {
+    "rank": 2418,
+    "gr": "εγκεφαλικός",
+    "en": "cerebral; stroke (medical)"
+  },
+  {
+    "rank": 2422,
+    "gr": "η επίδραση",
+    "en": "the impact, effect"
+  },
+  {
+    "rank": 2425,
+    "gr": "η υποψία",
+    "en": "the suspicion, inkling"
+  },
+  {
+    "rank": 2426,
+    "gr": "η βελόνα",
+    "en": "the needle"
+  },
+  {
+    "rank": 2430,
+    "gr": "πλαστικός",
+    "en": "plastic"
+  },
+  {
+    "rank": 2431,
+    "gr": "έντονα",
+    "en": "intensely"
+  },
+  {
+    "rank": 2432,
+    "gr": "η επιβεβαίωση",
+    "en": "the confirmation, validation"
+  },
+  {
+    "rank": 2434,
+    "gr": "μπροστινός",
+    "en": "front, frontal"
+  },
+  {
+    "rank": 2437,
+    "gr": "τσεκάρω",
+    "en": "I check"
+  },
+  {
+    "rank": 2439,
+    "gr": "το μπέρδεμα",
+    "en": "the muddle, mix-up, mess"
+  },
+  {
+    "rank": 2441,
+    "gr": "εγκαίρως",
+    "en": "in time, in a timely manner"
+  },
+  {
+    "rank": 2445,
+    "gr": "χαλαρά",
+    "en": "loosely; casually, leisurely"
+  },
+  {
+    "rank": 2447,
+    "gr": "η συμμαχία",
+    "en": "the alliance"
+  },
+  {
+    "rank": 2449,
+    "gr": "η προσέγγιση",
+    "en": "the approach"
+  },
+  {
+    "rank": 2450,
+    "gr": "το αίτημα",
+    "en": "the request"
+  },
+  {
+    "rank": 2451,
+    "gr": "ιδού",
+    "en": "here it is, there you go"
+  },
+  {
+    "rank": 2452,
+    "gr": "το πουλόβερ",
+    "en": "the jumper, sweater"
+  },
+  {
+    "rank": 2453,
+    "gr": "η απόκτηση",
+    "en": "the acquisition, obtainment"
+  },
+  {
+    "rank": 2454,
+    "gr": "χαμηλός",
+    "en": "low"
+  },
+  {
+    "rank": 2456,
+    "gr": "χαρακτηριστικά",
+    "en": "characteristically"
+  },
+  {
+    "rank": 2457,
+    "gr": "στρογγυλός",
+    "en": "round, circular"
+  },
+  {
+    "rank": 2459,
+    "gr": "το βάζο",
+    "en": "the vase; jar"
+  },
+  {
+    "rank": 2460,
+    "gr": "το βραχιόλι",
+    "en": "the bracelet"
+  },
+  {
+    "rank": 2462,
+    "gr": "ο φράχτης; ο φράκτης",
+    "en": "the fence"
+  },
+  {
+    "rank": 2466,
+    "gr": "ο θαυμαστής; η θαυμάστρια",
+    "en": "the admirer"
+  },
+  {
+    "rank": 2467,
+    "gr": "το άνοιγμα",
+    "en": "the opening"
+  },
+  {
+    "rank": 2472,
+    "gr": "έντονος",
+    "en": "intense"
+  },
+  {
+    "rank": 2475,
+    "gr": "το φαΐ",
+    "en": "the food, the meal"
+  },
+  {
+    "rank": 2477,
+    "gr": "σκάβω",
+    "en": "I dig"
+  },
+  {
+    "rank": 2479,
+    "gr": "ο εξωγήινος",
+    "en": "the alien, extraterrestrial"
+  },
+  {
+    "rank": 2480,
+    "gr": "το τόξο",
+    "en": "the bow; arc, arch"
+  },
+  {
+    "rank": 2481,
+    "gr": "παλιότερα",
+    "en": "formerly, in the past"
+  },
+  {
+    "rank": 2483,
+    "gr": "η ειλικρίνεια",
+    "en": "the truthfulness, honesty, sincerity"
+  },
+  {
+    "rank": 2486,
+    "gr": "αρσενικός",
+    "en": "male, masculine"
+  },
+  {
+    "rank": 2487,
+    "gr": "τυχαίος",
+    "en": "random"
+  },
+  {
+    "rank": 2489,
+    "gr": "η συμμετοχή",
+    "en": "the participation, involvement"
+  },
+  {
+    "rank": 2490,
+    "gr": "συναισθηματικός",
+    "en": "sentimental"
+  },
+  {
+    "rank": 2491,
+    "gr": "ο οργανισμός",
+    "en": "the organism; organization"
+  },
+  {
+    "rank": 2493,
+    "gr": "το σκηνικό",
+    "en": "the film set, theatre scenery; setting, scenery"
+  },
+  {
+    "rank": 2495,
+    "gr": "η περίμετρος",
+    "en": "the circumference, perimeter"
+  },
+  {
+    "rank": 2496,
+    "gr": "η ελιά",
+    "en": "the olive"
+  },
+  {
+    "rank": 2497,
+    "gr": "τυλίγω",
+    "en": "I wrap"
+  },
+  {
+    "rank": 2498,
+    "gr": "γκρι",
+    "en": "grey"
+  },
+  {
+    "rank": 2500,
+    "gr": "έκτακτος",
+    "en": "emergency"
+  }
+]
