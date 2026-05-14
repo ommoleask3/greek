@@ -23,9 +23,10 @@ function setupKeyboardShortcuts() {
       const hardHidden = document.getElementById('btn-hard').style.display === 'none';
       if (hardHidden) {
         // New/Learning: 3 buttons — 1=Again, 2=Good, 3=Easy
+        // Custom range (readonly): 2 buttons — 1=Λάθος, 2=Σωστό
         if (e.key === '1') { e.preventDefault(); answer('again'); return; }
         if (e.key === '2') { e.preventDefault(); answer('good'); return; }
-        if (e.key === '3') { e.preventDefault(); answer('easy'); return; }
+        if (!sessionReadonly && e.key === '3') { e.preventDefault(); answer('easy'); return; }
       } else {
         // Review: 4 buttons — 1=Again, 2=Hard, 3=Good, 4=Easy
         if (e.key === '1') { e.preventDefault(); answer('again'); return; }

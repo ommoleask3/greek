@@ -2,12 +2,10 @@
 // PROGRESS & END
 // ═══════════════════════════════════════════════════════════════════════════════
 function updateProgress() {
-  const remaining = queue.length + delayedQueue.length;
-  const done = sessionTotal - remaining - 1;
-  const pct = sessionTotal > 0 ? Math.max(0, (done / sessionTotal) * 100) : 0;
+  const pct = sessionTotal > 0 ? Math.max(0, (sessionDone / sessionTotal) * 100) : 0;
   document.getElementById('progress-bar').style.width = pct + '%';
   document.getElementById('progress-label').textContent =
-    `${Math.max(0, done)} / ${sessionTotal} cards`;
+    `${sessionDone} / ${sessionTotal} cards`;
 }
 
 function abandonSession() {
@@ -32,7 +30,7 @@ function showEnd() {
   for (const word of checkWords) {
     for (const dir of dirs) {
       const cd = getCardData(srs, word, dir);
-      if (cd.nextReview <= now + 86400000) totalDue++;
+      if (cd.phase !== 'new' && cd.nextReview > now && cd.nextReview <= now + 86400000) totalDue++;
     }
   }
 

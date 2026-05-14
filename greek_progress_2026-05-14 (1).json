@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exported": "2026-05-14T09:33:10.566Z",
+  "exported": "2026-05-14T10:03:19.758Z",
   "srs": {
     "r1_en": {
       "phase": "review",
@@ -829,6 +829,27 @@
       "incorrect": 0,
       "days": [
         1778750972721
+      ]
+    },
+    "r46_en": {
+      "phase": "new",
+      "learningStep": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "nextReview": 0,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": false,
+      "lastReview": 1778752992695,
+      "seen": 5,
+      "correct": 0,
+      "incorrect": 0,
+      "days": [
+        1778752888350,
+        1778752947858,
+        1778752950820,
+        1778752983357,
+        1778752992695
       ]
     }
   }

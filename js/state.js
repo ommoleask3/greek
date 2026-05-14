@@ -70,6 +70,7 @@ let waitingTimer = null;   // timer ID for countdown display
 let current = null;
 let cardState = 'loading'; // loading | question | answer | answer-wrong | sentence | translation | no-sentence | waiting
 let sessionTotal = 0;
+let sessionDone = 0;       // unique cards fully answered (not re-queued)
 let sessionCorrect = 0;
 let sessionWrong = 0;
 let sessionGraduated = 0;  // cards that graduated learning → review this session

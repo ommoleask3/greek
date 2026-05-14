@@ -30,7 +30,7 @@ function buildQueue() {
   const srs = loadSRS();
   const now = Date.now();
   const dirs = sessionMode === 'both' ? ['en','gr'] : [sessionMode];
-  const due = [], learning = [], fresh = [];
+  const due = [], fresh = [];
 
   const wordsInRange = sessionRankMin !== null
     ? WORDS.filter(w => w.rank >= sessionRankMin && w.rank <= sessionRankMax)
@@ -43,11 +43,13 @@ function buildQueue() {
       const cd = getCardData(srs, word, dir);
       const card = { word, dir };
 
-      if (cd.phase === 'new') {
+      if (sessionReadonly) {
+        // Custom range: include every card regardless of due date
         fresh.push(card);
-      } else if (cd.phase === 'learning' || cd.phase === 'relearning') {
-        // Mid-learning cards go to delayed queue with remaining time
-        learning.push({ card, dueTime: cd.nextReview || now });
+      } else if (cd.phase === 'new') {
+        fresh.push(card);
+      } else if ((cd.phase === 'learning' || cd.phase === 'relearning') && cd.nextReview <= now) {
+        due.push(card);
       } else if (cd.phase === 'review' && cd.nextReview <= now) {
         due.push(card);
       }
@@ -56,12 +58,19 @@ function buildQueue() {
 
   shuffle(due);
 
-  // Take up to 20 due + new cards, plus any in-progress learning
-  const mainCards = [...due, ...fresh.slice(0, Math.max(0, 20 - due.length))];
-  queue = mainCards;
-  delayedQueue = learning;
+  if (sessionReadonly) {
+    // Custom range: all cards in range, shuffled
+    shuffle(fresh);
+    queue = fresh;
+  } else {
+    // Session = all due cards + new cards to fill up to 20
+    const newCount = Math.max(0, 20 - due.length);
+    queue = [...due, ...fresh.slice(0, newCount)];
+  }
+  delayedQueue = [];
 
-  sessionTotal = queue.length + delayedQueue.length;
+  sessionTotal = queue.length;
+  sessionDone = 0;
   sessionCorrect = 0;
   sessionWrong = 0;
   sessionGraduated = 0;
@@ -323,6 +332,25 @@ function updateIntervalHints() {
   const srs = loadSRS();
   const cd = getCardData(srs, current.word, current.dir);
   const btnHard = document.getElementById('btn-hard');
+  const btnAgain = document.getElementById('btn-again');
+  const btnGood = document.getElementById('btn-good');
+  const btnEasy = document.getElementById('btn-easy');
+
+  if (sessionReadonly) {
+    // Custom range: only Λάθος (Incorrect) / Σωστό (Correct)
+    btnHard.style.display = 'none';
+    btnEasy.style.display = 'none';
+    btnAgain.childNodes[0].textContent = 'Λάθος';
+    btnGood.childNodes[0].textContent = 'Σωστό';
+    document.getElementById('hint-again').textContent = '';
+    document.getElementById('hint-good').textContent = '';
+    return;
+  }
+
+  // Restore normal session buttons
+  btnEasy.style.display = '';
+  btnAgain.childNodes[0].textContent = 'Ξανά';
+  btnGood.childNodes[0].textContent = 'Καλά';
 
   if (cd.phase === 'new' || cd.phase === 'learning') {
     // Learning: show Again/Good/Easy (no Hard)
@@ -401,6 +429,8 @@ function answer(choice) {
   if (isCorrect) sessionCorrect++;
   else sessionWrong++;
 
+  const dqBefore = delayedQueue.length;
+
   if (!sessionReadonly) {
     const srs = loadSRS();
     const cd = getCardData(srs, answering.word, answering.dir);
@@ -426,6 +456,10 @@ function answer(choice) {
     // Custom range (readonly): no SRS writes
     if (choice === 'again') queue.push(answering);
   }
+
+  // Card is "done" if it was NOT re-queued
+  const requeued = delayedQueue.length > dqBefore || (sessionReadonly && choice === 'again');
+  if (!requeued) sessionDone++;
 
   document.getElementById('btn-row').classList.remove('visible');
 
@@ -496,11 +530,14 @@ function handleLearning(cd, choice, answering) {
 
 // ─── Review card handler ─────────────────────────────────────────────────────
 function handleReview(cd, choice, answering) {
-  // Late review bonus: use actual elapsed time as base if longer than scheduled interval
+  // Anki SM-2 late review bonus:
+  //   delay = days overdue (0 if answered on time)
+  //   Hard:  no bonus            → interval * HARD_MULTIPLIER
+  //   Good:  half the delay      → (interval + delay/2) * easeFactor
+  //   Easy:  full delay           → (interval + delay) * easeFactor * EASY_BONUS
   const now = Date.now();
-  const elapsed = cd.lastReview > 0
-    ? Math.max(cd.interval, (now - cd.lastReview) / 86400000)
-    : cd.interval;
+  const actualElapsed = cd.lastReview > 0 ? (now - cd.lastReview) / 86400000 : cd.interval;
+  const delay = Math.max(0, actualElapsed - cd.interval);
 
   if (choice === 'again') {
     // Lapse: enter relearning
@@ -519,18 +556,18 @@ function handleReview(cd, choice, answering) {
 
   } else if (choice === 'hard') {
     cd.easeFactor = clampEase(cd.easeFactor - 0.15);
-    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round(elapsed * HARD_MULTIPLIER))));
+    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round(cd.interval * HARD_MULTIPLIER))));
     cd.interval = newInt;
     cd.nextReview = now + cd.interval * 86400000;
 
   } else if (choice === 'good') {
-    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round(elapsed * cd.easeFactor))));
+    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round((cd.interval + delay / 2) * cd.easeFactor))));
     cd.interval = newInt;
     cd.nextReview = now + cd.interval * 86400000;
 
   } else if (choice === 'easy') {
     cd.easeFactor = clampEase(cd.easeFactor + 0.15);
-    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round(elapsed * cd.easeFactor * EASY_BONUS))));
+    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round((cd.interval + delay) * cd.easeFactor * EASY_BONUS))));
     cd.interval = newInt;
     cd.nextReview = now + cd.interval * 86400000;
   }
