@@ -443,9 +443,6 @@ function answer(choice) {
     cardState = 'no-sentence';
   }
 
-  if (justGraduated) {
-    triggerCompleteAnimation(answering, isCorrect);
-  }
 }
 
 // ─── Learning / New card handler ─────────────────────────────────────────────

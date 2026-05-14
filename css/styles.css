@@ -380,10 +380,6 @@ body:has(#home-view.active) {
   padding-top: 80px;
 }
 
-.card.complete-glow .card-back {
-  border-color: #f5c518;
-  box-shadow: 0 0 30px rgba(245,197,24,0.4), 0 8px 40px rgba(0,0,0,0.4);
-}
 
 .card-lang {
   font-size: 0.7rem;
@@ -700,35 +696,6 @@ button:active { transform: scale(0.97); }
   color: #7c85a6;
 }
 
-/* ── Bag icon (fixed bottom-right, behind audio) ── */
-#bag-icon {
-  position: fixed;
-  bottom: 20px;
-  right: 64px;
-  font-size: 1.3rem;
-  opacity: 0.15;
-  transition: opacity 0.3s, transform 0.3s;
-  z-index: 99;
-  pointer-events: none;
-}
-#bag-icon.pulse {
-  animation: bagPulse 0.5s ease-out forwards;
-}
-@keyframes bagPulse {
-  0% { transform: scale(1); opacity: 0.15; }
-  30% { transform: scale(1.4); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.15; }
-}
-
-
-/* ── Complete fly animation ── */
-@keyframes flyToBag {
-  0% { transform: scale(1) translate(0, 0); opacity: 1; }
-  100% { transform: scale(0.1) translate(calc(50vw - 80px), calc(50vh)); opacity: 0; }
-}
-.card.flying {
-  animation: flyToBag 0.4s ease-in forwards;
-}
 
 /* ═══════════════════════════════════════════════════════════════════════════════
    HOME SPLASH
