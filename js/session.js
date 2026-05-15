@@ -59,8 +59,14 @@ function buildQueue() {
   shuffle(due);
 
   if (sessionReadonly) {
-    // Custom range: all cards in range, shuffled
-    shuffle(fresh);
+    // Custom range: sort by nextReview ascending (most overdue first, new cards last)
+    fresh.sort((a, b) => {
+      const cdA = getCardData(srs, a.word, a.dir);
+      const cdB = getCardData(srs, b.word, b.dir);
+      const nrA = cdA.phase === 'new' ? Infinity : cdA.nextReview;
+      const nrB = cdB.phase === 'new' ? Infinity : cdB.nextReview;
+      return nrA - nrB;
+    });
     queue = fresh;
   } else {
     // Session = all due cards + new cards to fill up to 20

@@ -39,7 +39,10 @@
       "Bash(echo $OPENAI_API_KEY)",
       "Bash(node _extract.js)",
       "Bash(node -e \"const d = require\\(''./missing_with_en.json''\\); d.forEach\\(r => console.log\\(r.rank + ''\\\\t'' + r.gr + ''\\\\t'' + r.en\\)\\);\")",
-      "Bash(python insert_missing.py)"
+      "Bash(python insert_missing.py)",
+      "Bash(xargs grep -l \"learning_steps\\\\|newSpend\\\\|again_delay\")",
+      "Bash(xargs grep -l \"intraday_learning\\\\|learning_remaining\")",
+      "Bash(xargs grep -l \"learn_ahead\\\\|default.*1.*minute\\\\|[1m, 10m]\")"
     ]
   }
 }
