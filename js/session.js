@@ -25,16 +25,20 @@ function startSession() {
 }
 
 function buildQueue() {
-  if (WORDS.length === 0) { queue = []; delayedQueue = []; return; }
+  if (WORDS.length === 0) {
+    queue = [];
+    delayedQueue = [];
+    return;
+  }
 
   const srs = loadSRS();
   const now = Date.now();
-  const dirs = sessionMode === 'both' ? ['en','gr'] : [sessionMode];
-  const due = [], fresh = [];
+  const dirs = sessionMode === 'both' ? ['en', 'gr'] : [sessionMode];
+  const due = [],
+    fresh = [];
 
-  const wordsInRange = sessionRankMin !== null
-    ? WORDS.filter(w => w.rank >= sessionRankMin && w.rank <= sessionRankMax)
-    : WORDS;
+  const wordsInRange =
+    sessionRankMin !== null ? WORDS.filter((w) => w.rank >= sessionRankMin && w.rank <= sessionRankMax) : WORDS;
 
   const sorted = [...wordsInRange].sort((a, b) => (a.rank || 0) - (b.rank || 0));
 
@@ -63,7 +67,11 @@ function buildQueue() {
     for (const dir of dirs) {
       const cd = getCardData(srs, word, dir);
       if (cd.phase === 'review' && cd.nextReview > now) {
-        notYetDue.push({ key: `r${word.rank}_${dir}`, nextReview: cd.nextReview, dueIn: ((cd.nextReview - now) / 3600000).toFixed(1) + 'h' });
+        notYetDue.push({
+          key: `r${word.rank}_${dir}`,
+          nextReview: cd.nextReview,
+          dueIn: ((cd.nextReview - now) / 3600000).toFixed(1) + 'h',
+        });
       }
     }
   }
@@ -107,11 +115,18 @@ function interleave(a, b) {
   if (b.length === 0) return [...a];
   // Ensure 'longer' is the bigger array
   let longer, shorter;
-  if (a.length >= b.length) { longer = a; shorter = b; }
-  else { longer = b; shorter = a; }
+  if (a.length >= b.length) {
+    longer = a;
+    shorter = b;
+  } else {
+    longer = b;
+    shorter = a;
+  }
   const result = [];
   const ratio = (longer.length + 1) / (shorter.length + 1);
-  let li = 0, si = 0, acc = 0;
+  let li = 0,
+    si = 0,
+    acc = 0;
   while (li < longer.length || si < shorter.length) {
     acc += 1;
     if (si < shorter.length && acc >= ratio) {
@@ -170,7 +185,10 @@ function formatInterval(days) {
 // ═══════════════════════════════════════════════════════════════════════════════
 function nextCard(animate) {
   // Clear any waiting timer
-  if (waitingTimer) { clearInterval(waitingTimer); waitingTimer = null; }
+  if (waitingTimer) {
+    clearInterval(waitingTimer);
+    waitingTimer = null;
+  }
 
   const now = Date.now();
   const learnAheadCutoff = now + LEARN_AHEAD_SECS * 1000;
@@ -192,11 +210,11 @@ function nextCard(animate) {
   if (readyIdx >= 0) {
     next = delayedQueue.splice(readyIdx, 1)[0].card;
 
-  // --- Tier 2: main queue (new / review) ---
+    // --- Tier 2: main queue (new / review) ---
   } else if (queue.length > 0) {
     next = queue.shift();
 
-  // --- Tier 3: learn-ahead — show earliest learning card early, no timer ---
+    // --- Tier 3: learn-ahead — show earliest learning card early, no timer ---
   } else if (delayedQueue.length > 0) {
     // Find the card with the earliest due time within learn-ahead window
     let bestIdx = -1;
@@ -239,7 +257,7 @@ function nextCard(animate) {
       cd.seen = (cd.seen || 0) + 1;
       const now = Date.now();
       cd.lastReview = now;
-      cd.days.push(now);  // timestamps for FSRS migration readiness
+      cd.days.push(now); // timestamps for FSRS migration readiness
       saveSRS(srs);
     }
     if (current.dir === 'gr') {
@@ -258,7 +276,6 @@ function nextCard(animate) {
     doReady();
   }
 }
-
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // CARD CONTENT
@@ -310,7 +327,10 @@ function resetSentence() {
 
 function updateFreqBadge(word) {
   const badge = document.getElementById('freq-badge');
-  if (!word.rank) { badge.textContent = ''; return; }
+  if (!word.rank) {
+    badge.textContent = '';
+    return;
+  }
   const rank = word.rank;
   let color;
   if (rank <= 100) color = '#f5c518';
@@ -389,7 +409,6 @@ function updateIntervalHints() {
     // Easy → graduate immediately
     document.getElementById('hint-easy').textContent = formatInterval(EASY_INTERVAL);
     document.getElementById('hint-hard').textContent = '';
-
   } else if (cd.phase === 'relearning') {
     // Relearning: Again/Good/Easy (no Hard)
     btnHard.style.display = 'none';
@@ -407,15 +426,12 @@ function updateIntervalHints() {
 
     document.getElementById('hint-easy').textContent = formatInterval(Math.max(cd.interval || 1, EASY_INTERVAL));
     document.getElementById('hint-hard').textContent = '';
-
   } else {
     // Review: show all 4 buttons
     btnHard.style.display = '';
 
     // Late review bonus: use elapsed time as base if overdue
-    const elapsed = cd.lastReview > 0
-      ? Math.max(cd.interval, (Date.now() - cd.lastReview) / 86400000)
-      : cd.interval;
+    const elapsed = cd.lastReview > 0 ? Math.max(cd.interval, (Date.now() - cd.lastReview) / 86400000) : cd.interval;
 
     // Again
     document.getElementById('hint-again').textContent = formatSeconds(LAPSE_STEPS[0]);
@@ -458,11 +474,9 @@ function answer(choice) {
     if (cd.phase === 'new' || cd.phase === 'learning') {
       // ─── LEARNING / NEW ───
       justGraduated = handleLearning(cd, choice, answering);
-
     } else if (cd.phase === 'review') {
       // ─── REVIEW ───
       handleReview(cd, choice, answering);
-
     } else if (cd.phase === 'relearning') {
       // ─── RELEARNING ───
       handleRelearning(cd, choice, answering);
@@ -481,7 +495,9 @@ function answer(choice) {
     const sgr = document.getElementById('sentence-gr');
     sgr.textContent = answering.word.sentence;
 
-    requestAnimationFrame(() => { sgr.classList.add('visible'); });
+    requestAnimationFrame(() => {
+      sgr.classList.add('visible');
+    });
     playAudio(answering.word.sentenceAudio, answering.word.sentence);
     currentAudioFile = answering.word.wordAudio || null;
     sentenceAudioFile = answering.word.sentenceAudio;
@@ -489,7 +505,6 @@ function answer(choice) {
   } else {
     cardState = 'no-sentence';
   }
-
 }
 
 // ─── Learning / New card handler ─────────────────────────────────────────────
@@ -502,7 +517,6 @@ function handleLearning(cd, choice, answering) {
     cd.learningStep = 0;
     cd.nextReview = Date.now() + LEARNING_STEPS[0] * 1000;
     delayedQueue.push({ card: answering, dueTime: cd.nextReview });
-
   } else if (choice === 'good') {
     const nextStep = cd.learningStep + 1;
     if (nextStep < LEARNING_STEPS.length) {
@@ -523,7 +537,6 @@ function handleLearning(cd, choice, answering) {
         sessionGraduated++;
       }
     }
-
   } else if (choice === 'easy') {
     // Graduate immediately with easy interval
     cd.phase = 'review';
@@ -554,7 +567,7 @@ function handleReview(cd, choice, answering) {
 
   if (choice === 'again') {
     // Lapse: enter relearning
-    cd.easeFactor = clampEase(cd.easeFactor - 0.20);
+    cd.easeFactor = clampEase(cd.easeFactor - 0.2);
     cd.lapseCount++;
     cd.interval = Math.max(1, Math.floor(cd.interval * LAPSE_NEW_INTERVAL));
     cd.phase = 'relearning';
@@ -566,21 +579,22 @@ function handleReview(cd, choice, answering) {
     if (cd.lapseCount >= LEECH_THRESHOLD && cd.lapseCount % 4 === 0) {
       cd.leech = true;
     }
-
   } else if (choice === 'hard') {
     cd.easeFactor = clampEase(cd.easeFactor - 0.15);
     const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round(cd.interval * HARD_MULTIPLIER))));
     cd.interval = newInt;
     cd.nextReview = now + cd.interval * 86400000;
-
   } else if (choice === 'good') {
-    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round((cd.interval + delay / 2) * cd.easeFactor))));
+    const newInt = clampInterval(
+      fuzzInterval(Math.max(cd.interval + 1, Math.round((cd.interval + delay / 2) * cd.easeFactor))),
+    );
     cd.interval = newInt;
     cd.nextReview = now + cd.interval * 86400000;
-
   } else if (choice === 'easy') {
     cd.easeFactor = clampEase(cd.easeFactor + 0.15);
-    const newInt = clampInterval(fuzzInterval(Math.max(cd.interval + 1, Math.round((cd.interval + delay) * cd.easeFactor * EASY_BONUS))));
+    const newInt = clampInterval(
+      fuzzInterval(Math.max(cd.interval + 1, Math.round((cd.interval + delay) * cd.easeFactor * EASY_BONUS))),
+    );
     cd.interval = newInt;
     cd.nextReview = now + cd.interval * 86400000;
   }
@@ -593,7 +607,6 @@ function handleRelearning(cd, choice, answering) {
     cd.learningStep = 0;
     cd.nextReview = Date.now() + LAPSE_STEPS[0] * 1000;
     delayedQueue.push({ card: answering, dueTime: cd.nextReview });
-
   } else if (choice === 'good') {
     const nextStep = cd.learningStep + 1;
     if (nextStep < LAPSE_STEPS.length) {
@@ -606,7 +619,6 @@ function handleRelearning(cd, choice, answering) {
       cd.nextReview = Date.now() + cd.interval * 86400000;
       cd.learningStep = 0;
     }
-
   } else if (choice === 'easy') {
     // Graduate immediately back to review
     cd.phase = 'review';
@@ -621,11 +633,21 @@ function handleRelearning(cd, choice, answering) {
 // ═══════════════════════════════════════════════════════════════════════════════
 function onCardClick() {
   switch (cardState) {
-    case 'question':      flipCard(); break;
-    case 'answer-wrong':  advanceFromAnswer(); break;
-    case 'sentence':      advanceFromSentence(); break;
-    case 'translation':   advanceFromTranslation(); break;
-    case 'no-sentence':   nextCard(true); break;
+    case 'question':
+      flipCard();
+      break;
+    case 'answer-wrong':
+      advanceFromAnswer();
+      break;
+    case 'sentence':
+      advanceFromSentence();
+      break;
+    case 'translation':
+      advanceFromTranslation();
+      break;
+    case 'no-sentence':
+      nextCard(true);
+      break;
   }
 }
 
@@ -634,7 +656,9 @@ function advanceFromAnswer() {
   const sgr = document.getElementById('sentence-gr');
   if (current.word.sentence) {
     sgr.textContent = current.word.sentence;
-    requestAnimationFrame(() => { sgr.classList.add('visible'); });
+    requestAnimationFrame(() => {
+      sgr.classList.add('visible');
+    });
     playAudio(current.word.sentenceAudio, current.word.sentence);
     sentenceAudioFile = current.word.sentenceAudio;
     cardState = 'sentence';
@@ -648,7 +672,9 @@ function advanceFromSentence() {
   if (current.word.sentenceEn) {
     const sen = document.getElementById('sentence-en');
     sen.textContent = current.word.sentenceEn;
-    requestAnimationFrame(() => { sen.classList.add('visible'); });
+    requestAnimationFrame(() => {
+      sen.classList.add('visible');
+    });
     cardState = 'translation';
   } else {
     nextCard(true);

@@ -24,7 +24,9 @@ async function init() {
       const oldWords = JSON.parse(raw);
       if (oldWords && oldWords.length > 0) {
         // Assign rank if missing
-        oldWords.forEach((w, i) => { if (!w.rank) w.rank = i + 1; });
+        oldWords.forEach((w, i) => {
+          if (!w.rank) w.rank = i + 1;
+        });
         WORDS = oldWords;
         await dbPutBatch('words', WORDS);
         updateGreekOnlyUI();
@@ -38,14 +40,17 @@ async function init() {
 }
 
 // Event wiring
-document.getElementById('file-input').addEventListener('change', e => {
+document.getElementById('file-input').addEventListener('change', (e) => {
   if (e.target.files[0]) processApkg(e.target.files[0]);
 });
 
 const dropZone = document.getElementById('drop-zone');
-dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  dropZone.classList.add('drag-over');
+});
 dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
-dropZone.addEventListener('drop', e => {
+dropZone.addEventListener('drop', (e) => {
   e.preventDefault();
   dropZone.classList.remove('drag-over');
   if (e.dataTransfer.files[0]) processApkg(e.dataTransfer.files[0]);

@@ -18,12 +18,14 @@ function tileStyle(completed, locked) {
   // bg: #181c2a → #1e1810 → #1a1a20 → #1f1a08
   // border: #252a3d → #7c4a1a → #8a8a9a → #c9960c
   // glow: none → bronze → silver → gold
-  function lerp(a, b, t) { return Math.round(a + (b - a) * t); }
+  function lerp(a, b, t) {
+    return Math.round(a + (b - a) * t);
+  }
   function lerpHex(c1, c2, t) {
     const p = (h) => parseInt(h, 16);
-    const r = lerp(p(c1.slice(1,3)), p(c2.slice(1,3)), t);
-    const g = lerp(p(c1.slice(3,5)), p(c2.slice(3,5)), t);
-    const b = lerp(p(c1.slice(5,7)), p(c2.slice(5,7)), t);
+    const r = lerp(p(c1.slice(1, 3)), p(c2.slice(1, 3)), t);
+    const g = lerp(p(c1.slice(3, 5)), p(c2.slice(3, 5)), t);
+    const b = lerp(p(c1.slice(5, 7)), p(c2.slice(5, 7)), t);
     return `rgb(${r},${g},${b})`;
   }
 
@@ -34,20 +36,20 @@ function tileStyle(completed, locked) {
   } else if (t < 0.5) {
     // 0 → 50%: dark to bronze
     const u = t / 0.5;
-    bg     = lerpHex('#181c2a', '#1e1608', u);
+    bg = lerpHex('#181c2a', '#1e1608', u);
     border = lerpHex('#252a3d', '#8b5e1a', u);
     shadow = `0 0 ${Math.round(u * 8)}px rgba(139,94,26,${(u * 0.4).toFixed(2)})`;
     titleColor = lerpHex('#7c85a6', '#b07830', u);
   } else if (t < 1) {
     // 50% → 100%: bronze to gold
     const u = (t - 0.5) / 0.5;
-    bg     = lerpHex('#1e1608', '#221a00', u);
+    bg = lerpHex('#1e1608', '#221a00', u);
     border = lerpHex('#8b5e1a', '#d4a017', u);
     shadow = `0 0 ${Math.round(8 + u * 14)}px rgba(212,160,23,${(0.4 + u * 0.45).toFixed(2)})`;
     titleColor = lerpHex('#b07830', '#f5c518', u);
   } else {
     // 100%: full gold
-    bg     = '#231c00';
+    bg = '#231c00';
     border = '#f5c518';
     shadow = '0 0 22px rgba(245,197,24,0.85), 0 0 6px rgba(245,197,24,0.5)';
     titleColor = '#f5c518';
@@ -58,11 +60,13 @@ function tileStyle(completed, locked) {
 
 function getTileCounts(levelWords, dir, srs) {
   const now = Date.now();
-  let newCount = 0, learningCount = 0, dueCount = 0;
+  let newCount = 0,
+    learningCount = 0,
+    dueCount = 0;
   for (const w of levelWords) {
     const cd = srs[cardKey(w, dir)];
-    const phase = cd ? (cd.phase || 'new') : 'new';
-    const nextReview = cd ? (cd.nextReview || 0) : 0;
+    const phase = cd ? cd.phase || 'new' : 'new';
+    const nextReview = cd ? cd.nextReview || 0 : 0;
     if (phase === 'new') {
       newCount++;
     } else if ((phase === 'learning' || phase === 'relearning') && nextReview <= now) {
@@ -84,14 +88,14 @@ function renderGrid(dir) {
   const grid = document.getElementById(`grid-${dir}`);
   grid.innerHTML = '';
 
-  const maxRank = WORDS.length > 0 ? Math.max(...WORDS.map(w => w.rank || 0), 100) : 2500;
+  const maxRank = WORDS.length > 0 ? Math.max(...WORDS.map((w) => w.rank || 0), 100) : 2500;
   const numLevels = Math.ceil(maxRank / 100);
   const levels = Math.min(numLevels, 25);
 
   for (let lvl = 1; lvl <= levels; lvl++) {
     const rankMin = (lvl - 1) * 100 + 1;
     const rankMax = lvl * 100;
-    const levelWords = WORDS.filter(w => w.rank >= rankMin && w.rank <= rankMax);
+    const levelWords = WORDS.filter((w) => w.rank >= rankMin && w.rank <= rankMax);
     const total = levelWords.length;
 
     let completed = 0;
@@ -105,7 +109,7 @@ function renderGrid(dir) {
     if (lvl > 1) {
       const prevMin = (lvl - 2) * 100 + 1;
       const prevMax = (lvl - 1) * 100;
-      const prevWords = WORDS.filter(w => w.rank >= prevMin && w.rank <= prevMax);
+      const prevWords = WORDS.filter((w) => w.rank >= prevMin && w.rank <= prevMax);
       let prevCompleted = 0;
       for (const w of prevWords) {
         const cd = srs[cardKey(w, dir)];
@@ -122,11 +126,12 @@ function renderGrid(dir) {
     if (style) tile.setAttribute('style', style);
 
     // Progress bar colour: blue at 0%, shifts to gold at 100%
-    const barColor = completed >= 100
-      ? 'linear-gradient(90deg,#c9960c,#f5c518)'
-      : completed >= 50
-        ? `linear-gradient(90deg,#a06820,#d4a017)`
-        : 'linear-gradient(90deg,#4f7cff,#a78bfa)';
+    const barColor =
+      completed >= 100
+        ? 'linear-gradient(90deg,#c9960c,#f5c518)'
+        : completed >= 50
+          ? `linear-gradient(90deg,#a06820,#d4a017)`
+          : 'linear-gradient(90deg,#4f7cff,#a78bfa)';
 
     const { newCount, learningCount, dueCount } = getTileCounts(levelWords, dir, srs);
     tile.innerHTML = `
@@ -135,9 +140,9 @@ function renderGrid(dir) {
       <div class="level-tile-progress">${completed}/100 ολοκληρωμένα</div>
       <div class="level-tile-bar"><div class="level-tile-bar-fill" style="width:${pct}%;background:${barColor}"></div></div>
       <div class="tile-counts">
-        ${!locked && newCount > 0      ? `<span class="tc-new" title="${newCount} new">${newCount}</span>` : ''}
+        ${!locked && newCount > 0 ? `<span class="tc-new" title="${newCount} new">${newCount}</span>` : ''}
         ${!locked && learningCount > 0 ? `<span class="tc-learning" title="${learningCount} learning">${learningCount}</span>` : ''}
-        ${!locked && dueCount > 0      ? `<span class="tc-due" title="${dueCount} due for review">${dueCount}</span>` : ''}
+        ${!locked && dueCount > 0 ? `<span class="tc-due" title="${dueCount} due for review">${dueCount}</span>` : ''}
       </div>
       ${locked ? '<div class="level-lock-icon">🔒</div>' : ''}
     `;
@@ -158,7 +163,7 @@ function toggleCustomRange() {
 
 function setCustomDir(d) {
   customDir = d;
-  ['en','gr','both'].forEach(id => {
+  ['en', 'gr', 'both'].forEach((id) => {
     document.getElementById(`cdir-${id}`).classList.toggle('active', id === d);
   });
 }

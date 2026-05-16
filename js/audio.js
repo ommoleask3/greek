@@ -55,10 +55,11 @@ function speakGreek(text, voiceOverride) {
 
   const voiceName = voiceOverride || prefs.voiceSource;
   const voices = speechSynthesis.getVoices();
-  const greekVoices = voices.filter(v => v.lang.startsWith('el'));
-  const pick = greekVoices.find(v => v.name.toLowerCase().includes(voiceName))
-    || greekVoices.find(v => /athina/i.test(v.name))
-    || greekVoices[0];
+  const greekVoices = voices.filter((v) => v.lang.startsWith('el'));
+  const pick =
+    greekVoices.find((v) => v.name.toLowerCase().includes(voiceName)) ||
+    greekVoices.find((v) => /athina/i.test(v.name)) ||
+    greekVoices[0];
   if (pick) utter.voice = pick;
 
   document.getElementById('btn-speaker').classList.add('active');
@@ -79,11 +80,11 @@ function stopAudio() {
 }
 
 function replayAudio() {
-  const isSentenceState = (cardState === 'sentence' || cardState === 'translation');
+  const isSentenceState = cardState === 'sentence' || cardState === 'translation';
   const file = isSentenceState && sentenceAudioFile ? sentenceAudioFile : currentAudioFile;
   let ttsText = '';
   if (current) {
-    ttsText = (isSentenceState && current.word.sentence) ? current.word.sentence : current.word.gr;
+    ttsText = isSentenceState && current.word.sentence ? current.word.sentence : current.word.gr;
   }
   if (file || ttsText) {
     playAudio(file, ttsText);
@@ -95,10 +96,10 @@ function replayAudio() {
 }
 
 function replayAudioSlow() {
-  const isSentenceState = (cardState === 'sentence' || cardState === 'translation');
+  const isSentenceState = cardState === 'sentence' || cardState === 'translation';
   let ttsText = '';
   if (current) {
-    ttsText = (isSentenceState && current.word.sentence) ? current.word.sentence : current.word.gr;
+    ttsText = isSentenceState && current.word.sentence ? current.word.sentence : current.word.gr;
   }
   if (ttsText) {
     speakGreekSlow(ttsText);
@@ -116,10 +117,11 @@ function speakGreekSlow(text) {
 
   const voiceName = prefs.voiceSource === 'indexed' ? 'athina' : prefs.voiceSource;
   const voices = speechSynthesis.getVoices();
-  const greekVoices = voices.filter(v => v.lang.startsWith('el'));
-  const pick = greekVoices.find(v => v.name.toLowerCase().includes(voiceName))
-    || greekVoices.find(v => /athina/i.test(v.name))
-    || greekVoices[0];
+  const greekVoices = voices.filter((v) => v.lang.startsWith('el'));
+  const pick =
+    greekVoices.find((v) => v.name.toLowerCase().includes(voiceName)) ||
+    greekVoices.find((v) => /athina/i.test(v.name)) ||
+    greekVoices[0];
   if (pick) utter.voice = pick;
 
   document.getElementById('btn-speaker').classList.add('active');
@@ -152,20 +154,20 @@ function setupVolumeSlider() {
 
   // Voice select buttons
   const voiceBtns = document.querySelectorAll('#voice-select button');
-  voiceBtns.forEach(btn => {
+  voiceBtns.forEach((btn) => {
     if (btn.dataset.voice === prefs.voiceSource) {
-      voiceBtns.forEach(b => b.classList.remove('active'));
+      voiceBtns.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
     }
     btn.addEventListener('click', () => {
-      voiceBtns.forEach(b => b.classList.remove('active'));
+      voiceBtns.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       prefs.voiceSource = btn.dataset.voice;
       savePrefs();
     });
   });
 
-  document.addEventListener('click', e => {
+  document.addEventListener('click', (e) => {
     if (audioControlsOpen && !document.getElementById('audio-controls').contains(e.target)) {
       audioControlsOpen = false;
       document.getElementById('volume-popover').classList.remove('open');

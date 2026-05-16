@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════════════════════════════════════════
 let conjQueue = [];
 let conjCurrent = null;
-let conjMode = 'mc';        // 'mc' or 'typing'
+let conjMode = 'mc'; // 'mc' or 'typing'
 let conjCorrect = 0;
 let conjTotal = 0;
 let conjSize = 20;
@@ -69,12 +69,14 @@ function renderConjCard() {
     `;
     const field = document.getElementById('conj-text-field');
     field.focus();
-    field.onkeydown = e => { if (e.key === 'Enter') submitConjTyping(); };
+    field.onkeydown = (e) => {
+      if (e.key === 'Enter') submitConjTyping();
+    };
   } else {
     const options = generateMCOptions(conjCurrent);
-    input.innerHTML = options.map(o =>
-      `<button class="conj-mc-btn" onclick="submitConjMC(this, '${escapeAttr(o)}')">${o}</button>`
-    ).join('');
+    input.innerHTML = options
+      .map((o) => `<button class="conj-mc-btn" onclick="submitConjMC(this, '${escapeAttr(o)}')">${o}</button>`)
+      .join('');
   }
 }
 
@@ -151,7 +153,7 @@ function submitConjMC(btn, answer) {
   const feedback = document.getElementById('conj-feedback');
   const buttons = document.querySelectorAll('.conj-mc-btn');
 
-  buttons.forEach(b => {
+  buttons.forEach((b) => {
     b.disabled = true;
     if (b.textContent === correct) b.classList.add('correct');
   });

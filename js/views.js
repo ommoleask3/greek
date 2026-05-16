@@ -2,24 +2,43 @@
 // VIEW MANAGEMENT
 // ═══════════════════════════════════════════════════════════════════════════════
 function showView(id) {
-  ['import-view','home-view','level-view','main-view','session-end',
-   'grammar-menu-view','grammar-list-view','grammar-lesson-view','conjugation-view'].forEach(v => {
+  [
+    'import-view',
+    'home-view',
+    'level-view',
+    'main-view',
+    'session-end',
+    'grammar-menu-view',
+    'grammar-list-view',
+    'grammar-lesson-view',
+    'conjugation-view',
+  ].forEach((v) => {
     document.getElementById(v).classList.toggle('active', v === id);
   });
 }
 
-function showImport() { showView('import-view'); }
+function showImport() {
+  showView('import-view');
+}
 
-function splashDepart(callback) { callback(); }
-function splashArrive() { showView('home-view'); }
+function splashDepart(callback) {
+  callback();
+}
+function splashArrive() {
+  showView('home-view');
+}
 
 async function showLevelSelect() {
   // Reload words if needed
   if (WORDS.length === 0) {
-    try { WORDS = await dbGetAll('words'); } catch {}
+    try {
+      WORDS = await dbGetAll('words');
+    } catch {}
   }
   renderLevelGrids();
   showView('level-view');
 }
 
-function showMain() { showView('main-view'); }
+function showMain() {
+  showView('main-view');
+}

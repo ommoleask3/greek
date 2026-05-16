@@ -1,229 +1,254 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eλληνικές Σημειώσεις</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eλληνικές Σημειώσεις</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <h1>Eλληνικές σημειώσεις</h1>
 
-<h1>Eλληνικές σημειώσεις</h1>
+    <!-- Home splash -->
+    <div id="home-view">
+      <div class="splash-canvas">
+        <img
+          src="_The_School_of_Athens__by_Raffaello_Sanzio_da_Urbino.png"
+          alt="The School of Athens"
+          class="splash-bg"
+        />
 
-<!-- Home splash -->
-<div id="home-view">
-  <div class="splash-canvas">
-    <img src="_The_School_of_Athens__by_Raffaello_Sanzio_da_Urbino.png" alt="The School of Athens" class="splash-bg">
-
-    <div class="splash-zone splash-zone--left" onclick="splashDepart(showLevelSelect)">
-      <div class="splash-zone-label">
-        <span class="splash-title">Λεξιλόγιο</span>
-      </div>
-    </div>
-
-    <div class="splash-zone splash-zone--right" onclick="splashDepart(showGrammarMenu)">
-      <div class="splash-zone-label">
-        <span class="splash-title">Γραμματική</span>
-      </div>
-    </div>
-
-    <div class="splash-divider"></div>
-  </div>
-
-  <div class="home-toggle" id="greek-only-toggle" onclick="toggleGreekOnly()">
-    <div class="toggle-track"><div class="toggle-thumb"></div></div>
-    <span class="toggle-label">Greek only</span>
-  </div>
-</div>
-
-<!-- Grammar menu -->
-<div id="grammar-menu-view">
-  <button class="btn-back-session" onclick="showHome()">← Πίσω</button>
-  <div class="grammar-menu-panels">
-    <div class="grammar-menu-card" onclick="showGrammarList()">
-      <div class="gmc-icon">📖</div>
-      <div class="gmc-title">Μαθήματα</div>
-      <div class="gmc-sub">Lessons</div>
-    </div>
-    <div class="grammar-menu-card" onclick="showConjugation()">
-      <div class="gmc-icon">✏️</div>
-      <div class="gmc-title">Κλίση ρημάτων</div>
-      <div class="gmc-sub">Conjugation drills</div>
-    </div>
-  </div>
-</div>
-
-<!-- Grammar lesson list -->
-<div id="grammar-list-view">
-  <button class="btn-back-session" onclick="showGrammarMenu()">← Πίσω</button>
-  <h2 class="grammar-heading">Μαθήματα</h2>
-  <div id="grammar-list" class="grammar-list"></div>
-</div>
-
-<!-- Grammar lesson content -->
-<div id="grammar-lesson-view">
-  <button class="btn-back-session" onclick="showGrammarList()">← Πίσω</button>
-  <div id="lesson-content" class="lesson-content"></div>
-</div>
-
-<!-- Conjugation drills -->
-<div id="conjugation-view">
-  <button class="btn-back-session" onclick="showGrammarMenu()">← Πίσω</button>
-  <div class="conj-header">
-    <div class="conj-mode-toggle">
-      <button id="conj-mode-mc" class="active" onclick="setConjMode('mc')">Επιλογή</button>
-      <button id="conj-mode-typing" onclick="setConjMode('typing')">Πληκτρολόγηση</button>
-    </div>
-    <div class="conj-progress" id="conj-progress"></div>
-  </div>
-  <div class="conj-card" id="conj-card"></div>
-  <div class="conj-input" id="conj-input"></div>
-  <div class="conj-feedback" id="conj-feedback"></div>
-</div>
-
-<!-- Import screen -->
-<div id="import-view">
-  <div class="import-box" id="drop-zone" onclick="document.getElementById('file-input').click()">
-    <div class="import-icon">📦</div>
-    <p><strong>Drop your .apkg file here</strong><br>or click to browse<br><br>
-    Imported words are saved permanently —<br>you only need to do this once.</p>
-  </div>
-  <input type="file" id="file-input" accept=".apkg">
-  <div class="import-status" id="import-status"></div>
-  <div class="detected-fields" id="detected-fields" style="display:none"></div>
-  <button class="btn-skip" onclick="useBuiltinWords()">Use built-in 100 words instead</button>
-</div>
-
-<!-- Level select screen -->
-<div id="level-view">
-  <button class="btn-back-session" onclick="showHome()">← Πίσω</button>
-  <div class="level-tabs">
-    <button class="level-tab-btn active" id="tab-en" onclick="switchTab('en')">EN → GR</button>
-    <button class="level-tab-btn" id="tab-gr" onclick="switchTab('gr')">GR → EN</button>
-  </div>
-
-  <div class="level-panels">
-    <div class="level-panel active" id="panel-en">
-      <div class="level-grid" id="grid-en"></div>
-    </div>
-    <div class="level-panel" id="panel-gr">
-      <div class="level-grid" id="grid-gr"></div>
-    </div>
-  </div>
-
-  <div style="display:flex; justify-content:space-between; align-items:center; width:100%; margin-bottom:4px;">
-    <div style="display:flex; gap:6px;">
-      <button class="btn-skip" onclick="exportProgress()" style="font-size:0.72rem;">↓ Export progress</button>
-      <button class="btn-skip" onclick="document.getElementById('progress-file-input').click()" style="font-size:0.72rem;">↑ Import progress</button>
-      <input type="file" id="progress-file-input" accept=".json" style="display:none" onchange="importProgress(this)">
-    </div>
-    <button class="btn-skip" onclick="showImport()" style="font-size:0.72rem;">↑ Re-import deck</button>
-  </div>
-
-  <div class="custom-range" id="custom-range-section">
-    <div class="custom-range-header" id="custom-range-toggle" onclick="toggleCustomRange()">
-      <span class="chevron">▶</span> Προσαρμοσμένο εύρος
-    </div>
-    <div class="custom-range-body" id="custom-range-body">
-      <label>Από κατάταξη</label>
-      <input type="number" id="range-from" value="1" min="1">
-      <label>έως</label>
-      <input type="number" id="range-to" value="100" min="1">
-      <div class="dir-select" id="custom-dir-select">
-        <button class="active" id="cdir-en" onclick="setCustomDir('en')">EN→GR</button>
-        <button id="cdir-gr" onclick="setCustomDir('gr')">GR→EN</button>
-        <button id="cdir-both" onclick="setCustomDir('both')">Και τα δύο</button>
-      </div>
-      <button class="btn-practice" onclick="startCustomRange()">Εξάσκηση</button>
-    </div>
-  </div>
-</div>
-
-<!-- Session / main view -->
-<div id="main-view">
-  <button class="btn-back-session" onclick="abandonSession()">← Πίσω</button>
-  <div class="queue-counts" id="queue-counts">
-    <span class="count-new" id="count-new">0</span> +
-    <span class="count-learn" id="count-learn">0</span> +
-    <span class="count-review" id="count-review">0</span>
-  </div>
-
-  <div class="scene" id="scene" onclick="onCardClick()">
-    <div class="card" id="card">
-      <div class="card-face card-front">
-        <div class="card-lang" id="front-lang"></div>
-        <div class="card-word" id="front-word"></div>
-        <div class="card-hint" id="card-hint">πάτα ή πάτησε Space για αποκάλυψη</div>
-        <div class="card-type-badge" id="card-type-badge"></div>
-      </div>
-      <div class="card-face card-back">
-        <div class="card-answer-label" id="back-lang"></div>
-        <div class="card-answer" id="back-word"></div>
-        <div class="card-sentence-area">
-          <div class="sentence-gr" id="sentence-gr"></div>
-          <div class="sentence-en" id="sentence-en"></div>
+        <div class="splash-zone splash-zone--left" onclick="splashDepart(showLevelSelect)">
+          <div class="splash-zone-label">
+            <span class="splash-title">Λεξιλόγιο</span>
+          </div>
         </div>
-        <div class="freq-badge" id="freq-badge"></div>
+
+        <div class="splash-zone splash-zone--right" onclick="splashDepart(showGrammarMenu)">
+          <div class="splash-zone-label">
+            <span class="splash-title">Γραμματική</span>
+          </div>
+        </div>
+
+        <div class="splash-divider"></div>
+      </div>
+
+      <div class="home-toggle" id="greek-only-toggle" onclick="toggleGreekOnly()">
+        <div class="toggle-track"><div class="toggle-thumb"></div></div>
+        <span class="toggle-label">Greek only</span>
       </div>
     </div>
-  </div>
 
-  <div class="kbd-hint" id="kbd-hint">Space/2 = αποκάλυψη &nbsp;·&nbsp; 1 ξανά · 2 δύσκολο · 3 καλά · 4 εύκολο &nbsp;·&nbsp; Enter = ήχος · ← = αργά</div>
-
-  <div class="btn-row" id="btn-row">
-    <button class="btn-again" onclick="answer('again')" id="btn-again">Ξανά<span class="btn-interval" id="hint-again"></span></button>
-    <button class="btn-hard" onclick="answer('hard')" id="btn-hard">Δύσκολο<span class="btn-interval" id="hint-hard"></span></button>
-    <button class="btn-good" onclick="answer('good')" id="btn-good">Καλά<span class="btn-interval" id="hint-good"></span></button>
-    <button class="btn-easy" onclick="answer('easy')" id="btn-easy">Εύκολο<span class="btn-interval" id="hint-easy"></span></button>
-  </div>
-</div>
-
-<!-- Session end -->
-<div id="session-end">
-  <h2>Η συνεδρία ολοκληρώθηκε</h2>
-  <div class="session-stats" id="session-stats"></div>
-  <button class="btn-restart" onclick="startSession()">Επόμενη συνεδρία</button>
-  <button class="btn-back-to-levels" onclick="showLevelSelect()">← Πίσω στα επίπεδα</button>
-</div>
-
-<!-- Fixed UI -->
-<audio id="audio-el"></audio>
-
-<div id="audio-controls">
-  <div id="volume-popover">
-    <label class="popover-label">Ένταση</label>
-    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
-    <label class="popover-label">Φωνή</label>
-    <div class="voice-select" id="voice-select">
-      <button class="active" data-voice="indexed">Αρχείο</button>
-      <button data-voice="athina">Αθηνά</button>
-      <button data-voice="nestoras">Νέστορας</button>
-      <button data-voice="stefanos">Στέφανος</button>
+    <!-- Grammar menu -->
+    <div id="grammar-menu-view">
+      <button class="btn-back-session" onclick="showHome()">← Πίσω</button>
+      <div class="grammar-menu-panels">
+        <div class="grammar-menu-card" onclick="showGrammarList()">
+          <div class="gmc-icon">📖</div>
+          <div class="gmc-title">Μαθήματα</div>
+          <div class="gmc-sub">Lessons</div>
+        </div>
+        <div class="grammar-menu-card" onclick="showConjugation()">
+          <div class="gmc-icon">✏️</div>
+          <div class="gmc-title">Κλίση ρημάτων</div>
+          <div class="gmc-sub">Conjugation drills</div>
+        </div>
+      </div>
     </div>
-    <label class="popover-label">Ταχύτητα</label>
-    <input type="range" id="speed-slider" min="0.5" max="1.5" step="0.05" value="0.85">
-  </div>
-  <button id="btn-speaker" onclick="toggleAudioControls(event)">🔊</button>
-</div>
 
+    <!-- Grammar lesson list -->
+    <div id="grammar-list-view">
+      <button class="btn-back-session" onclick="showGrammarMenu()">← Πίσω</button>
+      <h2 class="grammar-heading">Μαθήματα</h2>
+      <div id="grammar-list" class="grammar-list"></div>
+    </div>
 
-<!-- Scripts: load order matters -->
-<script src="js/state.js"></script>
-<script src="js/db.js"></script>
-<script src="js/animation.js"></script>
-<script src="js/audio.js"></script>
-<script src="js/views.js"></script>
-<script src="js/import.js"></script>
-<script src="js/levels.js"></script>
-<script src="js/progress.js"></script>
-<script src="js/session.js"></script>
-<script src="js/keyboard.js"></script>
-<script src="js/grammar-data.js"></script>
-<script src="js/grammar.js"></script>
-<script src="js/conjugation.js"></script>
-<script src="js/app.js"></script>
-</body>
+    <!-- Grammar lesson content -->
+    <div id="grammar-lesson-view">
+      <button class="btn-back-session" onclick="showGrammarList()">← Πίσω</button>
+      <div id="lesson-content" class="lesson-content"></div>
+    </div>
+
+    <!-- Conjugation drills -->
+    <div id="conjugation-view">
+      <button class="btn-back-session" onclick="showGrammarMenu()">← Πίσω</button>
+      <div class="conj-header">
+        <div class="conj-mode-toggle">
+          <button id="conj-mode-mc" class="active" onclick="setConjMode('mc')">Επιλογή</button>
+          <button id="conj-mode-typing" onclick="setConjMode('typing')">Πληκτρολόγηση</button>
+        </div>
+        <div class="conj-progress" id="conj-progress"></div>
+      </div>
+      <div class="conj-card" id="conj-card"></div>
+      <div class="conj-input" id="conj-input"></div>
+      <div class="conj-feedback" id="conj-feedback"></div>
+    </div>
+
+    <!-- Import screen -->
+    <div id="import-view">
+      <div class="import-box" id="drop-zone" onclick="document.getElementById('file-input').click()">
+        <div class="import-icon">📦</div>
+        <p>
+          <strong>Drop your .apkg file here</strong><br />or click to browse<br /><br />
+          Imported words are saved permanently —<br />you only need to do this once.
+        </p>
+      </div>
+      <input type="file" id="file-input" accept=".apkg" />
+      <div class="import-status" id="import-status"></div>
+      <div class="detected-fields" id="detected-fields" style="display: none"></div>
+      <button class="btn-skip" onclick="useBuiltinWords()">Use built-in 100 words instead</button>
+    </div>
+
+    <!-- Level select screen -->
+    <div id="level-view">
+      <button class="btn-back-session" onclick="showHome()">← Πίσω</button>
+      <div class="level-tabs">
+        <button class="level-tab-btn active" id="tab-en" onclick="switchTab('en')">EN → GR</button>
+        <button class="level-tab-btn" id="tab-gr" onclick="switchTab('gr')">GR → EN</button>
+      </div>
+
+      <div class="level-panels">
+        <div class="level-panel active" id="panel-en">
+          <div class="level-grid" id="grid-en"></div>
+        </div>
+        <div class="level-panel" id="panel-gr">
+          <div class="level-grid" id="grid-gr"></div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 4px">
+        <div style="display: flex; gap: 6px">
+          <button class="btn-skip" onclick="exportProgress()" style="font-size: 0.72rem">↓ Export progress</button>
+          <button
+            class="btn-skip"
+            onclick="document.getElementById('progress-file-input').click()"
+            style="font-size: 0.72rem"
+          >
+            ↑ Import progress
+          </button>
+          <input
+            type="file"
+            id="progress-file-input"
+            accept=".json"
+            style="display: none"
+            onchange="importProgress(this)"
+          />
+        </div>
+        <button class="btn-skip" onclick="showImport()" style="font-size: 0.72rem">↑ Re-import deck</button>
+      </div>
+
+      <div class="custom-range" id="custom-range-section">
+        <div class="custom-range-header" id="custom-range-toggle" onclick="toggleCustomRange()">
+          <span class="chevron">▶</span> Προσαρμοσμένο εύρος
+        </div>
+        <div class="custom-range-body" id="custom-range-body">
+          <label>Από κατάταξη</label>
+          <input type="number" id="range-from" value="1" min="1" />
+          <label>έως</label>
+          <input type="number" id="range-to" value="100" min="1" />
+          <div class="dir-select" id="custom-dir-select">
+            <button class="active" id="cdir-en" onclick="setCustomDir('en')">EN→GR</button>
+            <button id="cdir-gr" onclick="setCustomDir('gr')">GR→EN</button>
+            <button id="cdir-both" onclick="setCustomDir('both')">Και τα δύο</button>
+          </div>
+          <button class="btn-practice" onclick="startCustomRange()">Εξάσκηση</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Session / main view -->
+    <div id="main-view">
+      <button class="btn-back-session" onclick="abandonSession()">← Πίσω</button>
+      <div class="queue-counts" id="queue-counts">
+        <span class="count-new" id="count-new">0</span> + <span class="count-learn" id="count-learn">0</span> +
+        <span class="count-review" id="count-review">0</span>
+      </div>
+
+      <div class="scene" id="scene" onclick="onCardClick()">
+        <div class="card" id="card">
+          <div class="card-face card-front">
+            <div class="card-lang" id="front-lang"></div>
+            <div class="card-word" id="front-word"></div>
+            <div class="card-hint" id="card-hint">πάτα ή πάτησε Space για αποκάλυψη</div>
+            <div class="card-type-badge" id="card-type-badge"></div>
+          </div>
+          <div class="card-face card-back">
+            <div class="card-answer-label" id="back-lang"></div>
+            <div class="card-answer" id="back-word"></div>
+            <div class="card-sentence-area">
+              <div class="sentence-gr" id="sentence-gr"></div>
+              <div class="sentence-en" id="sentence-en"></div>
+            </div>
+            <div class="freq-badge" id="freq-badge"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kbd-hint" id="kbd-hint">
+        Space/2 = αποκάλυψη &nbsp;·&nbsp; 1 ξανά · 2 δύσκολο · 3 καλά · 4 εύκολο &nbsp;·&nbsp; Enter = ήχος · ← = αργά
+      </div>
+
+      <div class="btn-row" id="btn-row">
+        <button class="btn-again" onclick="answer('again')" id="btn-again">
+          Ξανά<span class="btn-interval" id="hint-again"></span>
+        </button>
+        <button class="btn-hard" onclick="answer('hard')" id="btn-hard">
+          Δύσκολο<span class="btn-interval" id="hint-hard"></span>
+        </button>
+        <button class="btn-good" onclick="answer('good')" id="btn-good">
+          Καλά<span class="btn-interval" id="hint-good"></span>
+        </button>
+        <button class="btn-easy" onclick="answer('easy')" id="btn-easy">
+          Εύκολο<span class="btn-interval" id="hint-easy"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Session end -->
+    <div id="session-end">
+      <h2>Η συνεδρία ολοκληρώθηκε</h2>
+      <div class="session-stats" id="session-stats"></div>
+      <button class="btn-restart" onclick="startSession()">Επόμενη συνεδρία</button>
+      <button class="btn-back-to-levels" onclick="showLevelSelect()">← Πίσω στα επίπεδα</button>
+    </div>
+
+    <!-- Fixed UI -->
+    <audio id="audio-el"></audio>
+
+    <div id="audio-controls">
+      <div id="volume-popover">
+        <label class="popover-label">Ένταση</label>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" />
+        <label class="popover-label">Φωνή</label>
+        <div class="voice-select" id="voice-select">
+          <button class="active" data-voice="indexed">Αρχείο</button>
+          <button data-voice="athina">Αθηνά</button>
+          <button data-voice="nestoras">Νέστορας</button>
+          <button data-voice="stefanos">Στέφανος</button>
+        </div>
+        <label class="popover-label">Ταχύτητα</label>
+        <input type="range" id="speed-slider" min="0.5" max="1.5" step="0.05" value="0.85" />
+      </div>
+      <button id="btn-speaker" onclick="toggleAudioControls(event)">🔊</button>
+    </div>
+
+    <!-- Scripts: load order matters -->
+    <script src="js/state.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/views.js"></script>
+    <script src="js/import.js"></script>
+    <script src="js/levels.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/session.js"></script>
+    <script src="js/keyboard.js"></script>
+    <script src="js/grammar-data.js"></script>
+    <script src="js/grammar.js"></script>
+    <script src="js/conjugation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>

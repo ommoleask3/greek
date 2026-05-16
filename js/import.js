@@ -34,7 +34,7 @@ async function processApkg(file) {
     const dbBytes = await dbEntry.async('uint8array');
 
     const SQL = await initSqlJs({
-      locateFile: f => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/${f}`
+      locateFile: (f) => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/${f}`,
     });
     const db = new SQL.Database(dbBytes);
 
@@ -59,8 +59,10 @@ async function processApkg(file) {
     }
 
     setStatus(`✓ Imported ${words.length} word pairs`, 'success');
-    setTimeout(() => { updateGreekOnlyUI(); showHome(); }, 800);
-
+    setTimeout(() => {
+      updateGreekOnlyUI();
+      showHome();
+    }, 800);
   } catch (err) {
     setStatus('Error: ' + err.message, 'error');
     console.error(err);
@@ -80,7 +82,9 @@ async function extractAudio(zip, words) {
     for (const [idx, fname] of Object.entries(raw)) {
       mediaMap[fname] = idx;
     }
-  } catch { return; }
+  } catch {
+    return;
+  }
 
   // Collect unique audio filenames
   const audioFiles = new Set();
@@ -105,14 +109,22 @@ async function extractAudio(zip, words) {
 
     for (const fname of batch) {
       const zipIdx = mediaMap[fname];
-      if (zipIdx === undefined) { skipped++; continue; }
+      if (zipIdx === undefined) {
+        skipped++;
+        continue;
+      }
       const entry = zip.file(zipIdx);
-      if (!entry) { skipped++; continue; }
+      if (!entry) {
+        skipped++;
+        continue;
+      }
       try {
         const buf = await entry.async('arraybuffer');
         entries.push({ key: fname, value: buf });
         done++;
-      } catch { skipped++; }
+      } catch {
+        skipped++;
+      }
     }
 
     if (entries.length > 0) {
@@ -120,7 +132,7 @@ async function extractAudio(zip, words) {
     }
 
     setStatus(`Extracting audio (${done}/${total})…`);
-    await new Promise(r => setTimeout(r, 0)); // yield to event loop
+    await new Promise((r) => setTimeout(r, 0)); // yield to event loop
   }
 
   if (skipped > 0) {
@@ -129,19 +141,19 @@ async function extractAudio(zip, words) {
 }
 
 function extractWords(db) {
-  const colRes = db.exec("SELECT models FROM col LIMIT 1");
+  const colRes = db.exec('SELECT models FROM col LIMIT 1');
   if (!colRes.length) return { words: [], detectedFields: {}, allFieldNames: [] };
 
   const models = JSON.parse(colRes[0].values[0][0]);
   const modelFields = {};
   const allFieldNames = [];
   for (const mid in models) {
-    const names = models[mid].flds.map(f => f.name);
-    modelFields[mid] = names.map(n => n.toLowerCase());
+    const names = models[mid].flds.map((f) => f.name);
+    modelFields[mid] = names.map((n) => n.toLowerCase());
     allFieldNames.push(...names);
   }
 
-  const notesRes = db.exec("SELECT mid, flds FROM notes");
+  const notesRes = db.exec('SELECT mid, flds FROM notes');
   if (!notesRes.length) return { words: [], detectedFields: {}, allFieldNames };
 
   const words = [];
@@ -183,7 +195,10 @@ function extractWords(db) {
     const rankIdx = findRankIndex(names, fields);
     if (rankIdx !== -1) {
       const rv = parseInt(stripHtml(fields[rankIdx]).trim(), 10);
-      if (!isNaN(rv) && rv > 0) { rank = rv; detectedFields.rank = true; }
+      if (!isNaN(rv) && rv > 0) {
+        rank = rv;
+        detectedFields.rank = true;
+      }
     }
 
     // Extract sentence
@@ -233,21 +248,23 @@ function extractWords(db) {
 function findFieldIndex(names, values, lang) {
   // Words to exclude: fields that are clearly example/sentence/audio, not the main word field
   const excludeWords = ['example', 'sentence', 'context', 'usage', 'audio'];
-  const isExcluded = n => excludeWords.some(w => n.includes(w));
+  const isExcluded = (n) => excludeWords.some((w) => n.includes(w));
 
   const enHints = ['english meaning', 'english word', 'english', 'meaning', 'translation', 'en', 'front', 'word'];
   const grHints = ['greek word', 'greek', 'gr', 'back', 'target', 'ελληνικά'];
   const hints = lang === 'en' ? enHints : grHints;
 
   for (const hint of hints) {
-    const i = names.findIndex(n => n.includes(hint) && !isExcluded(n.replace(hint, '')));
+    const i = names.findIndex((n) => n.includes(hint) && !isExcluded(n.replace(hint, '')));
     if (i !== -1 && i < values.length) return i;
   }
   // Script-based fallback
   if (lang === 'gr') {
-    return values.findIndex(v => /[\u0370-\u03FF\u1F00-\u1FFF]/.test(stripHtml(v)));
+    return values.findIndex((v) => /[\u0370-\u03FF\u1F00-\u1FFF]/.test(stripHtml(v)));
   } else {
-    return values.findIndex(v => v && /^[A-Za-z\s\-\/,.']+$/.test(stripHtml(v).trim()) && stripHtml(v).trim().length > 0);
+    return values.findIndex(
+      (v) => v && /^[A-Za-z\s\-\/,.']+$/.test(stripHtml(v).trim()) && stripHtml(v).trim().length > 0,
+    );
   }
 }
 
@@ -255,24 +272,26 @@ function findRankIndex(names, values) {
   // Exact name "Rank" first, then broader hints
   const hints = ['rank', 'frequency', 'freq', 'position', 'order'];
   for (const hint of hints) {
-    const i = names.findIndex(n => n === hint || n.startsWith(hint));
+    const i = names.findIndex((n) => n === hint || n.startsWith(hint));
     if (i !== -1 && i < values.length) return i;
   }
   // Field whose stripped value is purely numeric
-  return values.findIndex(v => /^\d+$/.test(stripHtml(v).trim()));
+  return values.findIndex((v) => /^\d+$/.test(stripHtml(v).trim()));
 }
 
 function findSentenceIndex(names, values) {
   // Look for Greek example: "Greek Example", "Greek Sentence", "Example", "Sentence" — but NOT "English *"
   const hints = ['greek example', 'greek sentence', 'example sentence', 'sentence gr', 'example gr'];
   for (const hint of hints) {
-    const i = names.findIndex(n => n.includes(hint));
+    const i = names.findIndex((n) => n.includes(hint));
     if (i !== -1 && i < values.length && values[i]) return i;
   }
   // Broader: any field with 'example' or 'sentence' that doesn't start with 'english' or 'audio'
   const broad = ['example', 'sentence', 'context', 'usage'];
   for (const hint of broad) {
-    const i = names.findIndex(n => n.includes(hint) && !n.startsWith('english') && !n.startsWith('audio') && !n.includes('audio'));
+    const i = names.findIndex(
+      (n) => n.includes(hint) && !n.startsWith('english') && !n.startsWith('audio') && !n.includes('audio'),
+    );
     if (i !== -1 && i < values.length && values[i]) return i;
   }
   return -1;
@@ -280,9 +299,16 @@ function findSentenceIndex(names, values) {
 
 function findSentenceEnIndex(names, values) {
   // "English Example", "English Sentence", "Sentence Translation", "Example Translation"
-  const hints = ['english example', 'english sentence', 'sentence translation', 'example translation', 'sentence en', 'example en'];
+  const hints = [
+    'english example',
+    'english sentence',
+    'sentence translation',
+    'example translation',
+    'sentence en',
+    'example en',
+  ];
   for (const hint of hints) {
-    const i = names.findIndex(n => n.includes(hint));
+    const i = names.findIndex((n) => n.includes(hint));
     if (i !== -1 && i < values.length && values[i]) return i;
   }
   return -1;
@@ -290,10 +316,10 @@ function findSentenceEnIndex(names, values) {
 
 function findAudioIndex(names, values, audioHint) {
   // Find an audio field by name hint (e.g. 'audio', 'audio2')
-  const i = names.findIndex(n => n === audioHint);
+  const i = names.findIndex((n) => n === audioHint);
   if (i !== -1 && i < values.length && values[i]) return i;
   // Partial match
-  const j = names.findIndex(n => n.includes(audioHint));
+  const j = names.findIndex((n) => n.includes(audioHint));
   if (j !== -1 && j < values.length && values[j]) return j;
   return -1;
 }
@@ -337,7 +363,14 @@ function showDetectedFields(df) {
 }
 
 async function useBuiltinWords() {
-  WORDS = BUILTIN_WORDS.map((w, i) => ({ ...w, rank: i + 1, sentence: '', sentenceEn: '', wordAudio: '', sentenceAudio: '' }));
+  WORDS = BUILTIN_WORDS.map((w, i) => ({
+    ...w,
+    rank: i + 1,
+    sentence: '',
+    sentenceEn: '',
+    wordAudio: '',
+    sentenceAudio: '',
+  }));
   await dbClearStore('words');
   await dbPutBatch('words', WORDS);
   updateGreekOnlyUI();
@@ -346,7 +379,10 @@ async function useBuiltinWords() {
 
 function loadScript(src) {
   return new Promise((resolve, reject) => {
-    if (document.querySelector(`script[src="${src}"]`)) { resolve(); return; }
+    if (document.querySelector(`script[src="${src}"]`)) {
+      resolve();
+      return;
+    }
     const s = document.createElement('script');
     s.src = src;
     s.onload = resolve;

@@ -1,0 +1,10 @@
+{
+  "name": "greek-flashcards",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write \"js/**/*.js\" \"css/**/*.css\" \"*.html\""
+  },
+  "devDependencies": {
+    "prettier": "^3.3.0"
+  }
+}

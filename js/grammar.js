@@ -4,8 +4,11 @@
 const GRAMMAR_PROGRESS_KEY = 'greek_grammar_v1';
 
 function loadGrammarProgress() {
-  try { return JSON.parse(localStorage.getItem(GRAMMAR_PROGRESS_KEY)) || {}; }
-  catch { return {}; }
+  try {
+    return JSON.parse(localStorage.getItem(GRAMMAR_PROGRESS_KEY)) || {};
+  } catch {
+    return {};
+  }
 }
 
 function saveGrammarProgress(data) {
@@ -40,13 +43,15 @@ function renderLessonList() {
 
   GRAMMAR_LESSONS.forEach((lesson, i) => {
     const completed = progress[lesson.id]?.completed;
-    const exerciseCount = lesson.sections.filter(s => s.type === 'exercise').length;
+    const exerciseCount = lesson.sections.filter((s) => s.type === 'exercise').length;
     const doneCount = progress[lesson.id]?.exercises || 0;
     const hasContent = lesson.sections.length > 0;
 
     const card = document.createElement('div');
     card.className = 'grammar-lesson-card' + (completed ? ' completed' : '') + (!hasContent ? ' empty' : '');
-    card.onclick = () => { if (hasContent) showGrammarLesson(lesson.id); };
+    card.onclick = () => {
+      if (hasContent) showGrammarLesson(lesson.id);
+    };
     card.innerHTML = `
       <div class="glc-number">${i + 1}</div>
       <div class="glc-body">
@@ -66,7 +71,7 @@ let currentLessonId = null;
 
 function showGrammarLesson(id) {
   currentLessonId = id;
-  const lesson = GRAMMAR_LESSONS.find(l => l.id === id);
+  const lesson = GRAMMAR_LESSONS.find((l) => l.id === id);
   if (!lesson) return;
 
   const container = document.getElementById('lesson-content');
@@ -79,7 +84,7 @@ function showGrammarLesson(id) {
     switch (section.type) {
       case 'text':
         el.className += ' lesson-text';
-        el.innerHTML = prefs.greekOnly ? section.content : (section.contentEn || section.content);
+        el.innerHTML = prefs.greekOnly ? section.content : section.contentEn || section.content;
         break;
 
       case 'table':
@@ -100,11 +105,13 @@ function showGrammarLesson(id) {
 }
 
 function renderGrammarTable(section) {
-  const headers = section.headers.map(h => `<th>${h}</th>`).join('');
-  const rows = section.rows.map(row => {
-    const cells = row.map((cell, i) => `<td${i === 0 ? ' class="row-header"' : ''}>${cell}</td>`).join('');
-    return `<tr>${cells}</tr>`;
-  }).join('');
+  const headers = section.headers.map((h) => `<th>${h}</th>`).join('');
+  const rows = section.rows
+    .map((row) => {
+      const cells = row.map((cell, i) => `<td${i === 0 ? ' class="row-header"' : ''}>${cell}</td>`).join('');
+      return `<tr>${cells}</tr>`;
+    })
+    .join('');
   return `<table class="grammar-table"><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table>`;
 }
 
@@ -112,9 +119,11 @@ function renderExercise(section, idx) {
   const id = `exercise-${idx}`;
 
   if (section.kind === 'fill-blank') {
-    const options = section.options.map(o =>
-      `<button class="ex-option" onclick="checkFillBlank(this, '${id}', '${section.answer}')">${o}</button>`
-    ).join('');
+    const options = section.options
+      .map(
+        (o) => `<button class="ex-option" onclick="checkFillBlank(this, '${id}', '${section.answer}')">${o}</button>`,
+      )
+      .join('');
     return `
       <div class="exercise-block" id="${id}">
         <div class="ex-label">${gt('Συμπλήρωσε:', 'Fill in:')}</div>
@@ -126,13 +135,13 @@ function renderExercise(section, idx) {
   }
 
   if (section.kind === 'multiple-choice') {
-    const options = section.options.map((o, i) =>
-      `<button class="ex-option" onclick="checkMC(this, '${id}', ${section.correct})">${o}</button>`
-    ).join('');
+    const options = section.options
+      .map((o, i) => `<button class="ex-option" onclick="checkMC(this, '${id}', ${section.correct})">${o}</button>`)
+      .join('');
     return `
       <div class="exercise-block" id="${id}">
         <div class="ex-label">${gt('Επίλεξε:', 'Choose:')}</div>
-        <div class="ex-prompt">${prefs.greekOnly ? section.question : (section.questionEn || section.question)}</div>
+        <div class="ex-prompt">${prefs.greekOnly ? section.question : section.questionEn || section.question}</div>
         <div class="ex-options">${options}</div>
         <div class="ex-feedback"></div>
       </div>
@@ -158,7 +167,9 @@ function checkFillBlank(btn, exId, correctAnswer) {
     markExerciseDone();
   } else {
     btn.classList.add('wrong');
-    buttons.forEach(b => { if (b.textContent.trim() === correctAnswer) b.classList.add('correct'); });
+    buttons.forEach((b) => {
+      if (b.textContent.trim() === correctAnswer) b.classList.add('correct');
+    });
     feedback.textContent = gt('Λάθος — ', 'Wrong — ') + correctAnswer;
     feedback.className = 'ex-feedback wrong';
   }
@@ -192,8 +203,8 @@ function markExerciseDone() {
   if (!progress[currentLessonId]) progress[currentLessonId] = { exercises: 0, completed: false };
   progress[currentLessonId].exercises++;
 
-  const lesson = GRAMMAR_LESSONS.find(l => l.id === currentLessonId);
-  const totalExercises = lesson ? lesson.sections.filter(s => s.type === 'exercise').length : 0;
+  const lesson = GRAMMAR_LESSONS.find((l) => l.id === currentLessonId);
+  const totalExercises = lesson ? lesson.sections.filter((s) => s.type === 'exercise').length : 0;
   if (totalExercises > 0 && progress[currentLessonId].exercises >= totalExercises) {
     progress[currentLessonId].completed = true;
   }

@@ -5,7 +5,9 @@ function updateProgress() {
   // Anki-style remaining counts: new + learning + review
   // Count new and review cards left in the main queue
   const srs = loadSRS();
-  let newCount = 0, learnCount = 0, reviewCount = 0;
+  let newCount = 0,
+    learnCount = 0,
+    reviewCount = 0;
   for (const c of queue) {
     const cd = getCardData(srs, c.word, c.dir);
     if (cd.phase === 'new') newCount++;
@@ -37,7 +39,10 @@ function updateProgress() {
 
 function abandonSession() {
   stopAudio();
-  if (waitingTimer) { clearInterval(waitingTimer); waitingTimer = null; }
+  if (waitingTimer) {
+    clearInterval(waitingTimer);
+    waitingTimer = null;
+  }
   queue = [];
   delayedQueue = [];
   showLevelSelect();
@@ -49,11 +54,10 @@ function showEnd() {
 
   const srs = loadSRS();
   const now = Date.now();
-  const dirs = sessionMode === 'both' ? ['en','gr'] : [sessionMode];
+  const dirs = sessionMode === 'both' ? ['en', 'gr'] : [sessionMode];
   let totalDue = 0;
-  const checkWords = sessionRankMin !== null
-    ? WORDS.filter(w => w.rank >= sessionRankMin && w.rank <= sessionRankMax)
-    : WORDS;
+  const checkWords =
+    sessionRankMin !== null ? WORDS.filter((w) => w.rank >= sessionRankMin && w.rank <= sessionRankMax) : WORDS;
   for (const word of checkWords) {
     for (const dir of dirs) {
       const cd = getCardData(srs, word, dir);

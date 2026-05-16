@@ -47,7 +47,8 @@
       "Bash(xargs grep -l \"QueuedCards\")",
       "Bash(xargs grep -l \"fn get_queued_cards\")",
       "Bash(xargs grep -l \"new-count\\\\|learn-count\\\\|review-count\")",
-      "Bash(node -e \"console.log\\(''Now:'', Date.now\\(\\)\\); console.log\\(''r1_en nextReview:'', 1778958374242, ''due in'', \\(\\(1778958374242 - Date.now\\(\\)\\) / 3600000\\).toFixed\\(1\\), ''hours''\\)\")"
+      "Bash(node -e \"console.log\\(''Now:'', Date.now\\(\\)\\); console.log\\(''r1_en nextReview:'', 1778958374242, ''due in'', \\(\\(1778958374242 - Date.now\\(\\)\\) / 3600000\\).toFixed\\(1\\), ''hours''\\)\")",
+      "Bash(ls c:/Users/OliverLeask/Desktop/greek/.prettierrc*)"
     ]
   }
 }
