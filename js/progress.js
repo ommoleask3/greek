@@ -2,10 +2,37 @@
 // PROGRESS & END
 // ═══════════════════════════════════════════════════════════════════════════════
 function updateProgress() {
-  const pct = sessionTotal > 0 ? Math.max(0, (sessionDone / sessionTotal) * 100) : 0;
-  document.getElementById('progress-bar').style.width = pct + '%';
-  document.getElementById('progress-label').textContent =
-    `${sessionDone} / ${sessionTotal} cards`;
+  // Anki-style remaining counts: new + learning + review
+  // Count new and review cards left in the main queue
+  const srs = loadSRS();
+  let newCount = 0, learnCount = 0, reviewCount = 0;
+  for (const c of queue) {
+    const cd = getCardData(srs, c.word, c.dir);
+    if (cd.phase === 'new') newCount++;
+    else if (cd.phase === 'learning' || cd.phase === 'relearning') learnCount++;
+    else reviewCount++;
+  }
+  // Also count cards in the delayed queue (intraday learning)
+  learnCount += delayedQueue.length;
+
+  const el = document.getElementById('queue-counts');
+  const newEl = document.getElementById('count-new');
+  const learnEl = document.getElementById('count-learn');
+  const reviewEl = document.getElementById('count-review');
+  newEl.textContent = newCount;
+  learnEl.textContent = learnCount;
+  reviewEl.textContent = reviewCount;
+
+  // Underline the current card's queue type
+  newEl.classList.remove('count-current');
+  learnEl.classList.remove('count-current');
+  reviewEl.classList.remove('count-current');
+  if (current) {
+    const cd = getCardData(srs, current.word, current.dir);
+    if (cd.phase === 'new') newEl.classList.add('count-current');
+    else if (cd.phase === 'learning' || cd.phase === 'relearning') learnEl.classList.add('count-current');
+    else reviewEl.classList.add('count-current');
+  }
 }
 
 function abandonSession() {

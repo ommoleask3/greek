@@ -145,10 +145,11 @@
 <!-- Session / main view -->
 <div id="main-view">
   <button class="btn-back-session" onclick="abandonSession()">← Πίσω</button>
-  <div class="progress-bar-wrap">
-    <div class="progress-bar" id="progress-bar"></div>
+  <div class="queue-counts" id="queue-counts">
+    <span class="count-new" id="count-new">0</span> +
+    <span class="count-learn" id="count-learn">0</span> +
+    <span class="count-review" id="count-review">0</span>
   </div>
-  <div class="progress-label" id="progress-label"></div>
 
   <div class="scene" id="scene" onclick="onCardClick()">
     <div class="card" id="card">

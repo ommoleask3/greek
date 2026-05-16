@@ -51,6 +51,7 @@ const LAPSE_NEW_INTERVAL = 0.5;        // multiplier on old interval (0.5 = keep
 const LAPSE_STEPS       = [600];       // seconds: 10min relearning
 const MAX_INTERVAL      = 36500;       // ~100 years
 const LEECH_THRESHOLD   = 8;           // flag card as leech after this many lapses
+const LEARN_AHEAD_SECS  = 1200;        // 20min — show learning cards early (Anki default)
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // CONSTANTS & STATE
@@ -68,9 +69,7 @@ let queue = [];
 let delayedQueue = [];     // [{card, dueTime}] for learning/relearning cards
 let waitingTimer = null;   // timer ID for countdown display
 let current = null;
-let cardState = 'loading'; // loading | question | answer | answer-wrong | sentence | translation | no-sentence | waiting
-let sessionTotal = 0;
-let sessionDone = 0;       // unique cards fully answered (not re-queued)
+let cardState = 'loading'; // loading | question | answer | answer-wrong | sentence | translation | no-sentence
 let sessionCorrect = 0;
 let sessionWrong = 0;
 let sessionGraduated = 0;  // cards that graduated learning → review this session

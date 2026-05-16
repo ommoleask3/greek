@@ -41,7 +41,6 @@ async function processApkg(file) {
     setStatus('Extracting cards…');
     const { words, detectedFields, allFieldNames } = extractWords(db);
     db.close();
-    console.log('All model field names:', allFieldNames);
 
     if (words.length === 0) throw new Error('No usable EN↔GR pairs found.');
 
@@ -167,17 +166,6 @@ function extractWords(db) {
       const sentEnIdx2 = findSentenceEnIndex(names, fields);
       const audioIdx2 = findAudioIndex(names, fields, 'audio');
       const audio2Idx2 = findAudioIndex(names, fields, 'audio2');
-      console.log('Field names:', names);
-      console.log('Field values (first note):', fields);
-      console.log('Mapped fields:', {
-        en: `[${enIdx}] ${names[enIdx]}`,
-        gr: `[${grIdx}] ${names[grIdx]}`,
-        rank: `[${rankIdx2}] ${names[rankIdx2]}`,
-        sentence: `[${sentIdx2}] ${names[sentIdx2]}`,
-        sentenceEn: `[${sentEnIdx2}] ${names[sentEnIdx2]}`,
-        audio: `[${audioIdx2}] ${names[audioIdx2]}`,
-        audio2: `[${audio2Idx2}] ${names[audio2Idx2]}`,
-      });
     }
 
     if (enIdx === -1 || grIdx === -1 || enIdx === grIdx) continue;

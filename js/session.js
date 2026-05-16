@@ -7,7 +7,7 @@ function startSession() {
   buildQueue();
 
   if (queue.length === 0 && delayedQueue.length === 0) {
-    document.getElementById('progress-label').textContent = 'Δεν υπάρχουν κάρτες — επέστρεψε αργότερα!';
+    document.getElementById('queue-counts').textContent = 'Δεν υπάρχουν κάρτες — επέστρεψε αργότερα!';
     document.getElementById('front-word').textContent = '';
     document.getElementById('front-lang').textContent = '';
     cardState = 'loading';
@@ -57,6 +57,16 @@ function buildQueue() {
   }
 
   shuffle(due);
+  // Log cards that are review phase but NOT due (to see what the tile might be counting)
+  const notYetDue = [];
+  for (const word of sorted) {
+    for (const dir of dirs) {
+      const cd = getCardData(srs, word, dir);
+      if (cd.phase === 'review' && cd.nextReview > now) {
+        notYetDue.push({ key: `r${word.rank}_${dir}`, nextReview: cd.nextReview, dueIn: ((cd.nextReview - now) / 3600000).toFixed(1) + 'h' });
+      }
+    }
+  }
 
   if (sessionReadonly) {
     // Custom range: sort by nextReview ascending (most overdue first, new cards last)
@@ -71,12 +81,13 @@ function buildQueue() {
   } else {
     // Session = all due cards + new cards to fill up to 20
     const newCount = Math.max(0, 20 - due.length);
-    queue = [...due, ...fresh.slice(0, newCount)];
+    const newCards = fresh.slice(0, newCount);
+    // Anki-style interleave: proportionally mix due and new cards
+    // so learning cards have time to become re-due between new cards
+    queue = interleave(due, newCards);
   }
   delayedQueue = [];
 
-  sessionTotal = queue.length;
-  sessionDone = 0;
   sessionCorrect = 0;
   sessionWrong = 0;
   sessionGraduated = 0;
@@ -87,6 +98,32 @@ function shuffle(arr) {
     const j = Math.floor(Math.random() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
+}
+
+// Anki Intersperser: proportionally distribute shorter array into longer one
+// e.g. 3 due + 17 new → due cards spaced evenly among new cards
+function interleave(a, b) {
+  if (a.length === 0) return [...b];
+  if (b.length === 0) return [...a];
+  // Ensure 'longer' is the bigger array
+  let longer, shorter;
+  if (a.length >= b.length) { longer = a; shorter = b; }
+  else { longer = b; shorter = a; }
+  const result = [];
+  const ratio = (longer.length + 1) / (shorter.length + 1);
+  let li = 0, si = 0, acc = 0;
+  while (li < longer.length || si < shorter.length) {
+    acc += 1;
+    if (si < shorter.length && acc >= ratio) {
+      result.push(shorter[si++]);
+      acc -= ratio;
+    } else if (li < longer.length) {
+      result.push(longer[li++]);
+    } else {
+      result.push(shorter[si++]);
+    }
+  }
+  return result;
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -126,13 +163,19 @@ function formatInterval(days) {
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // NEXT CARD
+// Anki-style 3-tier priority:
+//   1. Intraday learning cards that are due NOW
+//   2. Main queue (new + review cards, interleaved)
+//   3. Learning cards within learn-ahead window (show early, never wait)
 // ═══════════════════════════════════════════════════════════════════════════════
 function nextCard(animate) {
   // Clear any waiting timer
   if (waitingTimer) { clearInterval(waitingTimer); waitingTimer = null; }
 
-  // Check delayed queue for cards that are due now
   const now = Date.now();
+  const learnAheadCutoff = now + LEARN_AHEAD_SECS * 1000;
+
+  // --- Tier 1: learning card that is due now ---
   let readyIdx = -1;
   let earliestTime = Infinity;
   for (let i = 0; i < delayedQueue.length; i++) {
@@ -147,23 +190,32 @@ function nextCard(animate) {
 
   let next;
   if (readyIdx >= 0) {
-    // A delayed card is ready
     next = delayedQueue.splice(readyIdx, 1)[0].card;
+
+  // --- Tier 2: main queue (new / review) ---
   } else if (queue.length > 0) {
-    // Pull from main queue
     next = queue.shift();
-  } else if (delayedQueue.length > 0 && shouldWaitForDelayed(now)) {
-    // "Again" cards skip the timer — show them immediately
-    const againIdx = delayedQueue.findIndex(e => e.wasAgain);
-    if (againIdx >= 0) {
-      next = delayedQueue.splice(againIdx, 1)[0].card;
+
+  // --- Tier 3: learn-ahead — show earliest learning card early, no timer ---
+  } else if (delayedQueue.length > 0) {
+    // Find the card with the earliest due time within learn-ahead window
+    let bestIdx = -1;
+    let bestTime = Infinity;
+    for (let i = 0; i < delayedQueue.length; i++) {
+      if (delayedQueue[i].dueTime < bestTime) {
+        bestTime = delayedQueue[i].dueTime;
+        bestIdx = i;
+      }
+    }
+    if (bestIdx >= 0 && bestTime <= learnAheadCutoff) {
+      next = delayedQueue.splice(bestIdx, 1)[0].card;
     } else {
-      // Wait for non-again cards due within 60s
-      showWaitingState(earliestTime);
+      // All delayed cards are beyond 20-min learn-ahead — session complete
+      showEnd();
       return;
     }
   } else {
-    // Session complete
+    // Nothing left at all
     showEnd();
     return;
   }
@@ -207,45 +259,6 @@ function nextCard(animate) {
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// WAITING LOGIC
-// ═══════════════════════════════════════════════════════════════════════════════
-function shouldWaitForDelayed(now) {
-  // Wait if any delayed card was an "again" or is due within 60s
-  for (const entry of delayedQueue) {
-    if (entry.wasAgain || entry.dueTime - now <= 60000) return true;
-  }
-  return false;
-}
-
-function showWaitingState(nextDueTime) {
-  cardState = 'waiting';
-  const card = document.getElementById('card');
-  card.classList.remove('flipped', 'complete-glow', 'flying');
-  document.getElementById('btn-row').classList.remove('visible');
-  document.getElementById('card-hint').style.display = 'none';
-
-  const frontWord = document.getElementById('front-word');
-  document.getElementById('front-lang').textContent = '';
-  document.getElementById('card-type-badge').textContent = '';
-
-  function updateCountdown() {
-    const remaining = Math.max(0, nextDueTime - Date.now());
-    if (remaining <= 0) {
-      clearInterval(waitingTimer);
-      waitingTimer = null;
-      nextCard(false);
-      return;
-    }
-    const secs = Math.ceil(remaining / 1000);
-    const m = Math.floor(secs / 60);
-    const s = secs % 60;
-    frontWord.textContent = `Επόμενη κάρτα σε ${m}:${s.toString().padStart(2, '0')}`;
-  }
-
-  updateCountdown();
-  waitingTimer = setInterval(updateCountdown, 1000);
-}
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // CARD CONTENT
@@ -435,8 +448,6 @@ function answer(choice) {
   if (isCorrect) sessionCorrect++;
   else sessionWrong++;
 
-  const dqBefore = delayedQueue.length;
-
   if (!sessionReadonly) {
     const srs = loadSRS();
     const cd = getCardData(srs, answering.word, answering.dir);
@@ -462,10 +473,6 @@ function answer(choice) {
     // Custom range (readonly): no SRS writes
     if (choice === 'again') queue.push(answering);
   }
-
-  // Card is "done" if it was NOT re-queued
-  const requeued = delayedQueue.length > dqBefore || (sessionReadonly && choice === 'again');
-  if (!requeued) sessionDone++;
 
   document.getElementById('btn-row').classList.remove('visible');
 
@@ -494,7 +501,7 @@ function handleLearning(cd, choice, answering) {
     cd.phase = 'learning';
     cd.learningStep = 0;
     cd.nextReview = Date.now() + LEARNING_STEPS[0] * 1000;
-    delayedQueue.push({ card: answering, dueTime: cd.nextReview, wasAgain: choice === 'again' });
+    delayedQueue.push({ card: answering, dueTime: cd.nextReview });
 
   } else if (choice === 'good') {
     const nextStep = cd.learningStep + 1;
@@ -503,7 +510,7 @@ function handleLearning(cd, choice, answering) {
       cd.phase = 'learning';
       cd.learningStep = nextStep;
       cd.nextReview = Date.now() + LEARNING_STEPS[nextStep] * 1000;
-      delayedQueue.push({ card: answering, dueTime: cd.nextReview, wasAgain: choice === 'again' });
+      delayedQueue.push({ card: answering, dueTime: cd.nextReview });
     } else {
       // Graduate: learning → review
       cd.phase = 'review';
@@ -553,7 +560,7 @@ function handleReview(cd, choice, answering) {
     cd.phase = 'relearning';
     cd.learningStep = 0;
     cd.nextReview = now + LAPSE_STEPS[0] * 1000;
-    delayedQueue.push({ card: answering, dueTime: cd.nextReview, wasAgain: true });
+    delayedQueue.push({ card: answering, dueTime: cd.nextReview });
 
     // Leech detection
     if (cd.lapseCount >= LEECH_THRESHOLD && cd.lapseCount % 4 === 0) {
@@ -585,14 +592,14 @@ function handleRelearning(cd, choice, answering) {
     // Reset to step 0
     cd.learningStep = 0;
     cd.nextReview = Date.now() + LAPSE_STEPS[0] * 1000;
-    delayedQueue.push({ card: answering, dueTime: cd.nextReview, wasAgain: choice === 'again' });
+    delayedQueue.push({ card: answering, dueTime: cd.nextReview });
 
   } else if (choice === 'good') {
     const nextStep = cd.learningStep + 1;
     if (nextStep < LAPSE_STEPS.length) {
       cd.learningStep = nextStep;
       cd.nextReview = Date.now() + LAPSE_STEPS[nextStep] * 1000;
-      delayedQueue.push({ card: answering, dueTime: cd.nextReview, wasAgain: choice === 'again' });
+      delayedQueue.push({ card: answering, dueTime: cd.nextReview });
     } else {
       // Graduate back to review with the lapse interval
       cd.phase = 'review';

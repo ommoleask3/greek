@@ -42,7 +42,12 @@
       "Bash(python insert_missing.py)",
       "Bash(xargs grep -l \"learning_steps\\\\|newSpend\\\\|again_delay\")",
       "Bash(xargs grep -l \"intraday_learning\\\\|learning_remaining\")",
-      "Bash(xargs grep -l \"learn_ahead\\\\|default.*1.*minute\\\\|[1m, 10m]\")"
+      "Bash(xargs grep -l \"learn_ahead\\\\|default.*1.*minute\\\\|[1m, 10m]\")",
+      "Bash(xargs grep -l \"new_count\\\\|review_count\\\\|learning_count\")",
+      "Bash(xargs grep -l \"QueuedCards\")",
+      "Bash(xargs grep -l \"fn get_queued_cards\")",
+      "Bash(xargs grep -l \"new-count\\\\|learn-count\\\\|review-count\")",
+      "Bash(node -e \"console.log\\(''Now:'', Date.now\\(\\)\\); console.log\\(''r1_en nextReview:'', 1778958374242, ''due in'', \\(\\(1778958374242 - Date.now\\(\\)\\) / 3600000\\).toFixed\\(1\\), ''hours''\\)\")"
     ]
   }
 }

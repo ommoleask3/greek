@@ -302,28 +302,20 @@ body:has(#home-view.active) {
 .btn-practice:hover { background: linear-gradient(135deg, #3a4060, #4a5280); }
 
 /* ── Progress bar (session) ── */
-.progress-bar-wrap {
-  width: 100%;
-  max-width: 480px;
-  height: 3px;
-  background: #1e2130;
-  border-radius: 2px;
-  margin-bottom: 12px;
-}
-.progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, #4f7cff, #a78bfa);
-  border-radius: 2px;
-  transition: width 0.4s ease;
-}
-.progress-label {
-  font-size: 0.75rem;
-  color: #4a5170;
-  text-align: right;
+/* Anki-style queue counts: new + learning + review */
+.queue-counts {
+  font-size: 0.85rem;
+  color: #6b7194;
+  text-align: center;
   max-width: 480px;
   width: 100%;
   margin-bottom: 28px;
+  letter-spacing: 0.5px;
 }
+.count-new     { color: #4f9fff; }
+.count-learn   { color: #d4915e; }
+.count-review  { color: #5fbf7f; }
+.count-current { text-decoration: underline; }
 
 /* ── Card ── */
 .scene {
