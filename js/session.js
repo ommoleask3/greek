@@ -193,17 +193,30 @@ function nextCard(animate) {
   const now = Date.now();
   const learnAheadCutoff = now + LEARN_AHEAD_SECS * 1000;
 
-  // --- Tier 1: learning card that is due now ---
+  // Helper: check if a delayed queue entry is the same card we just showed
+  const isSameCard = (entry) =>
+    current && entry.card.word === current.word && entry.card.dir === current.dir;
+
+  // --- Tier 1: learning card that is due now (skip same-card if alternatives exist) ---
   let readyIdx = -1;
+  let fallbackIdx = -1;
   let earliestTime = Infinity;
   for (let i = 0; i < delayedQueue.length; i++) {
     if (delayedQueue[i].dueTime <= now) {
-      readyIdx = i;
-      break;
+      if (!isSameCard(delayedQueue[i])) {
+        readyIdx = i;
+        break;
+      } else if (fallbackIdx < 0) {
+        fallbackIdx = i; // same card, use only if no alternative
+      }
     }
     if (delayedQueue[i].dueTime < earliestTime) {
       earliestTime = delayedQueue[i].dueTime;
     }
+  }
+  // Use same card only if it's the sole option (no main queue, no other delayed cards)
+  if (readyIdx < 0 && fallbackIdx >= 0 && queue.length === 0 && delayedQueue.length <= 1) {
+    readyIdx = fallbackIdx;
   }
 
   let next;
@@ -217,16 +230,26 @@ function nextCard(animate) {
     // --- Tier 3: learn-ahead — show earliest learning card early, no timer ---
   } else if (delayedQueue.length > 0) {
     // Find the card with the earliest due time within learn-ahead window
+    // Prefer a different card than the one just shown
     let bestIdx = -1;
     let bestTime = Infinity;
+    let sameBestIdx = -1;
+    let sameBestTime = Infinity;
     for (let i = 0; i < delayedQueue.length; i++) {
-      if (delayedQueue[i].dueTime < bestTime) {
+      if (delayedQueue[i].dueTime < bestTime && !isSameCard(delayedQueue[i])) {
         bestTime = delayedQueue[i].dueTime;
         bestIdx = i;
       }
+      if (delayedQueue[i].dueTime < sameBestTime) {
+        sameBestTime = delayedQueue[i].dueTime;
+        sameBestIdx = i;
+      }
     }
+    // Use a different card if available within learn-ahead, else fall back to same card
     if (bestIdx >= 0 && bestTime <= learnAheadCutoff) {
       next = delayedQueue.splice(bestIdx, 1)[0].card;
+    } else if (sameBestIdx >= 0 && sameBestTime <= learnAheadCutoff) {
+      next = delayedQueue.splice(sameBestIdx, 1)[0].card;
     } else {
       // All delayed cards are beyond 20-min learn-ahead — session complete
       showEnd();
