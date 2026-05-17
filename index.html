@@ -117,10 +117,27 @@
 
       <div class="level-panels">
         <div class="level-panel active" id="panel-en">
-          <div class="level-grid" id="grid-en"></div>
+          <div class="scroll-row">
+            <button class="scroll-btn scroll-btn--left hidden" aria-label="Scroll left">&lsaquo;</button>
+            <div class="scroll-row-track" id="grid-en"></div>
+            <button class="scroll-btn scroll-btn--right" aria-label="Scroll right">&rsaquo;</button>
+          </div>
         </div>
         <div class="level-panel" id="panel-gr">
-          <div class="level-grid" id="grid-gr"></div>
+          <div class="scroll-row">
+            <button class="scroll-btn scroll-btn--left hidden" aria-label="Scroll left">&lsaquo;</button>
+            <div class="scroll-row-track" id="grid-gr"></div>
+            <button class="scroll-btn scroll-btn--right" aria-label="Scroll right">&rsaquo;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="thematic-section">
+        <h3 class="thematic-heading">Θεματικά μαθήματα</h3>
+        <div class="scroll-row">
+          <button class="scroll-btn scroll-btn--left hidden" aria-label="Scroll left">&lsaquo;</button>
+          <div class="scroll-row-track" id="thematic-grid"></div>
+          <button class="scroll-btn scroll-btn--right" aria-label="Scroll right">&rsaquo;</button>
         </div>
       </div>
 
@@ -247,6 +264,7 @@
     <script src="js/audio.js"></script>
     <script src="js/views.js"></script>
     <script src="js/import.js"></script>
+    <script src="js/thematic-data.js"></script>
     <script src="js/levels.js"></script>
     <script src="js/progress.js"></script>
     <script src="js/session.js"></script>

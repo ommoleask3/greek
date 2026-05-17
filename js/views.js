@@ -29,6 +29,7 @@ function splashArrive() {
 }
 
 async function showLevelSelect() {
+  sessionThematic = null;
   // Reload words if needed
   if (WORDS.length === 0) {
     try {

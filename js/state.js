@@ -144,6 +144,7 @@ let sessionMode = 'en'; // 'en' | 'gr' | 'both'
 let sessionRankMin = null;
 let sessionRankMax = null;
 let sessionReadonly = false; // true for custom range — no SRS/stats updates
+let sessionThematic = null; // null or THEMATIC_LESSONS entry when in thematic mode
 
 // Prefs
 let prefs = { volume: 1, firstCardSeen: false, voiceSource: 'indexed', ttsRate: 0.85, greekOnly: false };

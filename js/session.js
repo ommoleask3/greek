@@ -25,6 +25,38 @@ function startSession() {
 }
 
 function buildQueue() {
+  // Thematic mode: use lesson words with standard SRS filtering
+  if (sessionThematic) {
+    const srs = loadSRS();
+    const now = Date.now();
+    const dirs = sessionMode === 'both' ? ['en', 'gr'] : [sessionMode];
+    const due = [], fresh = [];
+
+    for (const word of sessionThematic.words) {
+      for (const dir of dirs) {
+        const cd = getCardData(srs, word, dir);
+        const card = { word, dir };
+        if (cd.phase === 'new') {
+          fresh.push(card);
+        } else if ((cd.phase === 'learning' || cd.phase === 'relearning') && cd.nextReview <= now) {
+          due.push(card);
+        } else if (cd.phase === 'review' && cd.nextReview <= now) {
+          due.push(card);
+        }
+      }
+    }
+
+    shuffle(due);
+    const newCount = Math.max(0, 20 - due.length);
+    const newCards = fresh.slice(0, newCount);
+    queue = interleave(due, newCards);
+    delayedQueue = [];
+    sessionCorrect = 0;
+    sessionWrong = 0;
+    sessionGraduated = 0;
+    return;
+  }
+
   if (WORDS.length === 0) {
     queue = [];
     delayedQueue = [];

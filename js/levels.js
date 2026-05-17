@@ -81,6 +81,165 @@ function getTileCounts(levelWords, dir, srs) {
 function renderLevelGrids() {
   renderGrid('en');
   renderGrid('gr');
+  renderThematicGrid();
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// SCROLL POSITION PERSISTENCE
+// ═══════════════════════════════════════════════════════════════════════════════
+const SCROLL_KEY = 'greek_scroll_v1';
+
+function loadScrollPositions() {
+  try { return JSON.parse(localStorage.getItem(SCROLL_KEY)) || {}; } catch { return {}; }
+}
+
+function saveScrollPosition(id, pos) {
+  const data = loadScrollPositions();
+  data[id] = pos;
+  localStorage.setItem(SCROLL_KEY, JSON.stringify(data));
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// SCROLL ROW BUTTONS
+// ═══════════════════════════════════════════════════════════════════════════════
+function initScrollRow(row) {
+  const track = row.querySelector('.scroll-row-track');
+  const btnL = row.querySelector('.scroll-btn--left');
+  const btnR = row.querySelector('.scroll-btn--right');
+  if (!track || !btnL || !btnR) return;
+
+  const trackId = track.id || '';
+
+  // Exponential chase: each frame closes 15% of remaining distance.
+  // Clicks just move the target — the single loop adapts smoothly.
+  let animId = null;
+  let scrollTarget = null;
+  const LERP = 0.15;
+
+  function tileStep() {
+    const tile = track.querySelector('.level-tile, .thematic-tile');
+    if (!tile) return 170;
+    const gap = parseFloat(getComputedStyle(track).gap) || 10;
+    return tile.offsetWidth + gap;
+  }
+
+  function clampTarget(t) {
+    return Math.max(0, Math.min(t, track.scrollWidth - track.clientWidth));
+  }
+
+  function tick() {
+    const diff = scrollTarget - track.scrollLeft;
+    if (Math.abs(diff) < 1) {
+      track.scrollLeft = scrollTarget;
+      animId = null;
+      update();
+      return;
+    }
+    // Move at least 1px per frame to avoid integer-rounding stalls
+    const step = diff * LERP;
+    const move = Math.abs(step) < 1 ? Math.sign(diff) : step;
+    track.scrollLeft += move;
+    animId = requestAnimationFrame(tick);
+  }
+
+  function scrollBy(delta) {
+    if (animId === null) {
+      scrollTarget = clampTarget(track.scrollLeft + delta);
+    } else {
+      scrollTarget = clampTarget(scrollTarget + delta);
+    }
+    if (!animId) animId = requestAnimationFrame(tick);
+  }
+
+  function update() {
+    btnL.classList.toggle('hidden', track.scrollLeft < 1);
+    btnR.classList.toggle('hidden', track.scrollLeft + track.clientWidth >= track.scrollWidth - 1);
+    if (trackId) saveScrollPosition(trackId, Math.round(track.scrollLeft));
+  }
+
+  btnL.addEventListener('click', () => scrollBy(-tileStep()));
+  btnR.addEventListener('click', () => scrollBy(tileStep()));
+  track.addEventListener('scroll', update);
+
+  // Restore saved position
+  if (trackId) {
+    const saved = loadScrollPositions()[trackId];
+    if (saved > 0) track.scrollLeft = saved;
+  }
+
+  // Initial button visibility check
+  requestAnimationFrame(update);
+}
+
+function initAllScrollRows() {
+  document.querySelectorAll('.scroll-row').forEach(initScrollRow);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// THEMATIC GRID
+// ═══════════════════════════════════════════════════════════════════════════════
+function renderThematicGrid() {
+  const grid = document.getElementById('thematic-grid');
+  if (!grid || typeof THEMATIC_LESSONS === 'undefined') return;
+  grid.innerHTML = '';
+
+  const srs = loadSRS();
+
+  for (const lesson of THEMATIC_LESSONS) {
+    const total = lesson.words.length;
+    let completed = 0;
+    const counts = { newCount: 0, learningCount: 0, dueCount: 0 };
+    const now = Date.now();
+
+    for (const w of lesson.words) {
+      for (const dir of ['en', 'gr']) {
+        const cd = srs[cardKey(w, dir)];
+        if (cd && cd.graduated) completed++;
+        const phase = cd ? cd.phase || 'new' : 'new';
+        const nextReview = cd ? cd.nextReview || 0 : 0;
+        if (phase === 'new') counts.newCount++;
+        else if ((phase === 'learning' || phase === 'relearning') && nextReview <= now) counts.learningCount++;
+        else if (phase === 'review' && nextReview <= now) counts.dueCount++;
+      }
+    }
+
+    const totalCards = total * 2; // both dirs
+    const pct = totalCards > 0 ? Math.round((completed / totalCards) * 100) : 0;
+    const barColor = pct >= 100 ? 'linear-gradient(90deg,#c9960c,#f5c518)'
+      : pct >= 50 ? 'linear-gradient(90deg,#a06820,#d4a017)'
+      : 'linear-gradient(90deg,#4f7cff,#a78bfa)';
+
+    const tile = document.createElement('div');
+    tile.className = 'thematic-tile';
+    const style = tileStyle(completed, false);
+    if (style) tile.setAttribute('style', style);
+
+    tile.innerHTML = `
+      <div class="thematic-tile-icon">${lesson.icon}</div>
+      <div class="thematic-tile-title" style="color:var(--tile-title-color,#7c85a6)">${lesson.title}</div>
+      <div class="level-tile-progress">${completed}/${totalCards} ολοκληρωμένα</div>
+      <div class="level-tile-bar"><div class="level-tile-bar-fill" style="width:${pct}%;background:${barColor}"></div></div>
+      <div class="tile-counts">
+        ${counts.newCount > 0 ? `<span class="tc-new" title="${counts.newCount} new">${counts.newCount}</span>` : ''}
+        ${counts.learningCount > 0 ? `<span class="tc-learning" title="${counts.learningCount} learning">${counts.learningCount}</span>` : ''}
+        ${counts.dueCount > 0 ? `<span class="tc-due" title="${counts.dueCount} due for review">${counts.dueCount}</span>` : ''}
+      </div>
+    `;
+    tile.addEventListener('click', () => startThematicSession(lesson));
+    grid.appendChild(tile);
+  }
+
+  const row = grid.closest('.scroll-row');
+  if (row) initScrollRow(row);
+}
+
+function startThematicSession(lesson) {
+  sessionThematic = lesson;
+  sessionMode = 'both';
+  sessionRankMin = null;
+  sessionRankMax = null;
+  sessionReadonly = false;
+  startSession();
 }
 
 function renderGrid(dir) {
@@ -151,6 +310,10 @@ function renderGrid(dir) {
     }
     grid.appendChild(tile);
   }
+
+  // Init scroll buttons for this row after tiles are in the DOM
+  const row = grid.closest('.scroll-row');
+  if (row) initScrollRow(row);
 }
 
 function toggleCustomRange() {
@@ -179,6 +342,7 @@ function startCustomRange() {
 }
 
 function startLevelSession(level, dir) {
+  sessionThematic = null;
   sessionMode = dir;
   sessionRankMin = (level - 1) * 100 + 1;
   sessionRankMax = level * 100;
