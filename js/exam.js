@@ -107,7 +107,10 @@ function renderExamCard() {
 
   // Clear translation from previous card
   const transEl = document.getElementById('exam-translation');
-  if (transEl) transEl.textContent = '';
+  if (transEl) {
+    transEl.textContent = '';
+    transEl.classList.remove('visible');
+  }
 
   // Input
   inputEl.innerHTML =
@@ -131,9 +134,10 @@ function submitExam() {
   if (!userAnswer) return;
 
   examAnswered = true;
-  // Strip punctuation from both for comparison
-  const normUser = normalizeGreek(userAnswer.replace(/[^α-ωά-ώϊϋΐΰ]/gi, ''));
-  const normCorrect = normalizeGreek(examCurrent.gr);
+  // Strip punctuation, normalize, and collapse ς→σ so either sigma form is accepted
+  const sigmaFold = (s) => normalizeGreek(s).replace(/ς/g, 'σ');
+  const normUser = sigmaFold(userAnswer.replace(/[^α-ωά-ώϊϋΐΰς]/gi, ''));
+  const normCorrect = sigmaFold(examCurrent.gr);
   const isCorrect = normUser === normCorrect;
 
   if (isCorrect) examCorrect++;
@@ -158,9 +162,12 @@ function submitExam() {
     feedbackEl.className = 'conj-feedback wrong';
   }
 
-  // Show English translation
+  // Store English translation but don't show yet — revealed on Space press
   const transEl = document.getElementById('exam-translation');
-  if (transEl) transEl.textContent = examCurrent.sentenceEn;
+  if (transEl) {
+    transEl.textContent = examCurrent.sentenceEn;
+    transEl.classList.remove('visible');
+  }
 
   // Play TTS with full sentence
   speakGreek(examCurrent.sentence);

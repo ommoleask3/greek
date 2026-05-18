@@ -8,7 +8,12 @@ function setupKeyboardShortcuts() {
       if (examAnswered && examCurrent) {
         if (e.key === ' ') {
           e.preventDefault();
-          nextExamCard();
+          const transEl = document.getElementById('exam-translation');
+          if (transEl && !transEl.classList.contains('visible')) {
+            transEl.classList.add('visible');
+          } else {
+            nextExamCard();
+          }
         } else if (e.key === 'Enter') {
           e.preventDefault();
           speakGreek(examCurrent.sentence);

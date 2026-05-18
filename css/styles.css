@@ -1640,17 +1640,25 @@ button:active {
   min-height: 20px;
 }
 
-.exam-sentence {
+.exam-sentence-wrap {
   background: #181c2a;
   border: 1px solid #252a3d;
   border-radius: 16px;
   padding: 28px 24px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100px;
+  position: relative;
+}
+
+.exam-sentence {
+  width: 100%;
   text-align: center;
   font-size: 1.25rem;
   line-height: 1.8;
   color: #e8eaf0;
-  min-height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1715,8 +1723,14 @@ button:active {
   font-size: 0.82rem;
   color: #4a5170;
   text-align: center;
-  min-height: 20px;
+  min-height: 0;
   font-style: italic;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  margin-top: 12px;
+}
+.exam-translation.visible {
+  opacity: 1;
 }
 
 .exam-tile-btn {
