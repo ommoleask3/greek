@@ -179,32 +179,35 @@ function initAllScrollRows() {
 // THEMATIC GRID
 // ═══════════════════════════════════════════════════════════════════════════════
 function renderThematicGrid() {
-  const grid = document.getElementById('thematic-grid');
-  if (!grid || typeof THEMATIC_LESSONS === 'undefined') return;
+  if (typeof THEMATIC_LESSONS === 'undefined') return;
+  renderThematicGridDir('en');
+  renderThematicGridDir('gr');
+}
+
+function renderThematicGridDir(dir) {
+  const grid = document.getElementById(`thematic-grid-${dir}`);
+  if (!grid) return;
   grid.innerHTML = '';
 
   const srs = loadSRS();
+  const now = Date.now();
 
   for (const lesson of THEMATIC_LESSONS) {
     const total = lesson.words.length;
     let completed = 0;
     const counts = { newCount: 0, learningCount: 0, dueCount: 0 };
-    const now = Date.now();
 
     for (const w of lesson.words) {
-      for (const dir of ['en', 'gr']) {
-        const cd = srs[cardKey(w, dir)];
-        if (cd && cd.graduated) completed++;
-        const phase = cd ? cd.phase || 'new' : 'new';
-        const nextReview = cd ? cd.nextReview || 0 : 0;
-        if (phase === 'new') counts.newCount++;
-        else if ((phase === 'learning' || phase === 'relearning') && nextReview <= now) counts.learningCount++;
-        else if (phase === 'review' && nextReview <= now) counts.dueCount++;
-      }
+      const cd = srs[cardKey(w, dir)];
+      if (cd && cd.graduated) completed++;
+      const phase = cd ? cd.phase || 'new' : 'new';
+      const nextReview = cd ? cd.nextReview || 0 : 0;
+      if (phase === 'new') counts.newCount++;
+      else if ((phase === 'learning' || phase === 'relearning') && nextReview <= now) counts.learningCount++;
+      else if (phase === 'review' && nextReview <= now) counts.dueCount++;
     }
 
-    const totalCards = total * 2; // both dirs
-    const pct = totalCards > 0 ? Math.round((completed / totalCards) * 100) : 0;
+    const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
     const barColor = pct >= 100 ? 'linear-gradient(90deg,#c9960c,#f5c518)'
       : pct >= 50 ? 'linear-gradient(90deg,#a06820,#d4a017)'
       : 'linear-gradient(90deg,#4f7cff,#a78bfa)';
@@ -217,7 +220,7 @@ function renderThematicGrid() {
     tile.innerHTML = `
       <div class="thematic-tile-icon">${lesson.icon}</div>
       <div class="thematic-tile-title" style="color:var(--tile-title-color,#7c85a6)">${lesson.title}</div>
-      <div class="level-tile-progress">${completed}/${totalCards} ολοκληρωμένα</div>
+      <div class="level-tile-progress">${completed}/${total} ολοκληρωμένα</div>
       <div class="level-tile-bar"><div class="level-tile-bar-fill" style="width:${pct}%;background:${barColor}"></div></div>
       <div class="tile-counts">
         ${counts.newCount > 0 ? `<span class="tc-new" title="${counts.newCount} new">${counts.newCount}</span>` : ''}
@@ -225,7 +228,7 @@ function renderThematicGrid() {
         ${counts.dueCount > 0 ? `<span class="tc-due" title="${counts.dueCount} due for review">${counts.dueCount}</span>` : ''}
       </div>
     `;
-    tile.addEventListener('click', () => startThematicSession(lesson));
+    tile.addEventListener('click', () => startThematicSession(lesson, dir));
     grid.appendChild(tile);
   }
 
@@ -233,9 +236,9 @@ function renderThematicGrid() {
   if (row) initScrollRow(row);
 }
 
-function startThematicSession(lesson) {
+function startThematicSession(lesson, dir) {
   sessionThematic = lesson;
-  sessionMode = 'both';
+  sessionMode = dir;
   sessionRankMin = null;
   sessionRankMax = null;
   sessionReadonly = false;
@@ -305,6 +308,20 @@ function renderGrid(dir) {
       </div>
       ${locked ? '<div class="level-lock-icon">🔒</div>' : ''}
     `;
+
+    // Exam button: only on EN-GR tiles that are fully graduated and have exam data
+    if (dir === 'en' && !locked && completed >= total && total > 0 &&
+        typeof EXAM_DATA !== 'undefined' && EXAM_DATA[lvl]) {
+      const examBtn = document.createElement('button');
+      examBtn.className = 'exam-tile-btn';
+      examBtn.textContent = 'Εξέταση';
+      examBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        startExam(lvl);
+      });
+      tile.appendChild(examBtn);
+    }
+
     if (!locked) {
       tile.addEventListener('click', () => startLevelSession(lvl, dir));
     }

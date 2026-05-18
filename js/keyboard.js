@@ -3,6 +3,20 @@
 // ═══════════════════════════════════════════════════════════════════════════════
 function setupKeyboardShortcuts() {
   document.addEventListener('keydown', (e) => {
+    // Exam view: Space advances to next card, Enter replays TTS
+    if (document.getElementById('exam-view').classList.contains('active')) {
+      if (examAnswered && examCurrent) {
+        if (e.key === ' ') {
+          e.preventDefault();
+          nextExamCard();
+        } else if (e.key === 'Enter') {
+          e.preventDefault();
+          speakGreek(examCurrent.sentence);
+        }
+      }
+      return;
+    }
+
     // Only act when main-view is visible
     if (!document.getElementById('main-view').classList.contains('active')) return;
 

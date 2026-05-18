@@ -12,6 +12,7 @@ function showView(id) {
     'grammar-list-view',
     'grammar-lesson-view',
     'conjugation-view',
+    'exam-view',
   ].forEach((v) => {
     document.getElementById(v).classList.toggle('active', v === id);
   });

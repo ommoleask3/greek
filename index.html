@@ -122,6 +122,14 @@
             <div class="scroll-row-track" id="grid-en"></div>
             <button class="scroll-btn scroll-btn--right" aria-label="Scroll right">&rsaquo;</button>
           </div>
+          <div class="thematic-section">
+            <h3 class="thematic-heading">Θεματικά μαθήματα</h3>
+            <div class="scroll-row">
+              <button class="scroll-btn scroll-btn--left hidden" aria-label="Scroll left">&lsaquo;</button>
+              <div class="scroll-row-track" id="thematic-grid-en"></div>
+              <button class="scroll-btn scroll-btn--right" aria-label="Scroll right">&rsaquo;</button>
+            </div>
+          </div>
         </div>
         <div class="level-panel" id="panel-gr">
           <div class="scroll-row">
@@ -129,15 +137,14 @@
             <div class="scroll-row-track" id="grid-gr"></div>
             <button class="scroll-btn scroll-btn--right" aria-label="Scroll right">&rsaquo;</button>
           </div>
-        </div>
-      </div>
-
-      <div class="thematic-section">
-        <h3 class="thematic-heading">Θεματικά μαθήματα</h3>
-        <div class="scroll-row">
-          <button class="scroll-btn scroll-btn--left hidden" aria-label="Scroll left">&lsaquo;</button>
-          <div class="scroll-row-track" id="thematic-grid"></div>
-          <button class="scroll-btn scroll-btn--right" aria-label="Scroll right">&rsaquo;</button>
+          <div class="thematic-section">
+            <h3 class="thematic-heading">Θεματικά μαθήματα</h3>
+            <div class="scroll-row">
+              <button class="scroll-btn scroll-btn--left hidden" aria-label="Scroll left">&lsaquo;</button>
+              <div class="scroll-row-track" id="thematic-grid-gr"></div>
+              <button class="scroll-btn scroll-btn--right" aria-label="Scroll right">&rsaquo;</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -229,6 +236,19 @@
       </div>
     </div>
 
+    <!-- Exam (fill-the-gap) -->
+    <div id="exam-view">
+      <button class="btn-back-session" onclick="showLevelSelect()">← Πίσω</button>
+      <div class="exam-header">
+        <div class="exam-progress" id="exam-progress"></div>
+      </div>
+      <div class="exam-hint" id="exam-hint"></div>
+      <div class="exam-sentence" id="exam-sentence"></div>
+      <div class="exam-input-area" id="exam-input"></div>
+      <div class="conj-feedback" id="exam-feedback"></div>
+      <div class="exam-translation" id="exam-translation"></div>
+    </div>
+
     <!-- Session end -->
     <div id="session-end">
       <h2>Η συνεδρία ολοκληρώθηκε</h2>
@@ -272,6 +292,8 @@
     <script src="js/grammar-data.js"></script>
     <script src="js/grammar.js"></script>
     <script src="js/conjugation.js"></script>
+    <script src="js/exam-data.js"></script>
+    <script src="js/exam.js"></script>
     <script src="js/app.js"></script>
     <script>
       if ('serviceWorker' in navigator) {
