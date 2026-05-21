@@ -30,7 +30,8 @@ function buildQueue() {
     const srs = loadSRS();
     const now = Date.now();
     const dirs = sessionMode === 'both' ? ['en', 'gr'] : [sessionMode];
-    const due = [], fresh = [];
+    const due = [],
+      fresh = [];
 
     for (const word of sessionThematic.words) {
       for (const dir of dirs) {
@@ -226,8 +227,7 @@ function nextCard(animate) {
   const learnAheadCutoff = now + LEARN_AHEAD_SECS * 1000;
 
   // Helper: check if a delayed queue entry is the same card we just showed
-  const isSameCard = (entry) =>
-    current && entry.card.word === current.word && entry.card.dir === current.dir;
+  const isSameCard = (entry) => current && entry.card.word === current.word && entry.card.dir === current.dir;
 
   // --- Tier 1: learning card that is due now (skip same-card if alternatives exist) ---
   let readyIdx = -1;

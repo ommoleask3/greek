@@ -7,15 +7,23 @@ let pdexSortCol = 'rank';
 let pdexSortDir = 1; // 1 = ASC, -1 = DESC, 0 = none
 let pdexHeatmap = false;
 let pdexDir = 'en'; // 'en' or 'gr'
+let pdexPage = 0;
+let pdexPerPage = 50; // 0 = show all
 
 const PDEX_COLUMNS = [
   { key: 'rank', label: '#', sortable: true },
   { key: 'gr', label: 'Ελληνικά', sortable: true, hasAudio: true },
   { key: 'en', label: 'English', sortable: true },
-  { key: 'sentenceGr', label: 'Πρόταση GR', sortable: false, hasAudio: true, cssClass: 'pdex-sentence pdex-col-sentence-gr' },
+  {
+    key: 'sentenceGr',
+    label: 'Πρόταση GR',
+    sortable: false,
+    hasAudio: true,
+    cssClass: 'pdex-sentence pdex-col-sentence-gr',
+  },
   { key: 'sentenceEn', label: 'Πρόταση EN', sortable: false, cssClass: 'pdex-sentence pdex-col-sentence-en' },
   { key: 'seen', label: 'Seen', sortable: true },
-  { key: 'ratio', label: '\u2713 / \u2717', sortable: true },
+  { key: 'ratio', label: '%', sortable: true },
   { key: 'firstSeen', label: 'First Seen', sortable: true },
   { key: 'lastSeen', label: 'Last Seen', sortable: true },
 ];
@@ -25,10 +33,11 @@ function showPokedex() {
   pdexSortCol = 'rank';
   pdexSortDir = 1;
   pdexHeatmap = false;
+  pdexPage = 0;
   document.getElementById('pdex-search').value = '';
+  document.getElementById('pdex-search-clear').classList.add('hidden');
   document.getElementById('pdex-heatmap-toggle').classList.remove('active');
   document.getElementById('pdex-table').classList.remove('heatmap-on');
-  // Reset dir toggle UI
   document.getElementById('pdex-dir-en').classList.toggle('active', pdexDir === 'en');
   document.getElementById('pdex-dir-gr').classList.toggle('active', pdexDir === 'gr');
   buildPokedexData();
@@ -46,6 +55,7 @@ function setPokedexDir(dir) {
   document.getElementById('pdex-dir-en').classList.toggle('active', dir === 'en');
   document.getElementById('pdex-dir-gr').classList.toggle('active', dir === 'gr');
   buildPokedexData();
+  pdexPage = 0;
   applyPokedexFilter(document.getElementById('pdex-search').value);
 }
 
@@ -112,6 +122,15 @@ function applyPokedexFilter(query) {
   applyPokedexSort();
   renderPokedexBody();
   updatePokedexCount();
+  renderPagination();
+}
+
+function clearPokedexSearch() {
+  document.getElementById('pdex-search').value = '';
+  document.getElementById('pdex-search-clear').classList.add('hidden');
+  pdexPage = 0;
+  applyPokedexFilter('');
+  document.getElementById('pdex-search').focus();
 }
 
 // ── Sorting ──────────────────────────────────────────────────────────────────
@@ -151,14 +170,19 @@ function applyPokedexSort() {
 function cycleSort(colKey) {
   if (pdexSortCol === colKey) {
     if (pdexSortDir === 1) pdexSortDir = -1;
-    else if (pdexSortDir === -1) { pdexSortDir = 0; pdexSortCol = null; }
+    else if (pdexSortDir === -1) {
+      pdexSortDir = 0;
+      pdexSortCol = null;
+    }
   } else {
     pdexSortCol = colKey;
     pdexSortDir = 1;
   }
+  pdexPage = 0;
   renderPokedexHeader();
   applyPokedexSort();
   renderPokedexBody();
+  renderPagination();
 }
 
 // ── Render header ────────────────────────────────────────────────────────────
@@ -184,11 +208,19 @@ function renderPokedexHeader() {
 // ── Render body ──────────────────────────────────────────────────────────────
 function renderPokedexBody() {
   const tbody = document.getElementById('pdex-tbody');
-  const rows = pdexFiltered;
-  const parts = [];
+  const total = pdexFiltered.length;
 
-  for (let i = 0; i < rows.length; i++) {
-    const row = rows[i];
+  // Compute page slice
+  let start = 0;
+  let end = total;
+  if (pdexPerPage > 0) {
+    start = pdexPage * pdexPerPage;
+    end = Math.min(start + pdexPerPage, total);
+  }
+
+  const parts = [];
+  for (let i = start; i < end; i++) {
+    const row = pdexFiltered[i];
     const trStyle = pdexHeatmap ? heatmapStyle(row.ratio) : '';
     parts.push(`<tr${trStyle}>`);
 
@@ -198,8 +230,8 @@ function renderPokedexBody() {
     // GR word + play
     parts.push(
       `<td><div class="pdex-cell-audio"><span>${escHtml(row.gr)}</span>` +
-      `<button class="pdex-play-btn" onclick="pdexPlayWord(${i})" title="Play">&#9654;</button>` +
-      `</div></td>`,
+        `<button class="pdex-play-btn" onclick="pdexPlayWord(${i})" title="Play">&#9654;</button>` +
+        `</div></td>`,
     );
 
     // EN word
@@ -210,8 +242,8 @@ function renderPokedexBody() {
     if (row.sentenceGr) {
       parts.push(
         `<div class="pdex-cell-audio"><span>${escHtml(row.sentenceGr)}</span>` +
-        `<button class="pdex-play-btn" onclick="pdexPlaySentence(${i})" title="Play">&#9654;</button>` +
-        `</div>`,
+          `<button class="pdex-play-btn" onclick="pdexPlaySentence(${i})" title="Play">&#9654;</button>` +
+          `</div>`,
       );
     }
     parts.push(`</td>`);
@@ -222,23 +254,77 @@ function renderPokedexBody() {
     // Seen
     parts.push(`<td${row.seen === 0 ? ' class="pdex-unseen"' : ''}>${row.seen || '---'}</td>`);
 
-    // Correct / Incorrect
-    if (row.seen === 0) {
+    // Ratio as percentage
+    if (row.ratio < 0) {
       parts.push(`<td class="pdex-unseen">---</td>`);
     } else {
-      parts.push(`<td>${row.correct} / ${row.incorrect}</td>`);
+      parts.push(`<td>${Math.round(row.ratio * 100)}%</td>`);
     }
 
     // First seen
-    parts.push(`<td${row.firstSeen ? '' : ' class="pdex-unseen"'}>${row.firstSeen ? pdexFormatDate(row.firstSeen) : '---'}</td>`);
+    parts.push(
+      `<td${row.firstSeen ? '' : ' class="pdex-unseen"'}>${row.firstSeen ? pdexFormatDate(row.firstSeen) : '---'}</td>`,
+    );
 
     // Last seen
-    parts.push(`<td${row.lastSeen ? '' : ' class="pdex-unseen"'}>${row.lastSeen ? pdexFormatDate(row.lastSeen) : '---'}</td>`);
+    parts.push(
+      `<td${row.lastSeen ? '' : ' class="pdex-unseen"'}>${row.lastSeen ? pdexFormatDate(row.lastSeen) : '---'}</td>`,
+    );
 
     parts.push(`</tr>`);
   }
 
   tbody.innerHTML = parts.join('');
+
+  // Scroll table to top on page change
+  document.getElementById('pdex-table-wrap').scrollTop = 0;
+}
+
+// ── Pagination ───────────────────────────────────────────────────────────────
+function pdexTotalPages() {
+  if (pdexPerPage <= 0) return 1;
+  return Math.max(1, Math.ceil(pdexFiltered.length / pdexPerPage));
+}
+
+function renderPagination() {
+  const total = pdexFiltered.length;
+  const pages = pdexTotalPages();
+  const showAll = pdexPerPage <= 0;
+
+  document.getElementById('pdex-prev').disabled = showAll || pdexPage <= 0;
+  document.getElementById('pdex-next').disabled = showAll || pdexPage >= pages - 1;
+
+  const info = document.getElementById('pdex-page-info');
+  if (showAll || pages <= 1) {
+    info.textContent = `${total} λέξεις`;
+  } else {
+    const start = pdexPage * pdexPerPage + 1;
+    const end = Math.min((pdexPage + 1) * pdexPerPage, total);
+    info.textContent = `${start}–${end} / ${total}`;
+  }
+}
+
+function pdexPrevPage() {
+  if (pdexPage > 0) {
+    pdexPage--;
+    renderPokedexBody();
+    renderPagination();
+  }
+}
+
+function pdexNextPage() {
+  if (pdexPage < pdexTotalPages() - 1) {
+    pdexPage++;
+    renderPokedexBody();
+    renderPagination();
+  }
+}
+
+function pdexSetPerPage(val) {
+  pdexPerPage = parseInt(val, 10) || 0;
+  pdexPage = 0;
+  renderPokedexBody();
+  renderPagination();
 }
 
 // ── Heatmap ──────────────────────────────────────────────────────────────────
@@ -251,9 +337,10 @@ function togglePokedexHeatmap() {
 
 function heatmapStyle(ratio) {
   if (ratio < 0) return '';
-  const r = Math.round(42 - ratio * 21);
-  const g = Math.round(21 + ratio * 21);
-  return ` style="background:rgb(${r},${g},21)"`;
+  // ~26% max brightness: red rgb(66,28,28) → green rgb(28,66,28)
+  const r = Math.round(66 - ratio * 38);
+  const g = Math.round(28 + ratio * 38);
+  return ` style="background:rgb(${r},${g},28)"`;
 }
 
 // ── Audio ────────────────────────────────────────────────────────────────────
@@ -292,9 +379,13 @@ function updatePokedexCount() {
 // ── Search input listener (debounced) ────────────────────────────────────────
 (function () {
   let timer = null;
-  document.getElementById('pdex-search').addEventListener('input', function () {
+  const input = document.getElementById('pdex-search');
+  const clearBtn = document.getElementById('pdex-search-clear');
+  input.addEventListener('input', function () {
     const val = this.value;
+    clearBtn.classList.toggle('hidden', val.length === 0);
     clearTimeout(timer);
+    pdexPage = 0;
     timer = setTimeout(() => applyPokedexFilter(val), 150);
   });
 })();

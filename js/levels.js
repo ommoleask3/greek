@@ -90,7 +90,11 @@ function renderLevelGrids() {
 const SCROLL_KEY = 'greek_scroll_v1';
 
 function loadScrollPositions() {
-  try { return JSON.parse(localStorage.getItem(SCROLL_KEY)) || {}; } catch { return {}; }
+  try {
+    return JSON.parse(localStorage.getItem(SCROLL_KEY)) || {};
+  } catch {
+    return {};
+  }
 }
 
 function saveScrollPosition(id, pos) {
@@ -208,9 +212,12 @@ function renderThematicGridDir(dir) {
     }
 
     const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
-    const barColor = pct >= 100 ? 'linear-gradient(90deg,#c9960c,#f5c518)'
-      : pct >= 50 ? 'linear-gradient(90deg,#a06820,#d4a017)'
-      : 'linear-gradient(90deg,#4f7cff,#a78bfa)';
+    const barColor =
+      pct >= 100
+        ? 'linear-gradient(90deg,#c9960c,#f5c518)'
+        : pct >= 50
+          ? 'linear-gradient(90deg,#a06820,#d4a017)'
+          : 'linear-gradient(90deg,#4f7cff,#a78bfa)';
 
     const tile = document.createElement('div');
     tile.className = 'thematic-tile';
@@ -310,8 +317,14 @@ function renderGrid(dir) {
     `;
 
     // Exam button: only on EN-GR tiles that are fully graduated and have exam data
-    if (dir === 'en' && !locked && completed >= total && total > 0 &&
-        typeof EXAM_DATA !== 'undefined' && EXAM_DATA[lvl]) {
+    if (
+      dir === 'en' &&
+      !locked &&
+      completed >= total &&
+      total > 0 &&
+      typeof EXAM_DATA !== 'undefined' &&
+      EXAM_DATA[lvl]
+    ) {
       const examBtn = document.createElement('button');
       examBtn.className = 'exam-tile-btn';
       examBtn.textContent = 'Εξέταση';

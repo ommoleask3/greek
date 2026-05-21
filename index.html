@@ -196,7 +196,12 @@
     <div id="pokedex-view">
       <button class="btn-back-session" onclick="showLevelSelect()">← Πίσω</button>
       <div class="pdex-toolbar">
-        <input type="text" id="pdex-search" class="pdex-search" placeholder="Αναζήτηση..." autocomplete="off" />
+        <div class="pdex-search-wrap">
+          <input type="text" id="pdex-search" class="pdex-search" placeholder="Αναζήτηση..." autocomplete="off" />
+          <button class="pdex-search-clear hidden" id="pdex-search-clear" onclick="clearPokedexSearch()">
+            &times;
+          </button>
+        </div>
         <div class="dir-select" id="pdex-dir-select">
           <button class="active" id="pdex-dir-en" onclick="setPokedexDir('en')">EN→GR</button>
           <button id="pdex-dir-gr" onclick="setPokedexDir('gr')">GR→EN</button>
@@ -214,6 +219,17 @@
           <thead id="pdex-thead"></thead>
           <tbody id="pdex-tbody"></tbody>
         </table>
+      </div>
+      <div class="pdex-pagination" id="pdex-pagination">
+        <button class="pdex-page-btn" id="pdex-prev" onclick="pdexPrevPage()">&lsaquo;</button>
+        <span class="pdex-page-info" id="pdex-page-info"></span>
+        <button class="pdex-page-btn" id="pdex-next" onclick="pdexNextPage()">&rsaquo;</button>
+        <select class="pdex-per-page" id="pdex-per-page" onchange="pdexSetPerPage(this.value)">
+          <option value="50" selected>50</option>
+          <option value="100">100</option>
+          <option value="150">150</option>
+          <option value="0">Όλα</option>
+        </select>
       </div>
     </div>
 

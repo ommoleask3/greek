@@ -113,8 +113,7 @@ function renderExamCard() {
   }
 
   // Input
-  inputEl.innerHTML =
-    `<input type="text" class="exam-text-input" id="exam-text-field"
+  inputEl.innerHTML = `<input type="text" class="exam-text-input" id="exam-text-field"
             placeholder="Γράψε τη λέξη..."
             autocomplete="off" autocorrect="off" spellcheck="false">
      <button class="conj-submit" onclick="submitExam()">Έλεγξε</button>`;
@@ -196,4 +195,3 @@ function showExamEnd() {
   feedbackEl.className = 'conj-feedback';
   document.getElementById('exam-progress').textContent = '';
 }
-

@@ -1769,9 +1769,16 @@ button:active {
   width: 100%;
 }
 
-.pdex-search {
+.pdex-search-wrap {
   flex: 1;
-  padding: 8px 14px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pdex-search {
+  width: 100%;
+  padding: 8px 32px 8px 14px;
   background: #0f1117;
   border: 1px solid #252a3d;
   border-radius: 8px;
@@ -1785,6 +1792,26 @@ button:active {
 }
 .pdex-search::placeholder {
   color: #3a4060;
+}
+
+.pdex-search-clear {
+  position: absolute;
+  right: 6px;
+  background: none;
+  border: none;
+  color: #4a5170;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  line-height: 1;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+.pdex-search-clear:hover {
+  color: #e8eaf0;
+}
+.pdex-search-clear.hidden {
+  display: none;
 }
 
 .pdex-controls {
@@ -1805,10 +1832,30 @@ button:active {
   width: 100%;
   overflow-x: auto;
   overflow-y: auto;
-  max-height: calc(100vh - 200px);
+  max-height: calc(100vh - 260px);
   border: 1px solid #252a3d;
   border-radius: 12px;
   background: #181c2a;
+  scrollbar-width: thin;
+  scrollbar-color: #252a3d #0f1117;
+}
+.pdex-table-wrap::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.pdex-table-wrap::-webkit-scrollbar-track {
+  background: #0f1117;
+  border-radius: 4px;
+}
+.pdex-table-wrap::-webkit-scrollbar-thumb {
+  background: #252a3d;
+  border-radius: 4px;
+}
+.pdex-table-wrap::-webkit-scrollbar-thumb:hover {
+  background: #3a4060;
+}
+.pdex-table-wrap::-webkit-scrollbar-corner {
+  background: #0f1117;
 }
 
 .pdex-table {
@@ -1876,7 +1923,9 @@ button:active {
   font-size: 0.72rem;
   padding: 2px 4px;
   border-radius: 4px;
-  transition: color 0.15s, background 0.15s;
+  transition:
+    color 0.15s,
+    background 0.15s;
   flex-shrink: 0;
   min-width: 0;
 }
@@ -1919,10 +1968,84 @@ button:active {
   border-color: #4f7cff;
 }
 
+/* Pagination */
+.pdex-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 4px 0;
+}
+
+.pdex-page-btn {
+  background: #181c2a;
+  border: 1px solid #252a3d;
+  border-radius: 6px;
+  color: #7c85a6;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px 12px;
+  transition: all 0.15s;
+  line-height: 1;
+}
+.pdex-page-btn:hover:not(:disabled) {
+  background: #252a3d;
+  color: #a0b4ff;
+}
+.pdex-page-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.pdex-page-info {
+  font-size: 0.72rem;
+  color: #4a5170;
+  letter-spacing: 0.04em;
+  min-width: 80px;
+  text-align: center;
+}
+
+.pdex-per-page {
+  background: #0f1117;
+  border: 1px solid #252a3d;
+  border-radius: 6px;
+  color: #7c85a6;
+  font-size: 0.72rem;
+  padding: 4px 8px;
+  cursor: pointer;
+  outline: none;
+}
+.pdex-per-page option {
+  background: #0f1117;
+  color: #e8eaf0;
+}
+
 @media (max-width: 700px) {
   .pdex-col-sentence-gr,
   .pdex-col-sentence-en {
     display: none;
+  }
+  .pdex-toolbar {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .pdex-search-wrap {
+    width: 100%;
+  }
+  #pdex-dir-select {
+    width: 100%;
+    display: flex;
+  }
+  #pdex-dir-select button {
+    flex: 1;
+  }
+  .pdex-table {
+    font-size: 0.72rem;
+  }
+  .pdex-table th,
+  .pdex-table td {
+    padding: 5px 6px;
   }
 }
 
