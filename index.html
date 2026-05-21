@@ -166,16 +166,6 @@
             onchange="importProgress(this)"
           />
         </div>
-        <div style="display: flex; gap: 6px">
-          <button class="btn-skip btn-sync" onclick="showSyncConfirm('pull', syncPull)" style="font-size: 0.72rem">
-            ↓ Pull
-          </button>
-          <button class="btn-skip btn-sync" onclick="showSyncConfirm('push', syncPush)" style="font-size: 0.72rem">
-            ↑ Push
-          </button>
-        </div>
-      </div>
-      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 4px">
         <button class="btn-skip" onclick="showImport()" style="font-size: 0.72rem">↑ Re-import deck</button>
       </div>
 
@@ -194,24 +184,6 @@
             <button id="cdir-both" onclick="setCustomDir('both')">Και τα δύο</button>
           </div>
           <button class="btn-practice" onclick="startCustomRange()">Εξάσκηση</button>
-        </div>
-      </div>
-
-      <div class="custom-range" id="sync-config-section">
-        <div class="custom-range-header" onclick="toggleSyncConfig()">
-          <span class="chevron">▶</span> GitHub Sync
-        </div>
-        <div class="custom-range-body" id="sync-config-body" style="display: none">
-          <label>Repo (owner/name)</label>
-          <input type="text" id="sync-repo" placeholder="user/greek" />
-          <label>Token</label>
-          <input type="password" id="sync-token" placeholder="ghp_..." />
-          <label>Device name</label>
-          <input type="text" id="sync-device" placeholder="mobile" />
-          <div style="display: flex; gap: 6px; margin-top: 8px">
-            <button class="btn-practice" onclick="saveSyncSettings()">Save</button>
-            <button class="btn-skip" onclick="clearSyncSettings()">Clear</button>
-          </div>
         </div>
       </div>
 
@@ -357,6 +329,29 @@
         <input type="range" id="speed-slider" min="0.5" max="1.5" step="0.05" value="0.85" />
       </div>
       <button id="btn-speaker" onclick="toggleAudioControls(event)">🔊</button>
+    </div>
+
+    <!-- Sync controls (fixed bottom-left) -->
+    <div id="sync-controls">
+      <div id="sync-popover">
+        <div class="sync-popover-btns">
+          <button class="btn-practice" onclick="showSyncConfirm('pull', syncPull)">↓ Pull</button>
+          <button class="btn-practice" onclick="showSyncConfirm('push', syncPush)">↑ Push</button>
+        </div>
+        <div class="sync-config-fields" id="sync-config-body">
+          <label>Repo</label>
+          <input type="text" id="sync-repo" placeholder="user/repo" />
+          <label>Token</label>
+          <input type="password" id="sync-token" placeholder="ghp_..." />
+          <label>Device</label>
+          <input type="text" id="sync-device" placeholder="mobile" />
+          <div class="sync-config-actions">
+            <button class="btn-practice" onclick="saveSyncSettings()">Save</button>
+            <button class="btn-skip" onclick="clearSyncSettings()" style="color: #5a6080">Clear</button>
+          </div>
+        </div>
+      </div>
+      <button id="btn-sync" onclick="toggleSyncControls(event)">⟳</button>
     </div>
 
     <!-- Sync confirm modal -->

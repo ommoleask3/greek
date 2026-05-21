@@ -33,6 +33,9 @@ body:has(#home-view.active) {
   padding: 0;
   justify-content: stretch;
 }
+body:has(#home-view.active) #sync-controls {
+  display: none;
+}
 
 /* ── Views ── */
 #import-view,
@@ -2207,19 +2210,78 @@ button:active {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
-   SYNC CONFIG
+   SYNC CONTROLS (fixed bottom-left widget)
    ═══════════════════════════════════════════════════════════════════════════════ */
-#sync-config-body input[type='text'],
-#sync-config-body input[type='password'] {
+#sync-controls {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  z-index: 100;
+}
+#btn-sync {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #252a3d;
+  background: #0F1117;
+  color: #7c85a6;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#btn-sync:hover {
+  border-color: #3a4060;
+  color: #e8eaf0;
+}
+#sync-popover {
+  display: none;
+  position: absolute;
+  bottom: 48px;
+  left: 0;
+  background: #1a1e2e;
+  border: 1px solid #252a3d;
+  border-radius: 10px;
+  padding: 12px;
+  width: 200px;
+}
+#sync-popover.open {
+  display: block;
+}
+.sync-popover-btns {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.sync-popover-btns button {
+  flex: 1;
+  font-size: 0.8rem;
+  padding: 6px 0;
+}
+.sync-config-fields label {
+  display: block;
+  font-size: 0.7rem;
+  color: #5a6080;
+  margin-bottom: 2px;
+}
+.sync-config-fields input {
   width: 100%;
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding: 4px 8px;
+  border-radius: 5px;
   border: 1px solid #252a3d;
   background: #0f1117;
   color: #e8eaf0;
-  font-size: 0.85rem;
-  margin-bottom: 8px;
+  font-size: 0.78rem;
+  margin-bottom: 6px;
 }
-.btn-sync {
-  color: #5a8abf !important;
+.sync-config-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+.sync-config-actions button {
+  flex: 1;
+  font-size: 0.75rem;
+  padding: 4px 0;
 }

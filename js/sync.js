@@ -319,16 +319,17 @@ function showSyncConfirm(action, callback) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// SYNC CONFIG UI
+// SYNC CONTROLS UI
 // ═══════════════════════════════════════════════════════════════════════════════
-function toggleSyncConfig() {
-  const body = document.getElementById('sync-config-body');
-  const section = document.getElementById('sync-config-section');
-  const isOpen = body.style.display !== 'none';
-  body.style.display = isOpen ? 'none' : 'block';
-  section.querySelector('.chevron').textContent = isOpen ? '▶' : '▼';
+function toggleSyncControls(event) {
+  event.stopPropagation();
+  const popover = document.getElementById('sync-popover');
+  const isOpen = popover.classList.contains('open');
 
-  if (!isOpen) {
+  if (isOpen) {
+    popover.classList.remove('open');
+  } else {
+    popover.classList.add('open');
     // Populate fields from saved config
     const config = getSyncConfig();
     if (config) {
@@ -338,6 +339,14 @@ function toggleSyncConfig() {
     }
   }
 }
+
+// Close popover when clicking outside
+document.addEventListener('click', (e) => {
+  const controls = document.getElementById('sync-controls');
+  if (controls && !controls.contains(e.target)) {
+    document.getElementById('sync-popover').classList.remove('open');
+  }
+});
 
 function saveSyncSettings() {
   const repo = document.getElementById('sync-repo').value.trim();
