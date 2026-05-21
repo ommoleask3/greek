@@ -2023,7 +2023,8 @@ button:active {
 
 @media (max-width: 700px) {
   .pdex-col-sentence-gr,
-  .pdex-col-sentence-en {
+  .pdex-col-sentence-en,
+  .pdex-col-desktop {
     display: none;
   }
   .pdex-toolbar {

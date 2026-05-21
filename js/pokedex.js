@@ -26,6 +26,7 @@ const PDEX_COLUMNS = [
   { key: 'ratio', label: '%', sortable: true },
   { key: 'firstSeen', label: 'First Seen', sortable: true },
   { key: 'lastSeen', label: 'Last Seen', sortable: true },
+  { key: 'nextDue', label: 'Next Due', sortable: true, cssClass: 'pdex-col-desktop' },
 ];
 
 // ── Entry point ──────────────────────────────────────────────────────────────
@@ -74,6 +75,7 @@ function buildPokedexData() {
     const lastSeen = days.length > 0 ? days[days.length - 1] : 0;
     const total = correct + incorrect;
     const ratio = total > 0 ? correct / total : -1;
+    const nextDue = (cd && cd.nextReview) || 0;
 
     return {
       word,
@@ -88,6 +90,7 @@ function buildPokedexData() {
       firstSeen,
       lastSeen,
       ratio,
+      nextDue,
       grNorm: normalizeGreek(word.gr),
       enNorm: (word.en || '').toLowerCase().trim(),
     };
@@ -149,7 +152,7 @@ function applyPokedexSort() {
       if (!va) return 1;
       if (!vb) return -1;
     }
-    if (col === 'firstSeen' || col === 'lastSeen') {
+    if (col === 'firstSeen' || col === 'lastSeen' || col === 'nextDue') {
       if (va === 0 && vb === 0) return 0;
       if (va === 0) return 1;
       if (vb === 0) return -1;
@@ -271,6 +274,11 @@ function renderPokedexBody() {
       `<td${row.lastSeen ? '' : ' class="pdex-unseen"'}>${row.lastSeen ? pdexFormatDate(row.lastSeen) : '---'}</td>`,
     );
 
+    // Next due
+    parts.push(
+      `<td class="pdex-col-desktop${row.nextDue ? '' : ' pdex-unseen'}">${row.nextDue ? pdexFormatDateTime(row.nextDue) : '---'}</td>`,
+    );
+
     parts.push(`</tr>`);
   }
 
@@ -367,6 +375,17 @@ function pdexFormatDate(ts) {
   const mm = String(d.getMonth() + 1).padStart(2, '0');
   const yy = String(d.getFullYear()).slice(-2);
   return `${dd}/${mm}/${yy}`;
+}
+
+function pdexFormatDateTime(ts) {
+  if (!ts) return '---';
+  const d = new Date(ts);
+  const dd = String(d.getDate()).padStart(2, '0');
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  const yy = String(d.getFullYear()).slice(-2);
+  const hh = String(d.getHours()).padStart(2, '0');
+  const mi = String(d.getMinutes()).padStart(2, '0');
+  return `${dd}/${mm}/${yy} ${hh}:${mi}`;
 }
 
 function updatePokedexCount() {
