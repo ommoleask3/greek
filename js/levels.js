@@ -368,6 +368,8 @@ function startCustomRange() {
   sessionRankMin = Math.min(from, to);
   sessionRankMax = Math.max(from, to);
   sessionReadonly = true;
+  sessionCustomWords = null;
+  sessionFromPokedex = false;
   startSession();
 }
 

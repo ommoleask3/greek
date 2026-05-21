@@ -212,6 +212,13 @@
           <div class="toggle-track"><div class="toggle-thumb"></div></div>
           <span class="toggle-label">Heatmap</span>
         </div>
+        <div class="pdex-practice">
+          <label class="pdex-practice-label">Από</label>
+          <input type="number" id="pdex-row-from" class="pdex-row-input" min="1" value="1" />
+          <label class="pdex-practice-label">Έως</label>
+          <input type="number" id="pdex-row-to" class="pdex-row-input" min="1" value="20" />
+          <button class="btn-practice" onclick="launchPokedexSession()">Εξάσκηση</button>
+        </div>
         <div class="pdex-count" id="pdex-count"></div>
       </div>
       <div class="pdex-table-wrap" id="pdex-table-wrap">
@@ -301,7 +308,7 @@
       <h2>Η συνεδρία ολοκληρώθηκε</h2>
       <div class="session-stats" id="session-stats"></div>
       <button class="btn-restart" onclick="startSession()">Επόμενη συνεδρία</button>
-      <button class="btn-back-to-levels" onclick="showLevelSelect()">← Πίσω στα επίπεδα</button>
+      <button class="btn-back-to-levels" onclick="exitSession()">← Πίσω</button>
     </div>
 
     <!-- Fixed UI -->

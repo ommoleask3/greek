@@ -145,6 +145,8 @@ let sessionRankMin = null;
 let sessionRankMax = null;
 let sessionReadonly = false; // true for custom range — no SRS/stats updates
 let sessionThematic = null; // null or THEMATIC_LESSONS entry when in thematic mode
+let sessionCustomWords = null; // null or array of word objects (from pokedex)
+let sessionFromPokedex = false; // true when session launched from pokedex
 
 // Prefs
 let prefs = { volume: 1, firstCardSeen: false, voiceSource: 'indexed', ttsRate: 0.85, greekOnly: false };

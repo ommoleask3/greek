@@ -70,10 +70,15 @@ function buildQueue() {
   const due = [],
     fresh = [];
 
-  const wordsInRange =
-    sessionRankMin !== null ? WORDS.filter((w) => w.rank >= sessionRankMin && w.rank <= sessionRankMax) : WORDS;
+  const wordsInRange = sessionCustomWords
+    ? sessionCustomWords
+    : sessionRankMin !== null
+      ? WORDS.filter((w) => w.rank >= sessionRankMin && w.rank <= sessionRankMax)
+      : WORDS;
 
-  const sorted = [...wordsInRange].sort((a, b) => (a.rank || 0) - (b.rank || 0));
+  const sorted = sessionCustomWords
+    ? [...wordsInRange]
+    : [...wordsInRange].sort((a, b) => (a.rank || 0) - (b.rank || 0));
 
   for (const word of sorted) {
     for (const dir of dirs) {
@@ -110,14 +115,17 @@ function buildQueue() {
   }
 
   if (sessionReadonly) {
-    // Custom range: sort by nextReview ascending (most overdue first, new cards last)
-    fresh.sort((a, b) => {
-      const cdA = getCardData(srs, a.word, a.dir);
-      const cdB = getCardData(srs, b.word, b.dir);
-      const nrA = cdA.phase === 'new' ? Infinity : cdA.nextReview;
-      const nrB = cdB.phase === 'new' ? Infinity : cdB.nextReview;
-      return nrA - nrB;
-    });
+    // Rank-range custom: sort by nextReview (most overdue first, new cards last)
+    // Pokedex custom: preserve the order from the table (already sorted by user)
+    if (!sessionCustomWords) {
+      fresh.sort((a, b) => {
+        const cdA = getCardData(srs, a.word, a.dir);
+        const cdB = getCardData(srs, b.word, b.dir);
+        const nrA = cdA.phase === 'new' ? Infinity : cdA.nextReview;
+        const nrB = cdB.phase === 'new' ? Infinity : cdB.nextReview;
+        return nrA - nrB;
+      });
+    }
     queue = fresh;
   } else {
     // Session = all due cards + new cards to fill up to 20
@@ -128,6 +136,7 @@ function buildQueue() {
     queue = interleave(due, newCards);
   }
   delayedQueue = [];
+  sessionCustomWords = null;
 
   sessionCorrect = 0;
   sessionWrong = 0;

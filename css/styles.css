@@ -1821,6 +1821,29 @@ button:active {
   width: 100%;
 }
 
+.pdex-practice {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.pdex-practice-label {
+  font-size: 0.72rem;
+  color: #4a5170;
+}
+
+.pdex-row-input {
+  width: 52px;
+  padding: 5px 6px;
+  background: #0f1117;
+  border: 1px solid #252a3d;
+  border-radius: 8px;
+  color: #e8eaf0;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
 .pdex-count {
   font-size: 0.72rem;
   color: #4a5170;
@@ -2040,6 +2063,9 @@ button:active {
   }
   #pdex-dir-select button {
     flex: 1;
+  }
+  .pdex-controls {
+    flex-wrap: wrap;
   }
   .pdex-table {
     font-size: 0.72rem;

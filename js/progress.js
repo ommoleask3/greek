@@ -45,7 +45,21 @@ function abandonSession() {
   }
   queue = [];
   delayedQueue = [];
-  showLevelSelect();
+  if (sessionFromPokedex) {
+    sessionFromPokedex = false;
+    reopenPokedex();
+  } else {
+    showLevelSelect();
+  }
+}
+
+function exitSession() {
+  if (sessionFromPokedex) {
+    sessionFromPokedex = false;
+    reopenPokedex();
+  } else {
+    showLevelSelect();
+  }
 }
 
 function showEnd() {
