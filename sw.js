@@ -1,4 +1,4 @@
-const CACHE_NAME = 'greek-v2';
+const CACHE_NAME = 'greek-v3';
 const ASSETS = [
   './',
   './index.html',
@@ -18,6 +18,9 @@ const ASSETS = [
   './js/conjugation.js',
   './js/import.js',
   './js/pokedex.js',
+  './js/exam.js',
+  './js/exam-data.js',
+  './js/thematic-data.js',
   './plato_head.jpg',
   './_The_School_of_Athens__by_Raffaello_Sanzio_da_Urbino.png',
 ];
