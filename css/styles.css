@@ -1028,6 +1028,14 @@ button:active {
   transition: filter 0.45s ease;
   z-index: 0;
 }
+@media (max-width: 800px) {
+  .splash-zone::before {
+    background-image: url('../image.png');
+  }
+  .splash-bg {
+    content: url('../image.png');
+  }
+}
 
 /* ── Hover states ─────────────────────────────────────────────────────────── */
 /* Default: both sides normal                                                  */
@@ -1085,7 +1093,7 @@ button:active {
 .splash-title {
   font-family: 'Libertinus Serif Display', Georgia, 'Times New Roman', serif;
   font-weight: 400;
-  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  font-size: clamp(1.6rem, 5vw, 5.5rem);
   color: #fff;
   letter-spacing: 0.04em;
 }
@@ -2231,9 +2239,11 @@ button:active {
   align-items: center;
   justify-content: center;
 }
-#btn-sync:hover {
-  border-color: #3a4060;
-  color: #e8eaf0;
+@media (hover: hover) {
+  #btn-sync:hover {
+    border-color: #3a4060;
+    color: #e8eaf0;
+  }
 }
 #sync-popover {
   display: none;
@@ -2284,4 +2294,21 @@ button:active {
   flex: 1;
   font-size: 0.75rem;
   padding: 4px 0;
+}
+
+@media (max-width: 500px) {
+  #sync-controls {
+    bottom: 10px;
+    left: 10px;
+  }
+  #btn-sync {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+  #sync-popover {
+    bottom: 42px;
+    width: 180px;
+    padding: 10px;
+  }
 }

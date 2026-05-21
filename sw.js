@@ -23,6 +23,7 @@ const ASSETS = [
   './js/thematic-data.js',
   './js/sync.js',
   './plato_head.jpg',
+  './image.png',
   './_The_School_of_Athens__by_Raffaello_Sanzio_da_Urbino.png',
 ];
 

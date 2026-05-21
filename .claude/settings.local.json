@@ -53,7 +53,8 @@
       "WebFetch(domain:docs.github.com)",
       "Bash(ls /c/Users/OliverLeask/Desktop/greek/curr_deck/collection*)",
       "Bash(python analysis_task1.py)",
-      "Bash(python misc/disambiguate_deck.py)"
+      "Bash(python misc/disambiguate_deck.py)",
+      "Bash(ffmpeg -i \"/c/Users/OliverLeask/Desktop/greek/_The_School_of_Athens__by_Raffaello_Sanzio_da_Urbino.png\" -vf scale=800:-1 \"/c/Users/OliverLeask/Desktop/greek/school_of_athens_mobile.jpg\" -y)"
     ]
   }
 }
