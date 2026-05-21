@@ -13,6 +13,7 @@ function showView(id) {
     'grammar-lesson-view',
     'conjugation-view',
     'exam-view',
+    'pokedex-view',
   ].forEach((v) => {
     document.getElementById(v).classList.toggle('active', v === id);
   });

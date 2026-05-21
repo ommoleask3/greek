@@ -44,7 +44,8 @@ body:has(#home-view.active) {
 #grammar-list-view,
 #grammar-lesson-view,
 #conjugation-view,
-#exam-view {
+#exam-view,
+#pokedex-view {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -59,7 +60,8 @@ body:has(#home-view.active) {
 #grammar-list-view.active,
 #grammar-lesson-view.active,
 #conjugation-view.active,
-#exam-view.active {
+#exam-view.active,
+#pokedex-view.active {
   display: flex;
 }
 
@@ -1748,6 +1750,180 @@ button:active {
 .exam-tile-btn:hover {
   background: linear-gradient(135deg, #3a2870, #4a3890);
   border-color: #7a5ab0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   POKEDEX (VOCABULARY BROWSER)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+#pokedex-view {
+  max-width: 1200px;
+  gap: 12px;
+  padding-top: 40px;
+  width: 100%;
+}
+
+.pdex-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.pdex-search {
+  flex: 1;
+  padding: 8px 14px;
+  background: #0f1117;
+  border: 1px solid #252a3d;
+  border-radius: 8px;
+  color: #e8eaf0;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.pdex-search:focus {
+  border-color: #4f7cff;
+}
+.pdex-search::placeholder {
+  color: #3a4060;
+}
+
+.pdex-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.pdex-count {
+  font-size: 0.72rem;
+  color: #4a5170;
+  text-align: right;
+  width: 100%;
+}
+
+.pdex-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+  border: 1px solid #252a3d;
+  border-radius: 12px;
+  background: #181c2a;
+}
+
+.pdex-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+.pdex-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.pdex-table th {
+  background: #1a2040;
+  color: #7c85a6;
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #252a3d;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+.pdex-table th:hover {
+  color: #a0b4ff;
+}
+.pdex-table th.no-sort {
+  cursor: default;
+}
+.pdex-table th.no-sort:hover {
+  color: #7c85a6;
+}
+
+.pdex-sort-arrow {
+  margin-left: 4px;
+  font-size: 0.6rem;
+  color: #4f7cff;
+}
+
+.pdex-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #1e2130;
+  color: #e8eaf0;
+  vertical-align: middle;
+}
+
+.pdex-table:not(.heatmap-on) tbody tr:hover td {
+  background: #1a1f30;
+}
+.pdex-table.heatmap-on tbody tr:hover td {
+  filter: brightness(1.15);
+}
+
+.pdex-play-btn {
+  background: none;
+  border: none;
+  color: #4a5170;
+  cursor: pointer;
+  font-size: 0.72rem;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+  flex-shrink: 0;
+  min-width: 0;
+}
+.pdex-play-btn:hover {
+  color: #a0b4ff;
+  background: rgba(79, 124, 255, 0.1);
+}
+
+.pdex-cell-audio {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pdex-unseen {
+  color: #3a4060;
+}
+
+.pdex-table td.pdex-sentence {
+  max-width: 260px;
+  white-space: normal;
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+.btn-pokedex {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #1a2040, #252a50);
+  border: 1px solid #3a4170;
+  border-radius: 10px;
+  color: #a0b4ff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.04em;
+  margin-top: 8px;
+}
+.btn-pokedex:hover {
+  background: linear-gradient(135deg, #252a50, #3a4170);
+  border-color: #4f7cff;
+}
+
+@media (max-width: 700px) {
+  .pdex-col-sentence-gr,
+  .pdex-col-sentence-en {
+    display: none;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
