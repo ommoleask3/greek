@@ -14,6 +14,7 @@ function showView(id) {
     'conjugation-view',
     'exam-view',
     'pokedex-view',
+    'ai-exam-view',
   ].forEach((v) => {
     document.getElementById(v).classList.toggle('active', v === id);
   });

@@ -162,3 +162,15 @@ let customDir = 'en';
 
 // Active level tab
 let activeTab = 'en';
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// AI EXAM STATE
+// ═══════════════════════════════════════════════════════════════════════════════
+const AI_HISTORY_KEY = 'greek_ai_history_v1';
+let aiExamQueue = [];
+let aiExamCurrent = null;
+let aiExamCorrect = 0;
+let aiExamTotal = 0;
+let aiExamAnswered = false;
+let aiExamFromPokedex = false;
+let aiExamSessionSize = 15;

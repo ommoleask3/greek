@@ -3,6 +3,20 @@
 // ═══════════════════════════════════════════════════════════════════════════════
 function setupKeyboardShortcuts() {
   document.addEventListener('keydown', (e) => {
+    // AI Exam view: Space advances to next question, Enter replays TTS
+    if (document.getElementById('ai-exam-view').classList.contains('active')) {
+      if (aiExamAnswered && aiExamCurrent) {
+        if (e.key === ' ') {
+          e.preventDefault();
+          aiExamNextQuestion();
+        } else if (e.key === 'Enter') {
+          e.preventDefault();
+          speakGreek((aiExamCurrent.greekWords || []).join(' '));
+        }
+      }
+      return;
+    }
+
     // Exam view: Space advances to next card, Enter replays TTS
     if (document.getElementById('exam-view').classList.contains('active')) {
       if (examAnswered && examCurrent) {

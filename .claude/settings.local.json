@@ -54,7 +54,15 @@
       "Bash(ls /c/Users/OliverLeask/Desktop/greek/curr_deck/collection*)",
       "Bash(python analysis_task1.py)",
       "Bash(python misc/disambiguate_deck.py)",
-      "Bash(ffmpeg -i \"/c/Users/OliverLeask/Desktop/greek/_The_School_of_Athens__by_Raffaello_Sanzio_da_Urbino.png\" -vf scale=800:-1 \"/c/Users/OliverLeask/Desktop/greek/school_of_athens_mobile.jpg\" -y)"
+      "Bash(ffmpeg -i \"/c/Users/OliverLeask/Desktop/greek/_The_School_of_Athens__by_Raffaello_Sanzio_da_Urbino.png\" -vf scale=800:-1 \"/c/Users/OliverLeask/Desktop/greek/school_of_athens_mobile.jpg\" -y)",
+      "Bash(node -e \"const d = require\\(''./tmp_batch3.json''\\); console.log\\(''Total questions:'', d.length\\); const counts = {}; d.forEach\\(q => { counts[q.rank] = \\(counts[q.rank]||0\\)+1; }\\); console.log\\(''Per rank:'', JSON.stringify\\(counts\\)\\);\")",
+      "Bash(for f in tmp_batch1.json tmp_batch2.json tmp_batch3.json tmp_batch4.json tmp_batch5.json tmp_topup1.json tmp_topup2.json tmp_topup3.json)",
+      "Bash(do echo \"=== $f ===\")",
+      "Bash(node -e \"const d=JSON.parse\\(require\\(''fs''\\).readFileSync\\(''$f'',''utf8''\\)\\); console.log\\(''Count:'', d.length\\); console.log\\(''Valid JSON: yes''\\);\")",
+      "Bash(done)",
+      "Bash(for f in js/state.js js/app.js js/ai-exam.js js/ai-exam-data.js js/keyboard.js)",
+      "Bash(node -c \"$f\")",
+      "Bash(node -c js/ai-exam.js)"
     ]
   }
 }
