@@ -1,7 +1,7 @@
 {
   "version": 1,
   "device": "laptop",
-  "exported": "2026-05-27T08:24:39.568Z",
+  "exported": "2026-05-29T20:52:24.409Z",
   "srs": {
     "r1_en": {
       "phase": "review",
@@ -33,148 +33,156 @@
     "r2_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 10,
-      "easeFactor": 2.8,
-      "nextReview": 1779996183251,
+      "interval": 36,
+      "easeFactor": 2.9499999999999997,
+      "nextReview": 1783114333948,
       "lapseCount": 0,
       "graduated": true,
-      "seen": 6,
-      "correct": 5,
+      "seen": 7,
+      "correct": 6,
       "incorrect": 1,
       "days": [
         "2026-05-13",
         1778747549059,
         1778871579541,
-        1779132181781
+        1779132181781,
+        1780003932645
       ],
       "leech": false,
-      "lastReview": 1779132181781
+      "lastReview": 1780003932645
     },
     "r3_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.5,
-      "nextReview": 1779823542111,
+      "interval": 9,
+      "easeFactor": 2.35,
+      "nextReview": 1780687018200,
       "lapseCount": 0,
       "graduated": true,
-      "seen": 5,
-      "correct": 5,
+      "seen": 6,
+      "correct": 6,
       "incorrect": 0,
       "days": [
         "2026-05-13",
         1778749513375,
         1778750182854,
         1778871727030,
-        1779132337971
+        1779132337971,
+        1779909412742
       ],
       "leech": false,
-      "lastReview": 1779132337971
+      "lastReview": 1779909412742
     },
     "r4_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 21,
       "easeFactor": 2.65,
-      "nextReview": 1779823583875,
+      "nextReview": 1781818203709,
       "lapseCount": 0,
       "graduated": true,
-      "seen": 5,
-      "correct": 5,
+      "seen": 6,
+      "correct": 6,
       "incorrect": 0,
       "days": [
         "2026-05-13",
         1778749520341,
         1778750191403,
         1778871708085,
-        1779132380406
+        1779132380406,
+        1780003801718
       ],
       "leech": false,
-      "lastReview": 1779132380406
+      "lastReview": 1780003801718
     },
     "r5_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 20,
       "easeFactor": 2.5,
-      "nextReview": 1779823472031,
+      "nextReview": 1781731782396,
       "lapseCount": 0,
       "graduated": true,
-      "seen": 5,
-      "correct": 5,
+      "seen": 6,
+      "correct": 6,
       "incorrect": 0,
       "days": [
         "2026-05-13",
         1778749523757,
         1778750200053,
         1778871788626,
-        1779132270658
+        1779132270658,
+        1780003778255
       ],
       "leech": false,
-      "lastReview": 1779132270658
+      "lastReview": 1780003778255
     },
     "r6_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.65,
-      "nextReview": 1779823492224,
+      "interval": 29,
+      "easeFactor": 2.8,
+      "nextReview": 1782419386960,
       "lapseCount": 0,
       "graduated": true,
-      "seen": 5,
-      "correct": 5,
+      "seen": 6,
+      "correct": 6,
       "incorrect": 0,
       "days": [
         "2026-05-13",
         1778749526724,
         1778750203619,
         1778871815878,
-        1779132290960
+        1779132290960,
+        1779913785363
       ],
       "leech": false,
-      "lastReview": 1779132290960
+      "lastReview": 1779913785363
     },
     "r7_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.5,
-      "nextReview": 1779823385897,
+      "interval": 11,
+      "easeFactor": 2.35,
+      "nextReview": 1780859820219,
       "lapseCount": 0,
       "graduated": true,
-      "seen": 5,
-      "correct": 5,
+      "seen": 6,
+      "correct": 6,
       "incorrect": 0,
       "days": [
         "2026-05-13",
         1778749529323,
         1778750209353,
         1778871825938,
-        1779132184184
+        1779132184184,
+        1779909418779
       ],
       "leech": false,
-      "lastReview": 1779132184184
+      "lastReview": 1779909418779
     },
     "r8_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.5,
-      "nextReview": 1779823425315,
-      "lapseCount": 0,
+      "interval": 4,
+      "easeFactor": 2.3,
+      "nextReview": 1780349603080,
+      "lapseCount": 1,
       "graduated": true,
-      "seen": 5,
-      "correct": 5,
-      "incorrect": 0,
+      "seen": 7,
+      "correct": 6,
+      "incorrect": 1,
       "days": [
         "2026-05-13",
         1778749536925,
         1778750213319,
         1778871621071,
-        1779132222530
+        1779132222530,
+        1780003773970,
+        1780004001275
       ],
       "leech": false,
-      "lastReview": 1779132222530
+      "lastReview": 1780004001275
     },
     "r9_en": {
       "phase": "review",
@@ -205,13 +213,13 @@
     "r10_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 3,
+      "interval": 5,
       "easeFactor": 1.7499999999999998,
-      "nextReview": 1779994123078,
+      "nextReview": 1780435747999,
       "lapseCount": 3,
       "graduated": true,
-      "seen": 14,
-      "correct": 9,
+      "seen": 15,
+      "correct": 10,
       "incorrect": 5,
       "days": [
         "2026-05-13",
@@ -227,10 +235,11 @@
         1779303854036,
         1779303866078,
         1779397919810,
-        1779734917627
+        1779734917627,
+        1780003743789
       ],
       "leech": false,
-      "lastReview": 1779734917627
+      "lastReview": 1780003743789
     },
     "r11_en": {
       "phase": "review",
@@ -254,13 +263,13 @@
     "r12_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 21,
       "easeFactor": 2.5,
-      "nextReview": 1779823515579,
+      "nextReview": 1781818199199,
       "lapseCount": 0,
       "graduated": true,
-      "seen": 8,
-      "correct": 4,
+      "seen": 9,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         "2026-05-13",
@@ -268,10 +277,11 @@
         1778750231034,
         1778750435669,
         1778871883424,
-        1779132312990
+        1779132312990,
+        1780003793386
       ],
       "leech": false,
-      "lastReview": 1779132312990
+      "lastReview": 1780003793386
     },
     "r13_en": {
       "phase": "review",
@@ -301,16 +311,16 @@
     "r14_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.5,
-      "nextReview": 1779956667003,
-      "lapseCount": 0,
+      "interval": 4,
+      "easeFactor": 2.3,
+      "nextReview": 1780349670323,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779265460418,
-      "seen": 11,
-      "correct": 6,
-      "incorrect": 3,
+      "lastReview": 1780004061638,
+      "seen": 14,
+      "correct": 7,
+      "incorrect": 5,
       "days": [
         1778749554224,
         1778750459204,
@@ -322,43 +332,48 @@
         1778753891633,
         1778871570742,
         1778969055905,
-        1779265460418
+        1779265460418,
+        1780003839072,
+        1780004005692,
+        1780004061638
       ]
     },
     "r15_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.5,
-      "nextReview": 1779823494568,
-      "lapseCount": 0,
+      "interval": 4,
+      "easeFactor": 2.3,
+      "nextReview": 1780349595554,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132293076,
-      "seen": 6,
-      "correct": 4,
-      "incorrect": 2,
+      "lastReview": 1780003990858,
+      "seen": 8,
+      "correct": 5,
+      "incorrect": 3,
       "days": [
         1778749669766,
         1778749748910,
         1778749827939,
         1778750471453,
         1778871888140,
-        1779132293076
+        1779132293076,
+        1780003699458,
+        1780003990858
       ]
     },
     "r16_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 1.95,
-      "nextReview": 1779821617786,
+      "nextReview": 1780176493425,
       "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735214731,
-      "seen": 8,
-      "correct": 6,
+      "lastReview": 1780003691013,
+      "seen": 9,
+      "correct": 7,
       "incorrect": 2,
       "days": [
         1778749697399,
@@ -368,21 +383,22 @@
         1778969023440,
         1779265441270,
         1779735024907,
-        1779735214731
+        1779735214731,
+        1780003691013
       ]
     },
     "r17_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 19,
       "easeFactor": 2.5,
-      "nextReview": 1779823478913,
+      "nextReview": 1781645328520,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132272991,
-      "seen": 8,
-      "correct": 5,
+      "lastReview": 1780003726356,
+      "seen": 9,
+      "correct": 6,
       "incorrect": 3,
       "days": [
         1778749711129,
@@ -392,21 +408,22 @@
         1778750565931,
         1778753867102,
         1778871737967,
-        1779132272991
+        1779132272991,
+        1780003726356
       ]
     },
     "r18_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
+      "interval": 4,
       "easeFactor": 2.0999999999999996,
-      "nextReview": 1779907985111,
+      "nextReview": 1780349436249,
       "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735182249,
-      "seen": 12,
-      "correct": 6,
+      "lastReview": 1780003830242,
+      "seen": 13,
+      "correct": 7,
       "incorrect": 6,
       "days": [
         1778749721997,
@@ -420,21 +437,22 @@
         1778968988842,
         1779272027315,
         1779734923932,
-        1779735182249
+        1779735182249,
+        1780003830242
       ]
     },
     "r19_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 3,
+      "interval": 6,
       "easeFactor": 2.15,
-      "nextReview": 1779994161818,
+      "nextReview": 1780522359825,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779734948062,
-      "seen": 7,
-      "correct": 6,
+      "lastReview": 1780003951994,
+      "seen": 8,
+      "correct": 7,
       "incorrect": 1,
       "days": [
         1778749759294,
@@ -443,21 +461,22 @@
         1779132246696,
         1779132426404,
         1779272068103,
-        1779734948062
+        1779734948062,
+        1780003951994
       ]
     },
     "r20_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 21,
       "easeFactor": 2.5,
-      "nextReview": 1779823484064,
+      "nextReview": 1781728200415,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132279760,
-      "seen": 6,
-      "correct": 5,
+      "lastReview": 1779913794078,
+      "seen": 7,
+      "correct": 6,
       "incorrect": 1,
       "days": [
         1778749775575,
@@ -465,7 +484,8 @@
         1778750596679,
         1778753813590,
         1778871625539,
-        1779132279760
+        1779132279760,
+        1779913794078
       ]
     },
     "r21_en": {
@@ -489,39 +509,41 @@
     "r22_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 10,
+      "interval": 26,
       "easeFactor": 2.65,
-      "nextReview": 1779986842593,
+      "nextReview": 1782250201029,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779122839022,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003799874,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1778749839323,
-        1779122839022
+        1779122839022,
+        1780003799874
       ]
     },
     "r23_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.65,
-      "nextReview": 1779823544830,
+      "interval": 9,
+      "easeFactor": 2.5,
+      "nextReview": 1780781531032,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132342940,
-      "seen": 4,
-      "correct": 4,
+      "lastReview": 1780003928913,
+      "seen": 5,
+      "correct": 5,
       "incorrect": 0,
       "days": [
         1778749848340,
         1778750535115,
         1778871733632,
-        1779132342940
+        1779132342940,
+        1780003928913
       ]
     },
     "r24_en": {
@@ -572,57 +594,60 @@
     "r26_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.5,
-      "nextReview": 1779823591859,
-      "lapseCount": 0,
+      "interval": 4,
+      "easeFactor": 2.3,
+      "nextReview": 1780349655324,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132387355,
-      "seen": 5,
-      "correct": 4,
-      "incorrect": 0,
+      "lastReview": 1780004054004,
+      "seen": 7,
+      "correct": 5,
+      "incorrect": 1,
       "days": [
         1778750003714,
         1778750572963,
         1778753763790,
         1778871829626,
-        1779132387355
+        1779132387355,
+        1780003941161,
+        1780004054004
       ]
     },
     "r27_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 21,
       "easeFactor": 2.5,
-      "nextReview": 1779823430308,
+      "nextReview": 1781818302778,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132226180,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003900546,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778750577795,
         1778750648925,
         1778753720629,
         1778871715050,
-        1779132226180
+        1779132226180,
+        1780003900546
       ]
     },
     "r28_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 20,
       "easeFactor": 2.5,
-      "nextReview": 1779823445845,
+      "nextReview": 1781731756160,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132231144,
-      "seen": 7,
-      "correct": 4,
+      "lastReview": 1780003753522,
+      "seen": 9,
+      "correct": 5,
       "incorrect": 3,
       "days": [
         1778750584510,
@@ -631,27 +656,30 @@
         1778750893378,
         1778753808125,
         1778871673135,
-        1779132231144
+        1779132231144,
+        1779909433529,
+        1780003753522
       ]
     },
     "r29_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.65,
-      "nextReview": 1779823469816,
+      "interval": 11,
+      "easeFactor": 2.5,
+      "nextReview": 1780954160058,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132268153,
-      "seen": 4,
-      "correct": 4,
+      "lastReview": 1780003758873,
+      "seen": 5,
+      "correct": 5,
       "incorrect": 0,
       "days": [
         1778750590695,
         1778753727512,
         1778871669132,
-        1779132268153
+        1779132268153,
+        1780003758873
       ]
     },
     "r30_en": {
@@ -683,63 +711,66 @@
     "r31_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 21,
       "easeFactor": 2.5,
-      "nextReview": 1779823380971,
+      "nextReview": 1781818164973,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132178581,
-      "seen": 4,
-      "correct": 4,
+      "lastReview": 1780003763671,
+      "seen": 5,
+      "correct": 5,
       "incorrect": 0,
       "days": [
         1778750610478,
         1778753860387,
         1778871575075,
-        1779132178581
+        1779132178581,
+        1780003763671
       ]
     },
     "r32_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.5,
-      "nextReview": 1779823506446,
+      "interval": 10,
+      "easeFactor": 2.35,
+      "nextReview": 1780773431878,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132302925,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1779909423630,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778750614077,
         1778750704987,
         1778753883453,
         1778871852655,
-        1779132302925
+        1779132302925,
+        1779909423630
       ]
     },
     "r33_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 21,
       "easeFactor": 2.5,
-      "nextReview": 1779823522228,
+      "nextReview": 1781818362473,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132316395,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003960526,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778750620560,
         1778750718587,
         1778753497124,
         1778871566405,
-        1779132316395
+        1779132316395,
+        1780003960526
       ]
     },
     "r34_en": {
@@ -772,76 +803,79 @@
     "r35_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 21,
       "easeFactor": 2.65,
-      "nextReview": 1779823463265,
+      "nextReview": 1781818296251,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132261827,
-      "seen": 4,
-      "correct": 4,
+      "lastReview": 1780003894047,
+      "seen": 5,
+      "correct": 5,
       "incorrect": 0,
       "days": [
         1778750637476,
         1778753801757,
         1778871719679,
-        1779132261827
+        1779132261827,
+        1780003894047
       ]
     },
     "r36_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.5,
-      "nextReview": 1779823512164,
+      "interval": 11,
+      "easeFactor": 2.35,
+      "nextReview": 1780859823054,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132307282,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1779909420797,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778750799099,
         1778750904159,
         1778753771742,
         1778871561608,
-        1779132307282
+        1779132307282,
+        1779909420797
       ]
     },
     "r37_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 21,
       "easeFactor": 2.65,
-      "nextReview": 1779823461032,
+      "nextReview": 1781818162964,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132258615,
-      "seen": 4,
-      "correct": 4,
+      "lastReview": 1780003761473,
+      "seen": 5,
+      "correct": 5,
       "incorrect": 0,
       "days": [
         1778750810083,
         1778753768876,
         1778871711799,
-        1779132258615
+        1779132258615,
+        1780003761473
       ]
     },
     "r38_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 20,
       "easeFactor": 2.5,
-      "nextReview": 1779963222528,
+      "nextReview": 1781731948492,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779272017245,
-      "seen": 7,
-      "correct": 5,
+      "lastReview": 1780003944877,
+      "seen": 8,
+      "correct": 6,
       "incorrect": 1,
       "days": [
         1778750814949,
@@ -850,68 +884,72 @@
         1778777671887,
         1778871700251,
         1778969081386,
-        1779272017245
+        1779272017245,
+        1780003944877
       ]
     },
     "r39_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 19,
       "easeFactor": 2.5,
-      "nextReview": 1779823490144,
+      "nextReview": 1781645426037,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132284890,
-      "seen": 4,
-      "correct": 4,
+      "lastReview": 1780003823502,
+      "seen": 5,
+      "correct": 5,
       "incorrect": 0,
       "days": [
         1778750830430,
         1778753489188,
         1778871685649,
-        1779132284890
+        1779132284890,
+        1780003823502
       ]
     },
     "r40_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.5,
-      "nextReview": 1779823586535,
+      "interval": 29,
+      "easeFactor": 2.65,
+      "nextReview": 1782509295504,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132384803,
-      "seen": 4,
-      "correct": 4,
+      "lastReview": 1780003694092,
+      "seen": 5,
+      "correct": 5,
       "incorrect": 0,
       "days": [
         1778750836664,
         1778753833970,
         1778871890840,
-        1779132384803
+        1779132384803,
+        1780003694092
       ]
     },
     "r41_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 22,
       "easeFactor": 2.65,
-      "nextReview": 1779823502106,
+      "nextReview": 1781814584487,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779132298453,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1779913782128,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 0,
       "days": [
         1778750841464,
         1778753165971,
         1778753774807,
         1778871730629,
-        1779132298453
+        1779132298453,
+        1779913782128
       ]
     },
     "r42_en": {
@@ -940,22 +978,23 @@
     "r43_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 21,
       "easeFactor": 2.5,
-      "nextReview": 1779814062307,
+      "nextReview": 1781818098767,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779122860166,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003696224,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778750951157,
         1778750977388,
         1778753730911,
         1778851334932,
-        1779122860166
+        1779122860166,
+        1780003696224
       ]
     },
     "r44_en": {
@@ -982,15 +1021,15 @@
     "r45_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 5,
+      "interval": 13,
       "easeFactor": 2.3,
-      "nextReview": 1779735794563,
+      "nextReview": 1781126925656,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779303791851,
-      "seen": 16,
-      "correct": 5,
+      "lastReview": 1780003723489,
+      "seen": 17,
+      "correct": 6,
       "incorrect": 4,
       "days": [
         1778752888350,
@@ -1008,7 +1047,8 @@
         1778968960642,
         1778969128820,
         1779122898452,
-        1779303791851
+        1779303791851,
+        1780003723489
       ]
     },
     "r1_gr": {
@@ -1062,15 +1102,15 @@
     "r47_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
+      "interval": 4,
       "easeFactor": 2.0999999999999996,
-      "nextReview": 1779907889171,
+      "nextReview": 1780349422798,
       "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735086555,
-      "seen": 8,
-      "correct": 6,
+      "lastReview": 1780003820684,
+      "seen": 9,
+      "correct": 7,
       "incorrect": 2,
       "days": [
         1778872112889,
@@ -1080,104 +1120,110 @@
         1779272085878,
         1779397904452,
         1779397949569,
-        1779735086555
+        1779735086555,
+        1780003820684
       ]
     },
     "r48_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 19,
       "easeFactor": 2.5,
-      "nextReview": 1779963285000,
+      "nextReview": 1781645493343,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779272082472,
-      "seen": 4,
-      "correct": 4,
+      "lastReview": 1780003890847,
+      "seen": 5,
+      "correct": 5,
       "incorrect": 0,
       "days": [
         1778872118559,
         1778872857933,
         1778968846166,
-        1779272082472
+        1779272082472,
+        1780003890847
       ]
     },
     "r49_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.5,
-      "nextReview": 1779963267268,
-      "lapseCount": 0,
+      "interval": 4,
+      "easeFactor": 2.3,
+      "nextReview": 1780349661058,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779272058441,
-      "seen": 5,
-      "correct": 4,
-      "incorrect": 1,
+      "lastReview": 1780004055904,
+      "seen": 7,
+      "correct": 5,
+      "incorrect": 2,
       "days": [
         1778872123141,
         1778872240017,
         1778872863799,
         1778968851802,
-        1779272058441
+        1779272058441,
+        1780003977442,
+        1780004055904
       ]
     },
     "r50_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 21,
       "easeFactor": 2.5,
-      "nextReview": 1779963257611,
+      "nextReview": 1781818340456,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779272051012,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003938644,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778872129339,
         1778872243134,
         1778872868433,
         1778968914380,
-        1779272051012
+        1779272051012,
+        1780003938644
       ]
     },
     "r51_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 19,
       "easeFactor": 2.5,
-      "nextReview": 1779963281637,
+      "nextReview": 1781645343119,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779272079849,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003737222,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778872246649,
         1778872329796,
         1778873422048,
         1778968948327,
-        1779272079849
+        1779272079849,
+        1780003737222
       ]
     },
     "r52_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 19,
       "easeFactor": 2.5,
-      "nextReview": 1779995040178,
+      "nextReview": 1781645438401,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779303837233,
-      "seen": 9,
-      "correct": 6,
+      "lastReview": 1780003836934,
+      "seen": 10,
+      "correct": 7,
       "incorrect": 3,
       "days": [
         1778872251384,
@@ -1188,42 +1234,44 @@
         1778934415587,
         1778934511167,
         1779036381282,
-        1779303837233
+        1779303837233,
+        1780003836934
       ]
     },
     "r53_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.5,
-      "nextReview": 1779956659581,
+      "interval": 27,
+      "easeFactor": 2.65,
+      "nextReview": 1782336552792,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779265457646,
-      "seen": 4,
-      "correct": 4,
+      "lastReview": 1780003751555,
+      "seen": 5,
+      "correct": 5,
       "incorrect": 0,
       "days": [
         1778872256416,
         1778872871597,
         1778969014491,
-        1779265457646
+        1779265457646,
+        1780003751555
       ]
     },
     "r54_en": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 1.8999999999999997,
-      "nextReview": 1779821622330,
-      "lapseCount": 3,
+      "easeFactor": 1.6999999999999997,
+      "nextReview": 1780090400506,
+      "lapseCount": 4,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735218615,
-      "seen": 11,
-      "correct": 6,
-      "incorrect": 5,
+      "lastReview": 1780003997125,
+      "seen": 13,
+      "correct": 7,
+      "incorrect": 6,
       "days": [
         1778872259242,
         1778872349960,
@@ -1235,21 +1283,23 @@
         1779123273980,
         1779265467851,
         1779735109603,
-        1779735218615
+        1779735218615,
+        1780003729222,
+        1780003997125
       ]
     },
     "r55_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 5,
+      "interval": 12,
       "easeFactor": 2.3,
-      "nextReview": 1779735801389,
+      "nextReview": 1780950604507,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779303798073,
-      "seen": 9,
-      "correct": 5,
+      "lastReview": 1779913801294,
+      "seen": 10,
+      "correct": 6,
       "incorrect": 4,
       "days": [
         1778872289015,
@@ -1260,50 +1310,54 @@
         1778968921546,
         1778969124918,
         1779122834969,
-        1779303798073
+        1779303798073,
+        1779913801294
       ]
     },
     "r56_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.5,
-      "nextReview": 1779963211228,
-      "lapseCount": 0,
+      "interval": 4,
+      "easeFactor": 2.3,
+      "nextReview": 1780349653424,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779272006701,
-      "seen": 6,
-      "correct": 4,
-      "incorrect": 2,
+      "lastReview": 1780004051460,
+      "seen": 8,
+      "correct": 5,
+      "incorrect": 3,
       "days": [
         1778872306997,
         1778872373495,
         1778872448155,
         1778873460095,
         1778968983607,
-        1779272006701
+        1779272006701,
+        1780003934662,
+        1780004051460
       ]
     },
     "r57_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 19,
       "easeFactor": 2.5,
-      "nextReview": 1779956677784,
+      "nextReview": 1781645499850,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779265471029,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003896963,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778872369960,
         1778872445854,
         1778873454563,
         1778969010640,
-        1779265471029
+        1779265471029,
+        1780003896963
       ]
     },
     "r58_en": {
@@ -1338,16 +1392,16 @@
     "r59_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 5,
-      "easeFactor": 2.3,
-      "nextReview": 1779829851066,
-      "lapseCount": 1,
+      "interval": 2,
+      "easeFactor": 2.0999999999999996,
+      "nextReview": 1780176850876,
+      "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779397847954,
-      "seen": 15,
-      "correct": 6,
-      "incorrect": 9,
+      "lastReview": 1780004048938,
+      "seen": 17,
+      "correct": 7,
+      "incorrect": 10,
       "days": [
         1778872393258,
         1778872466018,
@@ -1363,21 +1417,23 @@
         1779036496143,
         1779036529375,
         1779132323024,
-        1779397847954
+        1779397847954,
+        1780003907063,
+        1780004048938
       ]
     },
     "r60_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 19,
       "easeFactor": 2.5,
-      "nextReview": 1779995045864,
+      "nextReview": 1781645419973,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779303840870,
-      "seen": 7,
-      "correct": 5,
+      "lastReview": 1780003816519,
+      "seen": 8,
+      "correct": 6,
       "incorrect": 2,
       "days": [
         1778872456536,
@@ -1386,42 +1442,45 @@
         1778873559736,
         1778934284412,
         1779036407665,
-        1779303840870
+        1779303840870,
+        1780003816519
       ]
     },
     "r61_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
-      "easeFactor": 2.5,
-      "nextReview": 1779963216418,
-      "lapseCount": 0,
+      "interval": 4,
+      "easeFactor": 2.3,
+      "nextReview": 1780349604905,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779272012079,
-      "seen": 4,
-      "correct": 4,
-      "incorrect": 0,
+      "lastReview": 1780004003840,
+      "seen": 6,
+      "correct": 5,
+      "incorrect": 1,
       "days": [
         1778872459455,
         1778873467723,
         1778968855113,
-        1779272012079
+        1779272012079,
+        1780003783086,
+        1780004003840
       ]
     },
     "r62_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
-      "easeFactor": 2.15,
-      "nextReview": 1779907994964,
-      "lapseCount": 1,
+      "interval": 1,
+      "easeFactor": 1.95,
+      "nextReview": 1780090328128,
+      "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735193067,
-      "seen": 11,
-      "correct": 6,
-      "incorrect": 5,
+      "lastReview": 1780003924412,
+      "seen": 13,
+      "correct": 7,
+      "incorrect": 6,
       "days": [
         1778872484986,
         1778872618738,
@@ -1433,63 +1492,67 @@
         1779036473462,
         1779303750043,
         1779734996542,
-        1779735193067
+        1779735193067,
+        1779913787845,
+        1780003924412
       ]
     },
     "r63_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 21,
       "easeFactor": 2.5,
-      "nextReview": 1779956639403,
+      "nextReview": 1781818351324,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779265422907,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003949177,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778872498766,
         1778872626278,
         1778873485360,
         1778969048222,
-        1779265422907
+        1779265422907,
+        1780003949177
       ]
     },
     "r64_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 21,
       "easeFactor": 2.5,
-      "nextReview": 1779963275690,
+      "nextReview": 1781818306370,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779272072716,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003903481,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778872636288,
         1778872676510,
         1778873508210,
         1778969037363,
-        1779272072716
+        1779272072716,
+        1780003903481
       ]
     },
     "r65_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 21,
       "easeFactor": 2.5,
-      "nextReview": 1779995031919,
+      "nextReview": 1781818215806,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779303829572,
-      "seen": 13,
-      "correct": 4,
+      "lastReview": 1780003813935,
+      "seen": 14,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         1778919314244,
@@ -1504,21 +1567,22 @@
         1778934221801,
         1778934472601,
         1779036378201,
-        1779303829572
+        1779303829572,
+        1780003813935
       ]
     },
     "r66_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 21,
       "easeFactor": 2.5,
-      "nextReview": 1779994991055,
+      "nextReview": 1781818373289,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779303786352,
-      "seen": 6,
-      "correct": 4,
+      "lastReview": 1780003969109,
+      "seen": 7,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         1778932857145,
@@ -1526,7 +1590,8 @@
         1778934226466,
         1778934479150,
         1779036367042,
-        1779303786352
+        1779303786352,
+        1780003969109
       ]
     },
     "r67_en": {
@@ -1568,36 +1633,37 @@
     "r69_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 19,
       "easeFactor": 2.5,
-      "nextReview": 1779995025650,
+      "nextReview": 1781645429507,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779303819440,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003826751,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778934229249,
         1778934330610,
         1778934492667,
         1779036422832,
-        1779303819440
+        1779303819440,
+        1780003826751
       ]
     },
     "r70_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 21,
       "easeFactor": 2.5,
-      "nextReview": 1779995034186,
+      "nextReview": 1781818158176,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779303832638,
-      "seen": 6,
-      "correct": 4,
+      "lastReview": 1780003756856,
+      "seen": 7,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         1778934254514,
@@ -1605,21 +1671,22 @@
         1778934408238,
         1778934506984,
         1779036484678,
-        1779303832638
+        1779303832638,
+        1780003756856
       ]
     },
     "r71_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 1.8999999999999997,
-      "nextReview": 1779821635609,
+      "nextReview": 1780176776729,
       "lapseCount": 3,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735223599,
-      "seen": 10,
-      "correct": 6,
+      "lastReview": 1780003973991,
+      "seen": 12,
+      "correct": 7,
       "incorrect": 4,
       "days": [
         1778934294096,
@@ -1631,70 +1698,75 @@
         1779132435471,
         1779272002130,
         1779735116420,
-        1779735223599
+        1779735223599,
+        1779913805378,
+        1780003973991
       ]
     },
     "r72_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 19,
       "easeFactor": 2.5,
-      "nextReview": 1779995028772,
+      "nextReview": 1781645350840,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779303826434,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003748689,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778934346460,
         1778934419154,
         1778934514582,
         1779036491809,
-        1779303826434
+        1779303826434,
+        1780003748689
       ]
     },
     "r73_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 19,
       "easeFactor": 2.5,
-      "nextReview": 1779995049881,
+      "nextReview": 1781645367812,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779303846554,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003765673,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778934374657,
         1778934430738,
         1778934521732,
         1779036445364,
-        1779303846554
+        1779303846554,
+        1780003765673
       ]
     },
     "r74_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 19,
       "easeFactor": 2.5,
-      "nextReview": 1779995036550,
+      "nextReview": 1781645322805,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779303834886,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003717640,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778934379690,
         1778934437552,
         1778934524082,
         1779036448280,
-        1779303834886
+        1779303834886,
+        1780003717640
       ]
     },
     "r75_en": {
@@ -1721,15 +1793,15 @@
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 1.8999999999999997,
-      "nextReview": 1779821613949,
-      "lapseCount": 3,
+      "easeFactor": 1.6999999999999997,
+      "nextReview": 1780090367545,
+      "lapseCount": 4,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735195785,
-      "seen": 11,
-      "correct": 6,
-      "incorrect": 5,
+      "lastReview": 1780003963210,
+      "seen": 13,
+      "correct": 7,
+      "incorrect": 6,
       "days": [
         1778934389974,
         1778934440554,
@@ -1741,28 +1813,31 @@
         1779132441027,
         1779272076547,
         1779735005726,
-        1779735195785
+        1779735195785,
+        1779913747510,
+        1780003963210
       ]
     },
     "r77_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 8,
+      "interval": 20,
       "easeFactor": 2.5,
-      "nextReview": 1779995004278,
+      "nextReview": 1781731769790,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779303802106,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003768521,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778934422136,
         1778934466302,
         1778934527066,
         1779036418748,
-        1779303802106
+        1779303802106,
+        1780003768521
       ]
     },
     "r78_en": {
@@ -2014,15 +2089,15 @@
     "r13_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 5,
+      "interval": 11,
       "easeFactor": 2.35,
-      "nextReview": 1779830075802,
+      "nextReview": 1780953181600,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779398073079,
-      "seen": 6,
-      "correct": 4,
+      "lastReview": 1780002777513,
+      "seen": 7,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         1778934975138,
@@ -2030,7 +2105,8 @@
         1778935017336,
         1778935155165,
         1779213669672,
-        1779398073079
+        1779398073079,
+        1780002777513
       ]
     },
     "r14_gr": {
@@ -2076,15 +2152,15 @@
     "r16_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.0999999999999996,
-      "nextReview": 1779822623105,
+      "nextReview": 1780176011478,
       "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779736220355,
-      "seen": 9,
-      "correct": 6,
+      "lastReview": 1780003209420,
+      "seen": 10,
+      "correct": 7,
       "incorrect": 3,
       "days": [
         1778934989554,
@@ -2095,7 +2171,8 @@
         1779215304065,
         1779398061576,
         1779736071649,
-        1779736220355
+        1779736220355,
+        1780003209420
       ]
     },
     "r17_gr": {
@@ -2313,22 +2390,23 @@
     "r107_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 5,
-      "easeFactor": 2.35,
-      "nextReview": 1779736143207,
+      "interval": 6,
+      "easeFactor": 2.2,
+      "nextReview": 1780522547971,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779304139299,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780004143732,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1778935405729,
         1778935472509,
         1778935788459,
         1779123299979,
-        1779304139299
+        1779304139299,
+        1780004143732
       ]
     },
     "r108_en": {
@@ -2673,15 +2751,15 @@
     "r123_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.2499999999999996,
-      "nextReview": 1779822214586,
+      "nextReview": 1780176974073,
       "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735809548,
-      "seen": 15,
-      "correct": 6,
+      "lastReview": 1780004167132,
+      "seen": 16,
+      "correct": 7,
       "incorrect": 9,
       "days": [
         1778969430117,
@@ -2698,21 +2776,22 @@
         1779131867498,
         1779272342941,
         1779735652040,
-        1779735809548
+        1779735809548,
+        1780004167132
       ]
     },
     "r124_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
+      "interval": 5,
       "easeFactor": 2.3,
-      "nextReview": 1779908523577,
+      "nextReview": 1780436216368,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735721967,
-      "seen": 6,
-      "correct": 5,
+      "lastReview": 1780004214628,
+      "seen": 7,
+      "correct": 6,
       "incorrect": 1,
       "days": [
         1778969493149,
@@ -2720,7 +2799,8 @@
         1779123432620,
         1779397678965,
         1779397828338,
-        1779735721967
+        1779735721967,
+        1780004214628
       ]
     },
     "r125_en": {
@@ -2922,15 +3002,15 @@
     "r86_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
+      "interval": 5,
       "easeFactor": 2.3,
-      "nextReview": 1779907908897,
+      "nextReview": 1780345781208,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735101153,
-      "seen": 8,
-      "correct": 5,
+      "lastReview": 1779913759397,
+      "seen": 9,
+      "correct": 6,
       "incorrect": 3,
       "days": [
         1779016844296,
@@ -2940,21 +3020,22 @@
         1779122865754,
         1779397936337,
         1779397953491,
-        1779735101153
+        1779735101153,
+        1779913759397
       ]
     },
     "r87_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.0999999999999996,
-      "nextReview": 1779821592255,
+      "nextReview": 1780176613244,
       "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735189332,
-      "seen": 9,
-      "correct": 5,
+      "lastReview": 1780003804419,
+      "seen": 10,
+      "correct": 6,
       "incorrect": 4,
       "days": [
         1779016999555,
@@ -2965,21 +3046,22 @@
         1779122890000,
         1779271913665,
         1779734974962,
-        1779735189332
+        1779735189332,
+        1780003804419
       ]
     },
     "r88_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.0999999999999996,
-      "nextReview": 1779821588506,
+      "nextReview": 1780176573259,
       "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735185915,
-      "seen": 9,
-      "correct": 5,
+      "lastReview": 1780003770504,
+      "seen": 10,
+      "correct": 6,
       "incorrect": 4,
       "days": [
         1779017042787,
@@ -2990,7 +3072,8 @@
         1779397946041,
         1779397956202,
         1779734939931,
-        1779735185915
+        1779735185915,
+        1780003770504
       ]
     },
     "r89_en": {
@@ -3468,15 +3551,15 @@
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.3,
-      "nextReview": 1779822185244,
-      "lapseCount": 1,
+      "easeFactor": 2.0999999999999996,
+      "nextReview": 1780090668963,
+      "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735778282,
-      "seen": 9,
-      "correct": 4,
-      "incorrect": 5,
+      "lastReview": 1780004265325,
+      "seen": 11,
+      "correct": 5,
+      "incorrect": 6,
       "days": [
         1779124495533,
         1779129419091,
@@ -3486,7 +3569,9 @@
         1779131977444,
         1779272346676,
         1779735563495,
-        1779735778282
+        1779735778282,
+        1780004222196,
+        1780004265325
       ]
     },
     "r129_en": {
@@ -3611,15 +3696,15 @@
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.3,
-      "nextReview": 1779822237072,
-      "lapseCount": 1,
+      "easeFactor": 2.0999999999999996,
+      "nextReview": 1780090634856,
+      "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735836778,
-      "seen": 9,
-      "correct": 4,
-      "incorrect": 5,
+      "lastReview": 1780004227844,
+      "seen": 11,
+      "correct": 5,
+      "incorrect": 6,
       "days": [
         1779129466148,
         1779131638872,
@@ -3629,21 +3714,23 @@
         1779735528680,
         1779735765316,
         1779735829447,
-        1779735836778
+        1779735836778,
+        1780004109034,
+        1780004227844
       ]
     },
     "r135_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.0999999999999996,
-      "nextReview": 1779822217335,
+      "nextReview": 1780176966432,
       "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735815422,
-      "seen": 12,
-      "correct": 6,
+      "lastReview": 1780004160932,
+      "seen": 13,
+      "correct": 7,
       "incorrect": 6,
       "days": [
         1779129470448,
@@ -3657,22 +3744,23 @@
         1779272538172,
         1779387832936,
         1779735680487,
-        1779735815422
+        1779735815422,
+        1780004160932
       ]
     },
     "r136_en": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.0999999999999996,
-      "nextReview": 1779822225912,
-      "lapseCount": 2,
+      "easeFactor": 1.8999999999999997,
+      "nextReview": 1780090639507,
+      "lapseCount": 3,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735821730,
-      "seen": 16,
-      "correct": 7,
-      "incorrect": 9,
+      "lastReview": 1780004235661,
+      "seen": 18,
+      "correct": 8,
+      "incorrect": 10,
       "days": [
         1779130514876,
         1779131248354,
@@ -3689,7 +3777,9 @@
         1779272487559,
         1779387813354,
         1779735708887,
-        1779735821730
+        1779735821730,
+        1780004116834,
+        1780004235661
       ]
     },
     "r137_en": {
@@ -3763,15 +3853,15 @@
     "r140_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 1.8999999999999997,
-      "nextReview": 1779822154952,
+      "nextReview": 1780177005628,
       "lapseCount": 3,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735751749,
-      "seen": 10,
-      "correct": 5,
+      "lastReview": 1780004198380,
+      "seen": 11,
+      "correct": 6,
       "incorrect": 4,
       "days": [
         1779131280418,
@@ -3783,21 +3873,22 @@
         1779397585849,
         1779397823062,
         1779735425169,
-        1779735751749
+        1779735751749,
+        1780004198380
       ]
     },
     "r141_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 3,
+      "interval": 6,
       "easeFactor": 2.15,
-      "nextReview": 1779994530350,
+      "nextReview": 1780522500711,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735328292,
-      "seen": 8,
-      "correct": 5,
+      "lastReview": 1780004099618,
+      "seen": 9,
+      "correct": 6,
       "incorrect": 3,
       "days": [
         1779131292116,
@@ -3807,7 +3898,8 @@
         1779272162110,
         1779272406243,
         1779387846103,
-        1779735328292
+        1779735328292,
+        1780004099618
       ]
     },
     "r142_en": {
@@ -3836,15 +3928,15 @@
     "r143_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
+      "interval": 4,
       "easeFactor": 2.0999999999999996,
-      "nextReview": 1779908120821,
+      "nextReview": 1780349777144,
       "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735318109,
-      "seen": 9,
-      "correct": 5,
+      "lastReview": 1780004174782,
+      "seen": 10,
+      "correct": 6,
       "incorrect": 4,
       "days": [
         1779131351597,
@@ -3855,21 +3947,22 @@
         1779272417385,
         1779397490438,
         1779397819717,
-        1779735318109
+        1779735318109,
+        1780004174782
       ]
     },
     "r144_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
+      "interval": 4,
       "easeFactor": 2.0999999999999996,
-      "nextReview": 1779908308141,
+      "nextReview": 1780349687318,
       "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735502882,
-      "seen": 10,
-      "correct": 5,
+      "lastReview": 1780004073219,
+      "seen": 11,
+      "correct": 6,
       "incorrect": 5,
       "days": [
         1779171412505,
@@ -3881,7 +3974,8 @@
         1779397345298,
         1779397978146,
         1779397985235,
-        1779735502882
+        1779735502882,
+        1780004073219
       ]
     },
     "r145_en": {
@@ -3932,15 +4026,15 @@
     "r147_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822158058,
+      "nextReview": 1780176898923,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735755750,
-      "seen": 6,
-      "correct": 4,
+      "lastReview": 1780004094519,
+      "seen": 7,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         1779212668946,
@@ -3948,7 +4042,8 @@
         1779213137903,
         1779304248596,
         1779735433386,
-        1779735755750
+        1779735755750,
+        1780004094519
       ]
     },
     "r148_en": {
@@ -4001,15 +4096,15 @@
     "r150_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.0999999999999996,
-      "nextReview": 1779822141420,
+      "nextReview": 1780176893816,
       "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735738270,
-      "seen": 12,
-      "correct": 6,
+      "lastReview": 1780004091501,
+      "seen": 13,
+      "correct": 7,
       "incorrect": 6,
       "days": [
         1779212720327,
@@ -4023,21 +4118,22 @@
         1779304320358,
         1779397513658,
         1779735332091,
-        1779735738270
+        1779735738270,
+        1780004091501
       ]
     },
     "r151_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822161865,
+      "nextReview": 1780176984999,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735758900,
-      "seen": 6,
-      "correct": 4,
+      "lastReview": 1780004177847,
+      "seen": 7,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         1779212769423,
@@ -4045,7 +4141,8 @@
         1779213147968,
         1779304123305,
         1779735442251,
-        1779735758900
+        1779735758900,
+        1780004177847
       ]
     },
     "r152_en": {
@@ -4116,15 +4213,15 @@
     "r155_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822134346,
+      "nextReview": 1780176995404,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735728968,
-      "seen": 6,
-      "correct": 4,
+      "lastReview": 1780004185680,
+      "seen": 7,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         1779212842769,
@@ -4132,21 +4229,22 @@
         1779213183166,
         1779304262060,
         1779735253511,
-        1779735728968
+        1779735728968,
+        1780004185680
       ]
     },
     "r156_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822164481,
+      "nextReview": 1780176903495,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735762683,
-      "seen": 8,
-      "correct": 5,
+      "lastReview": 1780004101383,
+      "seen": 9,
+      "correct": 6,
       "incorrect": 3,
       "days": [
         1779212915165,
@@ -4156,7 +4254,8 @@
         1779213381070,
         1779304308444,
         1779735457283,
-        1779735762683
+        1779735762683,
+        1780004101383
       ]
     },
     "r157_en": {
@@ -4292,15 +4391,15 @@
     "r163_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822220874,
+      "nextReview": 1780176955543,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735818164,
-      "seen": 11,
-      "correct": 6,
+      "lastReview": 1780004148799,
+      "seen": 12,
+      "correct": 7,
       "incorrect": 5,
       "days": [
         1779213037309,
@@ -4313,7 +4412,8 @@
         1779213508947,
         1779304183698,
         1779735701769,
-        1779735818164
+        1779735818164,
+        1780004148799
       ]
     },
     "r21_gr": {
@@ -4505,15 +4605,15 @@
     "r169_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822197909,
+      "nextReview": 1780176960215,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735795864,
-      "seen": 6,
-      "correct": 4,
+      "lastReview": 1780004156233,
+      "seen": 7,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         1779214223074,
@@ -4521,7 +4621,8 @@
         1779214727263,
         1779304120086,
         1779735624507,
-        1779735795864
+        1779735795864,
+        1780004156233
       ]
     },
     "r170_en": {
@@ -4717,22 +4818,25 @@
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.3,
-      "nextReview": 1779822203565,
-      "lapseCount": 1,
+      "easeFactor": 2.0999999999999996,
+      "nextReview": 1780090671802,
+      "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735798731,
-      "seen": 6,
-      "correct": 4,
-      "incorrect": 2,
+      "lastReview": 1780004269875,
+      "seen": 9,
+      "correct": 5,
+      "incorrect": 4,
       "days": [
         1779214448960,
         1779214518356,
         1779214820888,
         1779304204084,
         1779735630907,
-        1779735798731
+        1779735798731,
+        1780004217078,
+        1780004240277,
+        1780004269875
       ]
     },
     "r180_en": {
@@ -4876,15 +4980,15 @@
     "r28_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.0999999999999996,
-      "nextReview": 1779822568928,
+      "nextReview": 1780175894316,
       "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779736166126,
-      "seen": 6,
-      "correct": 4,
+      "lastReview": 1780003081428,
+      "seen": 7,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         1779215309278,
@@ -4892,7 +4996,8 @@
         1779397995892,
         1779398683052,
         1779735897742,
-        1779736166126
+        1779736166126,
+        1780003081428
       ]
     },
     "r29_gr": {
@@ -4972,20 +5077,21 @@
     "r33_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
+      "interval": 5,
       "easeFactor": 2.4499999999999997,
-      "nextReview": 1779908965347,
+      "nextReview": 1780435056480,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779736161727,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780003055497,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779215333342,
         1779735884310,
-        1779736161727
+        1779736161727,
+        1780003055497
       ]
     },
     "r34_gr": {
@@ -5135,15 +5241,15 @@
     "r42_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
+      "interval": 5,
       "easeFactor": 2.3,
-      "nextReview": 1779908659141,
+      "nextReview": 1780435208735,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735857645,
-      "seen": 8,
-      "correct": 5,
+      "lastReview": 1780003124326,
+      "seen": 9,
+      "correct": 6,
       "incorrect": 3,
       "days": [
         1779215388638,
@@ -5153,7 +5259,8 @@
         1779398090562,
         1779398804136,
         1779398833358,
-        1779735857645
+        1779735857645,
+        1780003124326
       ]
     },
     "r43_gr": {
@@ -5386,22 +5493,23 @@
     "r55_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
+      "interval": 5,
       "easeFactor": 2.3,
-      "nextReview": 1779908935149,
+      "nextReview": 1780435053062,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779736133012,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003049471,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1779215454018,
         1779215539164,
         1779398023515,
         1779398691295,
-        1779736133012
+        1779736133012,
+        1780003049471
       ]
     },
     "r56_gr": {
@@ -5524,15 +5632,15 @@
     "r62_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822633503,
+      "nextReview": 1780175916008,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779736231939,
-      "seen": 7,
-      "correct": 4,
+      "lastReview": 1780003108764,
+      "seen": 8,
+      "correct": 5,
       "incorrect": 3,
       "days": [
         1779215561434,
@@ -5541,7 +5649,8 @@
         1779398177423,
         1779736020051,
         1779736213140,
-        1779736231939
+        1779736231939,
+        1780003108764
       ]
     },
     "r63_gr": {
@@ -5605,15 +5714,15 @@
     "r66_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822619539,
+      "nextReview": 1780175848784,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779736216790,
-      "seen": 6,
-      "correct": 4,
+      "lastReview": 1780003040734,
+      "seen": 7,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         1779215583543,
@@ -5621,7 +5730,8 @@
         1779215750701,
         1779398111175,
         1779736023717,
-        1779736216790
+        1779736216790,
+        1780003040734
       ]
     },
     "r67_gr": {
@@ -5699,43 +5809,45 @@
     "r71_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822612361,
+      "nextReview": 1780175876684,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779736207223,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003072045,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1779215618909,
         1779215735318,
         1779398017311,
         1779736004753,
-        1779736207223
+        1779736207223,
+        1780003072045
       ]
     },
     "r72_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
+      "interval": 5,
       "easeFactor": 2.3,
-      "nextReview": 1779908694563,
+      "nextReview": 1780435215253,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735892741,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780003212187,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1779215623958,
         1779215738186,
         1779398079202,
         1779398796077,
-        1779735892741
+        1779735892741,
+        1780003212187
       ]
     },
     "r73_gr": {
@@ -5802,15 +5914,15 @@
     "r76_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822631120,
+      "nextReview": 1780175880405,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779736228939,
-      "seen": 7,
-      "correct": 4,
+      "lastReview": 1780003077362,
+      "seen": 8,
+      "correct": 5,
       "incorrect": 3,
       "days": [
         1779215677655,
@@ -5819,21 +5931,22 @@
         1779398076618,
         1779735973454,
         1779736190707,
-        1779736228939
+        1779736228939,
+        1780003077362
       ]
     },
     "r77_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
+      "interval": 5,
       "easeFactor": 2.3,
-      "nextReview": 1779908680676,
+      "nextReview": 1780435054815,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735879709,
-      "seen": 6,
-      "correct": 4,
+      "lastReview": 1780003053740,
+      "seen": 7,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         1779215696621,
@@ -5841,7 +5954,8 @@
         1779398141328,
         1779398844445,
         1779398869230,
-        1779735879709
+        1779735879709,
+        1780003053740
       ]
     },
     "r78_gr": {
@@ -6028,16 +6142,16 @@
     "r87_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
-      "easeFactor": 2.3,
-      "nextReview": 1779822628127,
-      "lapseCount": 1,
+      "interval": 4,
+      "easeFactor": 2.0999999999999996,
+      "nextReview": 1780348818900,
+      "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779736223923,
-      "seen": 8,
-      "correct": 5,
-      "incorrect": 3,
+      "lastReview": 1780003216304,
+      "seen": 11,
+      "correct": 6,
+      "incorrect": 4,
       "days": [
         1779215795149,
         1779215970956,
@@ -6046,21 +6160,24 @@
         1779398678930,
         1779735948472,
         1779736172516,
-        1779736223923
+        1779736223923,
+        1780002789011,
+        1780003095060,
+        1780003216304
       ]
     },
     "r88_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
+      "interval": 5,
       "easeFactor": 2.3,
-      "nextReview": 1779908770776,
+      "nextReview": 1780435071323,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735960637,
-      "seen": 9,
-      "correct": 4,
+      "lastReview": 1780003057327,
+      "seen": 10,
+      "correct": 5,
       "incorrect": 5,
       "days": [
         1779215833530,
@@ -6071,28 +6188,31 @@
         1779398817714,
         1779398835727,
         1779398837914,
-        1779735960637
+        1779735960637,
+        1780003057327
       ]
     },
     "r89_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
-      "easeFactor": 2.3,
-      "nextReview": 1779908704596,
-      "lapseCount": 1,
+      "interval": 1,
+      "easeFactor": 2.0999999999999996,
+      "nextReview": 1780090086808,
+      "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735902922,
-      "seen": 5,
-      "correct": 4,
-      "incorrect": 1,
+      "lastReview": 1780003678708,
+      "seen": 7,
+      "correct": 5,
+      "incorrect": 2,
       "days": [
         1779215874294,
         1779215985370,
         1779398037700,
         1779398706833,
-        1779735902922
+        1779735902922,
+        1780002739731,
+        1780003678708
       ]
     },
     "r90_gr": {
@@ -6159,22 +6279,23 @@
     "r93_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822571709,
+      "nextReview": 1780175588209,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779736169710,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780002782294,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1779215912858,
         1779216011054,
         1779398195130,
         1779735917891,
-        1779736169710
+        1779736169710,
+        1780002782294
       ]
     },
     "r94_gr": {
@@ -7072,15 +7193,15 @@
     "r137_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
-      "easeFactor": 2.3,
-      "nextReview": 1779909246922,
+      "interval": 6,
+      "easeFactor": 2.4499999999999997,
+      "nextReview": 1780521627367,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779736445127,
-      "seen": 8,
-      "correct": 4,
+      "lastReview": 1780003225120,
+      "seen": 9,
+      "correct": 5,
       "incorrect": 4,
       "days": [
         1779272842287,
@@ -7090,7 +7211,8 @@
         1779399003818,
         1779399069302,
         1779399081418,
-        1779736445127
+        1779736445127,
+        1780003225120
       ]
     },
     "r138_gr": {
@@ -7115,37 +7237,39 @@
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.3,
-      "nextReview": 1779822859795,
-      "lapseCount": 1,
+      "easeFactor": 2.0999999999999996,
+      "nextReview": 1780089860137,
+      "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779736454043,
-      "seen": 6,
-      "correct": 4,
-      "incorrect": 2,
+      "lastReview": 1780003458577,
+      "seen": 8,
+      "correct": 5,
+      "incorrect": 3,
       "days": [
         1779272873492,
         1779273030393,
         1779273165635,
         1779399026305,
         1779736343149,
-        1779736454043
+        1779736454043,
+        1780003307464,
+        1780003458577
       ]
     },
     "r140_gr": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.0999999999999996,
-      "nextReview": 1779822885461,
-      "lapseCount": 2,
+      "easeFactor": 1.8999999999999997,
+      "nextReview": 1780089852842,
+      "lapseCount": 3,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779736484042,
-      "seen": 10,
-      "correct": 5,
-      "incorrect": 5,
+      "lastReview": 1780003450672,
+      "seen": 12,
+      "correct": 6,
+      "incorrect": 6,
       "days": [
         1779272881245,
         1779273035357,
@@ -7156,7 +7280,9 @@
         1779399059667,
         1779736379547,
         1779736461226,
-        1779736484042
+        1779736484042,
+        1780003242084,
+        1780003450672
       ]
     },
     "r184_en": {
@@ -7224,15 +7350,15 @@
     "r187_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.0999999999999996,
-      "nextReview": 1779822137456,
+      "nextReview": 1780176936220,
       "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735735184,
-      "seen": 6,
-      "correct": 4,
+      "lastReview": 1780004132784,
+      "seen": 7,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         1779289167119,
@@ -7240,28 +7366,30 @@
         1779397408569,
         1779398661175,
         1779735304376,
-        1779735735184
+        1779735735184,
+        1780004132784
       ]
     },
     "r188_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822228608,
+      "nextReview": 1780176908327,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735826779,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780004104185,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1779289170289,
         1779289372872,
         1779397372971,
         1779735716350,
-        1779735826779
+        1779735826779,
+        1780004104185
       ]
     },
     "r189_en": {
@@ -7287,15 +7415,15 @@
     "r190_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822207791,
+      "nextReview": 1780177009090,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735804397,
-      "seen": 6,
-      "correct": 4,
+      "lastReview": 1780004206312,
+      "seen": 7,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1779289180296,
@@ -7303,7 +7431,8 @@
         1779375970065,
         1779397577006,
         1779735636673,
-        1779735804397
+        1779735804397,
+        1780004206312
       ]
     },
     "r191_en": {
@@ -7350,36 +7479,37 @@
     "r193_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
+      "interval": 5,
       "easeFactor": 2.3,
-      "nextReview": 1779908252526,
+      "nextReview": 1780436197692,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735449484,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780004196113,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1779289212726,
         1779289400125,
         1779387797878,
         1779394181473,
-        1779735449484
+        1779735449484,
+        1780004196113
       ]
     },
     "r194_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822150957,
+      "nextReview": 1780176940052,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735742250,
-      "seen": 6,
-      "correct": 4,
+      "lastReview": 1780004136903,
+      "seen": 7,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         1779289215697,
@@ -7387,21 +7517,22 @@
         1779289415225,
         1779397397133,
         1779735402821,
-        1779735742250
+        1779735742250,
+        1780004136903
       ]
     },
     "r195_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 2,
+      "interval": 5,
       "easeFactor": 2.3,
-      "nextReview": 1779908404382,
+      "nextReview": 1780436090788,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735602058,
-      "seen": 6,
-      "correct": 4,
+      "lastReview": 1780004088236,
+      "seen": 7,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         1779289240073,
@@ -7409,7 +7540,8 @@
         1779289447063,
         1779397165368,
         1779397960667,
-        1779735602058
+        1779735602058,
+        1780004088236
       ]
     },
     "r196_en": {
@@ -7455,36 +7587,37 @@
     "r198_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822173126,
+      "nextReview": 1780177013887,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735770432,
-      "seen": 5,
-      "correct": 4,
+      "lastReview": 1780004209797,
+      "seen": 6,
+      "correct": 5,
       "incorrect": 1,
       "days": [
         1779289260121,
         1779289408498,
         1779397546029,
         1779735534596,
-        1779735770432
+        1779735770432,
+        1780004209797
       ]
     },
     "r199_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.3,
-      "nextReview": 1779822177456,
+      "nextReview": 1780176916134,
       "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735773947,
-      "seen": 6,
-      "correct": 4,
+      "lastReview": 1780004114351,
+      "seen": 7,
+      "correct": 5,
       "incorrect": 2,
       "days": [
         1779289265162,
@@ -7492,21 +7625,22 @@
         1779289451163,
         1779387820819,
         1779735541313,
-        1779735773947
+        1779735773947,
+        1780004114351
       ]
     },
     "r200_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 2,
       "easeFactor": 2.0999999999999996,
-      "nextReview": 1779822235939,
+      "nextReview": 1780176943039,
       "lapseCount": 2,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779735833912,
-      "seen": 8,
-      "correct": 4,
+      "lastReview": 1780004140732,
+      "seen": 9,
+      "correct": 5,
       "incorrect": 4,
       "days": [
         1779289270347,
@@ -7516,42 +7650,44 @@
         1779397388337,
         1779735607474,
         1779735786082,
-        1779735833912
+        1779735833912,
+        1780004140732
       ]
     },
     "r201_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823754702,
+      "nextReview": 1780263694134,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737349107,
-      "seen": 5,
-      "correct": 2,
+      "lastReview": 1780004492796,
+      "seen": 6,
+      "correct": 3,
       "incorrect": 3,
       "days": [
         1779736550174,
         1779736685013,
         1779736752375,
         1779736823323,
-        1779737349107
+        1779737349107,
+        1780004492796
       ]
     },
     "r202_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823796368,
+      "nextReview": 1780263650969,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737389590,
-      "seen": 7,
-      "correct": 2,
+      "lastReview": 1780004448614,
+      "seen": 8,
+      "correct": 3,
       "incorrect": 5,
       "days": [
         1779736623116,
@@ -7560,140 +7696,148 @@
         1779736857721,
         1779736987546,
         1779737064023,
-        1779737389590
+        1779737389590,
+        1780004448614
       ]
     },
     "r203_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823772479,
+      "nextReview": 1780263713162,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737369558,
-      "seen": 5,
-      "correct": 2,
+      "lastReview": 1780004512000,
+      "seen": 6,
+      "correct": 3,
       "incorrect": 3,
       "days": [
         1779736645616,
         1779736719694,
         1779736799856,
         1779736873619,
-        1779737369558
+        1779737369558,
+        1780004512000
       ]
     },
     "r204_en": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779823895860,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780090980218,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737493817,
-      "seen": 5,
-      "correct": 3,
-      "incorrect": 2,
+      "lastReview": 1780004578474,
+      "seen": 7,
+      "correct": 4,
+      "incorrect": 3,
       "days": [
         1779736649483,
         1779736725993,
         1779737285244,
         1779737310109,
-        1779737493817
+        1779737493817,
+        1780004479497,
+        1780004578474
       ]
     },
     "r205_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823898410,
+      "nextReview": 1780263628040,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737496650,
-      "seen": 5,
-      "correct": 3,
+      "lastReview": 1780004422900,
+      "seen": 6,
+      "correct": 4,
       "incorrect": 2,
       "days": [
         1779736660698,
         1779736729744,
         1779737294061,
         1779737316759,
-        1779737496650
+        1779737496650,
+        1780004422900
       ]
     },
     "r206_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779823675213,
+      "interval": 3,
+      "easeFactor": 2.65,
+      "nextReview": 1780263653138,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737268913,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780004451681,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779736674181,
-        1779737268913
+        1779737268913,
+        1780004451681
       ]
     },
     "r207_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823715973,
+      "nextReview": 1780263646018,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737313226,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004444351,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779736688396,
         1779736757226,
-        1779737313226
+        1779737313226,
+        1780004444351
       ]
     },
     "r208_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823742842,
+      "nextReview": 1780263724012,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737337208,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004521861,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779736704611,
         1779736782973,
-        1779737337208
+        1779737337208,
+        1780004521861
       ]
     },
     "r209_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823902212,
+      "nextReview": 1780263480249,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737499216,
-      "seen": 6,
-      "correct": 3,
+      "lastReview": 1780004278659,
+      "seen": 7,
+      "correct": 4,
       "incorrect": 3,
       "days": [
         1779736709078,
@@ -7701,40 +7845,42 @@
         1779736869436,
         1779737355523,
         1779737373295,
-        1779737499216
+        1779737499216,
+        1780004278659
       ]
     },
     "r210_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823748303,
+      "nextReview": 1780263700097,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737343658,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004497629,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779736732844,
         1779736808722,
-        1779737343658
+        1779737343658,
+        1780004497629
       ]
     },
     "r211_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823818093,
+      "nextReview": 1780263643666,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737409938,
-      "seen": 6,
-      "correct": 2,
+      "lastReview": 1780004439549,
+      "seen": 7,
+      "correct": 3,
       "incorrect": 4,
       "days": [
         1779736812373,
@@ -7742,42 +7888,44 @@
         1779737002994,
         1779737070241,
         1779737139770,
-        1779737409938
+        1779737409938,
+        1780004439549
       ]
     },
     "r212_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823908593,
+      "nextReview": 1780263731094,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737503020,
-      "seen": 5,
-      "correct": 3,
+      "lastReview": 1780004527427,
+      "seen": 6,
+      "correct": 4,
       "incorrect": 2,
       "days": [
         1779736828638,
         1779736910999,
         1779737375172,
         1779737387605,
-        1779737503020
+        1779737503020,
+        1780004527427
       ]
     },
     "r213_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823910954,
+      "nextReview": 1780263589861,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737509399,
-      "seen": 7,
-      "correct": 3,
+      "lastReview": 1780004350088,
+      "seen": 8,
+      "correct": 4,
       "incorrect": 4,
       "days": [
         1779736841071,
@@ -7786,22 +7934,23 @@
         1779737090239,
         1779737397189,
         1779737418970,
-        1779737509399
+        1779737509399,
+        1780004350088
       ]
     },
     "r214_en": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779823926342,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780090976554,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737514499,
-      "seen": 9,
-      "correct": 3,
-      "incorrect": 6,
+      "lastReview": 1780004564158,
+      "seen": 11,
+      "correct": 4,
+      "incorrect": 7,
       "days": [
         1779736892001,
         1779737010010,
@@ -7811,82 +7960,88 @@
         1779737276062,
         1779737456902,
         1779737492350,
-        1779737514499
+        1779737514499,
+        1780004466083,
+        1780004564158
       ]
     },
     "r215_en": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779823786802,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780090954450,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737384506,
-      "seen": 3,
-      "correct": 2,
-      "incorrect": 1,
+      "lastReview": 1780004531793,
+      "seen": 5,
+      "correct": 3,
+      "incorrect": 2,
       "days": [
         1779736923165,
         1779737028627,
-        1779737384506
+        1779737384506,
+        1780004285092,
+        1780004531793
       ]
     },
     "r216_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823834191,
+      "nextReview": 1780263696901,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737431020,
-      "seen": 5,
-      "correct": 2,
+      "lastReview": 1780004495132,
+      "seen": 6,
+      "correct": 3,
       "incorrect": 3,
       "days": [
         1779737032044,
         1779737126720,
         1779737173517,
         1779737249164,
-        1779737431020
+        1779737431020,
+        1780004495132
       ]
     },
     "r217_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823837394,
+      "nextReview": 1780263601284,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737435003,
-      "seen": 5,
-      "correct": 2,
+      "lastReview": 1780004398468,
+      "seen": 6,
+      "correct": 3,
       "incorrect": 3,
       "days": [
         1779737038475,
         1779737132970,
         1779737186967,
         1779737254498,
-        1779737435003
+        1779737435003,
+        1780004398468
       ]
     },
     "r218_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823913656,
+      "nextReview": 1780263661339,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737511798,
-      "seen": 7,
-      "correct": 3,
+      "lastReview": 1780004457331,
+      "seen": 8,
+      "correct": 4,
       "incorrect": 4,
       "days": [
         1779737049792,
@@ -7895,809 +8050,857 @@
         1779737264846,
         1779737438236,
         1779737489800,
-        1779737511798
+        1779737511798,
+        1780004457331
       ]
     },
     "r219_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823823720,
+      "nextReview": 1780263517982,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737421272,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004316689,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779737084940,
         1779737164469,
-        1779737421272
+        1779737421272,
+        1780004316689
       ]
     },
     "r220_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779823830179,
+      "nextReview": 1780263484430,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779737424540,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004280942,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779737093171,
         1779737168002,
-        1779737424540
+        1779737424540,
+        1780004280942
       ]
     },
     "r221_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779825965120,
+      "nextReview": 1780263597774,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739560062,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004394668,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779738979970,
         1779739149322,
-        1779739560062
+        1779739560062,
+        1780004394668
       ]
     },
     "r222_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779825987499,
+      "nextReview": 1780263549427,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739572063,
-      "seen": 4,
-      "correct": 2,
+      "lastReview": 1780004318689,
+      "seen": 5,
+      "correct": 3,
       "incorrect": 2,
       "days": [
         1779739120556,
         1779739198001,
         1779739279647,
-        1779739572063
+        1779739572063,
+        1780004318689
       ]
     },
     "r223_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779825967212,
+      "nextReview": 1780263512435,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739565930,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004311240,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779739153553,
         1779739233983,
-        1779739565930
+        1779739565930,
+        1780004311240
       ]
     },
     "r224_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779825971263,
+      "nextReview": 1780263726732,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739567997,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004524676,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779739170286,
         1779739236448,
-        1779739567997
+        1779739567997,
+        1780004524676
       ]
     },
     "r225_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779825993776,
+      "nextReview": 1780263721169,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739588396,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004513895,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779739211650,
         1779739284146,
-        1779739588396
+        1779739588396,
+        1780004513895
       ]
     },
     "r226_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779826000635,
+      "nextReview": 1780263632280,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739597367,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004428732,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779739238914,
         1779739304978,
-        1779739597367
+        1779739597367,
+        1780004428732
       ]
     },
     "r227_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779826049511,
+      "nextReview": 1780263515966,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739646209,
-      "seen": 5,
-      "correct": 3,
+      "lastReview": 1780004313141,
+      "seen": 6,
+      "correct": 4,
       "incorrect": 2,
       "days": [
         1779739252216,
         1779739330560,
         1779739601443,
         1779739610545,
-        1779739646209
+        1779739646209,
+        1780004313141
       ]
     },
     "r228_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779825996596,
+      "nextReview": 1780263638866,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739594894,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780004435481,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779739293179,
-        1779739594894
+        1779739594894,
+        1780004435481
       ]
     },
     "r229_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779826016403,
+      "nextReview": 1780263656610,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739614932,
-      "seen": 4,
-      "correct": 2,
+      "lastReview": 1780004453815,
+      "seen": 5,
+      "correct": 3,
       "incorrect": 2,
       "days": [
         1779739296329,
         1779739366424,
         1779739448253,
-        1779739614932
+        1779739614932,
+        1780004453815
       ]
     },
     "r230_en": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779826009756,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780090957559,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739607378,
-      "seen": 3,
-      "correct": 2,
-      "incorrect": 1,
+      "lastReview": 1780004555227,
+      "seen": 5,
+      "correct": 3,
+      "incorrect": 2,
       "days": [
         1779739308328,
         1779739380057,
-        1779739607378
+        1779739607378,
+        1780004390636,
+        1780004555227
       ]
     },
     "r231_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779826014129,
+      "nextReview": 1780263663485,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739612677,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004462046,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779739334211,
         1779739397573,
-        1779739612677
+        1779739612677,
+        1780004462046
       ]
     },
     "r232_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779826043003,
+      "nextReview": 1780263708802,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739640008,
-      "seen": 5,
-      "correct": 2,
+      "lastReview": 1780004505696,
+      "seen": 6,
+      "correct": 3,
       "incorrect": 3,
       "days": [
         1779739349414,
         1779739416210,
         1779739503800,
         1779739552814,
-        1779739640008
+        1779739640008,
+        1780004505696
       ]
     },
     "r233_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779826018366,
+      "nextReview": 1780263711321,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739617244,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004509495,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779739371823,
         1779739452086,
-        1779739617244
+        1779739617244,
+        1780004509495
       ]
     },
     "r234_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779826020666,
+      "nextReview": 1780263665366,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739619193,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004464165,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779739386758,
         1779739454619,
-        1779739619193
+        1779739619193,
+        1780004464165
       ]
     },
     "r235_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779826022365,
+      "nextReview": 1780263634767,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739621492,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004432965,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779739402039,
         1779739470002,
-        1779739621492
+        1779739621492,
+        1780004432965
       ]
     },
     "r236_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779826024251,
+      "nextReview": 1780263647937,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739623159,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004446731,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779739405156,
         1779739500200,
-        1779739623159
+        1779739623159,
+        1780004446731
       ]
     },
     "r237_en": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779826030429,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780090963170,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739625077,
-      "seen": 3,
-      "correct": 2,
-      "incorrect": 1,
+      "lastReview": 1780004558158,
+      "seen": 5,
+      "correct": 3,
+      "incorrect": 2,
       "days": [
         1779739429554,
         1779739509833,
-        1779739625077
+        1779739625077,
+        1780004401950,
+        1780004558158
       ]
     },
     "r238_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779826032324,
+      "nextReview": 1780263477963,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739631276,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004274947,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779739456769,
         1779739527382,
-        1779739631276
+        1779739631276,
+        1780004274947
       ]
     },
     "r239_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779826039156,
+      "nextReview": 1780263705010,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739633144,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004500780,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779739472102,
         1779739530815,
-        1779739633144
+        1779739633144,
+        1780004500780
       ]
     },
     "r240_en": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779826045387,
+      "nextReview": 1780263692095,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779739643809,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780004490112,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779739518583,
         1779739556730,
-        1779739643809
+        1779739643809,
+        1780004490112
       ]
     },
     "r141_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872504115,
+      "nextReview": 1780262615457,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786103094,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003414275,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779785975861,
-        1779786103094
+        1779786103094,
+        1780003414275
       ]
     },
     "r142_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872505147,
+      "nextReview": 1780262562708,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786104927,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003359878,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779785984351,
-        1779786104927
+        1779786104927,
+        1780003359878
       ]
     },
     "r143_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872506203,
+      "nextReview": 1780262586121,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786105962,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003384943,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786035231,
-        1779786105962
+        1779786105962,
+        1780003384943
       ]
     },
     "r144_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872507367,
+      "nextReview": 1780262435614,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786107059,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003228053,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786038131,
-        1779786107059
+        1779786107059,
+        1780003228053
       ]
     },
     "r145_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872508429,
+      "nextReview": 1780262522283,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786108242,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003321031,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786043265,
-        1779786108242
+        1779786108242,
+        1780003321031
       ]
     },
     "r146_gr": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779872509545,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780089865296,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786109327,
-      "seen": 2,
-      "correct": 2,
-      "incorrect": 0,
+      "lastReview": 1780003463622,
+      "seen": 4,
+      "correct": 3,
+      "incorrect": 1,
       "days": [
         1779786045148,
-        1779786109327
+        1779786109327,
+        1780003379076,
+        1780003463622
       ]
     },
     "r147_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872522611,
+      "nextReview": 1780262547857,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786122559,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780003343811,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779786048514,
         1779786095828,
-        1779786122559
+        1779786122559,
+        1780003343811
       ]
     },
     "r148_gr": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779872510644,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780089868948,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786110444,
-      "seen": 2,
-      "correct": 2,
-      "incorrect": 0,
+      "lastReview": 1780003466988,
+      "seen": 4,
+      "correct": 3,
+      "incorrect": 1,
       "days": [
         1779786055762,
-        1779786110444
+        1779786110444,
+        1780003427474,
+        1780003466988
       ]
     },
     "r149_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872511747,
+      "nextReview": 1780262483517,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786111544,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003281054,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786059480,
-        1779786111544
+        1779786111544,
+        1780003281054
       ]
     },
     "r150_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872512840,
+      "nextReview": 1780262589009,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786112643,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003386843,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786062029,
-        1779786112643
+        1779786112643,
+        1780003386843
       ]
     },
     "r151_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872513985,
+      "nextReview": 1780262554112,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786113744,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003348546,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786064962,
-        1779786113744
+        1779786113744,
+        1780003348546
       ]
     },
     "r152_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872515089,
+      "nextReview": 1780262538314,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786114860,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003336730,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786068248,
-        1779786114860
+        1779786114860,
+        1780003336730
       ]
     },
     "r153_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779872516148,
+      "interval": 3,
+      "easeFactor": 2.65,
+      "nextReview": 1780262478404,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786115961,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003277249,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786070430,
-        1779786115961
+        1779786115961,
+        1780003277249
       ]
     },
     "r154_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872517270,
+      "nextReview": 1780262559191,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786117060,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003354811,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786074428,
-        1779786117060
+        1779786117060,
+        1780003354811
       ]
     },
     "r155_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779872518347,
+      "interval": 2,
+      "easeFactor": 2.35,
+      "nextReview": 1780176196817,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786118143,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003389776,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786078663,
-        1779786118143
+        1779786118143,
+        1780003389776
       ]
     },
     "r156_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872519459,
+      "nextReview": 1780262649996,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786119412,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003448677,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786085495,
-        1779786119412
+        1779786119412,
+        1780003448677
       ]
     },
     "r157_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779872520095,
+      "interval": 3,
+      "easeFactor": 2.65,
+      "nextReview": 1780262464937,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786120043,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003263634,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786087528,
-        1779786120043
+        1779786120043,
+        1780003263634
       ]
     },
     "r158_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872520731,
+      "nextReview": 1780262584220,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786120677,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003382542,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786089677,
-        1779786120677
+        1779786120677,
+        1780003382542
       ]
     },
     "r159_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872521338,
+      "nextReview": 1780262457954,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786121298,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003255951,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786091645,
-        1779786121298
+        1779786121298,
+        1780003255951
       ]
     },
     "r160_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779872521974,
+      "interval": 3,
+      "easeFactor": 2.65,
+      "nextReview": 1780262600432,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786121926,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003398494,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786094028,
-        1779786121926
+        1779786121926,
+        1780003398494
       ]
     },
     "r161_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872605239,
+      "nextReview": 1780262602729,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786203605,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003401125,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786126483,
-        1779786203605
+        1779786203605,
+        1780003401125
       ]
     },
     "r162_gr": {
@@ -8720,1417 +8923,2455 @@
     "r163_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872605876,
+      "nextReview": 1780262626756,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786205822,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003424841,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786131909,
-        1779786205822
+        1779786205822,
+        1780003424841
       ]
     },
     "r164_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872606513,
+      "nextReview": 1780262617568,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786206452,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003416175,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786135474,
-        1779786206452
+        1779786206452,
+        1780003416175
       ]
     },
     "r165_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779872607121,
+      "interval": 2,
+      "easeFactor": 2.35,
+      "nextReview": 1780176204768,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786207089,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003403425,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786137426,
-        1779786207089
+        1779786207089,
+        1780003403425
       ]
     },
     "r166_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872607725,
+      "nextReview": 1780262613560,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786207693,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003412442,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786139409,
-        1779786207693
+        1779786207693,
+        1780003412442
       ]
     },
     "r167_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872608362,
+      "nextReview": 1780262460913,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786208303,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003258650,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786141225,
-        1779786208303
+        1779786208303,
+        1780003258650
       ]
     },
     "r168_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872609000,
+      "nextReview": 1780262526736,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786208956,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003325081,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786144608,
-        1779786208956
+        1779786208956,
+        1780003325081
       ]
     },
     "r169_gr": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779872615340,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780089857806,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786215289,
-      "seen": 3,
-      "correct": 2,
-      "incorrect": 1,
+      "lastReview": 1780003454323,
+      "seen": 5,
+      "correct": 3,
+      "incorrect": 2,
       "days": [
         1779786146842,
         1779786193189,
-        1779786215289
+        1779786215289,
+        1780003288383,
+        1780003454323
       ]
     },
     "r170_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872609638,
+      "nextReview": 1780262535884,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786209590,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003334213,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786150608,
-        1779786209590
+        1779786209590,
+        1780003334213
       ]
     },
     "r171_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872610275,
+      "nextReview": 1780262480345,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786210222,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003279099,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786153689,
-        1779786210222
+        1779786210222,
+        1780003279099
       ]
     },
     "r172_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779872610910,
+      "interval": 3,
+      "easeFactor": 2.65,
+      "nextReview": 1780262568092,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786210856,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003366844,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786156091,
-        1779786210856
+        1779786210856,
+        1780003366844
       ]
     },
     "r173_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872611547,
+      "nextReview": 1780262462927,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786211487,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003261617,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786158025,
-        1779786211487
+        1779786211487,
+        1780003261617
       ]
     },
     "r174_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872615975,
+      "nextReview": 1780262441392,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786215922,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780003238269,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779786159756,
         1779786196488,
-        1779786215922
+        1779786215922,
+        1780003238269
       ]
     },
     "r175_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872612184,
+      "nextReview": 1780262524397,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786212139,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003323012,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786172323,
-        1779786212139
+        1779786212139,
+        1780003323012
       ]
     },
     "r176_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779872612821,
+      "interval": 3,
+      "easeFactor": 2.65,
+      "nextReview": 1780262466849,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786212773,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003265666,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786175440,
-        1779786212773
+        1779786212773,
+        1780003265666
       ]
     },
     "r177_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872613458,
+      "nextReview": 1780262474484,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786213405,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003270050,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786177289,
-        1779786213405
+        1779786213405,
+        1780003270050
       ]
     },
     "r178_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779872614097,
+      "interval": 3,
+      "easeFactor": 2.65,
+      "nextReview": 1780262518572,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786214039,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003316731,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786180122,
-        1779786214039
+        1779786214039,
+        1780003316731
       ]
     },
     "r179_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872618761,
+      "nextReview": 1780262624139,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786216552,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780003421341,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779786182872,
         1779786200756,
-        1779786216552
+        1779786216552,
+        1780003421341
       ]
     },
     "r180_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872614702,
+      "nextReview": 1780262540316,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786214672,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003339029,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786191272,
-        1779786214672
+        1779786214672,
+        1780003339029
       ]
     },
     "r181_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872684452,
+      "nextReview": 1780262573677,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786282833,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003371494,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786222664,
-        1779786282833
+        1779786282833,
+        1780003371494
       ]
     },
     "r182_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872686143,
+      "nextReview": 1780262620624,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786285250,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003418307,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786227054,
-        1779786285250
+        1779786285250,
+        1780003418307
       ]
     },
     "r183_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872688593,
+      "nextReview": 1780262469360,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786286951,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003267567,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786229486,
-        1779786286951
+        1779786286951,
+        1780003267567
       ]
     },
     "r184_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872690904,
+      "nextReview": 1780262506749,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786289183,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003305631,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786231187,
-        1779786289183
+        1779786289183,
+        1780003305631
       ]
     },
     "r185_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872694538,
+      "nextReview": 1780262611712,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786291483,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003410425,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786233821,
-        1779786291483
+        1779786291483,
+        1780003410425
       ]
     },
     "r186_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779872696313,
+      "interval": 3,
+      "easeFactor": 2.65,
+      "nextReview": 1780262437566,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786295115,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003236351,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786235886,
-        1779786295115
+        1779786295115,
+        1780003236351
       ]
     },
     "r187_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872698340,
+      "nextReview": 1780262485544,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786296899,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003284199,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786238386,
-        1779786296899
+        1779786296899,
+        1780003284199
       ]
     },
     "r188_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872700291,
+      "nextReview": 1780262487685,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786298916,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003286249,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786240153,
-        1779786298916
+        1779786298916,
+        1780003286249
       ]
     },
     "r189_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872701984,
+      "nextReview": 1780262529160,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786300866,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003327462,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786242152,
-        1779786300866
+        1779786300866,
+        1780003327462
       ]
     },
     "r190_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872703556,
+      "nextReview": 1780262570769,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786302563,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003368811,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786243904,
-        1779786302563
+        1779786302563,
+        1780003368811
       ]
     },
     "r191_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872705756,
+      "nextReview": 1780262578365,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786304131,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003374394,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786245669,
-        1779786304131
+        1779786304131,
+        1780003374394
       ]
     },
     "r192_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872707420,
+      "nextReview": 1780262520331,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786306331,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003319280,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786250941,
-        1779786306331
+        1779786306331,
+        1780003319280
       ]
     },
     "r193_gr": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779872710694,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780089862824,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786307999,
-      "seen": 2,
-      "correct": 2,
-      "incorrect": 0,
+      "lastReview": 1780003460906,
+      "seen": 4,
+      "correct": 3,
+      "incorrect": 1,
       "days": [
         1779786253102,
-        1779786307999
+        1779786307999,
+        1780003329863,
+        1780003460906
       ]
     },
     "r194_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872713763,
+      "nextReview": 1780262645712,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786311281,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003443070,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786255018,
-        1779786311281
+        1779786311281,
+        1780003443070
       ]
     },
     "r195_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872715496,
+      "nextReview": 1780262607233,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786314348,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003405609,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786262336,
-        1779786314348
+        1779786314348,
+        1780003405609
       ]
     },
     "r196_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872717418,
+      "nextReview": 1780262648020,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786316082,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003446407,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786264785,
-        1779786316082
+        1779786316082,
+        1780003446407
       ]
     },
     "r197_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872719036,
+      "nextReview": 1780262476536,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786317999,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003275182,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786267854,
-        1779786317999
+        1779786317999,
+        1780003275182
       ]
     },
     "r198_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872720900,
+      "nextReview": 1780262543068,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786319615,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003341045,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786269589,
-        1779786319615
+        1779786319615,
+        1780003341045
       ]
     },
     "r199_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872722568,
+      "nextReview": 1780262609704,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786321482,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003407975,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786278584,
-        1779786321482
+        1779786321482,
+        1780003407975
       ]
     },
     "r200_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779872724374,
+      "nextReview": 1780262566116,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786323148,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003363411,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786280518,
-        1779786323148
+        1779786323148,
+        1780003363411
       ]
     },
     "r201_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873400127,
+      "nextReview": 1780262814216,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779786998342,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003613081,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786328989,
-        1779786998342
+        1779786998342,
+        1780003613081
       ]
     },
     "r202_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873500076,
+      "nextReview": 1780262823615,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787097919,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780003619260,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779786331448,
         1779787000709,
-        1779787097919
+        1779787097919,
+        1780003619260
       ]
     },
     "r203_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873482528,
+      "nextReview": 1780262796968,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787080771,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003595531,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786805488,
-        1779787080771
+        1779787080771,
+        1780003595531
       ]
     },
     "r204_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873484727,
+      "nextReview": 1780262829704,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787083103,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003628228,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786808187,
-        1779787083103
+        1779787083103,
+        1780003628228
       ]
     },
     "r205_gr": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779873488279,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780090070029,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787085321,
-      "seen": 2,
-      "correct": 2,
-      "incorrect": 0,
+      "lastReview": 1780003666727,
+      "seen": 4,
+      "correct": 3,
+      "incorrect": 1,
       "days": [
         1779786810453,
-        1779787085321
+        1779787085321,
+        1780003569865,
+        1780003666727
       ]
     },
     "r206_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779873489953,
+      "interval": 3,
+      "easeFactor": 2.65,
+      "nextReview": 1780262818544,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787088870,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003617279,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786820452,
-        1779787088870
+        1779787088870,
+        1780003617279
       ]
     },
     "r207_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873491723,
+      "nextReview": 1780262738320,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787090537,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003536419,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786822800,
-        1779787090537
+        1779787090537,
+        1780003536419
       ]
     },
     "r208_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873493409,
+      "nextReview": 1780262798617,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787092303,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003597649,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786824869,
-        1779787092303
+        1779787092303,
+        1780003597649
       ]
     },
     "r209_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873495244,
+      "nextReview": 1780262691068,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787094003,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003489786,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786826885,
-        1779787094003
+        1779787094003,
+        1780003489786
       ]
     },
     "r210_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873497342,
+      "nextReview": 1780262769097,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787095820,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003567749,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779786828785,
-        1779787095820
+        1779787095820,
+        1780003567749
       ]
     },
     "r211_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873502209,
+      "nextReview": 1780262839709,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787100652,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780003632746,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779786830802,
         1779787003182,
-        1779787100652
+        1779787100652,
+        1780003632746
       ]
     },
     "r212_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873538236,
+      "nextReview": 1780262807116,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787134535,
-      "seen": 3,
-      "correct": 2,
+      "lastReview": 1780003599352,
+      "seen": 4,
+      "correct": 3,
       "incorrect": 1,
       "days": [
         1779786835602,
         1779787044223,
-        1779787134535
+        1779787134535,
+        1780003599352
       ]
     },
     "r213_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873504461,
+      "nextReview": 1780262827544,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787102787,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003624312,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787005641,
-        1779787102787
+        1779787102787,
+        1780003624312
       ]
     },
     "r214_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873526679,
+      "nextReview": 1780262781790,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787105028,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003573099,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787009175,
-        1779787105028
+        1779787105028,
+        1780003573099
       ]
     },
     "r215_gr": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779873528590,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780090072680,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787127269,
-      "seen": 2,
-      "correct": 2,
-      "incorrect": 0,
+      "lastReview": 1780003670809,
+      "seen": 4,
+      "correct": 3,
+      "incorrect": 1,
       "days": [
         1779787014559,
-        1779787127269
+        1779787127269,
+        1780003582481,
+        1780003670809
       ]
     },
     "r216_gr": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779873540294,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780090050139,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787138818,
-      "seen": 3,
-      "correct": 2,
-      "incorrect": 1,
+      "lastReview": 1780003648678,
+      "seen": 5,
+      "correct": 3,
+      "incorrect": 2,
       "days": [
         1779787017041,
         1779787049257,
-        1779787138818
+        1779787138818,
+        1780003491753,
+        1780003648678
       ]
     },
     "r217_gr": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779873554964,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780090059988,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787153017,
-      "seen": 4,
-      "correct": 2,
-      "incorrect": 2,
+      "lastReview": 1780003655011,
+      "seen": 6,
+      "correct": 3,
+      "incorrect": 3,
       "days": [
         1779787021208,
         1779787051606,
         1779787074555,
-        1779787153017
+        1779787153017,
+        1780003521768,
+        1780003655011
       ]
     },
     "r218_gr": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779873552439,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780090074972,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787140884,
-      "seen": 3,
-      "correct": 2,
-      "incorrect": 1,
+      "lastReview": 1780003673476,
+      "seen": 5,
+      "correct": 3,
+      "incorrect": 2,
       "days": [
         1779787032607,
         1779787068255,
-        1779787140884
+        1779787140884,
+        1780003607800,
+        1780003673476
       ]
     },
     "r219_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873531561,
+      "nextReview": 1780262816593,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787129168,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003614913,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787037127,
-        1779787129168
+        1779787129168,
+        1780003614913
       ]
     },
     "r220_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873533951,
+      "nextReview": 1780262794850,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787132151,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003591581,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787039707,
-        1779787132151
+        1779787132151,
+        1780003591581
       ]
     },
     "r221_gr": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779873641161,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780090054245,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787239845,
-      "seen": 2,
-      "correct": 2,
-      "incorrect": 0,
+      "lastReview": 1780003650912,
+      "seen": 4,
+      "correct": 3,
+      "incorrect": 1,
       "days": [
         1779787158762,
-        1779787239845
+        1779787239845,
+        1780003518735,
+        1780003650912
       ]
     },
     "r222_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873642865,
+      "nextReview": 1780262674940,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787241745,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003471589,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787162965,
-        1779787241745
+        1779787241745,
+        1780003471589
       ]
     },
     "r223_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873644734,
+      "nextReview": 1780262767049,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787243445,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003565366,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787164917,
-        1779787243445
+        1779787243445,
+        1780003565366
       ]
     },
     "r224_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873646537,
+      "nextReview": 1780262748255,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787245311,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003546818,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787166901,
-        1779787245311
+        1779787245311,
+        1780003546818
       ]
     },
     "r225_gr": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779873649480,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780090063084,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787247128,
-      "seen": 2,
-      "correct": 2,
-      "incorrect": 0,
+      "lastReview": 1780003661578,
+      "seen": 4,
+      "correct": 3,
+      "incorrect": 1,
       "days": [
         1779787168816,
-        1779787247128
+        1779787247128,
+        1780003525402,
+        1780003661578
       ]
     },
     "r226_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873651451,
+      "nextReview": 1780262754839,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787250061,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003553349,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787174582,
-        1779787250061
+        1779787250061,
+        1780003553349
       ]
     },
     "r227_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873653334,
+      "nextReview": 1780262832036,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787252027,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003630396,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787177349,
-        1779787252027
+        1779787252027,
+        1780003630396
       ]
     },
     "r228_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873655033,
+      "nextReview": 1780262740239,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787253928,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003539033,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787179549,
-        1779787253928
+        1779787253928,
+        1780003539033
       ]
     },
     "r229_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873658142,
+      "nextReview": 1780262764520,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787255611,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003558350,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787181766,
-        1779787255611
+        1779787255611,
+        1780003558350
       ]
     },
     "r230_gr": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779873680099,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780090046965,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787273960,
-      "seen": 3,
-      "correct": 2,
-      "incorrect": 1,
+      "lastReview": 1780003643345,
+      "seen": 5,
+      "correct": 3,
+      "incorrect": 2,
       "days": [
         1779787184598,
         1779787232796,
-        1779787273960
+        1779787273960,
+        1780003480238,
+        1780003643345
       ]
     },
     "r231_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873659963,
+      "nextReview": 1780262735729,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787258727,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003534619,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787194831,
-        1779787258727
+        1779787258727,
+        1780003534619
       ]
     },
     "r232_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873661552,
+      "nextReview": 1780262679253,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787260544,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003476622,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787197198,
-        1779787260544
+        1779787260544,
+        1780003476622
       ]
     },
     "r233_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873663118,
+      "nextReview": 1780262757641,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787262142,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003555538,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787199947,
-        1779787262142
+        1779787262142,
+        1780003555538
       ]
     },
     "r234_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873664858,
+      "nextReview": 1780262752632,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787263710,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003551068,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787202779,
-        1779787263710
+        1779787263710,
+        1780003551068
       ]
     },
     "r235_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873666443,
+      "nextReview": 1780262750372,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787265443,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003548961,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787204680,
-        1779787265443
+        1779787265443,
+        1780003548961
       ]
     },
     "r236_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873668078,
+      "nextReview": 1780262842659,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787267027,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003640395,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787206329,
-        1779787267027
+        1779787267027,
+        1780003640395
       ]
     },
     "r237_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873670021,
+      "nextReview": 1780262689075,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787268661,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003485887,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787208564,
-        1779787268661
+        1779787268661,
+        1780003485887
       ]
     },
     "r238_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873671701,
+      "nextReview": 1780262733922,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787270593,
-      "seen": 2,
-      "correct": 2,
+      "lastReview": 1780003532201,
+      "seen": 3,
+      "correct": 3,
       "incorrect": 0,
       "days": [
         1779787212980,
-        1779787270593
+        1779787270593,
+        1780003532201
       ]
     },
     "r239_gr": {
       "phase": "review",
       "learningStep": 0,
       "interval": 1,
-      "easeFactor": 2.5,
-      "nextReview": 1779873682046,
-      "lapseCount": 0,
+      "easeFactor": 2.3,
+      "nextReview": 1780090065948,
+      "lapseCount": 1,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787280681,
-      "seen": 3,
-      "correct": 2,
-      "incorrect": 1,
+      "lastReview": 1780003664560,
+      "seen": 5,
+      "correct": 3,
+      "incorrect": 2,
       "days": [
         1779787215030,
         1779787237613,
-        1779787280681
+        1779787280681,
+        1780003540916,
+        1780003664560
       ]
     },
     "r240_gr": {
       "phase": "review",
       "learningStep": 0,
-      "interval": 1,
+      "interval": 3,
       "easeFactor": 2.5,
-      "nextReview": 1779873673374,
+      "nextReview": 1780262812392,
       "lapseCount": 0,
       "leech": false,
       "graduated": true,
-      "lastReview": 1779787272294,
+      "lastReview": 1780003610946,
+      "seen": 3,
+      "correct": 3,
+      "incorrect": 0,
+      "days": [
+        1779787230662,
+        1779787272294,
+        1780003610946
+      ]
+    },
+    "r241_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780091973272,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005553052,
+      "seen": 4,
+      "correct": 2,
+      "incorrect": 1,
+      "days": [
+        1780004642025,
+        1780005001840,
+        1780005092211,
+        1780005553052
+      ]
+    },
+    "r242_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780091979422,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005574834,
+      "seen": 3,
+      "correct": 2,
+      "incorrect": 1,
+      "days": [
+        1780005042132,
+        1780005122627,
+        1780005574834
+      ]
+    },
+    "r243_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092048635,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005628899,
+      "seen": 6,
+      "correct": 2,
+      "incorrect": 4,
+      "days": [
+        1780005056947,
+        1780005126976,
+        1780005198606,
+        1780005272024,
+        1780005364146,
+        1780005628899
+      ]
+    },
+    "r244_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780091987222,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005580200,
+      "seen": 3,
+      "correct": 2,
+      "incorrect": 1,
+      "days": [
+        1780005096179,
+        1780005162507,
+        1780005580200
+      ]
+    },
+    "r245_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092014092,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005608917,
+      "seen": 4,
+      "correct": 2,
+      "incorrect": 2,
+      "days": [
+        1780005136826,
+        1780005208805,
+        1780005301015,
+        1780005608917
+      ]
+    },
+    "r246_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092006079,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005602698,
+      "seen": 3,
+      "correct": 2,
+      "incorrect": 1,
+      "days": [
+        1780005156975,
+        1780005237021,
+        1780005602698
+      ]
+    },
+    "r247_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092178246,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005776863,
+      "seen": 6,
+      "correct": 4,
+      "incorrect": 2,
+      "days": [
+        1780005167507,
+        1780005590054,
+        1780005599784,
+        1780005742774,
+        1780005755340,
+        1780005776863
+      ]
+    },
+    "r248_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780091998981,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005597215,
       "seen": 2,
       "correct": 2,
       "incorrect": 0,
       "days": [
-        1779787230662,
-        1779787272294
+        1780005173008,
+        1780005597215
+      ]
+    },
+    "r249_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092028091,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005625831,
+      "seen": 4,
+      "correct": 2,
+      "incorrect": 2,
+      "days": [
+        1780005176057,
+        1780005245751,
+        1780005330014,
+        1780005625831
+      ]
+    },
+    "r250_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092008138,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005606882,
+      "seen": 3,
+      "correct": 2,
+      "incorrect": 1,
+      "days": [
+        1780005185805,
+        1780005265150,
+        1780005606882
+      ]
+    },
+    "r251_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092018780,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005614882,
+      "seen": 3,
+      "correct": 2,
+      "incorrect": 1,
+      "days": [
+        1780005239753,
+        1780005307532,
+        1780005614882
+      ]
+    },
+    "r252_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092055116,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005649446,
+      "seen": 3,
+      "correct": 2,
+      "incorrect": 1,
+      "days": [
+        1780005311049,
+        1780005412143,
+        1780005649446
+      ]
+    },
+    "r253_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092057586,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005655896,
+      "seen": 3,
+      "correct": 2,
+      "incorrect": 1,
+      "days": [
+        1780005318116,
+        1780005419209,
+        1780005655896
+      ]
+    },
+    "r254_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092025057,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005619615,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005323732,
+        1780005619615
+      ]
+    },
+    "r255_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092067847,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005658412,
+      "seen": 3,
+      "correct": 2,
+      "incorrect": 1,
+      "days": [
+        1780005334831,
+        1780005422140,
+        1780005658412
+      ]
+    },
+    "r256_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092175903,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005758524,
+      "seen": 6,
+      "correct": 3,
+      "incorrect": 3,
+      "days": [
+        1780005367537,
+        1780005445241,
+        1780005528586,
+        1780005708676,
+        1780005726124,
+        1780005758524
+      ]
+    },
+    "r257_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092154527,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005746173,
+      "seen": 5,
+      "correct": 3,
+      "incorrect": 2,
+      "days": [
+        1780005372828,
+        1780005450174,
+        1780005668778,
+        1780005705924,
+        1780005746173
+      ]
+    },
+    "r258_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092105124,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005696526,
+      "seen": 3,
+      "correct": 2,
+      "incorrect": 1,
+      "days": [
+        1780005429259,
+        1780005497305,
+        1780005696526
+      ]
+    },
+    "r259_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092125328,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005716324,
+      "seen": 3,
+      "correct": 2,
+      "incorrect": 1,
+      "days": [
+        1780005504955,
+        1780005544119,
+        1780005716324
+      ]
+    },
+    "r260_en": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092141390,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005737774,
+      "seen": 3,
+      "correct": 2,
+      "incorrect": 1,
+      "days": [
+        1780005532769,
+        1780005549368,
+        1780005737774
+      ]
+    },
+    "r241_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092259703,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005856917,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005781839,
+        1780005856917
+      ]
+    },
+    "r242_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092262385,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005860285,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005787122,
+        1780005860285
+      ]
+    },
+    "r243_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092265887,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005862984,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005789338,
+        1780005862984
+      ]
+    },
+    "r244_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092268287,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005866498,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005792404,
+        1780005866498
+      ]
+    },
+    "r245_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092271033,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005868868,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005796087,
+        1780005868868
+      ]
+    },
+    "r246_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092275282,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005871615,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005799254,
+        1780005871615
+      ]
+    },
+    "r247_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092277583,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005875865,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005804537,
+        1780005875865
+      ]
+    },
+    "r248_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 4,
+      "easeFactor": 2.65,
+      "nextReview": 1780351411188,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005809471,
+      "seen": 1,
+      "correct": 1,
+      "incorrect": 0,
+      "days": [
+        1780005809471
+      ]
+    },
+    "r249_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092280185,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005878183,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005812370,
+        1780005878183
+      ]
+    },
+    "r250_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092282069,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005880782,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005815770,
+        1780005880782
+      ]
+    },
+    "r251_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092285769,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005882649,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005817753,
+        1780005882649
+      ]
+    },
+    "r252_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092288119,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005886367,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005820839,
+        1780005886367
+      ]
+    },
+    "r253_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092290252,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005888715,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005824469,
+        1780005888715
+      ]
+    },
+    "r254_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092292033,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005890849,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005827203,
+        1780005890849
+      ]
+    },
+    "r255_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092294269,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005892615,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005829435,
+        1780005892615
+      ]
+    },
+    "r256_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092296620,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005894865,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005833152,
+        1780005894865
+      ]
+    },
+    "r257_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092304259,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005897198,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005835336,
+        1780005897198
+      ]
+    },
+    "r258_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092307187,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005905331,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005841668,
+        1780005905331
+      ]
+    },
+    "r259_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092332899,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005908248,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005845435,
+        1780005908248
+      ]
+    },
+    "r260_gr": {
+      "phase": "review",
+      "learningStep": 0,
+      "interval": 1,
+      "easeFactor": 2.5,
+      "nextReview": 1780092359415,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": true,
+      "lastReview": 1780005933480,
+      "seen": 2,
+      "correct": 2,
+      "incorrect": 0,
+      "days": [
+        1780005848901,
+        1780005933480
+      ]
+    },
+    "r261_en": {
+      "phase": "learning",
+      "learningStep": 1,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "nextReview": 1780068639094,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": false,
+      "lastReview": 1780086260887,
+      "seen": 3,
+      "correct": 1,
+      "incorrect": 1,
+      "days": [
+        1780067880589,
+        1780068035494,
+        1780086260887
+      ]
+    },
+    "r262_en": {
+      "phase": "learning",
+      "learningStep": 1,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "nextReview": 1780068812792,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": false,
+      "lastReview": 1780068210846,
+      "seen": 2,
+      "correct": 1,
+      "incorrect": 1,
+      "days": [
+        1780068024977,
+        1780068210846
+      ]
+    },
+    "r263_en": {
+      "phase": "learning",
+      "learningStep": 1,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "nextReview": 1780068815199,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": false,
+      "lastReview": 1780068213600,
+      "seen": 2,
+      "correct": 1,
+      "incorrect": 1,
+      "days": [
+        1780068039908,
+        1780068213600
+      ]
+    },
+    "r264_en": {
+      "phase": "learning",
+      "learningStep": 1,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "nextReview": 1780068874898,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": false,
+      "lastReview": 1780068272950,
+      "seen": 2,
+      "correct": 1,
+      "incorrect": 1,
+      "days": [
+        1780068059328,
+        1780068272950
+      ]
+    },
+    "r265_en": {
+      "phase": "learning",
+      "learningStep": 1,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "nextReview": 1780068896096,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": false,
+      "lastReview": 1780068293633,
+      "seen": 2,
+      "correct": 1,
+      "incorrect": 1,
+      "days": [
+        1780068216000,
+        1780068293633
+      ]
+    },
+    "r266_en": {
+      "phase": "learning",
+      "learningStep": 1,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "nextReview": 1780068899548,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": false,
+      "lastReview": 1780068297143,
+      "seen": 2,
+      "correct": 1,
+      "incorrect": 1,
+      "days": [
+        1780068224700,
+        1780068297143
+      ]
+    },
+    "r267_en": {
+      "phase": "learning",
+      "learningStep": 1,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "nextReview": 1780068902355,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": false,
+      "lastReview": 1780068300128,
+      "seen": 2,
+      "correct": 1,
+      "incorrect": 1,
+      "days": [
+        1780068232351,
+        1780068300128
+      ]
+    },
+    "r268_en": {
+      "phase": "learning",
+      "learningStep": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "nextReview": 1780068453853,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": false,
+      "lastReview": 1780068383725,
+      "seen": 2,
+      "correct": 0,
+      "incorrect": 2,
+      "days": [
+        1780068251235,
+        1780068383725
+      ]
+    },
+    "r269_en": {
+      "phase": "learning",
+      "learningStep": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "nextReview": 1780068339112,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": false,
+      "lastReview": 1780082294661,
+      "seen": 3,
+      "correct": 0,
+      "incorrect": 1,
+      "days": [
+        1780068275681,
+        1780068395558,
+        1780082294661
+      ]
+    },
+    "r270_en": {
+      "phase": "learning",
+      "learningStep": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "nextReview": 1780068366608,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": false,
+      "lastReview": 1780068302926,
+      "seen": 1,
+      "correct": 0,
+      "incorrect": 1,
+      "days": [
+        1780068302926
+      ]
+    },
+    "r271_en": {
+      "phase": "learning",
+      "learningStep": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "nextReview": 1780068436087,
+      "lapseCount": 0,
+      "leech": false,
+      "graduated": false,
+      "lastReview": 1780068310927,
+      "seen": 1,
+      "correct": 0,
+      "incorrect": 1,
+      "days": [
+        1780068310927
       ]
     }
   }
