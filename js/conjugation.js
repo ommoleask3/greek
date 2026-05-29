@@ -122,7 +122,7 @@ function submitConjTyping() {
 
   conjAnswered = true;
   const correct = conjCurrent.answer;
-  const isCorrect = normalizeGreek(userAnswer) === normalizeGreek(correct);
+  const isCorrect = removeTonosAndSendToLowerCase(userAnswer) === removeTonosAndSendToLowerCase(correct);
 
   if (isCorrect) conjCorrect++;
 
@@ -170,7 +170,7 @@ function submitConjMC(btn, answer) {
   setTimeout(() => nextConjCard(), isCorrect ? 800 : 2000);
 }
 
-function normalizeGreek(s) {
+function removeTonosAndSendToLowerCase(s) {
   // Normalize unicode and lowercase for comparison
   return s.normalize('NFC').toLowerCase().trim();
 }

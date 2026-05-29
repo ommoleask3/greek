@@ -101,8 +101,27 @@ function buildPokedexData() {
 function normalizeGreek(str) {
   if (!str) return '';
   let s = str.toLowerCase().trim();
-  s = s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+  // Strip accents via NFD decomposition
+  const nfd = s.normalize('NFD');
+  const stripped = nfd.replace(/[\u0300-\u036f]/g, '');
+  s = stripped.normalize('NFC');
+
+  // Fallback: replace precomposed accented vowels directly (some browsers skip NFD)
+  s = s.replace(/\u03AC/g, '\u03B1'); // ά → α
+  s = s.replace(/\u03AD/g, '\u03B5'); // έ → ε
+  s = s.replace(/\u03AE/g, '\u03B7'); // ή → η
+  s = s.replace(/\u03AF/g, '\u03B9'); // ί → ι
+  s = s.replace(/\u03CC/g, '\u03BF'); // ό → ο
+  s = s.replace(/\u03CD/g, '\u03C5'); // ύ → υ
+  s = s.replace(/\u03CE/g, '\u03C9'); // ώ → ω
+  s = s.replace(/\u0390/g, '\u03B9'); // ΐ → ι
+  s = s.replace(/\u03B0/g, '\u03C5'); // ΰ → υ
+
+  // Final sigma → regular sigma
   s = s.replace(/\u03C2/g, '\u03C3');
+  // ο ↔ ω equivalence
+  s = s.replace(/\u03C9/g, '\u03BF'); // ω → ο
   return s;
 }
 
