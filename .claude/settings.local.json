@@ -62,7 +62,8 @@
       "Bash(done)",
       "Bash(for f in js/state.js js/app.js js/ai-exam.js js/ai-exam-data.js js/keyboard.js)",
       "Bash(node -c \"$f\")",
-      "Bash(node -c js/ai-exam.js)"
+      "Bash(node -c js/ai-exam.js)",
+      "Bash(for f in js/ai-exam.js js/exam.js js/audio.js)"
     ]
   }
 }

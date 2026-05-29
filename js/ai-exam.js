@@ -109,6 +109,8 @@ function aiExamNextQuestion() {
   document.getElementById('ai-exam-feedback').innerHTML = '';
   document.getElementById('ai-exam-feedback').className = 'conj-feedback';
   document.getElementById('ai-exam-expected').textContent = '';
+  const oldNext = document.querySelector('#ai-exam-question .ai-next-btn');
+  if (oldNext) oldNext.remove();
 
   if (aiExamQueue.length === 0) {
     showAiExamEnd();
@@ -253,6 +255,13 @@ function aiConstructSubmit() {
 
   // TTS: play the correct Greek sentence
   speakGreek(correctWords.join(' '));
+
+  // Mobile: show "Next" button
+  const nextBtn = document.createElement('button');
+  nextBtn.className = 'conj-submit ai-next-btn';
+  nextBtn.textContent = gt('Συνέχεια', 'Next');
+  nextBtn.onclick = () => aiExamNextQuestion();
+  expectedEl.after(nextBtn);
 
   // Save to history
   saveAiHistoryEntry({

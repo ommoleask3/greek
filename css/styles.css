@@ -965,6 +965,33 @@ button:active {
   color: #7c85a6;
 }
 
+.popover-replay-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-top: 4px;
+}
+.popover-replay-btns button {
+  padding: 6px 4px;
+  background: #0f1117;
+  border: 1px solid #252a3d;
+  border-radius: 6px;
+  color: #7c85a6;
+  font-size: 0.68rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.popover-replay-btns button:active {
+  background: #2a3060;
+  color: #a0b4ff;
+}
+
+.ai-next-btn,
+.exam-next-btn {
+  margin-top: 12px;
+  width: 100%;
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════════
    HOME SPLASH
    ═══════════════════════════════════════════════════════════════════════════════ */

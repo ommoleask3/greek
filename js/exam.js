@@ -75,6 +75,8 @@ function blankWordInSentence(sentence, greekWord) {
 
 function nextExamCard() {
   examAnswered = false;
+  const oldNext = document.querySelector('#exam-view .exam-next-btn');
+  if (oldNext) oldNext.remove();
   if (examQueue.length === 0) {
     showExamEnd();
     return;
@@ -170,6 +172,20 @@ function submitExam() {
 
   // Play TTS with full sentence
   speakGreek(examCurrent.sentence);
+
+  // Mobile: show "Next" button
+  const nextBtn = document.createElement('button');
+  nextBtn.className = 'conj-submit exam-next-btn';
+  nextBtn.textContent = gt('Συνέχεια', 'Next');
+  nextBtn.onclick = () => {
+    const transEl2 = document.getElementById('exam-translation');
+    if (transEl2 && !transEl2.classList.contains('visible')) {
+      transEl2.classList.add('visible');
+    } else {
+      nextExamCard();
+    }
+  };
+  feedbackEl.after(nextBtn);
 }
 
 function showExamEnd() {
