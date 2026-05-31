@@ -18,8 +18,6 @@ const ASSETS = [
   './js/conjugation.js',
   './js/import.js',
   './js/pokedex.js',
-  './js/exam.js',
-  './js/exam-data.js',
   './js/thematic-data.js',
   './js/sync.js',
   './plato_head.jpg',

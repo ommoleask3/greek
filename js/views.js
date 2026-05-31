@@ -12,7 +12,6 @@ function showView(id) {
     'grammar-list-view',
     'grammar-lesson-view',
     'conjugation-view',
-    'exam-view',
     'pokedex-view',
     'ai-exam-view',
   ].forEach((v) => {

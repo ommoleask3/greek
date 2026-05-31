@@ -17,25 +17,6 @@ function setupKeyboardShortcuts() {
       return;
     }
 
-    // Exam view: Space advances to next card, Enter replays TTS
-    if (document.getElementById('exam-view').classList.contains('active')) {
-      if (examAnswered && examCurrent) {
-        if (e.key === ' ') {
-          e.preventDefault();
-          const transEl = document.getElementById('exam-translation');
-          if (transEl && !transEl.classList.contains('visible')) {
-            transEl.classList.add('visible');
-          } else {
-            nextExamCard();
-          }
-        } else if (e.key === 'Enter') {
-          e.preventDefault();
-          speakGreek(examCurrent.sentence);
-        }
-      }
-      return;
-    }
-
     // Only act when main-view is visible
     if (!document.getElementById('main-view').classList.contains('active')) return;
 

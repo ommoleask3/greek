@@ -133,8 +133,6 @@ function speakGreekSlow(text) {
 function mobileReplay() {
   if (document.getElementById('ai-exam-view').classList.contains('active')) {
     if (aiExamAnswered && aiExamCurrent) speakGreek((aiExamCurrent.greekWords || []).join(' '));
-  } else if (document.getElementById('exam-view').classList.contains('active')) {
-    if (typeof examAnswered !== 'undefined' && examAnswered && typeof examCurrent !== 'undefined' && examCurrent) speakGreek(examCurrent.sentence);
   } else {
     replayAudio();
   }
@@ -143,8 +141,6 @@ function mobileReplay() {
 function mobileReplaySlow() {
   if (document.getElementById('ai-exam-view').classList.contains('active')) {
     if (aiExamAnswered && aiExamCurrent) speakGreekSlow((aiExamCurrent.greekWords || []).join(' '));
-  } else if (document.getElementById('exam-view').classList.contains('active')) {
-    if (typeof examAnswered !== 'undefined' && examAnswered && typeof examCurrent !== 'undefined' && examCurrent) speakGreekSlow(examCurrent.sentence);
   } else {
     replayAudioSlow();
   }

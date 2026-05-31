@@ -317,24 +317,6 @@ function renderGrid(dir) {
     `;
 
     // Exam button: only on EN-GR tiles that are fully graduated and have exam data
-    if (
-      dir === 'en' &&
-      !locked &&
-      completed >= total &&
-      total > 0 &&
-      typeof EXAM_DATA !== 'undefined' &&
-      EXAM_DATA[lvl]
-    ) {
-      const examBtn = document.createElement('button');
-      examBtn.className = 'exam-tile-btn';
-      examBtn.textContent = 'Εξέταση';
-      examBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        startExam(lvl);
-      });
-      tile.appendChild(examBtn);
-    }
-
     if (!locked) {
       tile.addEventListener('click', () => startLevelSession(lvl, dir));
     }
