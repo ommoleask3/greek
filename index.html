@@ -169,26 +169,6 @@
         <button class="btn-skip" onclick="showImport()" style="font-size: 0.72rem">↑ Re-import deck</button>
       </div>
 
-      <div class="custom-range" id="custom-range-section">
-        <div class="custom-range-header" id="custom-range-toggle" onclick="toggleCustomRange()">
-          <span class="chevron">▶</span> Προσαρμοσμένο εύρος
-        </div>
-        <div class="custom-range-body" id="custom-range-body">
-          <label>Από κατάταξη</label>
-          <input type="number" id="range-from" value="1" min="1" />
-          <label>έως</label>
-          <input type="number" id="range-to" value="100" min="1" />
-          <div class="dir-select" id="custom-dir-select">
-            <button class="active" id="cdir-en" onclick="setCustomDir('en')">EN→GR</button>
-            <button id="cdir-gr" onclick="setCustomDir('gr')">GR→EN</button>
-            <button id="cdir-both" onclick="setCustomDir('both')">Και τα δύο</button>
-          </div>
-          <div style="display:flex;gap:8px;">
-            <button class="btn-practice" onclick="startCustomRange()">Εξάσκηση</button>
-            <button class="btn-practice ai-exam-trigger" onclick="startAiExamFromLevels()">AI</button>
-          </div>
-        </div>
-      </div>
 
       <div style="display: flex; justify-content: center; width: 100%">
         <button class="btn-pokedex" onclick="showPokedex()">📖 Λεξικό</button>

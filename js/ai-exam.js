@@ -21,33 +21,14 @@ function saveAiHistoryEntry(entry) {
 }
 
 // -- Entry points -------------------------------------------------------------
-function startAiExamFromLevels() {
-  const from = parseInt(document.getElementById('range-from').value, 10) || 1;
-  const to = parseInt(document.getElementById('range-to').value, 10) || 100;
-  const rankMin = Math.min(from, to);
-  const rankMax = Math.max(from, to);
-  const questions = AI_EXAM_DATA.filter((q) => q.rank >= rankMin && q.rank <= rankMax);
-  if (questions.length === 0) {
-    showSnackbar(gt('Δεν υπάρχουν ερωτήσεις για αυτό το εύρος', 'No questions for this range'));
-    return;
-  }
-  aiExamFromPokedex = false;
-  showAiExamSetup(questions);
-}
-
 function startAiExamFromPokedex() {
   if (pdexFiltered.length === 0) return;
-  const pageStart = pdexPerPage > 0 ? pdexPage * pdexPerPage : 0;
-  const pageEnd =
-    pdexPerPage > 0 ? Math.min(pageStart + pdexPerPage, pdexFiltered.length) : pdexFiltered.length;
-  const pageSize = pageEnd - pageStart;
-  if (pageSize === 0) return;
 
   const fromVal = parseInt(document.getElementById('pdex-row-from').value, 10) || 1;
-  const toVal = parseInt(document.getElementById('pdex-row-to').value, 10) || pageSize;
-  const from = Math.max(1, Math.min(fromVal, pageSize));
-  const to = Math.max(from, Math.min(toVal, pageSize));
-  const selectedWords = pdexFiltered.slice(pageStart + from - 1, pageStart + to).map((r) => r.word);
+  const toVal = parseInt(document.getElementById('pdex-row-to').value, 10) || pdexFiltered.length;
+  const from = Math.max(1, Math.min(fromVal, pdexFiltered.length));
+  const to = Math.max(from, Math.min(toVal, pdexFiltered.length));
+  const selectedWords = pdexFiltered.slice(from - 1, to).map((r) => r.word);
   if (selectedWords.length === 0) return;
 
   const selectedRanks = new Set(selectedWords.map((w) => w.rank).filter(Boolean));

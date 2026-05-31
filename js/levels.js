@@ -346,32 +346,7 @@ function renderGrid(dir) {
   if (row) initScrollRow(row);
 }
 
-function toggleCustomRange() {
-  const header = document.getElementById('custom-range-toggle');
-  const body = document.getElementById('custom-range-body');
-  const open = body.classList.contains('open');
-  body.classList.toggle('open', !open);
-  header.classList.toggle('open', !open);
-}
 
-function setCustomDir(d) {
-  customDir = d;
-  ['en', 'gr', 'both'].forEach((id) => {
-    document.getElementById(`cdir-${id}`).classList.toggle('active', id === d);
-  });
-}
-
-function startCustomRange() {
-  const from = parseInt(document.getElementById('range-from').value, 10) || 1;
-  const to = parseInt(document.getElementById('range-to').value, 10) || 100;
-  sessionMode = customDir;
-  sessionRankMin = Math.min(from, to);
-  sessionRankMax = Math.max(from, to);
-  sessionReadonly = true;
-  sessionCustomWords = null;
-  sessionFromPokedex = false;
-  startSession();
-}
 
 function startLevelSession(level, dir) {
   sessionThematic = null;

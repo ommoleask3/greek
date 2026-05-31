@@ -417,17 +417,12 @@ function updatePokedexCount() {
 // ── Launch custom session from pokedex ────────────────────────────────────────
 function launchPokedexSession() {
   if (pdexFiltered.length === 0) return;
-  // Row numbers are relative to the current page
-  const pageStart = pdexPerPage > 0 ? pdexPage * pdexPerPage : 0;
-  const pageEnd = pdexPerPage > 0 ? Math.min(pageStart + pdexPerPage, pdexFiltered.length) : pdexFiltered.length;
-  const pageSize = pageEnd - pageStart;
-  if (pageSize === 0) return;
 
   const fromVal = parseInt(document.getElementById('pdex-row-from').value, 10) || 1;
-  const toVal = parseInt(document.getElementById('pdex-row-to').value, 10) || pageSize;
-  const from = Math.max(1, Math.min(fromVal, pageSize));
-  const to = Math.max(from, Math.min(toVal, pageSize));
-  const words = pdexFiltered.slice(pageStart + from - 1, pageStart + to).map((r) => r.word);
+  const toVal = parseInt(document.getElementById('pdex-row-to').value, 10) || pdexFiltered.length;
+  const from = Math.max(1, Math.min(fromVal, pdexFiltered.length));
+  const to = Math.max(from, Math.min(toVal, pdexFiltered.length));
+  const words = pdexFiltered.slice(from - 1, to).map((r) => r.word);
   if (words.length === 0) return;
 
   sessionCustomWords = words;

@@ -157,8 +157,6 @@ let currentAudioFile = null; // for Enter key replay
 let sentenceAudioFile = null;
 let audioControlsOpen = false;
 
-// Custom range dir
-let customDir = 'en';
 
 // Active level tab
 let activeTab = 'en';
