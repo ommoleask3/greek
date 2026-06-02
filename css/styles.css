@@ -473,6 +473,9 @@ body:has(#home-view.active) #sync-controls {
   cursor: pointer;
   margin-bottom: 28px;
   position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .card {
@@ -684,6 +687,9 @@ button {
     transform 0.15s,
     box-shadow 0.15s;
   letter-spacing: 0.03em;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 button:active {
   transform: scale(0.97);
